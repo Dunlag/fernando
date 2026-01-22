@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automatizando tareas repetitivas con scripts en Bash"
-date: 2026-01-28 14:30:00 +0100
+date: 2026-01-20 14:30:00 +0100
 category: Bash
 tags: [Bash, Automation, Scripts]
 cover: /assets/images/bash-automation.jpg

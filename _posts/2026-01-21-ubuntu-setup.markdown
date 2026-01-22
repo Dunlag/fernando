@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Setting up the perfect programming environment on Ubuntu"
-date: 2026-02-01 10:00:00 +0100
+date: 2026-01-21 10:00:00 +0100
 category: Linux
 tags: [Linux, Productivity, Setup]
 cover: /assets/images/ubuntu-setup.jpg
