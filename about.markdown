@@ -1,18 +1,34 @@
 ---
 layout: page
-title: About
+title: Sobre Mí
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## Hola, soy Fernando 👋
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Soy un **Desarrollador Web** apasionado por crear interfaces modernas y funcionales. Con experiencia en desarrollo frontend y diseño web, me especializo en:
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+- **Frontend:** HTML, CSS, JavaScript
+- **Diseño:** UI/UX, Animaciones, Responsive Design
+- **Proyectos Web:** Diseño y desarrollo de sitios web profesionales
 
+## Mi Experiencia
 
-[jekyll-organization]: https://github.com/jekyll
+He trabajado en diversos proyectos web, desde pequeñas aplicaciones interactivas hasta sitios web completos para clientes profesionales. Me encanta aprender nuevas tecnologías y mantenerme actualizado en las últimas tendencias del desarrollo web.
+
+## Qué Puedo Hacer
+
+- Diseñar y desarrollar sitios web responsivos
+- Crear componentes interactivos y animaciones
+- Optimizar la experiencia del usuario
+- Convertir diseños en código funcional
+
+## Conecta Conmigo
+
+- **GitHub:** [github.com/Dunlag](https://github.com/Dunlag)
+- **LinkedIn:** [linkedin.com/in/fernandopinillavalbuena](https://www.linkedin.com/in/fernandopinillavalbuena/)
+- **Email:** fernando.pinilla85@gmail.com
+
+---
+
+*¿Tienes un proyecto en mente? ¡Hablemos!*
