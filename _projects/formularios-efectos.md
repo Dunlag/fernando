@@ -29,7 +29,7 @@ Formulario web implementando el efecto de etiqueta flotante inspirado en Google 
 
 ### Enlaces
 
-- **[Ver Demo en Vivo](https://dunlag.github.io/formulario-efecto-etiqueta-flotante-de-google/)** 🚀
+- **[Ver Demo en Vivo]({{ '/proyectos/formulario-flotante/' | relative_url }})** 🚀
 - **[Ver Código en GitHub](https://github.com/Dunlag/formulario-efecto-etiqueta-flotante-de-google)** 💻
 
 ---

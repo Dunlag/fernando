@@ -4,7 +4,6 @@ title: Elementos UI
 description: Componentes de interfaz reutilizables y accesibles
 technologies: HTML, CSS, JavaScript
 github: https://github.com/Dunlag
-demo: #
 image: /assets/images/ui-preview.png
 date: 2026-01-05
 ---
@@ -23,9 +22,9 @@ Biblioteca de componentes UI modernos, reutilizables y totalmente personalizable
 ### Componentes Incluidos
 
 - Botones con múltiples estilos
-- Modales y tooltips
+- Badges y alerts
 - Navegación responsive
-- Cards y badges
+- Cards y tooltips
 - Loaders y spinners
 
 ### Tecnologías Utilizadas
@@ -35,9 +34,10 @@ Biblioteca de componentes UI modernos, reutilizables y totalmente personalizable
 - JavaScript modular
 - Sin dependencias externas
 
-### Demostración
+### Enlaces
 
-[Ver demo en vivo](#) | [Ver código en GitHub](https://github.com/Dunlag)
+- **[Ver Demo en Vivo]({{ '/proyectos/elementos-ui/' | relative_url }})** 🚀
+- **[Ver Código en GitHub](https://github.com/Dunlag)** 💻
 
 ---
 

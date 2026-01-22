@@ -4,7 +4,6 @@ title: Cards Animadas
 description: Diseños modernos de tarjetas con animaciones CSS suaves
 technologies: HTML, CSS, JavaScript
 github: https://github.com/Dunlag
-demo: #
 image: /assets/images/cards-preview.png
 date: 2026-01-15
 ---
@@ -27,9 +26,10 @@ Colección de tarjetas interactivas con animaciones CSS modernas y efectos hover
 - JavaScript vanilla para interacciones
 - Flexbox y Grid para layouts
 
-### Demostración
+### Enlaces
 
-[Ver demo en vivo](#) | [Ver código en GitHub](https://github.com/Dunlag)
+- **[Ver Demo en Vivo]({{ '/proyectos/cards-animadas/' | relative_url }})** 🚀
+- **[Ver Código en GitHub](https://github.com/Dunlag)** 💻
 
 ---
 
