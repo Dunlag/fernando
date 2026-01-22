@@ -29,7 +29,7 @@ github_username: Dunlag
 linkedin_username: fernandopinillavalbuena
 
 # Build settings
-theme: minima
+# theme: minima  # Comenta esta línea para usar tema personalizado
 plugins:
   - jekyll-feed
 

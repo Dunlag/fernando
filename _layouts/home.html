@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            {{ content }}
+        </div>
+    </div>
+</section>
+
+<section class="latest-posts">
+    <div class="container">
+        <h2>Últimas Publicaciones</h2>
+        <div class="posts-grid">
+            {% for post in site.posts limit:3 %}
+            <article class="post-card">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p class="post-meta">{{ post.date | date: "%d %b %Y" }}</p>
+                <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                <a href="{{ post.url | relative_url }}" class="read-more">Leer más →</a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
