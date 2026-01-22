@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check for saved theme preference or default to dark mode
         const currentTheme = localStorage.getItem('theme') || 'dark';
+
         htmlElement.setAttribute('data-theme', currentTheme);
         updateThemeIcon(currentTheme);
 
