@@ -8,11 +8,11 @@ permalink: /contact/
   <div class="contact-image">
     <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop" alt="Contacto">
   </div>
-  
+
   <div class="contact-content">
     <h1>Ponte en Contacto</h1>
     <p class="contact-description">¿Tienes un proyecto en mente o quieres colaborar? Aquí encontrarás todas las formas de contactarme.</p>
-    
+
     <div class="contact-info">
       <div class="info-card">
         <i class="fas fa-envelope"></i>
