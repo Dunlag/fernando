@@ -4,7 +4,7 @@ title: "Welcome to Jekyll!"
 date: 2026-01-22 11:05:19 +0100
 category: jekyll
 tags: [jekyll, update, blog]
-cover: /assets/images/jekyll-cover.jpg
+cover: /assets/images/jekyll-cover.png
 author: Fernando
 read_time: 2 min read
 description: "Descubre cómo empezar con Jekyll, el generador de sitios estáticos perfecto para blogs y portfolios."
