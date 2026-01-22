@@ -223,9 +223,9 @@ body {
 }
 
 /* Page Content */
-    background: var(--bg-dark);
 .page-content {
     padding: 60px 0;
+    background: var(--bg-dark);
 }
 
 .page-header {
@@ -279,8 +279,8 @@ body {
 
 /* Posts Grid */
 .latest-posts {
-    padding: 60px 0;darker
-    background: var(--bg-light);
+    padding: 60px 0;
+    background: var(--bg-darker);
 }
 
 .latest-posts h2 {
@@ -295,11 +295,11 @@ body {
     gap: 2rem;
 }
 
-.post-card {var(--bg-card);
+.post-card {
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
@@ -390,6 +390,14 @@ body {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
+    color: #ffffff;
+}
+
+.btn:visited,
+.btn:active,
+.btn:focus {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* Footer */
