@@ -1,17 +1,13 @@
 ---
 layout: post
-title: "Setting up the perfect programming environment on Ubuntu"
-date: 2026-02-01 10:00:00 +0100
-category: Linux
-tags: [Linux, Productivity, Setup]
-cover: /assets/images/ubuntu-setup.jpg
+title: "Automatizando tareas repetitivas con scripts en Bash"
+date: 2026-01-28 14:30:00 +0100
+category: Bash
+tags: [Bash, Automation, Scripts]
+cover: /assets/images/bash-automation.jpg
 author: Fernando
-author_avatar: /assets/images/avatar.jpg
-read_time: 3 min read
-description: "Cómo montar un entorno de programación optimizado en Ubuntu."
-# featured_posts:
-#   - { title: "Automatizando tareas con Bash", url: "/automating-routine-tasks-with-bash-scripts/" }
-#   - { title: "Por qué migré a Arch", url: "/why-i-switched-to-arch-linux-and-never-looked-back/" }
+read_time: 4 min read
+description: "Aprende a automatizar tus flujos de trabajo diarios con scripts Bash profesionales y reutilizables."
 ---
 
 ## 1. Actualiza el sistema

@@ -8,7 +8,7 @@ cover: /assets/images/ubuntu-setup.jpg
 author: Fernando
 author_avatar: /assets/images/avatar.jpg
 read_time: 3 min read
-description: "Cómo montar un entorno de programación optimizado en Ubuntu."
+description: "Guía completa para configurar un entorno de desarrollo profesional en Ubuntu con las mejores herramientas y prácticas."
 # featured_posts:
 #   - { title: "Automatizando tareas con Bash", url: "/automating-routine-tasks-with-bash-scripts/" }
 #   - { title: "Por qué migré a Arch", url: "/why-i-switched-to-arch-linux-and-never-looked-back/" }
