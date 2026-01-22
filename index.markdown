@@ -13,6 +13,8 @@ Aquí puedes ver algunos de mis proyectos de diseño web:
 - **Formularios con Efectos** - Interfaces amigables y responsivas
 - **Elementos UI** - Componentes reutilizables y accesibles
 
+**[Ver todos mis proyectos →](/fernando/projects/)**
+
 *Próximamente: Proyectos de mis trabajos publicados*
 
 ## 🔗 Conéctate Conmigo
