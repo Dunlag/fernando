@@ -2,27 +2,18 @@
 layout: home
 ---
 
-Soy **Desarrollador Web** especializado en crear experiencias interactivas y visualmente atractivas.
+# ¡Hola! Soy Fernando <span class="wave">👋</span>
 
-## 📚 Proyectos Destacados
+<p class="hero-subtitle">Desarrollador Web, diseñador UI/UX y creador digital</p>
 
-Aquí puedes ver algunos de mis proyectos de diseño web:
+<p class="hero-description">
+Soy un desarrollador web apasionado por crear experiencias digitales únicas. Este portfolio es mi espacio personal donde comparto mis proyectos, ideas y conocimientos sobre desarrollo web, diseño y tecnología.
+</p>
 
-### Componentes Interactivos
-- **Cards Animadas** - Diseños modernos con animaciones CSS
-- **Formularios con Efectos** - Interfaces amigables y responsivas
-- **Elementos UI** - Componentes reutilizables y accesibles
+<p class="hero-description">
+Aquí encontrarás mis proyectos, herramientas y métodos que me ayudan a equilibrar productividad con creatividad. Explora, inspírate y siéntete libre de compartir tus ideas.
+</p>
 
-**[Ver todos mis proyectos →](/fernando/projects/)**
+<a href="{{ '/projects/' | relative_url }}">Ver Mis Proyectos</a>
+<a href="{{ '/about/' | relative_url }}">Sobre Mí</a>
 
-*Próximamente: Proyectos de mis trabajos publicados*
-
-## 🔗 Conéctate Conmigo
-
-- **GitHub:** [github.com/Dunlag](https://github.com/Dunlag)
-- **LinkedIn:** [linkedin.com/in/fernandopinillavalbuena](https://www.linkedin.com/in/fernandopinillavalbuena/)
-- **Email:** fernando.pinilla85@gmail.com
-
----
-
-*Explora mis proyectos y descubre lo que puedo hacer por ti.*
