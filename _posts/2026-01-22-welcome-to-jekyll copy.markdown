@@ -1,8 +1,13 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2026-01-22 11:05:19 +0100
-categories: jekyll update
+title: "Welcome to Jekyll!"
+date: 2026-01-22 11:05:19 +0100
+category: jekyll
+tags: [jekyll, update, blog]
+cover: /assets/images/jekyll-cover.jpg
+author: Fernando
+read_time: 2 min read
+description: "Descubre cómo empezar con Jekyll, el generador de sitios estáticos perfecto para blogs y portfolios."
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
