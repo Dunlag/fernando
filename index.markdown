@@ -2,8 +2,6 @@
 layout: home
 ---
 
-# ¡Bienvenido a mi Portfolio!
-
 Soy **Desarrollador Web** especializado en crear experiencias interactivas y visualmente atractivas.
 
 ## 📚 Proyectos Destacados
