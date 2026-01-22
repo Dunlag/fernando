@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 hamburger.classList.remove('active');
             }
         });
+
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
     }
 
     // Theme Toggle
@@ -48,4 +57,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-                themeIcon.classList.add('fa-moon');
