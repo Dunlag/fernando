@@ -238,8 +238,11 @@ body {
 
 /* Page Content */
 .page-content {
-    padding: 60px 0;
     background: var(--bg-dark);
+}
+
+.page-content:not(:has(.contact-hero)) {
+    padding: 60px 0;
 }
 
 .page-header {
@@ -486,8 +489,9 @@ body {
 .contact-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     gap: 0;
+    margin: 0;
 }
 
 .contact-image {
@@ -496,6 +500,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    min-height: 100vh;
 }
 
 .contact-image img {
@@ -503,6 +509,9 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .contact-content {
