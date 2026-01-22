@@ -677,7 +677,7 @@ body {
     }
 
     .contact-image {
-        height: 300px;
+        display: none;
     }
 
     .contact-content {
