@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<article class="post-article">
+  {% if page.cover %}
+  <div class="post-cover">
+    <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <div class="post-shell">
+    <div class="post-main">
+      <div class="post-chip-row">
+        {% if page.category %}
+        <span class="post-chip">{{ page.category }}</span>
+        {% elsif page.categories and page.categories.size > 0 %}
+        <span class="post-chip">{{ page.categories | first }}</span>
+        {% endif %}
+      </div>
+
+      <h1 class="post-title">{{ page.title }}</h1>
+
+      <div class="post-meta-bar">
+        <div class="post-author">
+          {% if page.author_avatar %}
+          <img src="{{ page.author_avatar | relative_url }}" alt="{{ page.author | default: site.author.name }}" />
+          {% endif %}
+          <div>
+            <div class="post-author-name">{{ page.author | default: site.author.name | default: site.title }}</div>
+            <div class="post-author-meta">{{ page.date | date: "%d %b, %Y" }}{% if page.read_time %} · {{ page.read_time }}{% endif %}</div>
+          </div>
+        </div>
+        {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <span class="tag-pill">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if page.description %}
+      <p class="post-lead">{{ page.description }}</p>
+      {% endif %}
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </div>
+
+    <aside class="post-aside">
+      {% if page.featured_posts %}
+      <div class="aside-card">
+        <h3>Destacados</h3>
+        <ul>
+          {% for item in page.featured_posts %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="aside-card">
+        <h3>Comparte</h3>
+        <div class="share-row">
+          <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}" target="_blank" aria-label="Compartir en X">X</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" aria-label="Compartir en Facebook">Fb</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" target="_blank" aria-label="Compartir en LinkedIn">In</a>
+        </div>
+      </div>
+
+      {% if page.tags %}
+      <div class="aside-card">
+        <h3>Temas</h3>
+        <div class="aside-tags">
+          {% for tag in page.tags %}
+          <span class="tag-pill">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</article>
