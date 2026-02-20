@@ -2,6 +2,16 @@
 // MARATHON CONCEPT - JAVASCRIPT
 // ========================================
 
+// Sincroniza --nav-height con la altura real del nav
+function syncNavHeight() {
+    const nav = document.querySelector('.main-nav');
+    if (nav) {
+        document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+    }
+}
+syncNavHeight();
+window.addEventListener('resize', syncNavHeight);
+
 // Smooth Scroll para enlaces de navegación
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

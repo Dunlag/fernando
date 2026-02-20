@@ -22,6 +22,9 @@
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
+
+    /* Altura del nav - se sobreescribe por JS si cambia */
+    --nav-height: 54px;
 }
 
 /* ========================================
@@ -317,9 +320,9 @@ a {
 .sidebar-left {
     position: fixed;
     left: 0;
-    top: 0;
+    top: var(--nav-height);
     width: 36px;
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
     background: var(--color-primary);
     z-index: 990;
     overflow: hidden;
@@ -333,7 +336,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0 1.5rem;
+    padding: 1rem 0 1.5rem;
     gap: 0.4rem;
 }
 
