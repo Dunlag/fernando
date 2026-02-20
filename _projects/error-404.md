@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Error 404 Cyberpunk
+title: Error 404 Marathon
 description: Página de error 404 con estética futurista y efectos visuales avanzados
 technologies: HTML, CSS, JavaScript, Canvas
 github: https://github.com/Dunlag
@@ -8,7 +8,7 @@ image: /assets/images/error-404-preview.png
 date: 2026-02-20
 ---
 
-## Error 404 Cyberpunk
+## Error 404 Marathon
 
 Página de error 404 con diseño futurista y efectos visuales inspirados en interfaces cyberpunk y terminales retro.
 
