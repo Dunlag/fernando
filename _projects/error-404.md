@@ -38,10 +38,13 @@ Página de error 404 con diseño futurista y efectos visuales inspirados en inte
 - Transiciones y animaciones CSS suaves
 - Sistema de cursor personalizado
 
-### Enlaces
+### Enlace
 
-- **[Ver Demo en Vivo]({{ '/proyectos/error-404/' | relative_url }})** 🚀
-- **[Ver Código en GitHub](https://github.com/Dunlag)** 💻
+<div style="text-align: center; margin: 3rem 0;">
+    <a href="/fernando/proyectos/error-404/" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #e91e63, #9c27b0); color: white; text-decoration: none; border-radius: 4px; font-weight: bold; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3); transition: all 0.3s ease;">
+        🚀 VER PÁGINA DE CONCEPTO
+    </a>
+</div>
 
 ---
 
