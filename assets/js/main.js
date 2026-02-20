@@ -1,5 +1,32 @@
 // Mobile menu toggle + Theme toggle
 document.addEventListener('DOMContentLoaded', function() {
+
+    // ---- Sidebar fade on scroll (home page only) ----
+    const sidebar = document.getElementById('homeSidebar');
+    if (sidebar) {
+        const fadeStart = window.innerHeight * 0.25;
+        const fadeEnd   = window.innerHeight * 0.85;
+
+        function updateSidebar() {
+            const scrolled = window.pageYOffset;
+            if (scrolled <= fadeStart) {
+                sidebar.style.opacity   = '1';
+                sidebar.style.transform = 'translateX(0)';
+            } else if (scrolled >= fadeEnd) {
+                sidebar.style.opacity   = '0';
+                sidebar.style.transform = 'translateX(-100%)';
+            } else {
+                const progress = (scrolled - fadeStart) / (fadeEnd - fadeStart);
+                sidebar.style.opacity   = (1 - progress).toString();
+                sidebar.style.transform = `translateX(${-progress * 100}%)`;
+            }
+        }
+
+        window.addEventListener('scroll', updateSidebar, { passive: true });
+        updateSidebar();
+    }
+
+    // ---- Mobile menu ----
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
