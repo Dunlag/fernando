@@ -3,111 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marathon Concept - Diseño Sci-Fi</title>
+    <title>Marathon - Un shooter PvPvE de evacuación y supervivencia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Canvas de fondo para efectos de partículas -->
-    <canvas id="particleCanvas"></canvas>
+    <!-- Navegación Principal -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="nav-logo">
+                    <span class="logo-icon">[●]</span>
+                    <span class="logo-text">MARATHON</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#noticias" class="nav-link">NOTICIAS <span class="nav-arrow">[→]</span></a>
+                    <a href="#multimedia" class="nav-link">CONTENIDO MULTIMEDIA <span class="nav-arrow">[→]</span></a>
+                    <a href="#creadores" class="nav-link">CREADORES <span class="nav-arrow">[→]</span></a>
+                    <a href="#ayuda" class="nav-link">AYUDA <span class="nav-arrow">[→]</span></a>
+                    <a href="#tienda" class="nav-link">TIENDA <span class="nav-arrow">[→]</span></a>
+                    <a href="#cuenta" class="nav-link">CUENTA <span class="nav-arrow">[→]</span></a>
+                    <a href="#espanol" class="nav-link">ESPAÑOL <span class="nav-arrow">[↓]</span></a>
+                </div>
+            </div>
+            <a href="#reserva" class="btn-reserva">RESERVA YA</a>
+        </div>
+    </nav>
 
-    <!-- Grid de fondo tecnológico -->
-    <div class="tech-grid"></div>
+    <!-- Barra lateral amarilla Marathon -->
+    <aside class="sidebar-left" id="sidebarLeft">
+        <div class="sidebar-inner">
+            <div class="sidebar-top-tag">EXPLORATION/<br>DEVELOPMENT</div>
+            <div class="sidebar-pixel-block">
+                <svg width="28" height="60" viewBox="0 0 28 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="4" height="4" fill="#000"/>
+                    <rect x="8" y="0" width="4" height="4" fill="#000"/>
+                    <rect x="16" y="0" width="4" height="4" fill="#000"/>
+                    <rect x="4" y="4" width="4" height="4" fill="#000"/>
+                    <rect x="12" y="4" width="4" height="4" fill="#000"/>
+                    <rect x="20" y="4" width="4" height="4" fill="#000"/>
+                    <rect x="0" y="8" width="4" height="4" fill="#000"/>
+                    <rect x="8" y="8" width="4" height="4" fill="#000"/>
+                    <rect x="16" y="8" width="4" height="4" fill="#000"/>
+                    <rect x="4" y="12" width="4" height="4" fill="#000"/>
+                    <rect x="12" y="12" width="4" height="4" fill="#000"/>
+                    <rect x="20" y="12" width="4" height="4" fill="#000"/>
+                    <rect x="0" y="16" width="4" height="4" fill="#000"/>
+                    <rect x="8" y="16" width="4" height="4" fill="#000"/>
+                    <rect x="16" y="16" width="4" height="4" fill="#000"/>
+                </svg>
+            </div>
+            <div class="sidebar-cyber">
+                <span>CYBER</span>
+                <span>RUNNERS</span>
+            </div>
+            <div class="sidebar-diamond">◈</div>
+            <div class="sidebar-divider-line"></div>
+            <div class="sidebar-trespass">TRESPASS</div>
+            <div class="sidebar-coords">
+                <span>TAU&nbsp;CETI</span>
+                <span>RUNS&nbsp;2&nbsp;8&nbsp;9&nbsp;3</span>
+                <span>00002025</span>
+            </div>
+        </div>
+    </aside>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Video/Imagen de Fondo -->
     <section class="hero">
+        <div class="hero-bg" style="background-image: url('src/images/image.png');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="glitch" data-text="MARATHON CONCEPT">MARATHON CONCEPT</h1>
-            <p class="hero-subtitle">UN SHOOTER PVPVE DE EVACUACIÓN Y SUPERVIVENCIA</p>
-            <p class="hero-description">Entra en el oscuro mundo de ciencia ficción • Explora instalaciones abandonadas • Compite contra otros jugadores</p>
-            <div class="hero-buttons">
-                <a href="#section1" class="btn-primary">Explorar Mundo</a>
-                <a href="#section2" class="btn-secondary">Ver Características</a>
+            <div class="hero-logo">
+                <h1>MARATHON</h1>
+            </div>
+            <p class="hero-subtitle">UN SHOOTER PVPVE DE EVACUACIÓN Y SUPERVIVENCIA EN PRIMERA PERSONA</p>
+            <div class="hero-cta">
+                <a href="#reserva" class="btn-hero-primary">REPRODUCIR</a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>SCROLL</span>
-            <div class="scroll-line"></div>
-        </div>
+        <div class="hero-side-text">DESCUBRE CÓMO SE HIZO LA MÚSICA DE MARATHON.</div>
     </section>
 
-    <!-- Section 1: Un cementerio de posibilidades -->
-    <section id="section1" class="content-section section-left">
-        <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop');">
-            <div class="section-overlay"></div>
-        </div>
-        <div class="section-content">
-            <div class="section-label">TAU CETI IV</div>
-            <h2>UN CEMENTERIO DE POSIBILIDADES</h2>
-            <p>Cuélate en instalaciones de investigación abandonadas, paisajes accidentados y puestos de seguridad que albergan los vestigios de una expedición desaparecida.</p>
-            <p>Cada zona es más difícil que la anterior y te prepara para el desafío final.</p>
-            <div class="feature-stats">
-                <div class="stat">
-                    <span class="stat-number">12+</span>
-                    <span class="stat-label">ZONAS EXPLORABLES</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">∞</span>
-                    <span class="stat-label">POSIBILIDADES</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">PELIGROSO</span>
-                </div>
+    <!-- Section Noticias -->
+    <section id="noticias" class="news-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">NOTICIAS</span>
+                <h2>ÚLTIMAS NOVEDADES</h2>
+                <p>Ponte al día con las últimas noticias sobre asuntos como el contenido que está por llegar, las novedades de los desarrolladores y la información relacionada con las pruebas del juego.</p>
+                <a href="#noticias" class="btn-section">VER TODAS LAS NOTICIAS ↗</a>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Armazones de corredor -->
-    <section id="section2" class="content-section section-right">
-        <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1920&h=1080&fit=crop');">
-            <div class="section-overlay"></div>
-        </div>
-        <div class="section-content">
-            <div class="section-label">ASESINOS PROFESIONALES</div>
-            <h2>PODEROSOS • CONFIGURABLES • DESECHABLES</h2>
-            <p>Los armazones de corredor ofrecen diferentes bases sobre las que construir un estilo de juego. Saquea un arsenal de armas modificables, implantes corporales y núcleos de mejora.</p>
-            <ul class="feature-list">
-                <li><span class="feature-icon">⚡</span> Múltiples clases de armazones</li>
-                <li><span class="feature-icon">🔧</span> Personalización profunda</li>
-                <li><span class="feature-icon">🎯</span> Estrategia de brigada</li>
-                <li><span class="feature-icon">💀</span> Sistema de muerte permanente</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Section 3: La influencia es poder -->
-    <section id="section3" class="content-section section-left">
-        <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1920&h=1080&fit=crop');">
-            <div class="section-overlay"></div>
-        </div>
-        <div class="section-content">
-            <div class="section-label">FORTALECE TU PRESENCIA</div>
-            <h2>LA INFLUENCIA ES PODER</h2>
-            <p>Completa contratos de las seis facciones en liza para hacer que tu poder básico crezca con elementos que durarán toda la temporada.</p>
-            <div class="factions">
-                <div class="faction-badge">MIDA</div>
-                <div class="faction-badge">THOLEN</div>
-                <div class="faction-badge">ICARUS</div>
-                <div class="faction-badge">DREAD</div>
-                <div class="faction-badge">SEVA</div>
-                <div class="faction-badge">RUNNER</div>
+    <!-- Section Creadores -->
+    <section id="creadores" class="creators-section">
+        <div class="section-container">
+            <div class="creators-grid">
+                <div class="creators-content">
+                    <span class="section-meta">UN SHOOTER PVPVE DE EVACUACIÓN Y SUPERVIVENCIA EN PRIMERA PERSONA</span>
+                    <h2>DE LOS CREADORES DE<br>HALO Y DESTINY</h2>
+                    <p>Entra en el oscuro mundo de ciencia ficción de Tau Ceti IV: una colonia en ruinas repleta de corredores, fuerzas de seguridad de la UESC y entornos impredecibles. Al ir buscando objetos de valor a solas o con una brigada, la tensión de la exploración se convertirá en frenéticos combates PvP.</p>
+                    <p>Evacúa para crear combinaciones más fuertes con el botín robado. Luego, vuelve al frente para obtener mayores fortunas en tus carreras.</p>
+                </div>
+                <div class="creators-image">
+                    <img src="src/images/image03.png" alt="Marathon gameplay" class="creators-img">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>DOS PALOS Y, DESPUÉS, FUEGO</h2>
-            <p>NO HACE FALTA MÁS. NO ES TAN DIFÍCIL. NO ES TAN COMPLICADO.</p>
-            <p class="cta-highlight">PROMETEO NO ERA UN GENIO. SOLO ERA UN LADRÓN QUE CAMBIÓ EL MUNDO.</p>
-            <a href="../../projects.html" class="btn-primary btn-large">VOLVER A PROYECTOS</a>
+    <!-- Section Asesinos Profesionales - Full Bleed -->
+    <section id="asesinos" class="fullbleed-section">
+        <div class="fullbleed-bg" style="background-image: url('src/images/image2.png');"></div>
+        <div class="fullbleed-overlay"></div>
+        <div class="fullbleed-content">
+            <span class="fullbleed-meta">PODEROSOS. <em>CONFIGURABLES.</em> DESECHABLES.</span>
+            <h2>ASESINOS<br>PROFESIONALES</h2>
+            <p>Los armazones de corredor ofrecen diferentes bases sobre las que construir un estilo de juego. Saquea un arsenal de armas modificables, implantes corporales y núcleos de mejora de sistemas para crear infinitas combinaciones. Cread una estrategia como brigada para maximizar el conjunto de vuestras fortalezas.</p>
         </div>
     </section>
+
+    <!-- Section Influencia - Full Bleed -->
+    <section id="reserva" class="influence-section">
+        <div class="influence-bg" style="background-image: url('src/images/image.png');"></div>
+        <div class="influence-overlay"></div>
+        <div class="influence-content">
+            <div class="influence-info-box">
+                <span class="influence-label">LA INFLUENCIA ES PODER</span>
+                <h2>FORTALECE TU<br>PRESENCIA</h2>
+                <p>Completa contratos de las seis facciones en liza para hacer que tu poder básico crezca con elementos que durarán toda la temporada, como mejoras para los armazones de corredor, equipamiento inicial más potente, más espacio en el depósito y mercancías especializadas a cambio de botín sobrante.</p>
+                <a href="#" class="btn-reserve-now">VER AHORA ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Reserva -->
+    <section class="reserve-section">
+        <div class="section-container">
+            <div class="reserve-info-full">
+                <div class="reserve-box">
+                    <h3>RESERVA YA</h3>
+                    <p>LLEGA EL 5 DE MARZO DE 2026 A PLAYSTATION 5, STEAM Y XBOX SERIES X|S CON TODAS LAS FUNCIONES RELACIONADAS TANTO CON EL CROSS-SAVE COMO CON EL JUEGO CRUZADO.</p>
+                    <div class="platform-icons">
+                        <div class="platform-icon">PS5</div>
+                        <div class="platform-icon">STEAM</div>
+                        <div class="platform-icon">XBOX SERIES X|S</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Cita -->
+    <section class="quote-section">
+        <div class="quote-container">
+            <div class="quote-content">
+                <p class="quote-text">DOS PALOS Y, DESPUÉS, FUEGO. NO HACE FALTA MÁS. NO ES TAN DIFÍCIL. NO ES TAN COMPLICADO. PROMETEO NO ERA UN GENIO. SOLO ERA UN LADRÓN QUE CAMBIÓ EL MUNDO.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Redes Sociales -->
+            <div class="footer-section">
+                <h3 class="footer-title">(10) REDES SOCIALES</h3>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">[●] DISCORD</a>
+                    <a href="#" class="footer-link">[●] TWITCH</a>
+                    <a href="#" class="footer-link">[●] SUBREDDIT DE LA COMUNIDAD</a>
+                    <a href="#" class="footer-link">[♥] BLUESKY</a>
+                    <a href="#" class="footer-link">[♥] TIKTOK</a>
+                    <a href="#" class="footer-link">[●] INSTAGRAM</a>
+                    <a href="#" class="footer-link">[●] FACEBOOK</a>
+                    <a href="#" class="footer-link">[●] YOUTUBE</a>
+                    <a href="#" class="footer-link">[X] X</a>
+                    <a href="#" class="footer-link">[X] THREADS</a>
+                </div>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-section">
+                <div class="footer-links footer-legal">
+                    <a href="#" class="footer-link">[→] LEGAL</a>
+                    <a href="#" class="footer-link">[→] TÉRMINOS DE USO</a>
+                    <a href="#" class="footer-link">[→] EMPLEO</a>
+                    <a href="#" class="footer-link">[→] PRENSA</a>
+                    <a href="#" class="footer-link">[→] CREADORES</a>
+                    <a href="#" class="footer-link">[→] NO QUIERO QUE MI INFORMACIÓN PERSONAL SE VENDA</a>
+                </div>
+            </div>
+
+            <!-- ESRB Rating -->
+            <div class="footer-section">
+                <div class="esrb-rating">
+                    <div class="esrb-box">
+                        <div class="esrb-logo">M</div>
+                        <div class="esrb-content">
+                            <div class="esrb-title">MATURE 17+</div>
+                            <div class="esrb-descriptors">
+                                <span>Violencia</span>
+                                <span>Animated Blood</span>
+                                <span>Language</span>
+                                <span>Online Game</span>
+                                <span>Compras dentro de sangre</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="esrb-disclaimer">© 2026 BUNGIE, INC. TODOS LOS DERECHOS RESERVADOS. BUNGIE Y EL LOGOTIPO DE BUNGIE SON MARCAS REGISTRADAS DE BUNGIE, INC. PUBLICADO POR BUNGIE.</p>
+                </div>
+            </div>
+
+            <!-- Hazard Stripes -->
+            <div class="footer-hazard">
+                <div class="hazard-stripes"></div>
+            </div>
+
+            <!-- Bungie Logo -->
+            <div class="footer-bottom">
+                <div class="bungie-logo">
+                    <span class="bungie-text">MARATHON<sup>®</sup></span>
+                </div>
+                <p class="footer-copyright">BUNGIE Y MARATHON SON MARCAS COMERCIALES DE BUNGIE INC. EN ESTADOS UNIDOS Y OTROS PAÍSES. © 2026 BUNGIE, INC.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
