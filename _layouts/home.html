@@ -3,21 +3,22 @@ layout: default
 ---
 
 <section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" alt="Workspace">
-            </div>
-            <div class="hero-text">
-                {{ content }}
-            </div>
+    <div class="hero-content container">
+        <div class="hero-text">
+            {{ content }}
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" alt="Workspace">
         </div>
     </div>
 </section>
 
 <section class="latest-posts">
     <div class="container">
-        <h2>Últimas Publicaciones</h2>
+        <div class="section-header">
+            <span class="section-label">// PUBLICACIONES</span>
+            <h2>Últimas Publicaciones</h2>
+        </div>
         <div class="posts-grid">
             {% for post in site.posts %}
             <article class="post-card-featured">
