@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERROR 404 — NOT FOUND</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-warn">
+    <div class="triangle"></div>
+    <span>ERROR 404</span>
+  </div>
+  <div class="barcode" id="barcode"></div>
+  <span>NOT FOUND</span>
+  <div class="header-right">
+    <span>SYNC-WAY A1 [DESY]</span>
+    <span>SYNC-WAY A3 [DESY]</span>
+  </div>
+</div>
+
+<!-- PATTERN CANVAS -->
+<canvas id="patternCanvas"></canvas>
+
+<!-- FLOATING LABELS -->
+<div class="float-label">ERROR 404</div>
+<div class="float-label">ERROR 404</div>
+<div class="float-label">SYS::NULL</div>
+<div class="float-label">NOT FOUND</div>
+
+<!-- CENTER CONTENT -->
+<div class="content">
+  <div class="error-box">
+    <div class="error-num">404</div>
+    <div class="error-label">// PAGE NOT FOUND //</div>
+    <div class="error-sub">REQUESTED RESOURCE DOES NOT EXIST<span class="blink">_</span></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
