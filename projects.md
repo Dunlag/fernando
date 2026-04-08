@@ -27,7 +27,11 @@ Aquí encontrarás una selección de mis trabajos en desarrollo web y diseño UI
 
 ### Proyectos Profesionales
 
-*Próximamente: Enlaces a sitios web en producción desarrollados para clientes.*
+Sitios web reales desarrollados para clientes, con backend en PHP y diseño a medida:
+
+- **[Finca Avignon](/fernando/projects/avignon/)** — Web corporativa para finca con formulario de reservas
+- **[Puerto Narixa](/fernando/projects/puerto-narixa/)** — Página web completa con galería y contacto
+- **[Landing Pacífico](/fernando/projects/landing-pacifico/)** — Landing page orientada a conversión
 
 ---
 
