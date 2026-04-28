@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bundle exec *)"
+      "Bash(bundle exec *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
