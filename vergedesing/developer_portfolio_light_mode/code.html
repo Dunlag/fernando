@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#00725b",
+                      "tertiary-container": "#555555",
+                      "secondary-container": "#3afecf",
+                      "tertiary": "#3e3e3e",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed": "#e5deff",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f3f3f3",
+                      "surface-tint": "#5c2bff",
+                      "primary": "#3c00c0",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-secondary-fixed-variant": "#00513f",
+                      "surface-variant": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-container": "#cacaca",
+                      "on-surface": "#1a1c1c",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-container": "#eeeeee",
+                      "outline": "#797489",
+                      "on-error": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "on-primary-container": "#ccc2ff",
+                      "secondary-fixed": "#3afecf",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c9c3da",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#c9bfff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#1a0063",
+                      "on-primary-fixed-variant": "#4400d9",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "background": "#f9f9f9",
+                      "secondary-fixed-dim": "#00e0b4",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "primary-container": "#5200ff",
+                      "inverse-surface": "#2f3131",
+                      "on-background": "#1a1c1c",
+                      "primary-fixed-dim": "#c9bfff",
+                      "surface-dim": "#dadada",
+                      "on-surface-variant": "#484457",
+                      "secondary": "#006b55",
+                      "on-secondary-fixed": "#002118"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "margin": "40px",
+                      "sm": "8px",
+                      "lg": "32px",
+                      "xs": "4px",
+                      "gutter": "20px",
+                      "unit": "4px",
+                      "xl": "64px"
+              },
+              "fontFamily": {
+                      "display-xl": ["Manuka", "Impact", "sans-serif"],
+                      "headline-md": ["Manuka", "Impact", "sans-serif"],
+                      "body-md": ["PolySans", "ui-sans-serif", "system-ui"],
+                      "body-lg": ["PolySans", "ui-sans-serif", "system-ui"],
+                      "label-caps": ["PolySans", "ui-sans-serif", "system-ui"],
+                      "headline-lg": ["Manuka", "Impact", "sans-serif"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        @font-face {
+            font-family: 'Manuka';
+            src: url('https://fonts.cdnfonts.com/s/85633/Manuka-Black.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'PolySans';
+            src: url('https://fonts.cdnfonts.com/s/85633/PolySans-Neutral.woff') format('woff');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-offset {
+            box-shadow: 4px 4px 0px 0px #5200ff;
+        }
+        .hard-offset-mint {
+            box-shadow: 4px 4px 0px 0px #3afecf;
+        }
+        .btn-active:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px #5200ff;
+        }
+        .rule-line-v {
+            width: 1px;
+            background-color: #1a1c1c;
+        }
+        .rule-line-h {
+            height: 1px;
+            background-color: #1a1c1c;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#F9F9F9] border-b-2 border-zinc-900 flex justify-between items-center px-6 h-16 max-w-full">
+<div class="text-2xl font-black italic tracking-tighter text-zinc-900">ROOT_PROTOCOL</div>
+<div class="hidden md:flex items-center space-x-8 h-full">
+<a class="font-mono font-bold uppercase tracking-tight text-sm text-zinc-600 hover:bg-[#5200FF] hover:text-white px-2 transition-none" href="#">REPO</a>
+<a class="font-mono font-bold uppercase tracking-tight text-sm border-b-4 border-[#5200FF] text-[#5200FF] pb-1" href="#">LOGS</a>
+<a class="font-mono font-bold uppercase tracking-tight text-sm text-zinc-600 hover:bg-[#5200FF] hover:text-white px-2 transition-none" href="#">STACK</a>
+<a class="font-mono font-bold uppercase tracking-tight text-sm text-zinc-600 hover:bg-[#5200FF] hover:text-white px-2 transition-none" href="#">MANIFESTO</a>
+</div>
+<button class="bg-primary-container text-white font-mono font-bold uppercase tracking-tight text-sm px-4 py-2 border-2 border-zinc-900 hard-offset active:translate-x-1 active:translate-y-1 active:shadow-none transition-none">
+            CONNECT
+        </button>
+</nav>
+<main class="pt-16 max-w-[1440px] mx-auto border-x border-zinc-900 min-h-screen">
+<!-- Hero Section -->
+<section class="grid grid-cols-12 gap-0 border-b-2 border-zinc-900">
+<div class="col-span-12 md:col-span-8 p-12 border-r-2 border-zinc-900 flex flex-col justify-center bg-surface">
+<span class="inline-block bg-secondary-container text-zinc-900 font-label-caps text-label-caps px-2 py-1 mb-6 border border-zinc-900 w-fit">STATUS: ACTIVE_RESEARCHER</span>
+<h1 class="font-display-xl text-display-xl uppercase mb-8 leading-none">BUILDING THE <br/><span class="text-primary">ULTRA-MODERN</span> ARCHITECTURE.</h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-zinc-700">
+                    A multi-disciplinary systems architect focused on the intersection of blockchain scalability and neo-brutalist digital interfaces. Every line of code is a manifesto.
+                </p>
+<div class="mt-12 flex gap-6">
+<button class="bg-primary-container text-white px-8 py-4 font-mono font-bold border-2 border-zinc-900 hard-offset-mint transition-none uppercase">EXPLORE_REPOS</button>
+<button class="bg-white text-zinc-900 px-8 py-4 font-mono font-bold border-2 border-zinc-900 hover:bg-surface-variant transition-none uppercase">GET_IN_TOUCH</button>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-surface-variant relative overflow-hidden group">
+<img class="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-500" data-alt="high-contrast industrial close-up of server rack circuitry with purple neon lighting and sharp shadows in brutalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIwEOqcEfFw530F0-1rcBtLUm1FrNe-mIBhM6_c6H-EAwrLcrJBDyVMKNt7TuvVziq7X89N5-wTYFAXqy936pROXymqKzgF4sAluNdUM_HMYOSI9KlRyeGgXs35TFxXJtT4ukEFSu2pWjkaeibaeppJfRZTPIBi0xZ5zlmS1Nlq0Q3m-jCeRZbEvvvcH9BzddlP2yi2HVSWltaj0ofAS0-pLLpjFraCM5uZ43sGPFnOs1hZiOkiAJfL38zVhO-j5dHk8juGPoq1g2I"/>
+<div class="absolute bottom-0 left-0 p-6 bg-zinc-950 text-white w-full">
+<p class="font-mono text-xs font-bold">SYSTEM_METRICS: 100%_STABLE</p>
+</div>
+</div>
+</section>
+<!-- /PROJECT_LOG -->
+<section class="border-b-2 border-zinc-900">
+<div class="p-6 border-b border-zinc-900 bg-surface-container-low flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md uppercase">/PROJECT_LOG</h2>
+<span class="font-mono text-xs text-zinc-500">SEQ_NUM: 00482_AX</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- Project 1 -->
+<div class="border-b md:border-b-0 md:border-r border-zinc-900 p-8 hover:bg-white transition-colors">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-xs font-bold text-primary">2024.Q1</span>
+<span class="material-symbols-outlined text-zinc-400">terminal</span>
+</div>
+<h3 class="font-headline-md text-3xl uppercase mb-4">NEURAL_NET_V2</h3>
+<p class="font-body-md text-zinc-600 mb-8">Decentralized inference engine for edge computing. Designed for high throughput and extreme resilience in volatile network conditions.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-zinc-200 text-zinc-800 text-[10px] font-bold px-2 py-1 uppercase">Rust</span>
+<span class="bg-zinc-200 text-zinc-800 text-[10px] font-bold px-2 py-1 uppercase">WASM</span>
+<span class="bg-zinc-200 text-zinc-800 text-[10px] font-bold px-2 py-1 uppercase">P2P</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="border-b md:border-b-0 md:border-r border-zinc-900 p-8 bg-primary-container text-white">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-xs font-bold text-secondary-container">2023.Q4</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline-md text-3xl uppercase mb-4">ROOT_OS_SHELL</h3>
+<p class="font-body-md text-on-primary-container mb-8">A terminal-first operating system interface focused on workflow automation and minimal cognitive load.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/20 text-white text-[10px] font-bold px-2 py-1 uppercase">Go</span>
+<span class="bg-white/20 text-white text-[10px] font-bold px-2 py-1 uppercase">React</span>
+<span class="bg-white/20 text-white text-[10px] font-bold px-2 py-1 uppercase">gRPC</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="p-8 hover:bg-white transition-colors">
+<div class="flex justify-between items-start mb-6">
+<span class="font-mono text-xs font-bold text-primary">2023.Q2</span>
+<span class="material-symbols-outlined text-zinc-400">database</span>
+</div>
+<h3 class="font-headline-md text-3xl uppercase mb-4">VOID_STORAGE</h3>
+<p class="font-body-md text-zinc-600 mb-8">Encrypted immutable file system leveraging Merkle DAGs for global data integrity and version control.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-zinc-200 text-zinc-800 text-[10px] font-bold px-2 py-1 uppercase">C++</span>
+<span class="bg-zinc-200 text-zinc-800 text-[10px] font-bold px-2 py-1 uppercase">Zero-Knowledge</span>
+</div>
+</div>
+</div>
+</section>
+<!-- HISTORY_LOG & TECH_STACK -->
+<section class="grid grid-cols-12 gap-0 border-b-2 border-zinc-900">
+<!-- History Log -->
+<div class="col-span-12 md:col-span-7 border-r-0 md:border-r-2 border-zinc-900 p-8 md:p-12">
+<h2 class="font-headline-md text-headline-md uppercase mb-12 border-b-2 border-zinc-900 pb-4">HISTORY_LOG</h2>
+<div class="space-y-12">
+<div class="relative pl-8 border-l-2 border-primary">
+<span class="absolute -left-[9px] top-0 w-4 h-4 bg-primary border-2 border-zinc-900"></span>
+<span class="font-mono text-xs font-bold text-zinc-500 uppercase tracking-widest">2021 — PRESENT</span>
+<h4 class="font-headline-md text-2xl uppercase mt-2">SR_SYSTEMS_ENGINEER // QUANTUM_CORE</h4>
+<p class="mt-4 font-body-md text-zinc-600">Leading the development of high-frequency trading infrastructure. Reduced latency by 14% across all major exchanges.</p>
+</div>
+<div class="relative pl-8 border-l-2 border-zinc-300">
+<span class="absolute -left-[9px] top-0 w-4 h-4 bg-zinc-300 border-2 border-zinc-900"></span>
+<span class="font-mono text-xs font-bold text-zinc-500 uppercase tracking-widest">2018 — 2021</span>
+<h4 class="font-headline-md text-2xl uppercase mt-2">BACKEND_ARCHITECT // VOID_INC</h4>
+<p class="mt-4 font-body-md text-zinc-600">Scaled microservices architecture to handle 10M+ concurrent users. Implemented distributed tracing and automated recovery.</p>
+</div>
+<div class="relative pl-8 border-l-2 border-zinc-300">
+<span class="absolute -left-[9px] top-0 w-4 h-4 bg-zinc-300 border-2 border-zinc-900"></span>
+<span class="font-mono text-xs font-bold text-zinc-500 uppercase tracking-widest">2015 — 2018</span>
+<h4 class="font-headline-md text-2xl uppercase mt-2">FULL_STACK_DEV // NEXUS_LABS</h4>
+<p class="mt-4 font-body-md text-zinc-600">First hire. Built the MVP for a real-time collaborative coding platform using WebSockets and CRDTs.</p>
+</div>
+</div>
+</div>
+<!-- TECH_STACK_INVENTORY -->
+<div class="col-span-12 md:col-span-5 bg-surface-container-low p-8 md:p-12">
+<h2 class="font-headline-md text-headline-md uppercase mb-12 border-b-2 border-zinc-900 pb-4">TECH_STACK_INVENTORY</h2>
+<div class="space-y-8">
+<div>
+<p class="font-mono text-xs font-extrabold text-primary mb-4 uppercase tracking-widest">LANGUAGES</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="border border-zinc-900 p-4 bg-white hover:hard-offset-mint transition-all">
+<span class="font-body-md font-bold uppercase">RUST_LANG</span>
+</div>
+<div class="border border-zinc-900 p-4 bg-white hover:hard-offset-mint transition-all">
+<span class="font-body-md font-bold uppercase">GO_LANG</span>
+</div>
+<div class="border border-zinc-900 p-4 bg-white hover:hard-offset-mint transition-all">
+<span class="font-body-md font-bold uppercase">TS_NODE</span>
+</div>
+<div class="border border-zinc-900 p-4 bg-white hover:hard-offset-mint transition-all">
+<span class="font-body-md font-bold uppercase">CPP_20</span>
+</div>
+</div>
+</div>
+<div>
+<p class="font-mono text-xs font-extrabold text-primary mb-4 uppercase tracking-widest">INFRASTRUCTURE</p>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-zinc-900 text-white p-3">
+<span class="material-symbols-outlined text-secondary-container">cloud</span>
+<span class="font-mono text-xs uppercase font-bold tracking-tight">KUBERNETES_CLUSTER_OPS</span>
+</div>
+<div class="flex items-center gap-4 bg-zinc-900 text-white p-3">
+<span class="material-symbols-outlined text-secondary-container">schema</span>
+<span class="font-mono text-xs uppercase font-bold tracking-tight">GRAPHQL_SCHEMA_FEDERATION</span>
+</div>
+<div class="flex items-center gap-4 bg-zinc-900 text-white p-3">
+<span class="material-symbols-outlined text-secondary-container">storage</span>
+<span class="font-mono text-xs uppercase font-bold tracking-tight">POSTGRES_OPTIMIZATION</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INITIATE_CONNECTION -->
+<section class="p-8 md:p-24 bg-surface text-center">
+<div class="max-w-3xl mx-auto border-4 border-zinc-900 p-12 relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-secondary-container border-2 border-zinc-900 px-6 py-2">
+<span class="font-mono font-bold text-sm">ENCRYPTED_LINE</span>
+</div>
+<h2 class="font-display-xl text-6xl md:text-8xl uppercase mb-8 leading-tight">INITIATE_ <br/>CONNECTION</h2>
+<p class="font-body-lg text-zinc-600 mb-12">I am currently accepting inquiries for high-impact architectural consultancy and strategic engineering partnerships.</p>
+<form class="space-y-6 text-left">
+<div class="border-b-2 border-zinc-900 pb-2">
+<label class="font-mono text-[10px] font-bold text-zinc-400 block uppercase mb-1">ENTITY_IDENTIFIER</label>
+<input class="w-full bg-transparent border-none focus:ring-0 font-headline-md text-2xl uppercase placeholder:text-zinc-200" placeholder="YOUR NAME / ORGANIZATION" type="text"/>
+</div>
+<div class="border-b-2 border-zinc-900 pb-2">
+<label class="font-mono text-[10px] font-bold text-zinc-400 block uppercase mb-1">SECURE_ADDRESS</label>
+<input class="w-full bg-transparent border-none focus:ring-0 font-headline-md text-2xl uppercase placeholder:text-zinc-200" placeholder="YOUR_EMAIL@HOST.COM" type="email"/>
+</div>
+<div class="pt-6">
+<button class="w-full bg-zinc-900 text-white py-6 font-mono font-bold text-xl uppercase hard-offset-mint active:translate-x-1 active:translate-y-1 active:shadow-none transition-none" type="submit">
+                            TRANSMIT_DATA_PACKET
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#F9F9F9] border-t-2 border-zinc-900 flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 space-y-4 md:space-y-0 max-w-[1440px] mx-auto border-x border-zinc-900">
+<div class="text-lg font-bold text-zinc-900 uppercase font-mono">© 2024_SYSTEM_ARCHITECT. ALL RIGHTS RESERVED.</div>
+<div class="flex items-center space-x-8">
+<a class="font-mono text-xs uppercase text-zinc-500 hover:text-[#5200FF] hover:italic transition-none" href="#">GITHUB</a>
+<a class="font-mono text-xs uppercase text-zinc-500 hover:text-[#5200FF] hover:italic transition-none" href="#">LINKEDIN</a>
+<a class="font-mono text-xs uppercase text-zinc-500 hover:text-[#5200FF] hover:italic transition-none" href="#">RSS_FEED</a>
+<a class="font-mono text-xs uppercase text-zinc-500 hover:text-[#5200FF] hover:italic transition-none" href="#">PGP_KEY</a>
+</div>
+</footer>
+</body></html>

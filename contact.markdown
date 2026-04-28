@@ -1,43 +1,33 @@
 ---
-layout: default
+layout: page
 title: Contacto
 permalink: /contact/
+description: ¿Tienes un proyecto en mente o quieres colaborar? Aquí están todas las formas de contactarme.
 ---
 
-<div class="contact-hero">
-  <div class="contact-image">
-    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074&auto=format&fit=crop" alt="Contacto">
-  </div>
+## Conecta directamente
 
-  <div class="contact-content">
-    <h1>Ponte en Contacto</h1>
-    <p class="contact-description">¿Tienes un proyecto en mente o quieres colaborar? Aquí encontrarás todas las formas de contactarme.</p>
+¿Quieres charlar sobre un proyecto, una idea o simplemente saludar? Estos son los canales abiertos.
 
-    <div class="contact-info">
-      <div class="info-card">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-      </div>
+### Email
 
-      <div class="info-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Ubicación</h3>
-        <p>Málaga, España</p>
-      </div>
+[{{ site.email }}](mailto:{{ site.email }})
 
-      <div class="info-card">
-        <i class="fas fa-share-alt"></i>
-        <h3>Redes Sociales</h3>
-        <div class="social-links">
-          {% if site.github_username %}
-          <a href="https://github.com/{{ site.github_username }}" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          {% endif %}
-          {% if site.linkedin_username %}
-          <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          {% endif %}
-        </div>
+La vía más directa. Respondo en menos de 48h salvo excepciones.
+
+### Ubicación
+
+**Málaga, España.** Disponible para trabajo remoto y proyectos con clientes en cualquier zona horaria.
+
+### Redes
+
+{% if site.github_username %}
+- **GitHub:** [github.com/{{ site.github_username }}](https://github.com/{{ site.github_username }})
+{% endif %}
+{% if site.linkedin_username %}
+- **LinkedIn:** [linkedin.com/in/{{ site.linkedin_username }}](https://linkedin.com/in/{{ site.linkedin_username }})
+{% endif %}
+
+---
+
+> Cuanto más concreto sea el mensaje (qué necesitas, plazo, presupuesto orientativo), más útil será mi respuesta.

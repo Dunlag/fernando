@@ -2,64 +2,120 @@
 layout: default
 ---
 
-<aside class="home-sidebar" id="homeSidebar">
-    <div class="home-sidebar-inner">
-        <span class="hsb-tag">FERNANDO / DEV</span>
-        <div class="hsb-pixel"></div>
-        <span class="hsb-label">PROYECTOS</span>
-        <span class="hsb-diamond">◈</span>
-        <span class="hsb-label">FRONTEND</span>
-        <div class="hsb-divider"></div>
-        <span class="hsb-coords">MÁLAGA / ES / 2026</span>
-    </div>
-</aside>
-
-<section class="hero">
-    <div class="hero-content container">
+<section class="hero-editorial">
+    <div class="hero-grid">
         <div class="hero-text">
-            {{ content }}
+            <span class="status-badge">ESTADO: DISPONIBLE</span>
+            <h1 class="hero-title">
+                Hola, soy<br>
+                <span class="accent">Fernando</span> <span class="wave">👋</span>
+            </h1>
+            <p class="hero-subtitle">// Desarrollador Web · Diseñador UI/UX · Creador digital</p>
+            <p class="hero-description">
+                Soy un desarrollador web apasionado por crear experiencias digitales únicas. Este portfolio es mi espacio personal donde comparto mis proyectos, ideas y conocimientos sobre desarrollo web, diseño y tecnología.
+            </p>
+            <p class="hero-description">
+                Aquí encontrarás herramientas y métodos que me ayudan a equilibrar productividad con creatividad. Explora, inspírate y siéntete libre de compartir tus ideas.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ '/projects/' | relative_url }}" class="btn-primary">Ver proyectos</a>
+                <a href="{{ '/about/' | relative_url }}" class="btn-outline">Sobre mí</a>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" alt="Workspace">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=900&fit=crop" alt="Workspace" loading="lazy">
+            <div class="hero-image-caption">// MÁLAGA / ES / 2026 — FRONTEND_LAB</div>
         </div>
     </div>
 </section>
 
-<section class="latest-posts">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">// PUBLICACIONES</span>
-            <h2>Últimas Publicaciones</h2>
+<section class="story-stream">
+    <div class="section-header">
+        <h2>/ Registro_de_proyectos</h2>
+        {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+        <span class="ref">REF: 00{{ sorted_projects.size }}_AX</span>
+    </div>
+    <div class="tile-grid">
+        {% for project in sorted_projects %}
+        {% assign idx = forloop.index0 %}
+        {% assign accent_class = '' %}
+        {% if idx == 1 %}{% assign accent_class = 'tile--accent' %}{% endif %}
+        {% case project.slug %}
+            {% when 'cards-animadas' %}{% assign icon = 'style' %}
+            {% when 'elementos-ui' %}{% assign icon = 'widgets' %}
+            {% when 'error-404' %}{% assign icon = 'terminal' %}
+            {% when 'formularios-efectos' %}{% assign icon = 'edit_note' %}
+            {% when 'marathon-concept' %}{% assign icon = 'sports_score' %}
+            {% else %}{% assign icon = 'code' %}
+        {% endcase %}
+        <article class="tile {{ accent_class }}">
+            <div class="tile-head">
+                <span class="timestamp">{{ project.date | date: "%Y.%m" }}</span>
+                <span class="material-symbols-outlined">{{ icon }}</span>
+            </div>
+            <h3 class="tile-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            <p class="tile-desc">{{ project.description }}</p>
+            <div class="tile-tags">
+                {% assign techs = project.technologies | split: ',' %}
+                {% for t in techs %}
+                <span class="pill-tag">{{ t | strip }}</span>
+                {% endfor %}
+            </div>
+            <a href="{{ project.url | relative_url }}" class="tile-cta">Ver detalle →</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="split-section">
+    <div class="split-main">
+        <h2>/ Qué_hago</h2>
+        <div class="story-card">
+            <span class="timestamp">FRONTEND</span>
+            <h4>Interfaces modernas y funcionales</h4>
+            <p>HTML semántico, CSS contemporáneo y JavaScript vanilla. Diseño responsive, animaciones cuidadas y código que sigue siendo legible seis meses después.</p>
         </div>
-        <div class="posts-grid">
-            {% for post in site.posts %}
-            <article class="post-card-featured">
-                {% if post.cover %}
-                <div class="post-card-image">
-                    <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}">
-                </div>
-                {% endif %}
-                <div class="post-card-content">
-                    {% if post.category %}
-                    <span class="post-card-chip">{{ post.category }}</span>
-                    {% elsif post.categories and post.categories.size > 0 %}
-                    <span class="post-card-chip">{{ post.categories | first }}</span>
-                    {% endif %}
-                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                    {% if post.description %}
-                    <p class="post-card-excerpt">{{ post.description }}</p>
-                    {% else %}
-                    <p class="post-card-excerpt">{{ post.content | strip_html | truncatewords: 20 }}</p>
-                    {% endif %}
-                    <div class="post-card-meta">
-                        <span class="post-card-date">{{ post.date | date: "%d %b, %Y" }}</span>
-                        {% if post.read_time %}
-                        <span class="post-card-read-time">{{ post.read_time }}</span>
-                        {% endif %}
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
+        <div class="story-card">
+            <span class="timestamp">DISEÑO</span>
+            <h4>UI/UX, animaciones, sistemas</h4>
+            <p>Sistemas de diseño coherentes, micro-interacciones que aportan, jerarquía tipográfica con carácter. El diseño cuenta una historia antes que el contenido.</p>
+        </div>
+        <div class="story-card">
+            <span class="timestamp">PROYECTOS WEB</span>
+            <h4>De diseño a producto</h4>
+            <p>Sitios web profesionales para clientes: del concepto a la puesta en producción. Optimización de rendimiento, SEO básico y accesibilidad como mínimos.</p>
+        </div>
+    </div>
+    <aside class="split-aside">
+        <h2>/ Stack</h2>
+        <div class="skill-list">
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Jekyll</div>
+            <div class="skill-item">UI/UX</div>
+            <div class="skill-item">Responsive</div>
+            <div class="skill-item">Git</div>
+            <div class="skill-item">Figma</div>
+        </div>
+    </aside>
+</section>
+
+<section class="connect-section">
+    <div class="connect-card">
+        <span class="connect-badge">LÍNEA_ABIERTA</span>
+        <h2 class="connect-title">Iniciar<br>conexión</h2>
+        <p class="connect-desc">¿Tienes un proyecto en mente o quieres colaborar? Escríbeme directamente y hablamos.</p>
+        <div class="connect-form">
+            <div class="input-group">
+                <span class="input-label">// EMAIL</span>
+                <div class="input-editorial">{{ site.email }}</div>
+            </div>
+            <div class="input-group">
+                <span class="input-label">// UBICACIÓN</span>
+                <div class="input-editorial">Málaga / España</div>
+            </div>
+            <a href="mailto:{{ site.email }}?subject=Contacto%20desde%20portfolio" class="btn-mono">Transmitir mensaje</a>
         </div>
     </div>
 </section>

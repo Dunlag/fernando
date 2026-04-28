@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&amp;family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Newsreader:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#534600",
+                    "on-background": "#dbe5df",
+                    "inverse-surface": "#dbe5df",
+                    "primary-container": "#3afecf",
+                    "background": "#0d1512",
+                    "on-primary-fixed": "#002118",
+                    "verge-ultraviolet": "#5200FF",
+                    "on-tertiary-fixed": "#221b00",
+                    "error-container": "#93000a",
+                    "text-secondary": "#949494",
+                    "text-muted": "#E9E9E9",
+                    "secondary": "#c9bfff",
+                    "on-secondary-fixed": "#1a0063",
+                    "jelly-mint": "#3CFFD0",
+                    "primary-fixed-dim": "#00e0b4",
+                    "error": "#ffb4ab",
+                    "primary": "#ffffff",
+                    "text-primary": "#FFFFFF",
+                    "tertiary-container": "#fee267",
+                    "primary-fixed": "#3afecf",
+                    "tertiary": "#ffffff",
+                    "secondary-fixed": "#e5deff",
+                    "on-primary-container": "#00725b",
+                    "deep-link-blue": "#3860BE",
+                    "on-tertiary": "#3a3000",
+                    "surface-bright": "#323b37",
+                    "surface-container": "#19211e",
+                    "tertiary-fixed-dim": "#e0c64e",
+                    "surface-variant": "#2e3733",
+                    "purple-rule": "#3D00BF",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c9bfff",
+                    "on-primary-fixed-variant": "#00513f",
+                    "surface-container-lowest": "#08100d",
+                    "on-secondary": "#2f009c",
+                    "inverse-primary": "#006b55",
+                    "canvas-black": "#131313",
+                    "on-primary": "#00382b",
+                    "on-surface-variant": "#b9cac2",
+                    "image-frame": "#313131",
+                    "surface-dim": "#0d1512",
+                    "surface-tint": "#00e0b4",
+                    "focus-cyan": "#1EAEDB",
+                    "surface-container-low": "#151d1a",
+                    "on-secondary-fixed-variant": "#4400d9",
+                    "inverse-on-surface": "#2a322f",
+                    "secondary-container": "#5200ff",
+                    "surface-container-high": "#232c28",
+                    "on-secondary-container": "#ccc2ff",
+                    "hazard-white": "#FFFFFF",
+                    "surface-slate": "#2D2D2D",
+                    "outline-variant": "#3b4a44",
+                    "on-error": "#690005",
+                    "surface": "#0d1512",
+                    "tertiary-fixed": "#fee267",
+                    "outline": "#84948d",
+                    "console-mint-border": "#309875",
+                    "surface-container-highest": "#2e3733",
+                    "on-tertiary-container": "#756300",
+                    "on-surface": "#dbe5df"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "micro-5": "5px",
+                    "editorial-20": "20px",
+                    "micro-9": "9px",
+                    "micro-10": "10px",
+                    "micro-4": "4px",
+                    "editorial-16": "16px",
+                    "micro-2": "2px",
+                    "editorial-25": "25px",
+                    "editorial-24": "24px",
+                    "editorial-12": "12px",
+                    "base": "8px",
+                    "micro-6": "6px"
+            },
+            "fontFamily": {
+                    "all-caps-xl": ["Inter"],
+                    "display-secondary": ["Epilogue"],
+                    "hero-wordmark": ["Epilogue"],
+                    "heading-wide": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "fashion-whisper": ["Inter"],
+                    "eyebrow": ["Inter"],
+                    "serif-pullquote": ["Newsreader"],
+                    "mono-timestamp": ["Space Grotesk"],
+                    "body-relaxed": ["Inter"],
+                    "mono-button": ["Space Grotesk"],
+                    "heading-md": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hazard-gradient {
+            background: repeating-linear-gradient(
+                45deg,
+                #3CFFD0,
+                #3CFFD0 10px,
+                #0A0A0A 10px,
+                #0A0A0A 20px
+            );
+        }
+        body {
+            background-color: #0d1512;
+            color: #dbe5df;
+        }
+    </style>
+</head>
+<body class="selection:bg-jelly-mint selection:text-canvas-black">
+<!-- TopAppBar -->
+<nav class="bg-[#0A0A0A] dark:bg-[#0A0A0A] text-[#3CFFD0] docked full-width top-0 z-50 border-b border-dashed border-[#3CFFD0]/30 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic tracking-tighter text-[#3CFFD0] border-2 border-[#3CFFD0] px-2 py-1 font-['EPILOGUE'] uppercase">
+                DEV_LOG_2024
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['EPILOGUE'] uppercase tracking-tighter font-black">
+<a class="text-[#3CFFD0] border-b-2 border-[#3CFFD0] pb-1" href="#">PROJECTS</a>
+<a class="text-gray-500 hover:text-[#3CFFD0] transition-colors" href="#">EXPERIENCE</a>
+<a class="text-gray-500 hover:text-[#3CFFD0] transition-colors" href="#">SKILLS</a>
+<a class="text-gray-500 hover:text-[#3CFFD0] transition-colors" href="#">ARCHIVE</a>
+</div>
+<button class="bg-[#3CFFD0] text-[#0A0A0A] font-black px-6 py-2 hover:bg-[#3CFFD0] hover:text-[#0A0A0A] duration-150 scale-95 active:bg-[#3CFFD0] font-['EPILOGUE'] uppercase tracking-tighter">
+                CONNECT
+            </button>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-6 md:px-12 py-12">
+<!-- Hero Section -->
+<section class="mb-32">
+<div class="flex flex-col gap-4">
+<span class="font-mono-timestamp text-mono-timestamp text-jelly-mint uppercase tracking-[0.2em] mb-4">SYSTEM_STATUS: OPERATIONAL // V_4.0.2</span>
+<h1 class="font-hero-wordmark text-hero-wordmark text-primary tracking-tighter italic">
+                    SYSTEM_<br/>REVEALED
+                </h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-end">
+<p class="font-body-relaxed text-body-relaxed text-on-surface max-w-xl">
+                        A DEEP-DIVE INTO ARCHITECTURAL INTEGRITY AND HIGH-OCTANE DIGITAL UTILITY. MAPPING THE FRONTIER OF MACHINE COGNITION AND HUMAN INTERFACE THROUGH RAW BRUTALIST FRAMEWORKS.
+                    </p>
+<div class="flex flex-col gap-2 border-l border-purple-rule pl-6">
+<span class="font-eyebrow text-eyebrow text-text-secondary uppercase">CORE_IDENTITY</span>
+<span class="font-heading-wide text-heading-wide text-primary">FULLSTACK_ARCHITECT</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Log (StoryStream Timeline) -->
+<section class="mb-32 relative" id="projects">
+<div class="flex justify-between items-baseline mb-16 border-b-2 border-jelly-mint pb-4">
+<h2 class="font-display-secondary text-display-secondary text-primary uppercase">/PROJECT_LOG</h2>
+<span class="font-mono-timestamp text-mono-timestamp text-jelly-mint">COUNT: 004_ACTIVE</span>
+</div>
+<div class="relative ml-4 md:ml-12 border-l border-dashed border-purple-rule py-8 flex flex-col gap-24">
+<!-- Tile 01 -->
+<div class="relative pl-12">
+<div class="absolute -left-[9px] top-4 w-4 h-4 bg-jelly-mint rounded-full shadow-[0_0_15px_#3CFFD0]"></div>
+<span class="font-mono-timestamp text-mono-timestamp text-text-secondary absolute -left-24 top-4 hidden md:block">2024.03.12</span>
+<div class="group bg-surface-container border-l-4 border-jelly-mint p-8 rounded-tr-3xl rounded-br-3xl hover:bg-surface-container-high transition-all">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="bg-verge-ultraviolet text-white px-3 py-1 rounded-full w-fit font-mono-button text-mono-button">INFRASTRUCTURE</span>
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase">NEURAL_NET_MONITOR</h3>
+<p class="font-serif-pullquote text-serif-pullquote text-on-surface-variant italic leading-relaxed">
+                                    "A real-time visualization layer for decentralized computing clusters, optimized for extreme data density."
+                                </p>
+<div class="flex gap-4 mt-4">
+<button class="bg-jelly-mint text-canvas-black px-6 py-2 rounded-full font-mono-button text-mono-button uppercase tracking-widest hover:brightness-110">VIEW_REPOS</button>
+</div>
+</div>
+<div class="overflow-hidden rounded-2xl border border-image-frame">
+<img alt="Server Rack" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a high-tech server rack with glowing blue and green fiber optic cables in a dark futuristic data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCY4SiGjjCtAKmZQ_1O0U9fSlC7k74uma-bRPNTLbfOOCN1_G1xvqwkdIlLBe-PnWfZOFQXCm4wxTIUmnpxO9eqXPOB5CWENBQLa4zkqaXcG9o7DWuka5lQh34jrCQZOJbCXLYKyPwIgzFqGLH_yg2Lk9TZKis6_A-X6xlNPL4Qn-jjpgK5Chw3Huk6Eexf7dI0MwoSsTYU2p7CfXFDmfrs07ZAgV9b6LkUjxgMquaHJLha7IQ2oBZRyJApD83LCwwtnvJyc-DTLIS"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Tile 02 -->
+<div class="relative pl-12">
+<div class="absolute -left-[9px] top-4 w-4 h-4 bg-purple-rule rounded-full"></div>
+<span class="font-mono-timestamp text-mono-timestamp text-text-secondary absolute -left-24 top-4 hidden md:block">2023.11.28</span>
+<div class="group bg-surface-container border-l-4 border-purple-rule p-8 rounded-tr-3xl rounded-br-3xl hover:bg-surface-container-high transition-all">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="bg-jelly-mint text-canvas-black px-3 py-1 rounded-full w-fit font-mono-button text-mono-button">CRYPTO_LOGIC</span>
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase">OBSIDIAN_VAULT_V2</h3>
+<p class="font-serif-pullquote text-serif-pullquote text-on-surface-variant italic leading-relaxed">
+                                    "Encrypted documentation engine built on top of a bespoke Git-based backend architecture."
+                                </p>
+<div class="flex gap-4 mt-4">
+<button class="bg-surface-slate text-jelly-mint border border-console-mint-border px-6 py-2 rounded-full font-mono-button text-mono-button uppercase tracking-widest">DEPLOY_LOG</button>
+</div>
+</div>
+<div class="overflow-hidden rounded-2xl border border-image-frame">
+<img alt="Fiber Optics" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Intricate glowing fiber optic network strands radiating bright teal and purple light against a deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD45ypPNquwtriCvtUqK1EzLbHYajKVojMHLGRqi6kL61SwDsnBiQtZjOJeOJxGmkkFTEv4CKlb3KM5hk0M2Q85NkeZP-jk1u14P9j_MOk2E9pcPJ4zlRU4hV5mLhjVQgfy97MW5WP7_vGt6hEZP3z-oZ1-KwT1Hsv9QgCpEx3jhauuDiTKPL92txMDQWv-LtNX9MhArMF26Kh_aD5bjkEcIok971DNS_qfQ6H35i2vhddFzeQNnr41M_XU3mDxZgihGmcWfoIR_kNR"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Inventory (Bento Grid) -->
+<section class="mb-32" id="skills">
+<h2 class="font-display-secondary text-display-secondary text-primary uppercase mb-12 border-b-2 border-purple-rule pb-4">TECH_STACK_INVENTORY</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Core Languages -->
+<div class="md:col-span-2 bg-surface-container p-8 border border-image-frame rounded-3xl">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-jelly-mint">terminal</span>
+<h4 class="font-heading-md text-heading-md text-primary">CORE_PROTOCOLS</h4>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full bg-canvas-black border border-console-mint-border text-jelly-mint font-mono-button text-mono-button">TYPESCRIPT_V5</span>
+<span class="px-4 py-2 rounded-full bg-canvas-black border border-console-mint-border text-jelly-mint font-mono-button text-mono-button">RUST_CARGO</span>
+<span class="px-4 py-2 rounded-full bg-canvas-black border border-console-mint-border text-jelly-mint font-mono-button text-mono-button">GO_LANG</span>
+<span class="px-4 py-2 rounded-full bg-canvas-black border border-console-mint-border text-jelly-mint font-mono-button text-mono-button">PYTHON_3.11</span>
+<span class="px-4 py-2 rounded-full bg-canvas-black border border-console-mint-border text-jelly-mint font-mono-button text-mono-button">C++_LLVM</span>
+</div>
+</div>
+<!-- Systems -->
+<div class="bg-verge-ultraviolet p-8 rounded-3xl flex flex-col justify-between">
+<div>
+<h4 class="font-heading-md text-heading-md text-white mb-4">SYSTEM_OPS</h4>
+<ul class="font-mono-timestamp text-mono-timestamp text-secondary-fixed flex flex-col gap-2">
+<li>&gt; DOCKER_CONTAINERIZATION</li>
+<li>&gt; KUBERNETES_ORCHESTRATION</li>
+<li>&gt; AWS_LAMBDA_RUNTIME</li>
+<li>&gt; TERRAFORM_IAC</li>
+</ul>
+</div>
+<span class="material-symbols-outlined text-white text-5xl opacity-30 self-end">settings_input_component</span>
+</div>
+<!-- Interface -->
+<div class="bg-jelly-mint p-8 rounded-3xl flex flex-col justify-between h-64 md:h-auto">
+<h4 class="font-heading-md text-heading-md text-canvas-black mb-4">INTERFACE_LAYERS</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-canvas-black text-white px-2 py-1 text-[10px] font-bold">REACT_18</span>
+<span class="bg-canvas-black text-white px-2 py-1 text-[10px] font-bold">NEXT_JS_APP_DIR</span>
+<span class="bg-canvas-black text-white px-2 py-1 text-[10px] font-bold">TAILWIND_V4</span>
+<span class="bg-canvas-black text-white px-2 py-1 text-[10px] font-bold">THREE_JS_GLSL</span>
+</div>
+</div>
+<!-- Research -->
+<div class="md:col-span-2 bg-surface-slate p-8 border border-purple-rule rounded-3xl">
+<h4 class="font-heading-md text-heading-md text-primary mb-6">RE_ENGINEERING_LABS</h4>
+<p class="font-body-relaxed text-body-relaxed text-on-surface-variant mb-6">
+                        CURRENTLY EXPLORING THE INTERSECTION OF WEB_ASSEMBLY AND HIGH-PERFORMANCE REAL-TIME AUDIO SYNTHESIS.
+                    </p>
+<div class="hazard-gradient h-2 w-full"></div>
+</div>
+</div>
+</section>
+<!-- History Log -->
+<section class="mb-32" id="experience">
+<h2 class="font-display-secondary text-display-secondary text-primary uppercase mb-12 text-right">HISTORY_LOG</h2>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex flex-col md:flex-row gap-8 items-start p-8 bg-surface-container-low border-b border-image-frame hover:border-jelly-mint group transition-colors">
+<span class="font-mono-timestamp text-mono-timestamp text-jelly-mint w-32 shrink-0">2022 — PRESENT</span>
+<div class="grow">
+<h4 class="font-heading-wide text-heading-wide text-primary">LEAD_SYSTEMS_ENGINEER</h4>
+<p class="font-fashion-whisper text-fashion-whisper text-text-secondary">NEURAL_DYNAMICS_CORP</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-jelly-mint transition-colors">arrow_outward</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start p-8 bg-surface-container-low border-b border-image-frame hover:border-jelly-mint group transition-colors">
+<span class="font-mono-timestamp text-mono-timestamp text-text-secondary w-32 shrink-0">2020 — 2022</span>
+<div class="grow">
+<h4 class="font-heading-wide text-heading-wide text-primary">FULLSTACK_OPERATIVE</h4>
+<p class="font-fashion-whisper text-fashion-whisper text-text-secondary">DATA_STREAM_INC</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-jelly-mint transition-colors">arrow_outward</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start p-8 bg-surface-container-low border-b border-image-frame hover:border-jelly-mint group transition-colors">
+<span class="font-mono-timestamp text-mono-timestamp text-text-secondary w-32 shrink-0">2018 — 2020</span>
+<div class="grow">
+<h4 class="font-heading-wide text-heading-wide text-primary">JUNIOR_INTERFACE_DEV</h4>
+<p class="font-fashion-whisper text-fashion-whisper text-text-secondary">PIXEL_FORGE_LABS</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-jelly-mint transition-colors">arrow_outward</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mb-32 bg-canvas-black border-2 border-jelly-mint p-12 md:p-24 flex flex-col items-center text-center gap-8 overflow-hidden relative">
+<div class="absolute inset-0 hazard-gradient opacity-5 pointer-events-none"></div>
+<h2 class="font-hero-wordmark text-[64px] md:text-hero-wordmark text-jelly-mint tracking-tighter leading-none z-10">INITIATE_CONNECTION?</h2>
+<p class="font-heading-wide text-heading-wide text-primary max-w-2xl z-10">THE TERMINAL IS OPEN. DATA TRANSMISSION READY.</p>
+<div class="flex flex-wrap justify-center gap-6 mt-8 z-10">
+<button class="bg-jelly-mint text-canvas-black px-12 py-4 rounded-full font-mono-button text-mono-button uppercase tracking-[0.3em] font-black hover:scale-105 transition-transform">SECURE_CHANNEL</button>
+<button class="bg-transparent border-2 border-jelly-mint text-jelly-mint px-12 py-4 rounded-full font-mono-button text-mono-button uppercase tracking-[0.3em] font-black hover:bg-jelly-mint hover:text-canvas-black transition-all">DOWNLOAD_V_CARD</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] dark:bg-[#0A0A0A] text-[#3CFFD0] full-width border-t-2 border-[#3CFFD0] border-t-4 border-double border-[#3CFFD0]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 max-w-[1440px] mx-auto">
+<div class="text-lg font-bold text-[#3CFFD0] font-['EPILOGUE'] uppercase tracking-widest">
+                SYSTEM_REVEALED
+            </div>
+<div class="font-['EPILOGUE'] text-xs monospaced uppercase tracking-widest text-[#3CFFD0]">
+                © 2024 SYSTEM_REVEALED. ALL_RIGHTS_RESERVED.
+            </div>
+<div class="flex gap-8 font-['EPILOGUE'] text-xs monospaced uppercase tracking-widest">
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">GITHUB</a>
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">LINKEDIN</a>
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">X_LOG</a>
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">RSS</a>
+</div>
+</div>
+</footer>
+</body></html>

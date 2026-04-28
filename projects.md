@@ -2,33 +2,27 @@
 layout: page
 title: Proyectos
 permalink: /projects/
+description: Una selección de mis trabajos en desarrollo web y diseño UI/UX.
 ---
-
-## Mis Proyectos
-
-Aquí encontrarás una selección de mis trabajos en desarrollo web y diseño UI/UX.
 
 {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
 
 <div class="project-list">
 {% for project in sorted_projects %}
-  <div class="project-item">
+  <article class="project-item">
+    <span class="timestamp">{{ project.date | date: "%Y.%m" }}</span>
     <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
     <p class="project-description">{{ project.description }}</p>
-    <p class="project-tech"><strong>Tecnologías:</strong> {{ project.technologies }}</p>
-    <p class="project-date"><em>{{ project.date | date: "%B %Y" }}</em></p>
-    <a href="{{ project.url | relative_url }}" class="btn">Ver detalles →</a>
-  </div>
-  <hr>
+    <p class="project-tech">// Stack — {{ project.technologies }}</p>
+    <a href="{{ project.url | relative_url }}" class="btn btn-outline">Ver detalle →</a>
+  </article>
 {% endfor %}
 </div>
 
 ---
 
-### Proyectos Profesionales
+### Proyectos profesionales
 
-*Próximamente: Enlaces a sitios web en producción desarrollados para clientes.*
+*Próximamente: enlaces a sitios web en producción desarrollados para clientes.*
 
----
-
-¿Tienes un proyecto en mente? [Contáctame](mailto:fernando.pinilla85@gmail.com)
+¿Tienes un proyecto en mente? [Contáctame](mailto:fernando.pinilla85@gmail.com).

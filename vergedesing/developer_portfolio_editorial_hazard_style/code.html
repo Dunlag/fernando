@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=Space+Grotesk:wght@300..700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#08100d",
+                        "on-tertiary-fixed": "#221b00",
+                        "console-mint-border": "#309875",
+                        "surface-container-highest": "#2e3733",
+                        "on-surface": "#dbe5df",
+                        "inverse-on-surface": "#2a322f",
+                        "on-primary-container": "#00725b",
+                        "secondary": "#c9bfff",
+                        "text-secondary": "#949494",
+                        "surface-dim": "#0d1512",
+                        "tertiary": "#ffffff",
+                        "on-background": "#dbe5df",
+                        "inverse-surface": "#dbe5df",
+                        "outline": "#84948d",
+                        "verge-ultraviolet": "#5200FF",
+                        "inverse-primary": "#006b55",
+                        "surface-bright": "#323b37",
+                        "tertiary-container": "#fee267",
+                        "background": "#0d1512",
+                        "jelly-mint": "#3CFFD0",
+                        "error": "#ffb4ab",
+                        "deep-link-blue": "#3860BE",
+                        "surface-container-high": "#232c28",
+                        "focus-cyan": "#1EAEDB",
+                        "on-tertiary-fixed-variant": "#534600",
+                        "on-secondary-fixed": "#1a0063",
+                        "on-secondary-fixed-variant": "#4400d9",
+                        "surface-tint": "#00e0b4",
+                        "primary-container": "#3afecf",
+                        "canvas-black": "#131313",
+                        "surface-container": "#19211e",
+                        "surface-container-low": "#151d1a",
+                        "surface": "#0d1512",
+                        "on-surface-variant": "#b9cac2",
+                        "text-muted": "#E9E9E9",
+                        "hazard-white": "#FFFFFF",
+                        "surface-variant": "#2e3733",
+                        "primary-fixed": "#3afecf",
+                        "on-secondary": "#2f009c",
+                        "error-container": "#93000a",
+                        "outline-variant": "#3b4a44",
+                        "on-primary-fixed": "#002118",
+                        "tertiary-fixed": "#fee267",
+                        "surface-slate": "#2D2D2D",
+                        "on-primary-fixed-variant": "#00513f",
+                        "primary-fixed-dim": "#00e0b4",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#e5deff",
+                        "purple-rule": "#3D00BF",
+                        "primary": "#ffffff",
+                        "text-primary": "#FFFFFF",
+                        "on-error": "#690005",
+                        "image-frame": "#313131",
+                        "on-tertiary": "#3a3000",
+                        "on-secondary-container": "#ccc2ff",
+                        "tertiary-fixed-dim": "#e0c64e",
+                        "secondary-container": "#5200ff",
+                        "secondary-fixed-dim": "#c9bfff",
+                        "on-tertiary-container": "#756300",
+                        "on-primary": "#00382b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "editorial-16": "16px",
+                        "editorial-20": "20px",
+                        "micro-5": "5px",
+                        "micro-2": "2px",
+                        "micro-9": "9px",
+                        "editorial-24": "24px",
+                        "micro-10": "10px",
+                        "editorial-25": "25px",
+                        "editorial-12": "12px",
+                        "base": "8px",
+                        "micro-4": "4px",
+                        "micro-6": "6px"
+                    },
+                    "fontFamily": {
+                        "heading-wide": ["inter"],
+                        "display-secondary": ["epilogue"],
+                        "hero-wordmark": ["epilogue"],
+                        "fashion-whisper": ["inter"],
+                        "mono-timestamp": ["spaceGrotesk"],
+                        "headline-lg": ["inter"],
+                        "all-caps-xl": ["inter"],
+                        "mono-button": ["spaceGrotesk"],
+                        "eyebrow": ["inter"],
+                        "heading-md": ["inter"],
+                        "body-relaxed": ["inter"],
+                        "serif-pullquote": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "heading-wide": ["32px", {"lineHeight": "1.10", "letterSpacing": "0.32px", "fontWeight": "400"}],
+                        "display-secondary": ["60px", {"lineHeight": "0.80", "fontWeight": "900"}],
+                        "hero-wordmark": ["107px", {"lineHeight": "0.80", "letterSpacing": "1.07px", "fontWeight": "900"}],
+                        "fashion-whisper": ["19px", {"lineHeight": "1.20", "letterSpacing": "1.9px", "fontWeight": "300"}],
+                        "mono-timestamp": ["11px", {"lineHeight": "1.20", "letterSpacing": "1.1px", "fontWeight": "500"}],
+                        "headline-lg": ["34px", {"lineHeight": "1.00", "fontWeight": "700"}],
+                        "all-caps-xl": ["18px", {"lineHeight": "1.10", "letterSpacing": "1.8px", "fontWeight": "400"}],
+                        "mono-button": ["12px", {"lineHeight": "2.00", "letterSpacing": "1.5px", "fontWeight": "600"}],
+                        "eyebrow": ["12px", {"lineHeight": "1.30", "letterSpacing": "1.8px", "fontWeight": "400"}],
+                        "heading-md": ["24px", {"lineHeight": "1.00", "fontWeight": "700"}],
+                        "body-relaxed": ["16px", {"lineHeight": "1.60", "fontWeight": "500"}],
+                        "serif-pullquote": ["16px", {"lineHeight": "1.30", "letterSpacing": "-0.16px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #dbe5df;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-jelly-mint selection:text-canvas-black">
+<!-- TopAppBar -->
+<nav class="bg-[#0A0A0A] dark:bg-[#0A0A0A] fixed top-0 z-50 w-full border-b border-dashed border-[#3CFFD0]/30">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic tracking-tighter text-[#3CFFD0] border-2 border-[#3CFFD0] px-2 py-1 font-['EPILOGUE'] uppercase">
+                DEV_LOG_2024
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['EPILOGUE'] uppercase tracking-tighter font-black">
+<a class="text-[#3CFFD0] border-b-2 border-[#3CFFD0] pb-1" href="#">PROJECTS</a>
+<a class="text-gray-500 hover:text-[#3CFFD0] transition-colors" href="#">EXPERIENCE</a>
+<a class="text-gray-500 hover:text-[#3CFFD0] transition-colors" href="#">SKILLS</a>
+<a class="text-gray-500 hover:text-[#3CFFD0] transition-colors" href="#">ARCHIVE</a>
+</div>
+<button class="bg-jelly-mint text-canvas-black px-6 py-2 rounded-full font-mono-button text-mono-button hover:bg-white transition-all active:scale-95">
+                CONNECT
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<header class="max-w-[1440px] mx-auto px-6 py-20 lg:py-32 flex flex-col items-start relative overflow-hidden">
+<div class="absolute -right-20 top-0 opacity-10 pointer-events-none select-none">
+<span class="font-hero-wordmark text-hero-wordmark leading-none text-jelly-mint block">01011</span>
+<span class="font-hero-wordmark text-hero-wordmark leading-none text-verge-ultraviolet block">11010</span>
+</div>
+<div class="mb-micro-10">
+<span class="bg-verge-ultraviolet text-white text-eyebrow font-eyebrow px-3 py-1 uppercase tracking-widest">STABLE_RELEASE_V4.2</span>
+</div>
+<h1 class="font-hero-wordmark text-hero-wordmark text-jelly-mint mb-6 max-w-4xl uppercase">
+                SYSTEM_REVEALED
+            </h1>
+<p class="font-fashion-whisper text-fashion-whisper text-on-surface-variant max-w-2xl mb-12">
+                FULL_STACK ARCHITECT SPECIALIZING IN HIGH-DENSITY DIGITAL INFRASTRUCTURE AND BRUTALIST UI/UX FRAMEWORKS.
+            </p>
+<div class="flex flex-wrap gap-editorial-16">
+<button class="bg-jelly-mint text-canvas-black px-10 py-4 rounded-full font-mono-button text-mono-button hover:invert transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">terminal</span>
+                    VIEW_REPOS
+                </button>
+<button class="border-2 border-surface-slate text-white px-10 py-4 rounded-full font-mono-button text-mono-button hover:border-jelly-mint transition-all">
+                    RESUME_PDF
+                </button>
+</div>
+</header>
+<!-- StoryStream Project Feed -->
+<section class="max-w-[1440px] mx-auto px-6 py-20">
+<h2 class="font-display-secondary text-display-secondary text-hazard-white mb-16 uppercase italic">/PROJECT_LOG</h2>
+<div class="relative ml-4 md:ml-12 border-l-2 border-dashed border-purple-rule pl-8 md:pl-16 space-y-24">
+<!-- Project Item 1 -->
+<div class="relative">
+<div class="absolute -left-[41px] md:-left-[73px] top-4 w-4 h-4 bg-purple-rule rounded-full ring-8 ring-canvas-black"></div>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-1/2 rounded-[24px] border-2 border-verge-ultraviolet overflow-hidden group">
+<img class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="high-tech computer server room with neon blue and purple lights glowing in a dark data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-OWJYDI52n6v-aNrAzlCa_5ZvRhEx6dfn5kMGdV1lFC_U9oIdwh9X-ODzrbXUdU0HFEcjhzeLcSGsNuA5RCUL1KbF-lwZQX1JiNPfTC_gGzUNeASZl0sIT31MgOzIVI5XnGCZsxl4CESDfqJ3s2wBnA-i8D70bvz5W2rg6TVGMspLc3Y52jqxnjhfkSKy9Msor3cXR8M_OjoxpjzDcA2x2-qBz5AlGs_p7dL5H9xfKnQZmlgTQPC_fkB0uC68iMKi_FlWxUyszUkL"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-mono-timestamp text-mono-timestamp text-purple-rule mb-micro-10 block">LAST_PUSH: 21m ago</span>
+<h3 class="font-headline-lg text-headline-lg text-jelly-mint mb-4 uppercase">NEURAL_DASH_OS</h3>
+<p class="font-body-relaxed text-body-relaxed text-on-surface mb-8">
+                                A decentralized dashboard for monitoring neural-link telemetry. Built with React, WebGL, and custom GLSL shaders for real-time data visualization.
+                            </p>
+<div class="flex flex-wrap gap-micro-10 mb-8">
+<span class="bg-surface-slate text-on-surface text-eyebrow font-eyebrow px-3 py-1 rounded-full border border-console-mint-border">REACT</span>
+<span class="bg-surface-slate text-on-surface text-eyebrow font-eyebrow px-3 py-1 rounded-full border border-console-mint-border">GLSL</span>
+<span class="bg-surface-slate text-on-surface text-eyebrow font-eyebrow px-3 py-1 rounded-full border border-console-mint-border">RUST</span>
+</div>
+<a class="inline-flex items-center gap-2 text-jelly-mint font-mono-button text-mono-button hover:underline" href="#">
+                                SOURCE_CODE <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Item 2 -->
+<div class="relative">
+<div class="absolute -left-[41px] md:-left-[73px] top-4 w-4 h-4 bg-jelly-mint rounded-full ring-8 ring-canvas-black"></div>
+<div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+<div class="w-full md:w-1/2 rounded-[24px] border-2 border-jelly-mint overflow-hidden group">
+<img class="w-full h-[400px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="abstract close-up of colorful fiber optic cables glowing in the dark with shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAANZGbpaRwxtbB9qV4lTikh3eJr8OynlAd6n48gQu2TOqn_iaU89fjPF5MHgZNa8STJh0f66eLbGsZJ3fyTV-KI7SAdBvA5TduTcRT71z5Bb2nL1YX-Rv1aMNeyw8NfHq6OPHA1yeLk7O1ew81rOEgYUTzYAFOCOo0egFo1dnug3RpAPqL5bJc0kszOSSPN7kpaIBa-Q9gMu15RxS8Ut0RVqp-N3xvxu3l0CmJMANrbTI7arEcI6Naaerwf8GL74rCbNl1RUsjEvQy"/>
+</div>
+<div class="w-full md:w-1/2 text-left md:text-right">
+<span class="font-mono-timestamp text-mono-timestamp text-jelly-mint mb-micro-10 block">COMMITTED: 4h ago</span>
+<h3 class="font-headline-lg text-headline-lg text-hazard-white mb-4 uppercase">VOID_PROTOCOL</h3>
+<p class="font-body-relaxed text-body-relaxed text-on-surface mb-8">
+                                End-to-end encrypted messaging protocol utilizing lattice-based cryptography. Designed for low-latency communication in hostile network environments.
+                            </p>
+<div class="flex flex-wrap gap-micro-10 mb-8 md:justify-end">
+<span class="bg-surface-slate text-on-surface text-eyebrow font-eyebrow px-3 py-1 rounded-full border border-verge-ultraviolet">TYPESCRIPT</span>
+<span class="bg-surface-slate text-on-surface text-eyebrow font-eyebrow px-3 py-1 rounded-full border border-verge-ultraviolet">NODE_JS</span>
+<span class="bg-surface-slate text-on-surface text-eyebrow font-eyebrow px-3 py-1 rounded-full border border-verge-ultraviolet">REDIS</span>
+</div>
+<a class="inline-flex items-center gap-2 text-jelly-mint font-mono-button text-mono-button hover:underline" href="#">
+<span class="material-symbols-outlined text-sm">arrow_outward</span> EXPLORE_SPEC
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Experience -->
+<section class="max-w-[1440px] mx-auto px-6 py-20 bg-surface-container-lowest border-y-4 border-double border-jelly-mint">
+<h2 class="font-display-secondary text-display-secondary text-hazard-white mb-16 uppercase text-center">HISTORY_LOG</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Job 1 -->
+<div class="p-editorial-24 rounded-[24px] border border-jelly-mint bg-canvas-black flex flex-col h-full">
+<span class="font-mono-timestamp text-mono-timestamp text-on-surface-variant mb-4">2022 — PRESENT</span>
+<h3 class="font-heading-md text-heading-md text-jelly-mint mb-1 uppercase">PRINCIPAL_DEV</h3>
+<p class="font-eyebrow text-eyebrow text-secondary mb-6 tracking-widest">CYBER_DYNE SYSTEMS</p>
+<p class="font-body-relaxed text-body-relaxed text-on-surface mb-8 flex-grow">
+                        Leading the core infrastructure team. Scaling microservices to handle 10M+ concurrent websocket connections.
+                    </p>
+<div class="pt-6 border-t border-dashed border-outline-variant">
+<span class="text-xs text-on-surface-variant font-mono-timestamp uppercase">TAGS: CLOUD_ARCH, SCALING, K8S</span>
+</div>
+</div>
+<!-- Job 2 -->
+<div class="p-editorial-24 rounded-[24px] border border-jelly-mint bg-canvas-black flex flex-col h-full">
+<span class="font-mono-timestamp text-mono-timestamp text-on-surface-variant mb-4">2020 — 2022</span>
+<h3 class="font-heading-md text-heading-md text-jelly-mint mb-1 uppercase">UI_ENGINEER</h3>
+<p class="font-eyebrow text-eyebrow text-secondary mb-6 tracking-widest">NEURAL_SOFT</p>
+<p class="font-body-relaxed text-body-relaxed text-on-surface mb-8 flex-grow">
+                        Developed a proprietary design system used by 50+ internal products. Reduced production build times by 40%.
+                    </p>
+<div class="pt-6 border-t border-dashed border-outline-variant">
+<span class="text-xs text-on-surface-variant font-mono-timestamp uppercase">TAGS: DESIGN_SYSTEMS, REACT, DX</span>
+</div>
+</div>
+<!-- Job 3 -->
+<div class="p-editorial-24 rounded-[24px] border border-jelly-mint bg-canvas-black flex flex-col h-full">
+<span class="font-mono-timestamp text-mono-timestamp text-on-surface-variant mb-4">2018 — 2020</span>
+<h3 class="font-heading-md text-heading-md text-jelly-mint mb-1 uppercase">BACKEND_DEV</h3>
+<p class="font-eyebrow text-eyebrow text-secondary mb-6 tracking-widest">GRID_CORE_IO</p>
+<p class="font-body-relaxed text-body-relaxed text-on-surface mb-8 flex-grow">
+                        Built high-performance API wrappers for legacy banking systems. Implemented rigorous security auditing protocols.
+                    </p>
+<div class="pt-6 border-t border-dashed border-outline-variant">
+<span class="text-xs text-on-surface-variant font-mono-timestamp uppercase">TAGS: SECURITY, GO, POSTGRES</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="max-w-[1440px] mx-auto px-6 py-20 text-center">
+<h2 class="font-all-caps-xl text-all-caps-xl text-jelly-mint mb-12 uppercase tracking-[0.5em]">TECH_STACK_INVENTORY</h2>
+<div class="flex flex-wrap justify-center gap-micro-9 max-w-3xl mx-auto">
+<span class="px-6 py-2 rounded-full border border-jelly-mint bg-jelly-mint text-canvas-black font-mono-button text-mono-button uppercase">REACT</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">TYPESCRIPT</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">NODE_JS</span>
+<span class="px-6 py-2 rounded-full border border-verge-ultraviolet text-verge-ultraviolet font-mono-button text-mono-button uppercase">GLSL</span>
+<span class="px-6 py-2 rounded-full border border-verge-ultraviolet text-verge-ultraviolet font-mono-button text-mono-button uppercase">RUST</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">TAILWIND_CSS</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">DOCKER</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">KUBERNETES</span>
+<span class="px-6 py-2 rounded-full border border-verge-ultraviolet text-verge-ultraviolet font-mono-button text-mono-button uppercase">WEB_GPU</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">THREE_JS</span>
+<span class="px-6 py-2 rounded-full border border-jelly-mint text-jelly-mint font-mono-button text-mono-button uppercase">PYTHON</span>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-[1440px] mx-auto px-6 py-32 text-center">
+<div class="bg-verge-ultraviolet/10 border-2 border-verge-ultraviolet p-12 md:p-24 rounded-[40px] relative overflow-hidden">
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-jelly-mint to-transparent"></div>
+</div>
+<h2 class="font-display-secondary text-display-secondary text-hazard-white mb-8 uppercase italic relative z-10">INITIATE_CONNECTION?</h2>
+<p class="font-fashion-whisper text-fashion-whisper text-on-surface-variant max-w-xl mx-auto mb-12 relative z-10">
+                    CURRENT_AVAILABILITY: OPEN_FOR_PROJECTS. RESPONSE_LATENCY: &lt; 24H.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-6 relative z-10">
+<button class="bg-jelly-mint text-canvas-black px-12 py-5 rounded-full font-mono-button text-mono-button hover:bg-white transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(60,255,208,0.3)]">
+                        CONNECT_VIA_TERMINAL
+                    </button>
+<button class="border-2 border-hazard-white text-white px-12 py-5 rounded-full font-mono-button text-mono-button hover:bg-hazard-white hover:text-canvas-black transition-all uppercase tracking-widest">
+                        PULL_RESUME
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] dark:bg-[#0A0A0A] border-t-4 border-double border-[#3CFFD0]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 max-w-[1440px] mx-auto">
+<div class="text-lg font-bold text-[#3CFFD0] font-['EPILOGUE'] uppercase">
+                SYSTEM_REVEALED
+            </div>
+<div class="text-xs font-['EPILOGUE'] monospaced uppercase tracking-widest text-gray-400">
+                © 2024 SYSTEM_REVEALED. ALL_RIGHTS_RESERVED.
+            </div>
+<div class="flex gap-6 font-['EPILOGUE'] text-xs monospaced uppercase tracking-widest">
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">GITHUB</a>
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">LINKEDIN</a>
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">X_LOG</a>
+<a class="text-gray-400 hover:text-[#BF94FF] hover:italic transition-all duration-200 ease-in-out" href="#">RSS</a>
+</div>
+</div>
+</footer>
+</body></html>

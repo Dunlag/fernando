@@ -1,25 +1,14 @@
 ---
 permalink: /404.html
-layout: page
+layout: default
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<section class="error-404">
+    <span class="eyebrow">// ERROR_404 / RECURSO_NO_ENCONTRADO</span>
+    <h1>404</h1>
+    <p>La página que buscas no existe, ha sido movida o nunca llegó a publicarse. Vuelve al inicio o explora los proyectos.</p>
+    <div class="hero-actions" style="justify-content: center;">
+        <a href="{{ '/' | relative_url }}" class="btn-primary">Volver al inicio</a>
+        <a href="{{ '/projects/' | relative_url }}" class="btn-outline">Ver proyectos</a>
+    </div>
+</section>
