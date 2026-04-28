@@ -8,7 +8,7 @@ layout: default
             <span class="status-badge">MODO: CONSTRUYENDO</span>
             <h1 class="hero-title">
                 Hola, soy<br>
-                <span class="accent">Fernando</span> <span class="wave">👋</span>
+                <span class="accent">Fernando</span> <span class="wave">🐈‍⬛🐈‍⬛</span>
             </h1>
             <p class="hero-subtitle">// Desarrollador Web · Diseñador UI/UX · Creador digital</p>
             <p class="hero-description">
@@ -39,7 +39,7 @@ layout: default
         {% for project in sorted_projects %}
         {% assign idx = forloop.index0 %}
         {% assign accent_class = '' %}
-        {% if idx == 1 or idx == 4 or idx == 7 %}{% assign accent_class = 'tile--accent' %}{% endif %}
+        {% if idx == 1 or idx == 3 or idx == 5 or idx == 7 %}{% assign accent_class = 'tile--accent' %}{% endif %}
         {% case project.slug %}
             {% when 'cards-animadas' %}{% assign icon = 'style' %}
             {% when 'elementos-ui' %}{% assign icon = 'widgets' %}
