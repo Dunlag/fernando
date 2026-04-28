@@ -23,6 +23,10 @@ description: Una selección de mis trabajos en desarrollo web y diseño UI/UX.
 
 ### Proyectos profesionales
 
-*Próximamente: enlaces a sitios web en producción desarrollados para clientes.*
+Sitios web reales desarrollados para clientes, con backend en PHP y diseño a medida:
+
+- **[Finca Avignon]({{ '/projects/avignon/' | relative_url }})** — Web corporativa para finca con formulario de reservas
+- **[Puerto Narixa]({{ '/projects/puerto-narixa/' | relative_url }})** — Página web completa con galería y contacto
+- **[Landing Pacífico]({{ '/projects/landing-pacifico/' | relative_url }})** — Landing page orientada a conversión
 
 ¿Tienes un proyecto en mente? [Contáctame](mailto:fernando.pinilla85@gmail.com).
