@@ -1,5 +1,10 @@
-_site
-.sass-cache
-.jekyll-cache
+# Jekyll & Ruby
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+vendor/
+
+# Claude AI
+.claude/
+claude.md
