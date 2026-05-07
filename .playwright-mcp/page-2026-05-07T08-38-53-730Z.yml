@@ -1,0 +1,156 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "[●] MARATHON" [ref=e5] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e6]: "[●]"
+          - generic [ref=e7]: MARATHON
+        - generic [ref=e8]:
+          - link "NOTICIAS [→]" [ref=e9] [cursor=pointer]:
+            - /url: "#noticias"
+            - text: NOTICIAS
+            - generic [ref=e10]: "[→]"
+          - link "CONTENIDO MULTIMEDIA [→]" [ref=e11] [cursor=pointer]:
+            - /url: "#multimedia"
+            - text: CONTENIDO MULTIMEDIA
+            - generic [ref=e12]: "[→]"
+          - link "CREADORES [→]" [ref=e13] [cursor=pointer]:
+            - /url: "#creadores"
+            - text: CREADORES
+            - generic [ref=e14]: "[→]"
+          - link "AYUDA [→]" [ref=e15] [cursor=pointer]:
+            - /url: "#ayuda"
+            - text: AYUDA
+            - generic [ref=e16]: "[→]"
+          - link "TIENDA [→]" [ref=e17] [cursor=pointer]:
+            - /url: "#tienda"
+            - text: TIENDA
+            - generic [ref=e18]: "[→]"
+          - link "CUENTA [→]" [ref=e19] [cursor=pointer]:
+            - /url: "#cuenta"
+            - text: CUENTA
+            - generic [ref=e20]: "[→]"
+          - link "ESPAÑOL [↓]" [ref=e21] [cursor=pointer]:
+            - /url: "#espanol"
+            - text: ESPAÑOL
+            - generic [ref=e22]: "[↓]"
+      - link "RESERVA YA" [ref=e23] [cursor=pointer]:
+        - /url: "#reserva"
+  - complementary [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - text: EXPLORATION/
+        - text: DEVELOPMENT
+      - img [ref=e28]
+      - generic [ref=e44]:
+        - generic [ref=e45]: CYBER
+        - generic [ref=e46]: RUNNERS
+      - generic [ref=e47]: ◈
+      - generic [ref=e49]: TRESPASS
+      - generic [ref=e50]:
+        - generic [ref=e51]: TAU CETI
+        - generic [ref=e52]: RUNS 2 8 9 3
+        - generic [ref=e53]: "00002025"
+  - generic [ref=e54]:
+    - generic [ref=e57]:
+      - heading "MARATHON" [level=1] [ref=e59]
+      - paragraph [ref=e60]: UN SHOOTER PVPVE DE EVACUACIÓN Y SUPERVIVENCIA EN PRIMERA PERSONA
+      - link "REPRODUCIR" [ref=e62] [cursor=pointer]:
+        - /url: "#reserva"
+    - generic [ref=e63]: DESCUBRE CÓMO SE HIZO LA MÚSICA DE MARATHON.
+  - generic [ref=e66]:
+    - generic [ref=e67]: NOTICIAS
+    - heading "ÚLTIMAS NOVEDADES" [level=2] [ref=e68]
+    - paragraph [ref=e69]: Ponte al día con las últimas noticias sobre asuntos como el contenido que está por llegar, las novedades de los desarrolladores y la información relacionada con las pruebas del juego.
+    - link "VER TODAS LAS NOTICIAS ↗" [ref=e70] [cursor=pointer]:
+      - /url: "#noticias"
+  - generic [ref=e73]:
+    - generic [ref=e74]:
+      - generic [ref=e75]: UN SHOOTER PVPVE DE EVACUACIÓN Y SUPERVIVENCIA EN PRIMERA PERSONA
+      - heading "DE LOS CREADORES DE HALO Y DESTINY" [level=2] [ref=e76]:
+        - text: DE LOS CREADORES DE
+        - text: HALO Y DESTINY
+      - paragraph [ref=e77]: "Entra en el oscuro mundo de ciencia ficción de Tau Ceti IV: una colonia en ruinas repleta de corredores, fuerzas de seguridad de la UESC y entornos impredecibles. Al ir buscando objetos de valor a solas o con una brigada, la tensión de la exploración se convertirá en frenéticos combates PvP."
+      - paragraph [ref=e78]: Evacúa para crear combinaciones más fuertes con el botín robado. Luego, vuelve al frente para obtener mayores fortunas en tus carreras.
+    - img "Marathon gameplay" [ref=e80]
+  - generic [ref=e84]:
+    - generic [ref=e85]:
+      - text: PODEROSOS.
+      - emphasis [ref=e86]: CONFIGURABLES.
+      - text: DESECHABLES.
+    - heading "ASESINOS PROFESIONALES" [level=2] [ref=e87]:
+      - text: ASESINOS
+      - text: PROFESIONALES
+    - paragraph [ref=e88]: Los armazones de corredor ofrecen diferentes bases sobre las que construir un estilo de juego. Saquea un arsenal de armas modificables, implantes corporales y núcleos de mejora de sistemas para crear infinitas combinaciones. Cread una estrategia como brigada para maximizar el conjunto de vuestras fortalezas.
+  - generic [ref=e93]:
+    - generic [ref=e94]: LA INFLUENCIA ES PODER
+    - heading "FORTALECE TU PRESENCIA" [level=2] [ref=e95]:
+      - text: FORTALECE TU
+      - text: PRESENCIA
+    - paragraph [ref=e96]: Completa contratos de las seis facciones en liza para hacer que tu poder básico crezca con elementos que durarán toda la temporada, como mejoras para los armazones de corredor, equipamiento inicial más potente, más espacio en el depósito y mercancías especializadas a cambio de botín sobrante.
+    - link "VER AHORA ↗" [ref=e97] [cursor=pointer]:
+      - /url: "#"
+  - generic [ref=e101]:
+    - heading "RESERVA YA" [level=3] [ref=e102]
+    - paragraph [ref=e103]: LLEGA EL 5 DE MARZO DE 2026 A PLAYSTATION 5, STEAM Y XBOX SERIES X|S CON TODAS LAS FUNCIONES RELACIONADAS TANTO CON EL CROSS-SAVE COMO CON EL JUEGO CRUZADO.
+    - generic [ref=e104]:
+      - generic [ref=e105]: PS5
+      - generic [ref=e106]: STEAM
+      - generic [ref=e107]: XBOX SERIES X|S
+  - paragraph [ref=e111]: DOS PALOS Y, DESPUÉS, FUEGO. NO HACE FALTA MÁS. NO ES TAN DIFÍCIL. NO ES TAN COMPLICADO. PROMETEO NO ERA UN GENIO. SOLO ERA UN LADRÓN QUE CAMBIÓ EL MUNDO.
+  - contentinfo [ref=e112]:
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - heading "(10) REDES SOCIALES" [level=3] [ref=e115]
+        - generic [ref=e116]:
+          - link "[●] DISCORD" [ref=e117] [cursor=pointer]:
+            - /url: "#"
+          - link "[●] TWITCH" [ref=e118] [cursor=pointer]:
+            - /url: "#"
+          - link "[●] SUBREDDIT DE LA COMUNIDAD" [ref=e119] [cursor=pointer]:
+            - /url: "#"
+          - link "[♥] BLUESKY" [ref=e120] [cursor=pointer]:
+            - /url: "#"
+          - link "[♥] TIKTOK" [ref=e121] [cursor=pointer]:
+            - /url: "#"
+          - link "[●] INSTAGRAM" [ref=e122] [cursor=pointer]:
+            - /url: "#"
+          - link "[●] FACEBOOK" [ref=e123] [cursor=pointer]:
+            - /url: "#"
+          - link "[●] YOUTUBE" [ref=e124] [cursor=pointer]:
+            - /url: "#"
+          - link "[X] X" [ref=e125] [cursor=pointer]:
+            - /url: "#"
+          - link "[X] THREADS" [ref=e126] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e128]:
+        - link "[→] LEGAL" [ref=e129] [cursor=pointer]:
+          - /url: "#"
+        - link "[→] TÉRMINOS DE USO" [ref=e130] [cursor=pointer]:
+          - /url: "#"
+        - link "[→] EMPLEO" [ref=e131] [cursor=pointer]:
+          - /url: "#"
+        - link "[→] PRENSA" [ref=e132] [cursor=pointer]:
+          - /url: "#"
+        - link "[→] CREADORES" [ref=e133] [cursor=pointer]:
+          - /url: "#"
+        - link "[→] NO QUIERO QUE MI INFORMACIÓN PERSONAL SE VENDA" [ref=e134] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e136]:
+        - generic [ref=e137]:
+          - generic [ref=e138]: M
+          - generic [ref=e139]:
+            - generic [ref=e140]: MATURE 17+
+            - generic [ref=e141]:
+              - generic [ref=e142]: Violencia
+              - generic [ref=e143]: Animated Blood
+              - generic [ref=e144]: Language
+              - generic [ref=e145]: Online Game
+              - generic [ref=e146]: Compras dentro de sangre
+        - paragraph [ref=e147]: © 2026 BUNGIE, INC. TODOS LOS DERECHOS RESERVADOS. BUNGIE Y EL LOGOTIPO DE BUNGIE SON MARCAS REGISTRADAS DE BUNGIE, INC. PUBLICADO POR BUNGIE.
+      - generic [ref=e150]:
+        - generic [ref=e152]:
+          - text: MARATHON
+          - superscript [ref=e153]: ®
+        - paragraph [ref=e154]: BUNGIE Y MARATHON SON MARCAS COMERCIALES DE BUNGIE INC. EN ESTADOS UNIDOS Y OTROS PAÍSES. © 2026 BUNGIE, INC.

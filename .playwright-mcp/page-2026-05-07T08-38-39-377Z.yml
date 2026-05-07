@@ -1,0 +1,19 @@
+- generic [ref=e2]:
+  - heading "Formulario con Etiqueta Flotante" [level=1] [ref=e3]
+  - paragraph [ref=e4]: Efecto estilo Google Material Design
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - textbox "Nombre completo" [ref=e7]
+      - generic: Nombre completo
+    - generic [ref=e8]:
+      - textbox "Correo electrónico" [ref=e9]
+      - generic: Correo electrónico
+    - generic [ref=e10]:
+      - textbox "Teléfono" [ref=e11]
+      - generic: Teléfono
+    - generic [ref=e12]:
+      - textbox "Mensaje" [ref=e13]
+      - generic: Mensaje
+    - button "Enviar" [ref=e14] [cursor=pointer]
+  - link "← Volver a Proyectos" [ref=e16] [cursor=pointer]:
+    - /url: ../../projects/

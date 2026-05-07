@@ -1,0 +1,156 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "FERNANDO_DEV" [ref=e4] [cursor=pointer]:
+        - /url: /fernando/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Inicio" [ref=e7] [cursor=pointer]:
+            - /url: /fernando/
+        - listitem [ref=e8]:
+          - link "Proyectos" [ref=e9] [cursor=pointer]:
+            - /url: /fernando/projects/
+        - listitem [ref=e10]:
+          - link "Sobre Mí" [ref=e11] [cursor=pointer]:
+            - /url: /fernando/about/
+        - listitem [ref=e12]:
+          - link "Contactar" [ref=e13] [cursor=pointer]:
+            - /url: /fernando/contact/
+      - button "Cambiar tema" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: dark_mode
+  - main [ref=e17]:
+    - article [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: // PROYECTOS
+          - heading "Proyectos" [level=1] [ref=e22]
+          - paragraph [ref=e23]: Una selección de mis trabajos en desarrollo web y diseño UI/UX.
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - article [ref=e26]:
+              - text: "2026.02"
+              - heading "Error 404 — Página de Error Estilo Terminal" [level=3] [ref=e27]:
+                - link "Error 404 — Página de Error Estilo Terminal" [ref=e28] [cursor=pointer]:
+                  - /url: /fernando/projects/error-404/
+              - paragraph [ref=e29]: "Página de error 404 con estética cyberpunk y efectos visuales avanzados: scanlines, glitch, Canvas API y cursor personalizado."
+              - paragraph [ref=e30]: // Stack — HTML5, CSS3, JavaScript, Canvas API
+              - link "Ver detalle →" [ref=e31] [cursor=pointer]:
+                - /url: /fernando/projects/error-404/
+            - article [ref=e32]:
+              - text: "2026.02"
+              - heading "Marathon Concept — Recreación del Site Oficial de Bungie" [level=3] [ref=e33]:
+                - link "Marathon Concept — Recreación del Site Oficial de Bungie" [ref=e34] [cursor=pointer]:
+                  - /url: /fernando/projects/marathon-concept/
+              - paragraph [ref=e35]: Página web conceptual que recrea fielmente el diseño oficial del videojuego Marathon de Bungie. Paleta neón, efectos visuales avanzados y diseño responsive.
+              - paragraph [ref=e36]: // Stack — HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e37] [cursor=pointer]:
+                - /url: /fernando/projects/marathon-concept/
+            - article [ref=e38]:
+              - text: "2026.01"
+              - heading "Cards Animadas — Componentes UI con CSS" [level=3] [ref=e39]:
+                - link "Cards Animadas — Componentes UI con CSS" [ref=e40] [cursor=pointer]:
+                  - /url: /fernando/projects/cards-animadas/
+              - paragraph [ref=e41]: Colección de tarjetas interactivas con animaciones CSS modernas. Sin frameworks, sin dependencias.
+              - paragraph [ref=e42]: // Stack — HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e43] [cursor=pointer]:
+                - /url: /fernando/projects/cards-animadas/
+            - article [ref=e44]:
+              - text: "2026.01"
+              - heading "Formulario con Etiqueta Flotante — Efecto Material Design" [level=3] [ref=e45]:
+                - link "Formulario con Etiqueta Flotante — Efecto Material Design" [ref=e46] [cursor=pointer]:
+                  - /url: /fernando/projects/formularios-efectos/
+              - paragraph [ref=e47]: Formulario con efecto de etiqueta flotante inspirado en Google Material Design. Código limpio, sin dependencias.
+              - paragraph [ref=e48]: // Stack — HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e49] [cursor=pointer]:
+                - /url: /fernando/projects/formularios-efectos/
+            - article [ref=e50]:
+              - text: "2026.01"
+              - heading "Elementos UI — Biblioteca de Componentes" [level=3] [ref=e51]:
+                - link "Elementos UI — Biblioteca de Componentes" [ref=e52] [cursor=pointer]:
+                  - /url: /fernando/projects/elementos-ui/
+              - paragraph [ref=e53]: Biblioteca de componentes UI modernos, accesibles y personalizables. Sin frameworks, sin dependencias.
+              - paragraph [ref=e54]: // Stack — HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e55] [cursor=pointer]:
+                - /url: /fernando/projects/elementos-ui/
+            - article [ref=e56]:
+              - text: "2026.01"
+              - heading "Umbro Iberia — Maquetación E-commerce" [level=3] [ref=e57]:
+                - link "Umbro Iberia — Maquetación E-commerce" [ref=e58] [cursor=pointer]:
+                  - /url: /fernando/projects/umbro-iberia/
+              - paragraph [ref=e59]: Diseño y maquetación de la tienda oficial de Umbro para España y Portugal. Trabajo profesional en agencia sobre PrestaShop.
+              - paragraph [ref=e60]: // Stack — PrestaShop, Elementor, HTML5, CSS3, E-commerce
+              - link "Ver detalle →" [ref=e61] [cursor=pointer]:
+                - /url: /fernando/projects/umbro-iberia/
+            - article [ref=e62]:
+              - text: "2025.08"
+              - heading "Pacífico Residences — Landing Inmobiliaria de Lujo" [level=3] [ref=e63]:
+                - link "Pacífico Residences — Landing Inmobiliaria de Lujo" [ref=e64] [cursor=pointer]:
+                  - /url: /fernando/projects/landing-pacifico/
+              - paragraph [ref=e65]: Landing page de captación desarrollada en agencia para promoción residencial de lujo en Málaga. Proyecto real en producción.
+              - paragraph [ref=e66]: // Stack — PHP, HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e67] [cursor=pointer]:
+                - /url: /fernando/projects/landing-pacifico/
+            - article [ref=e68]:
+              - text: "2025.07"
+              - heading "Finca Avignon — Landing Inmobiliaria" [level=3] [ref=e69]:
+                - link "Finca Avignon — Landing Inmobiliaria" [ref=e70] [cursor=pointer]:
+                  - /url: /fernando/projects/avignon/
+              - paragraph [ref=e71]: Landing page de captación desarrollada en agencia para promoción de apartamentos. Proyecto real en producción.
+              - paragraph [ref=e72]: // Stack — PHP, HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e73] [cursor=pointer]:
+                - /url: /fernando/projects/avignon/
+            - article [ref=e74]:
+              - text: "2025.06"
+              - heading "Puerto Narixa Garden Homes — Landing Inmobiliaria" [level=3] [ref=e75]:
+                - link "Puerto Narixa Garden Homes — Landing Inmobiliaria" [ref=e76] [cursor=pointer]:
+                  - /url: /fernando/projects/puerto-narixa/
+              - paragraph [ref=e77]: Landing page de captación desarrollada en agencia para concepto residencial Garden Homes. Proyecto real en producción.
+              - paragraph [ref=e78]: // Stack — PHP, HTML5, CSS3, JavaScript
+              - link "Ver detalle →" [ref=e79] [cursor=pointer]:
+                - /url: /fernando/projects/puerto-narixa/
+          - separator [ref=e80]
+          - heading "Proyectos profesionales" [level=3] [ref=e81]
+          - paragraph [ref=e82]: "Sitios web reales desarrollados para clientes, con backend en PHP y diseño a medida:"
+          - list [ref=e83]:
+            - listitem [ref=e84]:
+              - strong [ref=e85]:
+                - link "Finca Avignon" [ref=e86] [cursor=pointer]:
+                  - /url: /fernando/projects/avignon/
+              - text: — Web corporativa para finca con formulario de reservas
+            - listitem [ref=e87]:
+              - strong [ref=e88]:
+                - link "Puerto Narixa" [ref=e89] [cursor=pointer]:
+                  - /url: /fernando/projects/puerto-narixa/
+              - text: — Página web completa con galería y contacto
+            - listitem [ref=e90]:
+              - strong [ref=e91]:
+                - link "Landing Pacífico" [ref=e92] [cursor=pointer]:
+                  - /url: /fernando/projects/landing-pacifico/
+              - text: — Landing page orientada a conversión
+          - paragraph [ref=e93]:
+            - text: ¿Tienes un proyecto en mente?
+            - link "Contáctame" [ref=e94] [cursor=pointer]:
+              - /url: mailto:fernando.pinilla85@gmail.com
+            - text: .
+  - contentinfo [ref=e95]:
+    - generic [ref=e96]:
+      - generic [ref=e97]: © 2026 / FERNANDO_DEV / MÁLAGA
+      - generic [ref=e98]:
+        - link "Inicio" [ref=e99] [cursor=pointer]:
+          - /url: /fernando/
+        - link "Proyectos" [ref=e100] [cursor=pointer]:
+          - /url: /fernando/projects/
+        - link "Sobre mí" [ref=e101] [cursor=pointer]:
+          - /url: /fernando/about/
+        - link "Contacto" [ref=e102] [cursor=pointer]:
+          - /url: /fernando/contact/
+        - generic [ref=e103]:
+          - link "GitHub" [ref=e104] [cursor=pointer]:
+            - /url: https://github.com/Dunlag
+            - generic [ref=e105]: code
+          - link "LinkedIn" [ref=e106] [cursor=pointer]:
+            - /url: https://linkedin.com/in/fernandopinillavalbuena
+            - generic [ref=e107]: work
+          - link "Email" [ref=e108] [cursor=pointer]:
+            - /url: mailto:fernando.pinilla85@gmail.com
+            - generic [ref=e109]: mail

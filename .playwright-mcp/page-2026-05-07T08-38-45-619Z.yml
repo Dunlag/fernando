@@ -1,0 +1,16 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]: ERROR 404
+    - generic [ref=e31]: NOT FOUND
+    - generic [ref=e32]:
+      - generic [ref=e33]: SYNC-WAY A1 [DESY]
+      - generic [ref=e34]: SYNC-WAY A3 [DESY]
+  - generic [ref=e36]: ERROR 404
+  - generic [ref=e37]: ERROR 404
+  - generic [ref=e38]: SYS::NULL
+  - generic [ref=e39]: NOT FOUND
+  - generic:
+    - generic:
+      - generic: "404"
+      - generic: // PAGE NOT FOUND //
+      - generic: REQUESTED RESOURCE DOES NOT EXIST_

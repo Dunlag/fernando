@@ -1,37 +1,31 @@
 ---
 layout: page
-title: Formulario con Etiqueta Flotante
-description: Formulario con efecto de etiqueta flotante estilo Google Material Design
-technologies: HTML, CSS, JavaScript
+title: "Formulario con Etiqueta Flotante — Efecto Material Design"
+description: "Formulario con efecto de etiqueta flotante inspirado en Google Material Design. Código limpio, sin dependencias."
+technologies: HTML5, CSS3, JavaScript
 github: https://github.com/Dunlag/formulario-efecto-etiqueta-flotante-de-google
-demo: https://dunlag.github.io/formulario-efecto-etiqueta-flotante-de-google/
-image: /assets/images/forms-preview.png
 date: 2026-01-10
 ---
 
-## Formulario con Etiqueta Flotante
+## Formulario con Etiqueta Flotante — Efecto Material Design
 
-Formulario web implementando el efecto de etiqueta flotante inspirado en Google Material Design.
+Implementación del patrón de etiqueta flotante de Google Material Design en formularios web. Cuando el usuario enfoca un campo, la etiqueta sube y se reduce con una transición suave — feedback visual inmediato que mejora la experiencia de usuario sin añadir peso de librerías.
 
-### Características
+![Screenshot Formulario Flotante]({{ '/assets/images/projects/formularios.png' | relative_url }})
 
-- **Efecto de etiqueta flotante** cuando el usuario interactúa con el campo
-- **Diseño limpio y moderno** siguiendo principios de Material Design
-- **Validación visual** con feedback instantáneo
-- **Totalmente responsive** adaptable a cualquier dispositivo
+### Qué incluye
 
-### Tecnologías Utilizadas
+- **Etiqueta flotante animada** con transición CSS en `focus` y cuando hay valor
+- **Validación visual** con feedback de color en tiempo real
+- **Estados de campo** claros: vacío, activo, con valor, error
+- **Diseño mobile-first** adaptable a cualquier dispositivo
+- **Código copiable** — cada campo es un componente autocontenido
 
-- HTML5 con estructura semántica
-- CSS3 para animaciones y transiciones suaves
-- JavaScript vanilla para la interactividad
-- Diseño mobile-first
+### Stack
 
-### Enlaces
-
-- **[Ver Demo en Vivo]({{ '/proyectos/formulario-flotante/' | relative_url }})** 🚀
-- **[Ver Código en GitHub](https://github.com/Dunlag/formulario-efecto-etiqueta-flotante-de-google)** 💻
+HTML5 · CSS3 (transitions, pseudo-clases `:focus`, `:placeholder-shown`) · JavaScript vanilla
 
 ---
 
-*Este proyecto demuestra mi habilidad para implementar patrones de diseño modernos con código limpio y eficiente.*
+**[Ver demo en vivo →]({{ '/proyectos/formulario-flotante/' | relative_url }})**
+&nbsp;&nbsp;**[Código en GitHub →](https://github.com/Dunlag/formulario-efecto-etiqueta-flotante-de-google)**

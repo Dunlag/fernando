@@ -1,0 +1,31 @@
+- generic [ref=e2]:
+  - heading "Elementos UI" [level=1] [ref=e3]
+  - paragraph [ref=e4]: Componentes reutilizables y accesibles
+  - generic [ref=e5]:
+    - heading "Botones" [level=2] [ref=e6]
+    - generic [ref=e7]:
+      - button "Primario" [ref=e8] [cursor=pointer]
+      - button "Secundario" [ref=e9] [cursor=pointer]
+      - button "Éxito" [ref=e10] [cursor=pointer]
+      - button "Peligro" [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - heading "Badges" [level=2] [ref=e13]
+    - generic [ref=e14]:
+      - generic [ref=e15]: Nuevo
+      - generic [ref=e16]: Activo
+      - generic [ref=e17]: Pendiente
+      - generic [ref=e18]: Urgente
+  - generic [ref=e19]:
+    - heading "Alerts" [level=2] [ref=e20]
+    - generic [ref=e21]:
+      - strong [ref=e22]: "Info:"
+      - text: Este es un mensaje informativo.
+    - generic [ref=e23]:
+      - strong [ref=e24]: "Éxito:"
+      - text: Operación completada correctamente.
+    - generic [ref=e25]:
+      - strong [ref=e26]: "Advertencia:"
+      - text: Revisa esta información.
+  - heading "Loader" [level=2] [ref=e28]
+  - link "← Volver a Proyectos" [ref=e32] [cursor=pointer]:
+    - /url: ../../projects/

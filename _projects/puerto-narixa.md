@@ -1,35 +1,49 @@
 ---
 layout: page
-title: "Puerto Narixa - Página Web"
-description: Sitio web completo desarrollado en PHP para Puerto Narixa
-technologies: PHP, HTML, CSS, JavaScript
-github: https://github.com/Dunlag/Puerto-Narixa
+title: "Puerto Narixa Garden Homes — Landing Inmobiliaria"
+description: "Landing page de captación desarrollada en agencia para concepto residencial Garden Homes. Proyecto real en producción."
+technologies: PHP, HTML5, CSS3, JavaScript
 date: 2025-06-01
 ---
 
-## Puerto Narixa
+## Puerto Narixa Garden Homes — Landing Page para Concepto Residencial
 
-Desarrollo completo de la página web oficial de **Puerto Narixa**, un proyecto real para cliente que incluye presentación de servicios, galería de imágenes y formulario de contacto.
+Proyecto web desarrollado en **agencia** para cliente real. Landing de presentación y captación de leads para un concepto residencial diferenciador: viviendas con jardín privado en lugar de terraza. Actualmente **en producción** en [gardenhomes.puertonarixa.com](https://gardenhomes.puertonarixa.com/).
 
-### Características
+![Screenshot Puerto Narixa Garden Homes]({{ '/assets/images/projects/puerto-narixa.png' | relative_url }})
 
-- 🌊 **Diseño a medida** adaptado a la identidad visual del cliente
-- 📱 **Totalmente responsive** optimizado para móvil, tablet y escritorio
-- 📬 **Formulario de contacto** funcional con validación PHP
-- 🖼️ **Galería de imágenes** dinámica
-- ⚡ **Rendimiento optimizado** con carga rápida de recursos
+### Contexto del proyecto
 
-### Tecnologías Utilizadas
+Promoción inmobiliaria con un valor diferencial claro —jardín privado frente al apartamento tradicional— que necesitaba una landing capaz de comunicar ese concepto con fuerza: sección comparativa, galería lifestyle, y un formulario de captación con mensaje de disponibilidad limitada para generar urgencia.
 
-- **PHP** para la lógica del servidor y gestión de formularios
-- **HTML5** semántico con estructura moderna
-- **CSS3** con diseño responsive y animaciones
-- **JavaScript** para interactividad en el cliente
+### Mi rol
 
-### Tipo de Proyecto
+- 🎨 **Diseño visual** alineado con el estilo de vida que proyecta la promoción
+- 🖥️ **Maquetación responsive** mobile-first para cualquier dispositivo
+- 🏡 **Sección comparativa** Garden Homes vs apartamento tradicional
+- 🖼️ **Galería de imágenes lifestyle** con carousel interactivo
+- 📬 **Formulario de captación de leads** con lógica PHP y envío por correo
+- 🔄 **Iteración con cliente** — revisiones sobre feedback real hasta aprobación final
 
-Proyecto profesional desarrollado para cliente real. Página web corporativa con backend en PHP.
+### Proceso
+
+| Fase | Descripción |
+|---|---|
+| **Brief** | Análisis del concepto diferenciador y público objetivo |
+| **Diseño** | Propuesta visual orientada al lifestyle de la promoción |
+| **Desarrollo** | Maquetación frontend + formulario PHP |
+| **Revisión** | Iteración con cliente hasta aprobación final |
+| **Entrega** | Despliegue en producción |
+
+### Stack técnico
+
+| Herramienta | Uso |
+|---|---|
+| **PHP** | Backend, gestión de formularios, envío de correo |
+| **HTML5** | Estructura semántica y accesible |
+| **CSS3** | Diseño responsive, animaciones, identidad visual |
+| **JavaScript** | Carousel, interactividad y mejora de experiencia de usuario |
 
 ---
 
-**[Ver código en GitHub](https://github.com/Dunlag/Puerto-Narixa)** 💻
+**[Ver web en producción → gardenhomes.puertonarixa.com](https://gardenhomes.puertonarixa.com/)**

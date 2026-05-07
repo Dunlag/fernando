@@ -1,35 +1,49 @@
 ---
 layout: page
-title: "Landing Pacífico - Página Web"
-description: Landing page profesional desarrollada en PHP para Pacífico
-technologies: PHP, HTML, CSS, JavaScript
-github: https://github.com/Dunlag/Landing-Pacifico
+title: "Pacífico Residences — Landing Inmobiliaria de Lujo"
+description: "Landing page de captación desarrollada en agencia para promoción residencial de lujo en Málaga. Proyecto real en producción."
+technologies: PHP, HTML5, CSS3, JavaScript
 date: 2025-08-01
 ---
 
-## Landing Pacífico
+## Pacífico Residences — Landing Page para Promoción Residencial de Lujo
 
-Desarrollo de la **landing page** oficial de Pacífico, proyecto real para cliente orientado a la captación y conversión de visitantes, con diseño atractivo y llamadas a la acción bien definidas.
+Proyecto web desarrollado en **agencia** para cliente real. Landing de presentación y captación de leads para una promoción de 19 viviendas —incluyendo áticos con piscina privada— a 200 metros del Mediterráneo en Málaga. Actualmente **en producción** en [pacificoresidences.com](https://pacificoresidences.com/).
 
-### Características
+![Screenshot Pacífico Residences]({{ '/assets/images/projects/pacifico.png' | relative_url }})
 
-- 🎯 **Diseño orientado a conversión** con llamadas a la acción claras
-- 📱 **Totalmente responsive** optimizado para móvil y escritorio
-- 📬 **Formulario de contacto** funcional con validación y envío PHP
-- ✨ **Animaciones y efectos CSS** para una experiencia visual atractiva
-- ⚡ **Carga rápida** con recursos optimizados
+### Contexto del proyecto
 
-### Tecnologías Utilizadas
+Desarrollo residencial de lujo que necesitaba una landing de alto impacto visual: galería de tipologías de vivienda, sección de calidades y ubicación, y un formulario de contacto para canalizar el interés de compradores potenciales.
 
-- **PHP** para gestión de formularios y lógica del servidor
-- **HTML5** semántico y accesible
-- **CSS3** con animaciones y diseño responsive
-- **JavaScript** para interacciones y mejora de la experiencia de usuario
+### Mi rol
 
-### Tipo de Proyecto
+- 🎨 **Diseño visual** alineado con el posicionamiento premium de la promoción
+- 🖥️ **Maquetación responsive** mobile-first optimizada para cualquier dispositivo
+- 🖼️ **Galería de tipologías** con imágenes de viviendas y zonas comunes
+- 📬 **Formulario de captación de leads** con lógica PHP y envío por correo
+- 📍 **Sección de ubicación** con accesos y puntos de interés del entorno
+- 🔄 **Iteración con cliente** — revisiones sobre feedback real hasta aprobación final
 
-Proyecto profesional desarrollado para cliente real. Landing page con enfoque en presentación de marca y captación de contactos.
+### Proceso
+
+| Fase | Descripción |
+|---|---|
+| **Brief** | Análisis del posicionamiento de marca y público objetivo |
+| **Diseño** | Propuesta visual de alta gama adaptada a la identidad de la promoción |
+| **Desarrollo** | Maquetación frontend + formulario PHP |
+| **Revisión** | Iteración con cliente hasta aprobación final |
+| **Entrega** | Despliegue en producción |
+
+### Stack técnico
+
+| Herramienta | Uso |
+|---|---|
+| **PHP** | Backend, gestión de formularios, envío de correo |
+| **HTML5** | Estructura semántica y accesible |
+| **CSS3** | Diseño responsive, animaciones, identidad visual premium |
+| **JavaScript** | Interactividad, galería y mejora de experiencia de usuario |
 
 ---
 
-**[Ver código en GitHub](https://github.com/Dunlag/Landing-Pacifico)** 💻
+**[Ver web en producción → pacificoresidences.com](https://pacificoresidences.com/)**

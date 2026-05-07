@@ -1,44 +1,36 @@
 ---
 layout: page
-title: "Marathon Concept - Diseño Oficial Bungie"
+title: "Marathon Concept — Recreación del Site Oficial de Bungie"
+description: "Página web conceptual que recrea fielmente el diseño oficial del videojuego Marathon de Bungie. Paleta neón, efectos visuales avanzados y diseño responsive."
+technologies: HTML5, CSS3, JavaScript
 permalink: /projects/marathon-concept/
+date: 2026-02-01
 ---
 
-# Marathon Concept
+## Marathon Concept — Recreación del Site Oficial de Bungie
 
-Página web conceptual que recrea fielmente el diseño oficial del videojuego Marathon de Bungie, con su estética futurista cyberpunk y elementos de interfaz característicos.
+Ejercicio de fidelidad de maquetación: recrear el diseño oficial de [marathonthegame.com](https://www.marathonthegame.com/es) partiendo de cero con HTML, CSS y JavaScript vanilla. Sin frameworks, sin assets del original — todo construido a mano replicando paleta, tipografía, efectos visuales y comportamiento responsive.
 
-## Características del diseño:
+![Screenshot Marathon Concept]({{ '/assets/images/projects/marathon.png' | relative_url }})
 
-- 🎮 **Navegación oficial Marathon** con menú completo y botón "RESERVA YA"
-- 🌈 **Paleta de colores oficial** amarillo neón (#d4ff00), magenta (#ff00ff) y rojo (#ff0033)
-- ✨ **Hero section impactante** con logo animado y efectos de resplandor
-- 📱 **Diseño responsive** optimizado para todos los dispositivos
-- 🎯 **Secciones informativas** con grids modernos y contenido del juego
-- 🔥 **Footer completo** con redes sociales, enlaces legales y clasificación ESRB
-- 💫 **Efectos visuales avanzados** scanlines, glitch, parallax y animaciones
-- ⚡ **Interacciones suaves** con Intersection Observer y transiciones CSS
+### Qué incluye
 
-## Tecnologías:
+- **Paleta oficial** amarillo neón `#d4ff00`, magenta `#ff00ff` y rojo `#ff0033`
+- **Navegación completa** con menú responsive y botón de reserva
+- **Hero animado** con logo, efectos de resplandor y scanlines
+- **Secciones de contenido** en grid con información del juego
+- **Efectos avanzados**: parallax, glitch, `Intersection Observer` para entradas
+- **Footer completo** con redes sociales, legal y clasificación ESRB
+- **Responsive** desde móvil hasta escritorio
 
-- HTML5 semántico con estructura moderna
-- CSS3 con variables personalizadas y Grid/Flexbox
-- JavaScript vanilla para efectos e interacciones
-- Google Fonts (Inter + Space Grotesk)
-- Diseño mobile-first responsive
+### Stack
 
-## Inspirado en:
-
-Esta página recrea el diseño oficial de [marathonthegame.com](https://www.marathonthegame.com/es), el sitio oficial del próximo shooter PvPvE de Bungie.
+HTML5 semántico · CSS3 (grid, flexbox, keyframes, custom properties) · JavaScript vanilla · Google Fonts (Inter + Space Grotesk)
 
 ---
 
-<div style="text-align: center; margin: 3rem 0;">
-    <a href="/fernando/proyectos/marathon-concept/" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #d4ff00, #00ff00); color: black; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(212, 255, 0, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.1em;">
-        🎮 VER PÁGINA DE CONCEPTO
-    </a>
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/fernando/proyectos/marathon-concept/" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; background: #d4ff00; color: black; text-decoration: none; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase;">
+    Ver página de concepto →
+  </a>
 </div>
-
----
-
-**Nota**: Este proyecto demuestra mi capacidad para recrear diseños profesionales de sitios web de videojuegos AAA, incluyendo sistemas de navegación complejos, paletas de colores vibrantes y efectos visuales avanzados.

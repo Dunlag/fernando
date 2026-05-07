@@ -1,0 +1,269 @@
+- generic [ref=e1]:
+  - region "Preferencias de cookies":
+    - dialog "Aviso cookies" [ref=e3]:
+      - generic [ref=e4]:
+        - button "Close Cookie Control" [active] [ref=e5] [cursor=pointer]:
+          - img [ref=e6]
+        - generic [ref=e8]:
+          - heading "Aviso cookies" [level=1] [ref=e9]
+          - paragraph [ref=e10]: Usamos cookies propias y de terceros para analizar y medir nuestros servicios; elaborar estadísticas y un perfil elaborado a partir de los hábitos de su navegación. Se comparte información con los terceros que nos facilitan las cookies.
+          - paragraph [ref=e12]:
+            - text: Para más información visite nuestra
+            - link "Política de cookies (Opens in a new window)" [ref=e13] [cursor=pointer]:
+              - /url: partials/cookies.php
+              - text: Política de cookies
+              - generic [ref=e14]:
+                - generic [ref=e15]: (Opens in a new window)
+                - img [ref=e16]
+          - generic [ref=e18]:
+            - button "Acepto" [ref=e19] [cursor=pointer]
+            - button "No acepto" [ref=e20] [cursor=pointer]
+          - separator [ref=e21]
+          - heading "Cookies necesarias" [level=2] [ref=e22]
+          - paragraph [ref=e23]: Las cookies necesarias son habilitadas por defecto. La página web no podría funcionar correctamente sin este tipo de cookies y éstas sólo pueden ser desactivadas modificando las preferencias de su navegador.
+          - separator [ref=e24]
+          - link "About this tool (Opens in a new window)" [ref=e26] [cursor=pointer]:
+            - /url: https://www.civicuk.com/cookie-control
+            - text: About this tool
+            - generic [ref=e27]:
+              - generic [ref=e28]: (Opens in a new window)
+              - img [ref=e29]
+    - button "Establecer preferencias de cookies" [expanded] [ref=e31] [cursor=pointer]:
+      - img [ref=e32]
+  - banner [ref=e37]:
+    - navigation [ref=e39]:
+      - list [ref=e42]:
+        - listitem [ref=e43]:
+          - link "PROYECTO" [ref=e44] [cursor=pointer]:
+            - /url: "#lujo"
+        - listitem [ref=e45]:
+          - link "GALERÍA" [ref=e46] [cursor=pointer]:
+            - /url: "#galeria"
+        - listitem [ref=e47]:
+          - link "CALIDADES" [disabled] [ref=e48] [cursor=pointer]:
+            - /url: "#Calidades"
+        - listitem [ref=e49]:
+          - link "Logo Bueso Pineda" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+            - img "Logo Bueso Pineda" [ref=e51]
+        - listitem [ref=e52]:
+          - link "AMENITIES" [ref=e53] [cursor=pointer]:
+            - /url: "#NuevoHogar"
+        - listitem [ref=e54]:
+          - link "CONTACTO" [disabled] [ref=e55] [cursor=pointer]:
+            - /url: "#contacto"
+        - listitem [ref=e56]:
+          - button "Español" [ref=e57] [cursor=pointer]
+    - generic [ref=e58]:
+      - heading "Vivir en el Arte Mediterráneo" [level=1] [ref=e59]:
+        - text: Vivir en el
+        - emphasis [ref=e60]: Arte
+        - text: Mediterráneo
+      - paragraph [ref=e62]: Calle Pepita Jiménez 17
+    - generic [ref=e66]: Tu navegador no soporta video.
+  - main [ref=e67]:
+    - generic [ref=e68]:
+      - paragraph [ref=e69]:
+        - text: El lujo de
+        - emphasis [ref=e71]:
+          - text: vivir en una obra
+          - text: maestra
+        - text: reservado a unos pocos.
+      - paragraph [ref=e72]:
+        - text: Deléitate con estas 5 viviendas con el marco incomparable de la Bahía de Málaga, de una de las zonas
+        - text: más exclusivas de la ciudad. Tres viviendas en planta baja de 2 y 3 dormitorios con más de 50 m2
+        - text: de terraza y piscina privada. Otras dos Villas de 3 dormitorios con solárium, jardín y piscina privada.
+      - paragraph [ref=e73]: Un lugar donde la vida se hace arte
+      - link "Descargar Catalogo" [ref=e74] [cursor=pointer]:
+        - /url: src/files/dossier_avignon_catalogo_v2.pdf
+    - generic [ref=e76]:
+      - generic [ref=e79]:
+        - img "Terraza4" [ref=e80]
+        - img "Bajo1" [ref=e81]
+        - img "Edificio Mar" [ref=e82]
+      - button "Anterior" [ref=e83] [cursor=pointer]:
+        - generic [ref=e85]: Anterior
+      - button "Siguiente" [ref=e86] [cursor=pointer]:
+        - generic [ref=e88]: Siguiente
+    - generic [ref=e89]:
+      - list [ref=e91]:
+        - listitem [ref=e92]: Baños del Carmen -
+        - listitem [ref=e93]: Pedregalejo -
+        - listitem [ref=e94]: El Morlaco -
+        - listitem [ref=e95]: Baños del Carmen -
+        - listitem [ref=e96]: Pedregalejo -
+        - listitem [ref=e97]: El Morlaco -
+      - list [ref=e99]:
+        - listitem [ref=e100]: El Morlaco -
+        - listitem [ref=e101]: Pedregalejo -
+        - listitem [ref=e102]: Baños del Carmen -
+        - listitem [ref=e103]: El Morlaco -
+        - listitem [ref=e104]: Pedregalejo -
+        - listitem [ref=e105]: Baños del Carmen -
+    - iframe [ref=e107]:
+      
+    - generic [ref=e110]:
+      - img "Descripción de la imagen" [ref=e112]
+      - generic [ref=e113]:
+        - heading "El Mediterráneo como marco, Málaga Este el lienzo." [level=2] [ref=e114]:
+          - text: El
+          - emphasis [ref=e116]: Mediterráneo
+          - text: como marco,
+          - emphasis [ref=e118]: Málaga Este
+          - text: el lienzo.
+        - paragraph [ref=e119]: Con la bahía de Málaga de fondo, Málaga Este es una de los bárrios más exclusivos de la ciudad. Por su tradición como lugar de la burguesía y aristocracia Malagueña y por su cercanía a las mejores playas de la zona, convierten a Finca Avingon en una auténtica obra de arte donde querrás quedarte a vivir.
+        - list [ref=e120]:
+          - listitem [ref=e121]: ↗ 5 min.Playa y Baños del Carmen
+          - listitem [ref=e122]: ↗ 5 min.Playa y Pº Maritimo de Pegregalejo
+          - listitem [ref=e123]: ↗ 5 min. Parque El Morlaco
+          - listitem [ref=e124]: ↗ 15 min. La Malagueta
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - button "Slide 1" [ref=e128] [cursor=pointer]
+        - button "Slide 2" [ref=e129] [cursor=pointer]
+        - button "Slide 3" [ref=e130] [cursor=pointer]
+        - button "Slide 4" [ref=e131] [cursor=pointer]
+      - img "baños del Carmen" [ref=e134]
+      - button "Previous" [ref=e135] [cursor=pointer]:
+        - generic [ref=e137]: Previous
+      - button "Next" [ref=e138] [cursor=pointer]:
+        - generic [ref=e140]: Next
+    - generic [ref=e141]:
+      - heading "Elige tu nuevo hogar" [level=2] [ref=e143]:
+        - text: Elige tu
+        - emphasis [ref=e145]: nuevo
+        - text: hogar
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - text: Viviendas
+          - generic [ref=e148]:
+            - img "Plurifamiliar 1" [ref=e151]
+            - button "Anterior" [ref=e152] [cursor=pointer]:
+              - generic [ref=e154]: Anterior
+            - button "Siguiente" [ref=e155] [cursor=pointer]:
+              - generic [ref=e157]: Siguiente
+        - generic [ref=e158]:
+          - text: Villas Adosadas
+          - generic [ref=e159]:
+            - img "Triplex 1" [ref=e162]
+            - button "Anterior" [ref=e163] [cursor=pointer]:
+              - generic [ref=e165]: Anterior
+            - button "Siguiente" [ref=e166] [cursor=pointer]:
+              - generic [ref=e168]: Siguiente
+      - separator [ref=e169]
+      - generic [ref=e170]:
+        - paragraph [ref=e171]: Viviendas
+        - paragraph [ref=e172]:
+          - text: "2 disponibles / Precios y Planos:"
+          - link "V1 ↓" [ref=e173] [cursor=pointer]:
+            - /url: src/files/Plurifamiliar/vivienda_1c.pdf
+          - text: "|"
+          - link "V2↓" [ref=e174] [cursor=pointer]:
+            - /url: src/files/Plurifamiliar/vivienda_2.pdf
+          - text: "|"
+          - link "V3↓" [ref=e175] [cursor=pointer]:
+            - /url: src/files/Plurifamiliar/vivienda_3c.pdf
+      - separator [ref=e176]
+      - generic [ref=e177]:
+        - paragraph [ref=e178]: Villas Adosadas
+        - paragraph [ref=e179]:
+          - text: "1 disponibles / Precios y Planos:"
+          - link "VA↓" [ref=e180] [cursor=pointer]:
+            - /url: "#"
+          - text: "|"
+          - link "VB" [ref=e181] [cursor=pointer]:
+            - /url: src/files/Triplex/villa_b.pdf
+          - text: ↓
+      - separator [ref=e182]
+    - generic [ref=e183]:
+      - generic [ref=e185]:
+        - heading "Espacios que son arte" [level=2] [ref=e186]:
+          - text: Espacios que son
+          - emphasis [ref=e188]: arte
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: Viviendas creadas para integrar la vida interior y exterior que nos dibuja el Mediterráneo y su clima. Con una distribución de las viviendas para sacarle el máximo partido a la estupenda orientación. Cada detalle está esculpido con la mirada y la delicadeza de un auténtico artista.
+          - link "Descargar Memoria de Calidades" [ref=e191] [cursor=pointer]:
+            - /url: src/files/Memoria calidades Avignon.pdf
+      - generic [ref=e193]:
+        - generic [ref=e195]:
+          - img "Calidad 1" [ref=e196]
+          - heading "Terraza" [level=5] [ref=e197]
+          - paragraph [ref=e198]: Con la mejor orientación sureste, con vistas a la bahía, que te permitirá sacarle el máximo partido a la vida exterior.
+        - generic [ref=e200]:
+          - img "Calidad 2" [ref=e201]
+          - heading "Ascensor" [level=5] [ref=e202]
+          - paragraph [ref=e203]: Ascensor privado con acceso directo a la vivienda y con puerta de seguridad a la salida para mejorar insonorización y seguridad.
+        - generic [ref=e205]:
+          - img "Calidad 3" [ref=e206]
+          - heading "Piscina" [level=5] [ref=e207]
+          - paragraph [ref=e208]: Piscina privada de diseño con material porcelánico a juego con el resto de la vivienda que te proporcionará la máxima intimidad.
+        - generic [ref=e210]:
+          - img "Calidad 4" [ref=e211]
+          - heading "Jardines" [level=5] [ref=e212]
+          - paragraph [ref=e213]: Jardines privativos con un fabuloso soleamiento donde disfrutar el arte del clima Mediterráneo.
+    - generic [ref=e215]:
+      - heading "Si aprecias el verdadero arte de vivir. ¡Hablemos!" [level=1] [ref=e216]:
+        - text: Si aprecias el verdadero
+        - text: arte de vivir.
+        - emphasis [ref=e218]: ¡Hablemos!
+      - generic [ref=e220]:
+        - generic [ref=e222]:
+          - heading "Oficina de Venta" [level=5] [ref=e223]
+          - paragraph [ref=e224]: Calle Marqués de Larios 6, 4º1, 29005, Málaga.
+          - paragraph [ref=e225]: comercial@longlinecapital.es
+          - paragraph [ref=e226]: 744 78 47 34
+          - paragraph [ref=e227]:
+            - text: "Horario de Atención:"
+            - text: Atención con cita previa
+        - generic [ref=e230]:
+          - textbox "Nombre completo" [ref=e231]
+          - textbox "Correo electrónico" [ref=e232]
+          - textbox "Teléfono" [ref=e233]
+          - textbox "Escribe tu mensaje aquí" [ref=e234]
+          - generic [ref=e235]:
+            - checkbox "He leído y acepto la Política de Privacidad." [ref=e236]
+            - generic [ref=e237]:
+              - text: He leído y acepto la
+              - link "Política de Privacidad" [ref=e238] [cursor=pointer]:
+                - /url: "#"
+              - text: .
+          - button "¡Contacta ahora!" [ref=e239] [cursor=pointer]
+    - generic [ref=e241]:
+      - generic:
+        - button [ref=e242] [cursor=pointer]:
+          - img [ref=e243]
+        - generic [ref=e246]:
+          - link "Finca Avignon Calle Pepita Jiménez 17" [ref=e250] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/xwKtZcKm1AZFSMHg8
+            - heading "Finca Avignon" [level=6] [ref=e251]
+            - paragraph [ref=e252]: Calle Pepita Jiménez 17
+          - button "Close popup" [ref=e254] [cursor=pointer]: ×
+      - generic:
+        - generic [ref=e255]:
+          - button "Zoom in" [ref=e256] [cursor=pointer]: +
+          - button "Zoom out" [ref=e257] [cursor=pointer]: −
+        - generic [ref=e258]:
+          - link "Leaflet" [ref=e259] [cursor=pointer]:
+            - /url: https://leafletjs.com
+            - img [ref=e260]
+            - text: Leaflet
+          - text: "| ©"
+          - link "OpenStreetMap" [ref=e264] [cursor=pointer]:
+            - /url: https://www.openstreetmap.org/copyright
+          - text: contributors ©
+          - link "CARTO" [ref=e265] [cursor=pointer]:
+            - /url: https://carto.com/attributions
+  - contentinfo [ref=e266]:
+    - paragraph [ref=e267]: Promueve y vende
+    - generic [ref=e268]:
+      - img "Logo Longline" [ref=e269]
+      - img "logo Alma B" [ref=e270]
+    - separator [ref=e271]
+    - generic [ref=e272]:
+      - text: © 2025 Longline. Todos los derechos reservados.
+      - link "Aviso Legal" [ref=e273] [cursor=pointer]:
+        - /url: "#"
+      - link "Política de Privacidad" [ref=e274] [cursor=pointer]:
+        - /url: "#"
+      - link "Cookies" [ref=e275] [cursor=pointer]:
+        - /url: "#"

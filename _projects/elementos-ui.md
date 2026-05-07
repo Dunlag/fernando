@@ -1,44 +1,31 @@
 ---
 layout: page
-title: Elementos UI
-description: Componentes de interfaz reutilizables y accesibles
-technologies: HTML, CSS, JavaScript
-github: https://github.com/Dunlag
-image: /assets/images/ui-preview.png
+title: "Elementos UI — Biblioteca de Componentes"
+description: "Biblioteca de componentes UI modernos, accesibles y personalizables. Sin frameworks, sin dependencias."
+technologies: HTML5, CSS3, JavaScript
 date: 2026-01-05
 ---
 
-## Elementos UI
+## Elementos UI — Biblioteca de Componentes Reutilizables
 
-Biblioteca de componentes UI modernos, reutilizables y totalmente personalizables.
+Librería de componentes de interfaz construidos desde cero con HTML, CSS y JavaScript vanilla. Pensada como referencia práctica de patrones de UI que aparecen en cualquier proyecto: botones, badges, navegación, cards, tooltips y loaders, todos con API consistente y fácil de integrar.
 
-### Características
+![Screenshot Elementos UI]({{ '/assets/images/projects/elementos-ui.png' | relative_url }})
 
-- **Componentes modulares** fáciles de integrar
-- **Totalmente responsive** en todos los dispositivos
-- **Personalizable** con CSS variables
-- **Documentación completa** de uso
+### Qué incluye
 
-### Componentes Incluidos
+- **Botones** en múltiples estilos: primary, outline, ghost, icon
+- **Badges y alerts** con variantes semánticas (info, éxito, error, warning)
+- **Navegación responsive** con menú móvil y estados activos
+- **Cards y tooltips** con posicionamiento automático
+- **Loaders y spinners** CSS puro, sin JavaScript
+- **Personalización completa** mediante CSS custom properties
 
-- Botones con múltiples estilos
-- Badges y alerts
-- Navegación responsive
-- Cards y tooltips
-- Loaders y spinners
+### Stack
 
-### Tecnologías Utilizadas
-
-- HTML5 semántico
-- CSS3 con variables personalizadas
-- JavaScript modular
-- Sin dependencias externas
-
-### Enlaces
-
-- **[Ver Demo en Vivo]({{ '/proyectos/elementos-ui/' | relative_url }})** 🚀
-- **[Ver Código en GitHub](https://github.com/Dunlag)** 💻
+HTML5 semántico · CSS3 (custom properties, flexbox, grid) · JavaScript vanilla · Sin dependencias externas
 
 ---
 
-*Colección de componentes que demuestran diseño consistente y código limpio.*
+**[Ver demo en vivo →]({{ '/proyectos/elementos-ui/' | relative_url }})**
+&nbsp;&nbsp;**[Código en GitHub →](https://github.com/Dunlag)**

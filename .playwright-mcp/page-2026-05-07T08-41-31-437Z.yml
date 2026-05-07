@@ -1,0 +1,141 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "FERNANDO_DEV" [ref=e4] [cursor=pointer]:
+        - /url: /fernando/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Inicio" [ref=e7] [cursor=pointer]:
+            - /url: /fernando/
+        - listitem [ref=e8]:
+          - link "Proyectos" [ref=e9] [cursor=pointer]:
+            - /url: /fernando/projects/
+        - listitem [ref=e10]:
+          - link "Sobre Mí" [ref=e11] [cursor=pointer]:
+            - /url: /fernando/about/
+        - listitem [ref=e12]:
+          - link "Contactar" [ref=e13] [cursor=pointer]:
+            - /url: /fernando/contact/
+      - button "Cambiar tema" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: dark_mode
+  - main [ref=e17]:
+    - article [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: // FINCA AVIGNON — LANDING INMOBILIARIA
+          - heading "Finca Avignon — Landing Inmobiliaria" [level=1] [ref=e22]
+          - paragraph [ref=e23]: Landing page de captación desarrollada en agencia para promoción de apartamentos. Proyecto real en producción.
+        - generic [ref=e24]:
+          - heading "Finca Avignon — Landing Page para Promoción Inmobiliaria" [level=2] [ref=e25]
+          - paragraph [ref=e26]:
+            - text: Proyecto web desarrollado en
+            - strong [ref=e27]: agencia
+            - text: para cliente real. Landing de presentación y captación de contactos para una promoción de apartamentos, actualmente
+            - strong [ref=e28]: en producción
+            - text: en
+            - link "fincaavignon.es" [ref=e29] [cursor=pointer]:
+              - /url: https://fincaavignon.es/
+            - text: .
+          - paragraph [ref=e30]:
+            - img "Screenshot Finca Avignon" [ref=e31]
+          - heading "Contexto del proyecto" [level=3] [ref=e32]
+          - paragraph [ref=e33]: "Promoción inmobiliaria que necesitaba presencia digital orientada a la captación: presentación visual de los apartamentos, galería de imágenes y un formulario de contacto funcional para gestionar el interés de compradores."
+          - heading "Mi rol" [level=3] [ref=e34]
+          - list [ref=e35]:
+            - listitem [ref=e36]:
+              - text: 🎨
+              - strong [ref=e37]: Diseño visual
+              - text: alineado con la identidad de la promoción
+            - listitem [ref=e38]:
+              - text: 🖥️
+              - strong [ref=e39]: Maquetación responsive
+              - text: mobile-first para cualquier dispositivo
+            - listitem [ref=e40]:
+              - text: 📬
+              - strong [ref=e41]: Formulario de captación de leads
+              - text: con lógica PHP y envío por correo
+            - listitem [ref=e42]:
+              - text: 🖼️
+              - strong [ref=e43]: Galería de imágenes
+              - text: de viviendas y entorno optimizada para carga rápida
+            - listitem [ref=e44]:
+              - text: 🔄
+              - strong [ref=e45]: Iteración con cliente
+              - text: — revisiones sobre feedback real hasta aprobación final
+          - heading "Proceso" [level=3] [ref=e46]
+          - table [ref=e47]:
+            - rowgroup [ref=e48]:
+              - row "Fase Descripción" [ref=e49]:
+                - columnheader "Fase" [ref=e50]
+                - columnheader "Descripción" [ref=e51]
+            - rowgroup [ref=e52]:
+              - row "Brief Reunión con cliente, análisis de requisitos y público objetivo" [ref=e53]:
+                - cell "Brief" [ref=e54]:
+                  - strong [ref=e55]: Brief
+                - cell "Reunión con cliente, análisis de requisitos y público objetivo" [ref=e56]
+              - row "Diseño Propuesta visual adaptada a la identidad de la promoción" [ref=e57]:
+                - cell "Diseño" [ref=e58]:
+                  - strong [ref=e59]: Diseño
+                - cell "Propuesta visual adaptada a la identidad de la promoción" [ref=e60]
+              - row "Desarrollo Maquetación frontend + formulario PHP" [ref=e61]:
+                - cell "Desarrollo" [ref=e62]:
+                  - strong [ref=e63]: Desarrollo
+                - cell "Maquetación frontend + formulario PHP" [ref=e64]
+              - row "Revisión Iteración con cliente hasta aprobación final" [ref=e65]:
+                - cell "Revisión" [ref=e66]:
+                  - strong [ref=e67]: Revisión
+                - cell "Iteración con cliente hasta aprobación final" [ref=e68]
+              - row "Entrega Despliegue en producción" [ref=e69]:
+                - cell "Entrega" [ref=e70]:
+                  - strong [ref=e71]: Entrega
+                - cell "Despliegue en producción" [ref=e72]
+          - heading "Stack técnico" [level=3] [ref=e73]
+          - table [ref=e74]:
+            - rowgroup [ref=e75]:
+              - row "Herramienta Uso" [ref=e76]:
+                - columnheader "Herramienta" [ref=e77]
+                - columnheader "Uso" [ref=e78]
+            - rowgroup [ref=e79]:
+              - row "PHP Backend, gestión de formularios, envío de correo" [ref=e80]:
+                - cell "PHP" [ref=e81]:
+                  - strong [ref=e82]: PHP
+                - cell "Backend, gestión de formularios, envío de correo" [ref=e83]
+              - row "HTML5 Estructura semántica y accesible" [ref=e84]:
+                - cell "HTML5" [ref=e85]:
+                  - strong [ref=e86]: HTML5
+                - cell "Estructura semántica y accesible" [ref=e87]
+              - row "CSS3 Diseño responsive, animaciones, identidad visual" [ref=e88]:
+                - cell "CSS3" [ref=e89]:
+                  - strong [ref=e90]: CSS3
+                - cell "Diseño responsive, animaciones, identidad visual" [ref=e91]
+              - row "JavaScript Interactividad y mejora de experiencia de usuario" [ref=e92]:
+                - cell "JavaScript" [ref=e93]:
+                  - strong [ref=e94]: JavaScript
+                - cell "Interactividad y mejora de experiencia de usuario" [ref=e95]
+          - separator [ref=e96]
+          - paragraph [ref=e97]:
+            - strong [ref=e98]:
+              - link "Ver web en producción → fincaavignon.es" [ref=e99] [cursor=pointer]:
+                - /url: https://fincaavignon.es/
+  - contentinfo [ref=e100]:
+    - generic [ref=e101]:
+      - generic [ref=e102]: © 2026 / FERNANDO_DEV / MÁLAGA
+      - generic [ref=e103]:
+        - link "Inicio" [ref=e104] [cursor=pointer]:
+          - /url: /fernando/
+        - link "Proyectos" [ref=e105] [cursor=pointer]:
+          - /url: /fernando/projects/
+        - link "Sobre mí" [ref=e106] [cursor=pointer]:
+          - /url: /fernando/about/
+        - link "Contacto" [ref=e107] [cursor=pointer]:
+          - /url: /fernando/contact/
+        - generic [ref=e108]:
+          - link "GitHub" [ref=e109] [cursor=pointer]:
+            - /url: https://github.com/Dunlag
+            - generic [ref=e110]: code
+          - link "LinkedIn" [ref=e111] [cursor=pointer]:
+            - /url: https://linkedin.com/in/fernandopinillavalbuena
+            - generic [ref=e112]: work
+          - link "Email" [ref=e113] [cursor=pointer]:
+            - /url: mailto:fernando.pinilla85@gmail.com
+            - generic [ref=e114]: mail

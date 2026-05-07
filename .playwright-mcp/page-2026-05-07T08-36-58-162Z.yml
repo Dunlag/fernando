@@ -1,0 +1,192 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Puerto Narixa" [ref=e4] [cursor=pointer]:
+        - /url: "#inicio"
+        - img "Sea Views logo" [ref=e5]
+      - navigation "Principal" [ref=e6]:
+        - link "Inicio" [ref=e7] [cursor=pointer]:
+          - /url: "#inicio"
+        - link "Tu hogar" [ref=e8] [cursor=pointer]:
+          - /url: "#hogar"
+        - link "Personalización" [ref=e9] [cursor=pointer]:
+          - /url: "#personalizacion"
+        - link "Ubicación" [ref=e10] [cursor=pointer]:
+          - /url: "#ubicacion"
+        - link "Contacto" [ref=e11] [cursor=pointer]:
+          - /url: "#contacto"
+      - link "+34 670 719 335" [ref=e12] [cursor=pointer]:
+        - /url: tel:+34670719335
+        - img [ref=e13]
+        - generic [ref=e14]: +34 670 719 335
+  - main [ref=e15]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: 🏖️ Torrox Costa - Málaga
+      - heading "Tu jardín privado con vistas de ático." [level=1] [ref=e20]
+      - paragraph [ref=e21]: "Olvida los pisos encerrados. Vive en un Garden Home: la amplitud de una casa con la comodidad de un piso en Puerto Narixa."
+      - list [ref=e22]:
+        - listitem [ref=e23]:
+          - generic [ref=e24]: ✦
+          - text: Jardín privado (más metros que cualquier terraza)
+        - listitem [ref=e25]:
+          - generic [ref=e26]: ✦
+          - text: Espacio libre para tus mascotas.
+        - listitem [ref=e27]:
+          - generic [ref=e28]: ✦
+          - text: Acceso directo y privacidad total.
+      - link "Agenda visita al Garden Home" [ref=e29] [cursor=pointer]:
+        - /url: "#contacto"
+    - generic [ref=e31]:
+      - heading "¿Por qué una garden home?" [level=2] [ref=e32]
+      - paragraph [ref=e33]: Convertimos las dudas en certezas
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: UN PISO COMÚN
+          - generic [ref=e37]:
+            - generic [ref=e38]: ✕
+            - generic [ref=e39]: Terreza estrecha y limitada.
+          - generic [ref=e40]:
+            - generic [ref=e41]: ✕
+            - generic [ref=e42]: Sin espacio para mascotas.
+          - generic [ref=e43]:
+            - generic [ref=e44]: ✕
+            - generic [ref=e45]: Sensación de “encierro”.
+        - generic [ref=e46]:
+          - generic [ref=e47]: UNA GARDEN HOME
+          - generic [ref=e48]:
+            - generic [ref=e49]: ✓
+            - generic [ref=e50]: Jardín privado para disfrutar todo el año.
+          - generic [ref=e51]:
+            - generic [ref=e52]: ✓
+            - generic [ref=e53]: El paraíso para tu perro/gato.
+          - generic [ref=e54]:
+            - generic [ref=e55]: ✓
+            - generic [ref=e56]: Sensación de vivienda independiente.
+      - link "Quiero verlo en persona" [ref=e58] [cursor=pointer]:
+        - /url: "#contacto"
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - button "Tarjeta anterior" [ref=e62] [cursor=pointer]: ‹
+        - button "Tarjeta siguiente" [ref=e63] [cursor=pointer]: ›
+      - generic [ref=e65]:
+        - article [ref=e66]:
+          - generic [ref=e67]:
+            - img "Mujer con perro en una terraza ajardinada" [ref=e69]
+            - generic [ref=e70]:
+              - generic [ref=e71]: 🐶 Pet & Family Friendly
+              - heading "El espacio que tu mascota (y tú) estábais esperando" [level=2] [ref=e72]:
+                - text: El espacio que tu mascota
+                - text: (y tú) estábais esperando
+              - paragraph [ref=e73]:
+                - text: No es solo un bajo; es un jardín donde tu perro puede correr y tú puedes cenar bajo las estrellas.
+                - strong [ref=e74]: Libertad real sin escaleras.
+              - link "Consultar disponibilidad" [ref=e75] [cursor=pointer]:
+                - /url: "#contacto"
+        - article [ref=e76]:
+          - generic [ref=e77]:
+            - img "gente bebiendo vermut en una terraza ajardinada" [ref=e79]
+            - generic [ref=e80]:
+              - generic [ref=e81]: 🥗 Personalización
+              - heading "Tu jardín a pie de salón tu decides como vivirlo" [level=2] [ref=e82]:
+                - text: Tu jardín a pie de salón
+                - text: tu decides como vivirlo
+              - paragraph [ref=e83]: ¿Piscina privada, una pergola para tus comidas o un huerto urbano? Tú pones las reglas en un espacio exterior que se adapta a tu ritmo
+              - link "Consultar disponibilidad" [ref=e84] [cursor=pointer]:
+                - /url: "#contacto"
+        - article [ref=e85]:
+          - generic [ref=e86]:
+            - img "Terraza y jardín con acceso directo" [ref=e88]
+            - generic [ref=e89]:
+              - generic [ref=e90]: 👀 Increibles vistas
+              - 'heading "Redefiniciendo el lujo: un jardín con vistas de ático" [level=2] [ref=e91]':
+                - text: "Redefiniciendo el lujo: un"
+                - text: jardín con vistas de ático
+              - paragraph [ref=e92]: Todo el espacio y la comodidad de un bajo, con la panorámica que siempre soñaste. Despierta cada día con el horizonte.
+              - link "Consultar disponibilidad" [ref=e93] [cursor=pointer]:
+                - /url: "#contacto"
+        - article [ref=e94]:
+          - generic [ref=e95]:
+            - img "Pareja disfrutando de una vivienda luminosa con terraza" [ref=e97]
+            - generic [ref=e98]:
+              - generic [ref=e99]: 🚗 Cerca de todo
+              - heading "Vivir mejor, a solo 35 minutos de Málaga" [level=2] [ref=e100]:
+                - text: Vivir mejor, a solo
+                - text: 35 minutos de Málaga
+              - paragraph [ref=e101]: Espacios abiertos, clima suave y amplitud exterior para que la vivienda acompañe tu ritmo, no al revés. El jardín se convierte en tu mejor estancia durante todo el año.
+              - link "Consultar disponibilidad" [ref=e102] [cursor=pointer]:
+                - /url: "#contacto"
+      - generic "Paginación del slider" [ref=e103]:
+        - button "Ir a la tarjeta 1" [ref=e104] [cursor=pointer]
+        - button "Ir a la tarjeta 2" [ref=e105] [cursor=pointer]
+        - button "Ir a la tarjeta 3" [ref=e106] [cursor=pointer]
+        - button "Ir a la tarjeta 4" [ref=e107] [cursor=pointer]
+    - generic [ref=e109]:
+      - 'heading "Torrox: el mejor clima de Europa desde tu jardín" [level=2] [ref=e110]'
+      - paragraph [ref=e111]: Disfruta de 300 días de sol y temperaturas suaves todo el año.
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - article [ref=e114]:
+            - generic [ref=e115]:
+              - strong [ref=e116]: Torrox
+              - text: Tradición y servicios.
+            - generic [ref=e117]: 🕒 8 min.
+          - article [ref=e118]:
+            - generic [ref=e119]:
+              - strong [ref=e120]: Nerja
+              - text: Playas y cuevas icónicas.
+            - generic [ref=e121]: 🕒 15 min.
+          - article [ref=e122]:
+            - generic [ref=e123]:
+              - strong [ref=e124]: Málaga (Aeropuerto)
+              - text: Conexión internacional.
+            - generic [ref=e125]: 🕒 40 min.
+          - article [ref=e126]:
+            - generic [ref=e127]:
+              - strong [ref=e128]: Marbella
+              - text: Beach clubs y lujo.
+            - generic [ref=e129]: 🕒 75 min.
+          - article [ref=e130]:
+            - generic [ref=e131]:
+              - strong [ref=e132]: Sierra Nevada
+              - text: Esquí, nieve y senderismo.
+            - generic [ref=e133]: 🕒 85 min.
+        - iframe [ref=e135]:
+          
+    - generic [ref=e137]:
+      - generic [ref=e138]: ⏳ Disponibilidad limitada
+      - heading "¡Las garden homes vuelan!" [level=2] [ref=e139]
+      - paragraph [ref=e140]:
+        - text: Son la tipología más demandada de Puerto Narixa.
+        - text: No te quedes sin tu jardín por dudar.
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - generic [ref=e144]: Nombre*
+            - textbox "Nombre*" [ref=e145]:
+              - /placeholder: Tu nombre completo
+          - generic [ref=e146]:
+            - generic [ref=e147]: Teléfono *
+            - textbox "Teléfono *" [ref=e148]:
+              - /placeholder: +34 000 000 000
+          - generic [ref=e149]:
+            - generic [ref=e150]: E-Mail*
+            - textbox "E-Mail*" [ref=e151]:
+              - /placeholder: tu@email.com
+          - generic [ref=e152]:
+            - generic [ref=e153]: Mensaje
+            - textbox "Mensaje" [ref=e154]:
+              - /placeholder: Cuéntanos cuándo te gustaría visitar Puerto Narixa
+          - generic [ref=e156]:
+            - checkbox "Acepto la política de privacidad y el tratamiento de mis datos para recibir información sobre Puerto Narixa." [ref=e157]
+            - generic [ref=e158]: Acepto la política de privacidad y el tratamiento de mis datos para recibir información sobre Puerto Narixa.
+          - button "Reservar mi visita ahora" [ref=e159] [cursor=pointer]
+          - paragraph [ref=e160]: 🔒 Tus datos están seguros. Solo los usaremos para contactarte.
+        - complementary "Oficina de ventas" [ref=e161]:
+          - generic [ref=e162]: Oficina de ventas
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - generic [ref=e165]: 📍
+              - paragraph [ref=e166]: Avda. El Faro, 2. 29793 Torrox Costa (Málaga)
+            - generic [ref=e167]:
+              - generic [ref=e168]: ⏱
+              - paragraph [ref=e169]: "Horario: lunes a viernes de 10h a 18h"

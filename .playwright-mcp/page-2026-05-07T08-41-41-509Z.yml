@@ -1,0 +1,84 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "FERNANDO_DEV" [ref=e4] [cursor=pointer]:
+        - /url: /fernando/
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Inicio" [ref=e7] [cursor=pointer]:
+            - /url: /fernando/
+        - listitem [ref=e8]:
+          - link "Proyectos" [ref=e9] [cursor=pointer]:
+            - /url: /fernando/projects/
+        - listitem [ref=e10]:
+          - link "Sobre Mí" [ref=e11] [cursor=pointer]:
+            - /url: /fernando/about/
+        - listitem [ref=e12]:
+          - link "Contactar" [ref=e13] [cursor=pointer]:
+            - /url: /fernando/contact/
+      - button "Cambiar tema" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: dark_mode
+  - main [ref=e17]:
+    - article [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: // CARDS ANIMADAS — COMPONENTES UI CON CSS
+          - heading "Cards Animadas — Componentes UI con CSS" [level=1] [ref=e22]
+          - paragraph [ref=e23]: Colección de tarjetas interactivas con animaciones CSS modernas. Sin frameworks, sin dependencias.
+        - generic [ref=e24]:
+          - heading "Cards Animadas — Componentes UI con Animaciones CSS" [level=2] [ref=e25]
+          - paragraph [ref=e26]: "Colección de tarjetas interactivas construidas íntegramente con HTML, CSS y JavaScript vanilla. El objetivo: demostrar que no hacen falta frameworks para conseguir animaciones fluidas y componentes reutilizables de calidad."
+          - paragraph [ref=e27]:
+            - img "Screenshot Cards Animadas" [ref=e28]
+          - heading "Qué incluye" [level=3] [ref=e29]
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - strong [ref=e32]: Hover states
+              - text: con transiciones suaves y efecto de profundidad
+            - listitem [ref=e33]:
+              - strong [ref=e34]: Animaciones de entrada
+              - text: con
+              - code [ref=e35]: "@keyframes"
+              - text: e
+              - code [ref=e36]: Intersection Observer
+            - listitem [ref=e37]:
+              - strong [ref=e38]: Variantes de tarjeta
+              - text: ": producto, perfil, estadística y galería"
+            - listitem [ref=e39]:
+              - strong [ref=e40]: Dark/light compatible
+              - text: mediante CSS custom properties
+            - listitem [ref=e41]:
+              - strong [ref=e42]: Sin dependencias externas
+              - text: — cero KB de librería
+          - heading "Stack" [level=3] [ref=e43]
+          - paragraph [ref=e44]: HTML5 · CSS3 (custom properties, keyframes, transitions) · JavaScript vanilla
+          - separator [ref=e45]
+          - paragraph [ref=e46]:
+            - strong [ref=e47]:
+              - link "Ver demo en vivo →" [ref=e48] [cursor=pointer]:
+                - /url: /fernando/proyectos/cards-animadas/
+            - strong [ref=e49]:
+              - link "Código en GitHub →" [ref=e50] [cursor=pointer]:
+                - /url: https://github.com/Dunlag
+  - contentinfo [ref=e51]:
+    - generic [ref=e52]:
+      - generic [ref=e53]: © 2026 / FERNANDO_DEV / MÁLAGA
+      - generic [ref=e54]:
+        - link "Inicio" [ref=e55] [cursor=pointer]:
+          - /url: /fernando/
+        - link "Proyectos" [ref=e56] [cursor=pointer]:
+          - /url: /fernando/projects/
+        - link "Sobre mí" [ref=e57] [cursor=pointer]:
+          - /url: /fernando/about/
+        - link "Contacto" [ref=e58] [cursor=pointer]:
+          - /url: /fernando/contact/
+        - generic [ref=e59]:
+          - link "GitHub" [ref=e60] [cursor=pointer]:
+            - /url: https://github.com/Dunlag
+            - generic [ref=e61]: code
+          - link "LinkedIn" [ref=e62] [cursor=pointer]:
+            - /url: https://linkedin.com/in/fernandopinillavalbuena
+            - generic [ref=e63]: work
+          - link "Email" [ref=e64] [cursor=pointer]:
+            - /url: mailto:fernando.pinilla85@gmail.com
+            - generic [ref=e65]: mail

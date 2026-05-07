@@ -3,7 +3,16 @@
     "allow": [
       "Bash(bundle exec *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:fincaavignon.es)",
+      "WebFetch(domain:pacificoresidences.com)",
+      "WebFetch(domain:gardenhomes.puertonarixa.com)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4000/fernando/)"
     ]
   }
 }

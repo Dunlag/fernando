@@ -1,51 +1,34 @@
 ---
 layout: page
-title: Error 404 Marathon
-description: Página de error 404 con estética futurista y efectos visuales avanzados
-technologies: HTML, CSS, JavaScript, Canvas
-github: https://github.com/Dunlag
-image: /assets/images/error-404-preview.png
+title: "Error 404 — Página de Error Estilo Terminal"
+description: "Página de error 404 con estética cyberpunk y efectos visuales avanzados: scanlines, glitch, Canvas API y cursor personalizado."
+technologies: HTML5, CSS3, JavaScript, Canvas API
 date: 2026-02-20
 ---
 
-## Error 404 Marathon
+## Error 404 — Página de Error Estilo Terminal Cyberpunk
 
-Página de error 404 con diseño futurista y efectos visuales inspirados en interfaces cyberpunk y terminales retro.
+Las páginas de error suelen ser la peor experiencia del sitio. Este experimento toma el extremo opuesto: una 404 con estética de terminal retro-futurista que convierte un punto de fricción en un momento memorable. Efectos generativos con Canvas, glitch CSS y cursor personalizado, todo sin frameworks.
 
-### Características
+![Screenshot Error 404]({{ '/assets/images/projects/error-404.png' | relative_url }})
 
-- **Estética cyberpunk** con paleta de colores rojo neón sobre fondo oscuro
+### Qué incluye
+
+- **Canvas API** con patrones geométricos generativos y animados
+- **Efecto glitch/flicker** en tipografía con `@keyframes` y pseudo-elementos
+- **Overlay de scanlines** para simular monitores CRT
 - **Cursor personalizado** que sigue el movimiento del ratón
-- **Efectos de scanlines** y glitch para simular monitores CRT
-- **Canvas animado** con patrones geométricos generativos
 - **Código de barras dinámico** generado con JavaScript
-- **Etiquetas flotantes** con animaciones sutiles
-- **Tipografía monoespaciada** estilo terminal
+- **Tipografía monoespaciada** de terminal: Share Tech Mono + VT323
 
-### Tecnologías Utilizadas
+### Stack
 
-- HTML5 con Canvas API
-- CSS3 con animaciones avanzadas y pseudo-elementos
-- JavaScript vanilla para efectos interactivos
-- Google Fonts (Share Tech Mono, VT323)
-- Diseño responsive y optimizado
-
-### Efectos Visuales
-
-- Overlays de scanlines para efecto CRT
-- Animación de glitch/flicker constante
-- Patrones geométricos generativos en canvas
-- Transiciones y animaciones CSS suaves
-- Sistema de cursor personalizado
-
-### Enlace
-
-<div style="text-align: center; margin: 3rem 0;">
-    <a href="/fernando/proyectos/error-404/" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #e91e63, #9c27b0); color: white; text-decoration: none; border-radius: 4px; font-weight: bold; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3); transition: all 0.3s ease;">
-        🚀 VER PÁGINA DE CONCEPTO
-    </a>
-</div>
+HTML5 · Canvas API · CSS3 (animaciones avanzadas, pseudo-elementos) · JavaScript vanilla · Google Fonts
 
 ---
 
-*Este proyecto demuestra mi capacidad para crear experiencias visuales inmersivas y trabajar con Canvas API.*
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/fernando/proyectos/error-404/" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; background: #e91e63; color: white; text-decoration: none; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase;">
+    Ver página de concepto →
+  </a>
+</div>

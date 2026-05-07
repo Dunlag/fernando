@@ -1,36 +1,30 @@
 ---
 layout: page
-title: Cards Animadas
-description: Diseños modernos de tarjetas con animaciones CSS suaves
-technologies: HTML, CSS, JavaScript
-github: https://github.com/Dunlag
-image: /assets/images/cards-preview.png
+title: "Cards Animadas — Componentes UI con CSS"
+description: "Colección de tarjetas interactivas con animaciones CSS modernas. Sin frameworks, sin dependencias."
+technologies: HTML5, CSS3, JavaScript
 date: 2026-01-15
 ---
 
-## Cards Animadas
+## Cards Animadas — Componentes UI con Animaciones CSS
 
-Colección de tarjetas interactivas con animaciones CSS modernas y efectos hover.
+Colección de tarjetas interactivas construidas íntegramente con HTML, CSS y JavaScript vanilla. El objetivo: demostrar que no hacen falta frameworks para conseguir animaciones fluidas y componentes reutilizables de calidad.
 
-### Características
+![Screenshot Cards Animadas]({{ '/assets/images/projects/cards-animadas.png' | relative_url }})
 
-- **Animaciones suaves** con transiciones CSS
-- **Diseño responsive** adaptable a cualquier pantalla
-- **Efectos hover** interactivos
-- **Performance optimizado** sin dependencias externas
+### Qué incluye
 
-### Tecnologías Utilizadas
+- **Hover states** con transiciones suaves y efecto de profundidad
+- **Animaciones de entrada** con `@keyframes` e `Intersection Observer`
+- **Variantes de tarjeta**: producto, perfil, estadística y galería
+- **Dark/light compatible** mediante CSS custom properties
+- **Sin dependencias externas** — cero KB de librería
 
-- HTML5 para estructura semántica
-- CSS3 para animaciones y estilos
-- JavaScript vanilla para interacciones
-- Flexbox y Grid para layouts
+### Stack
 
-### Enlaces
-
-- **[Ver Demo en Vivo]({{ '/proyectos/cards-animadas/' | relative_url }})** 🚀
-- **[Ver Código en GitHub](https://github.com/Dunlag)** 💻
+HTML5 · CSS3 (custom properties, keyframes, transitions) · JavaScript vanilla
 
 ---
 
-*Este proyecto demuestra mi habilidad para crear componentes UI modernos y atractivos.*
+**[Ver demo en vivo →]({{ '/proyectos/cards-animadas/' | relative_url }})**
+&nbsp;&nbsp;**[Código en GitHub →](https://github.com/Dunlag)**

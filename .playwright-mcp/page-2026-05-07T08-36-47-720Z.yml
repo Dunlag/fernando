@@ -1,0 +1,295 @@
+- generic [ref=e1]:
+  - region "Preferencias de cookies":
+    - dialog "Aviso cookies" [ref=e3]:
+      - generic [ref=e4]:
+        - button "Close Cookie Control" [active] [ref=e5] [cursor=pointer]:
+          - img [ref=e6]
+        - generic [ref=e8]:
+          - heading "Aviso cookies" [level=1] [ref=e9]
+          - paragraph [ref=e10]: Usamos cookies propias y de terceros para analizar y medir nuestros servicios; elaborar estadísticas y un perfil elaborado a partir de los hábitos de su navegación. Se comparte información con los terceros que nos facilitan las cookies.
+          - paragraph [ref=e12]:
+            - text: Para más información visite nuestra
+            - link "Política de cookies (Opens in a new window)" [ref=e13] [cursor=pointer]:
+              - /url: partials/cookies.php
+              - text: Política de cookies
+              - generic [ref=e14]:
+                - generic [ref=e15]: (Opens in a new window)
+                - img [ref=e16]
+          - generic [ref=e18]:
+            - button "Acepto" [ref=e19] [cursor=pointer]
+            - button "No acepto" [ref=e20] [cursor=pointer]
+          - separator [ref=e21]
+          - heading "Cookies necesarias" [level=2] [ref=e22]
+          - paragraph [ref=e23]: Las cookies necesarias son habilitadas por defecto. La página web no podría funcionar correctamente sin este tipo de cookies y éstas sólo pueden ser desactivadas modificando las preferencias de su navegador.
+          - separator [ref=e24]
+          - link "About this tool (Opens in a new window)" [ref=e26] [cursor=pointer]:
+            - /url: https://www.civicuk.com/cookie-control
+            - text: About this tool
+            - generic [ref=e27]:
+              - generic [ref=e28]: (Opens in a new window)
+              - img [ref=e29]
+    - button "Establecer preferencias de cookies" [expanded] [ref=e31] [cursor=pointer]:
+      - img [ref=e32]
+  - banner [ref=e37]:
+    - navigation [ref=e39]:
+      - list [ref=e42]:
+        - listitem [ref=e43]:
+          - link "Proyecto" [ref=e44] [cursor=pointer]:
+            - /url: "#Proyecto"
+        - listitem [ref=e45]:
+          - link "Ubicación" [ref=e46] [cursor=pointer]:
+            - /url: "#Ubicacion"
+        - listitem [ref=e47]:
+          - link "Viviendas" [disabled] [ref=e48] [cursor=pointer]:
+            - /url: "#Tipologia"
+        - listitem [ref=e49]:
+          - link "Logo Pacifico" [ref=e50] [cursor=pointer]:
+            - /url: "#"
+            - img "Logo Pacifico" [ref=e51]
+        - listitem [ref=e52]:
+          - link "Calidades" [ref=e53] [cursor=pointer]:
+            - /url: "#Calidades"
+        - listitem [ref=e54]:
+          - link "Contacto" [disabled] [ref=e55] [cursor=pointer]:
+            - /url: "#Contacto"
+        - listitem [ref=e56]:
+          - button "Español" [ref=e57] [cursor=pointer]
+  - main [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e61]:
+        - heading "EL MEDITERRÁNEO EN PERFECTO EQUILIBRIO" [level=1] [ref=e62]:
+          - text: EL MEDITERRÁNEO
+          - text: EN PERFECTO
+          - text: EQUILIBRIO
+        - paragraph [ref=e63]: Av. Sor Teresa Prat 81, Málaga (Pacífico)
+      - generic [ref=e67]: Tu navegador no soporta video.
+    - generic [ref=e71]:
+      - heading "Vivir a los pies del Mediterráneo con la elegancia de Málaga." [level=2] [ref=e72]:
+        - text: Vivir a los pies del Mediterráneo
+        - text: con la elegancia de Málaga.
+      - paragraph [ref=e73]:
+        - text: Descubre las 19 viviendas, dos de ellas áticos con piscina privada, en un edificio contemporáneo y elegante,
+        - text: en fase avanzada de construcción. Ubicado junto a la Avda. Pacífico, una de las zonas con mayor proyección
+        - text: de Málaga y a tan sólo 200 metros del mar Mediterráneo. El equilibrio que necesitas para tu vida.
+      - link "Descargar dossier" [ref=e75] [cursor=pointer]:
+        - /url: /files/Pacifico Dossier.pdf
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - button "Slide 1" [ref=e79] [cursor=pointer]
+        - button "Slide 2" [ref=e80] [cursor=pointer]
+        - button "Slide 3" [ref=e81] [cursor=pointer]
+        - button "Slide 4" [ref=e82] [cursor=pointer]
+        - button "Slide 5" [ref=e83] [cursor=pointer]
+        - button "Slide 6" [ref=e84] [cursor=pointer]
+        - button "Slide 7" [ref=e85] [cursor=pointer]
+      - img "exterior día" [ref=e88]
+      - button "Previous" [ref=e89] [cursor=pointer]:
+        - generic [ref=e91]: Previous
+      - button "Next" [ref=e92] [cursor=pointer]:
+        - generic [ref=e94]: Next
+    - generic [ref=e95]:
+      - list [ref=e97]:
+        - listitem [ref=e98]: PLAYA MISERICORDIA-
+        - listitem [ref=e99]: PARQUE OESTE-
+        - listitem [ref=e100]: MUSEOS-
+        - listitem [ref=e101]: TERMICA-
+        - listitem [ref=e102]: Pº PACIFICO-
+        - listitem [ref=e103]: PARQUE OESTE-
+        - listitem [ref=e104]: MUSEOS-
+        - listitem [ref=e105]: TERMICA-
+        - listitem [ref=e106]: Pº PACIFICO-
+        - listitem [ref=e107]: PLAYA MISERICORDIA-
+      - list [ref=e109]:
+        - listitem [ref=e110]: PLAYA MISERICORDIA-
+        - listitem [ref=e111]: PARQUE OESTE-
+        - listitem [ref=e112]: MUSEOS-
+        - listitem [ref=e113]: TERMICA-
+        - listitem [ref=e114]: Pº PACIFICO-
+        - listitem [ref=e115]: PARQUE OESTE-
+        - listitem [ref=e116]: MUSEOS-
+        - listitem [ref=e117]: TERMICA-
+        - listitem [ref=e118]: Pº PACIFICO-
+        - listitem [ref=e119]: PLAYA MISERICORDIA-
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - heading "UNA VIDA EN PERFECTO EQUILIBRIO" [level=2] [ref=e124]:
+          - text: UNA VIDA EN
+          - text: PERFECTO
+          - text: EQUILIBRIO
+        - paragraph [ref=e125]:
+          - text: Disfruta de una de las zonas residenciales de Málaga con mayor crecimiento
+          - text: en infraestructuras, museos y equipamientos. Rodeada de numerosos
+          - text: parques, junto a la playa y a menos de 15 minutos del Centro de Málaga, el
+          - text: residencial Pacífico nos ofrece la posibilidad de disfrutar el estilo de vida
+          - text: Mediterráneo en uno de los lugares con mayor apogeo cultural y de ocio de la
+          - text: ciudad.
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - button "Slide 1" [ref=e129] [cursor=pointer]
+          - button "Slide 2" [ref=e130] [cursor=pointer]
+          - button "Slide 3" [ref=e131] [cursor=pointer]
+          - button "Slide 4" [ref=e132] [cursor=pointer]
+          - button "Slide 5" [ref=e133] [cursor=pointer]
+          - button "Slide 6" [ref=e134] [cursor=pointer]
+          - button "Slide 7" [ref=e135] [cursor=pointer]
+          - button "Slide 9" [ref=e136] [cursor=pointer]
+          - button "Slide 10" [ref=e137] [cursor=pointer]
+          - button "Slide 11" [ref=e138] [cursor=pointer]
+        - img "Estación de tren" [ref=e141]
+        - button "Anterior" [ref=e142] [cursor=pointer]:
+          - generic [ref=e144]: Anterior
+        - button "Siguiente" [ref=e145] [cursor=pointer]:
+          - generic [ref=e147]: Siguiente
+    - generic [ref=e149]:
+      - generic:
+        - button [ref=e150] [cursor=pointer]:
+          - img [ref=e151]
+        - generic [ref=e154]:
+          - link "PACÍFICO RESIDENCES Av. de Sor Teresa Prat, 81" [ref=e158] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/Rbj9th95toqptuoX6
+            - heading "PACÍFICO RESIDENCES" [level=6] [ref=e159]
+            - paragraph [ref=e160]: Av. de Sor Teresa Prat, 81
+          - button "Close popup" [ref=e162] [cursor=pointer]: ×
+    - generic [ref=e164]:
+      - heading "TIPOLOGIA DE VIVIENDAS" [level=1] [ref=e165]
+      - generic [ref=e166]:
+        - table [ref=e167]:
+          - rowgroup [ref=e168]:
+            - row "APARTAMENTO TIPOLOGÍA S. CONT. + ZC TRASTERO GARAJE PRECIO PLANO" [ref=e169]:
+              - columnheader "APARTAMENTO" [ref=e170]
+              - columnheader "TIPOLOGÍA" [ref=e171]
+              - columnheader "S. CONT. + ZC" [ref=e172]
+              - columnheader "TRASTERO" [ref=e173]
+              - columnheader "GARAJE" [ref=e174]
+              - columnheader "PRECIO" [ref=e175]
+              - columnheader "PLANO" [ref=e176]
+          - rowgroup [ref=e177]:
+            - row "Bajo A 2 Dormitorios 91,36 m2 - - 450.000 € Ver →" [ref=e178]:
+              - cell "Bajo A" [ref=e179]
+              - cell "2 Dormitorios" [ref=e180]
+              - cell "91,36 m2" [ref=e181]
+              - cell "-" [ref=e182]
+              - cell "-" [ref=e183]
+              - cell "450.000 €" [ref=e184]
+              - cell "Ver →" [ref=e185]:
+                - link "Ver →" [ref=e186] [cursor=pointer]:
+                  - /url: /files/Planos/0A.pdf
+            - row "Bajo B 2 Dormitorios 93,47 m2 - - - Reservado" [ref=e187]:
+              - cell "Bajo B" [ref=e188]
+              - cell "2 Dormitorios" [ref=e189]
+              - cell "93,47 m2" [ref=e190]
+              - cell "-" [ref=e191]
+              - cell "-" [ref=e192]
+              - cell "-" [ref=e193]
+              - cell "Reservado" [ref=e194]
+            - row "1A 1 Dormitorio 57,34 m2 Trastero 12 - - Reservado" [ref=e195]:
+              - cell "1A" [ref=e196]
+              - cell "1 Dormitorio" [ref=e197]
+              - cell "57,34 m2" [ref=e198]
+              - cell "Trastero 12" [ref=e199]
+              - cell "-" [ref=e200]
+              - cell "-" [ref=e201]
+              - cell "Reservado" [ref=e202]
+            - row "1B 2 Dormitorios 76,02 m2 Trastero 16 - - Reservado" [ref=e203]:
+              - cell "1B" [ref=e204]
+              - cell "2 Dormitorios" [ref=e205]
+              - cell "76,02 m2" [ref=e206]
+              - cell "Trastero 16" [ref=e207]
+              - cell "-" [ref=e208]
+              - cell "-" [ref=e209]
+              - cell "Reservado" [ref=e210]
+            - row "1C 1 Dormitorio 55,22 m2 Trastero 4 - - Reservado" [ref=e211]:
+              - cell "1C" [ref=e212]
+              - cell "1 Dormitorio" [ref=e213]
+              - cell "55,22 m2" [ref=e214]
+              - cell "Trastero 4" [ref=e215]
+              - cell "-" [ref=e216]
+              - cell "-" [ref=e217]
+              - cell "Reservado" [ref=e218]
+            - row "1D 2 Dormitorios 93,96 m2 Trastero 13 S2 - Plaza 1 595.000 € Ver →" [ref=e219]:
+              - cell "1D" [ref=e220]
+              - cell "2 Dormitorios" [ref=e221]
+              - cell "93,96 m2" [ref=e222]
+              - cell "Trastero 13" [ref=e223]
+              - cell "S2 - Plaza 1" [ref=e224]
+              - cell "595.000 €" [ref=e225]
+              - cell "Ver →" [ref=e226]:
+                - link "Ver →" [ref=e227] [cursor=pointer]:
+                  - /url: /files/Planos/1D.pdf
+            - row "2C 1 Dormitorio 55,22 m2 Trastero 3 - - Reservado" [ref=e228]:
+              - cell "2C" [ref=e229]
+              - cell "1 Dormitorio" [ref=e230]
+              - cell "55,22 m2" [ref=e231]
+              - cell "Trastero 3" [ref=e232]
+              - cell "-" [ref=e233]
+              - cell "-" [ref=e234]
+              - cell "Reservado" [ref=e235]
+            - row "2D 2 Dormitorios 88,03 m2 Trastero 15 S2 - Plaza 4 550.000 € Ver →" [ref=e236]:
+              - cell "2D" [ref=e237]
+              - cell "2 Dormitorios" [ref=e238]
+              - cell "88,03 m2" [ref=e239]
+              - cell "Trastero 15" [ref=e240]
+              - cell "S2 - Plaza 4" [ref=e241]
+              - cell "550.000 €" [ref=e242]
+              - cell "Ver →" [ref=e243]:
+                - link "Ver →" [ref=e244] [cursor=pointer]:
+                  - /url: /files/Planos/2D.pdf
+        - link "Ver más viviendas" [ref=e246] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=e248]:
+      - paragraph [ref=e249]:
+        - text: Espacios llenos de
+        - text: luz diseñados al
+        - text: detalle
+      - paragraph [ref=e250]:
+        - text: Un diseño contemporáneo donde se mezcla la elegancia y lo funcional, optimizando los
+        - text: espacios al mínimo detalle y creando estancias llenas de luz. Con 2 exclusivos áticos con
+        - text: piscina privada y terraza ajardinada que culminan este moderno residencial.
+      - link "Descarga Memoria de Calidades" [ref=e251] [cursor=pointer]:
+        - /url: /files/PacificoMC.pdf
+    - generic [ref=e253]:
+      - heading "¡Hablemos!" [level=1] [ref=e254]
+      - generic [ref=e255]:
+        - generic [ref=e256]:
+          - heading "Oficina de Ventas" [level=1] [ref=e257]
+          - paragraph [ref=e258]:
+            - strong [ref=e259]: "Dirección:"
+            - text: Calle Marqués de Larios 6, 4º1, 29005, Málaga.
+          - paragraph [ref=e260]:
+            - strong [ref=e261]: "Email:"
+            - link "comercial@longlinecapital.es" [ref=e262] [cursor=pointer]:
+              - /url: mailto:comercial@longlinecapital.es
+          - paragraph [ref=e263]:
+            - strong [ref=e264]: "Teléfono:"
+            - link "744 78 47 34" [ref=e265] [cursor=pointer]:
+              - /url: tel:744784734
+          - paragraph [ref=e266]:
+            - strong [ref=e267]: "Horario:"
+            - text: Atención con cita previa
+        - generic [ref=e268]:
+          - heading "Escríbenos para cualquier duda" [level=4] [ref=e269]
+          - generic [ref=e270]:
+            - textbox "Escribe tu nombre" [ref=e272]
+            - textbox "Escribe tu email" [ref=e274]
+            - textbox "Escribe tu teléfono" [ref=e276]
+            - textbox "Escribe tu mensaje" [ref=e278]
+            - generic [ref=e279]:
+              - checkbox "He leído y acepto la Política de Privacidad." [ref=e280]
+              - generic [ref=e281]:
+                - text: He leído y acepto la
+                - link "Política de Privacidad" [ref=e282] [cursor=pointer]:
+                  - /url: "#"
+                - text: .
+            - button "¡Contacta ahora!" [ref=e283] [cursor=pointer]
+  - contentinfo [ref=e284]:
+    - paragraph [ref=e285]: Promueve y vende
+    - img "Logo Longline" [ref=e286]
+    - separator [ref=e287]
+    - generic [ref=e288]:
+      - text: © 2025 Longline. Todos los derechos reservados.
+      - link "Aviso Legal" [ref=e289] [cursor=pointer]:
+        - /url: "#"
+      - link "Política de Privacidad" [ref=e290] [cursor=pointer]:
+        - /url: "#"
+      - link "Cookies" [ref=e291] [cursor=pointer]:
+        - /url: "#"

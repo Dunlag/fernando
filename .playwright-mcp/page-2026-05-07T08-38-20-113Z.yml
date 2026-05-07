@@ -1,0 +1,30 @@
+- generic [ref=e2]:
+  - heading "Cards Animadas" [level=1] [ref=e3]
+  - paragraph [ref=e4]: Tarjetas con efectos hover modernos
+  - generic [ref=e5]:
+    - generic [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: 🎨
+      - heading "Diseño" [level=3] [ref=e8]
+      - paragraph [ref=e9]: Interfaces modernas y atractivas que capturan la atención del usuario.
+    - generic [ref=e10] [cursor=pointer]:
+      - generic [ref=e11]: 💻
+      - heading "Desarrollo" [level=3] [ref=e12]
+      - paragraph [ref=e13]: Código limpio y eficiente siguiendo las mejores prácticas.
+    - generic [ref=e14] [cursor=pointer]:
+      - generic [ref=e15]: 🚀
+      - heading "Performance" [level=3] [ref=e16]
+      - paragraph [ref=e17]: Optimización para tiempos de carga rápidos y experiencia fluida.
+    - generic [ref=e18] [cursor=pointer]:
+      - generic [ref=e19]: 📱
+      - heading "Responsive" [level=3] [ref=e20]
+      - paragraph [ref=e21]: Adaptable a cualquier dispositivo y tamaño de pantalla.
+    - generic [ref=e22] [cursor=pointer]:
+      - generic [ref=e23]: ✨
+      - heading "Animaciones" [level=3] [ref=e24]
+      - paragraph [ref=e25]: Transiciones suaves que mejoran la experiencia del usuario.
+    - generic [ref=e26] [cursor=pointer]:
+      - generic [ref=e27]: 🎯
+      - heading "Precisión" [level=3] [ref=e28]
+      - paragraph [ref=e29]: Atención al detalle en cada elemento de la interfaz.
+  - link "← Volver a Proyectos" [ref=e31] [cursor=pointer]:
+    - /url: ../../projects/
