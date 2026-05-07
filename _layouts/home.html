@@ -49,11 +49,12 @@ layout: default
             {% when 'avignon' %}{% assign icon = 'villa' %}
             {% when 'puerto-narixa' %}{% assign icon = 'sailing' %}
             {% when 'landing-pacifico' %}{% assign icon = 'rocket_launch' %}
+            {% when 'umbro-iberia' %}{% assign icon = 'storefront' %}
             {% else %}{% assign icon = 'code' %}
         {% endcase %}
         <article class="tile {{ accent_class }}">
             <div class="tile-head">
-                <span class="timestamp">{{ project.date | date: "%Y.%m" }}</span>
+                <span class="timestamp">{% if project.display_date %}{{ project.display_date }}{% else %}{{ project.date | date: "%Y.%m" }}{% endif %}</span>
                 <span class="material-symbols-outlined">{{ icon }}</span>
             </div>
             <h3 class="tile-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
