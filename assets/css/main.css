@@ -1123,3 +1123,12 @@ a:hover {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     user-select: none;
 }
+
+/* ============================================================
+   VIEW TRANSITIONS — theme curtain wipe
+   ============================================================ */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}

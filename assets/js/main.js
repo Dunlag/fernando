@@ -17,9 +17,26 @@
         toggle.addEventListener('click', function() {
             var current = root.getAttribute('data-theme') || 'light';
             var next = current === 'dark' ? 'light' : 'dark';
-            root.setAttribute('data-theme', next);
-            try { localStorage.setItem('theme', next); } catch (e) {}
-            syncIcon();
+
+            function applyTheme() {
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncIcon();
+            }
+
+            var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduced || !document.startViewTransition) {
+                applyTheme();
+                return;
+            }
+
+            var transition = document.startViewTransition(applyTheme);
+            transition.ready.then(function() {
+                document.documentElement.animate(
+                    { clipPath: ['inset(0 0 100% 0)', 'inset(0)'] },
+                    { pseudoElement: '::view-transition-new(root)', duration: 600, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
+                );
+            });
         });
     }
 
