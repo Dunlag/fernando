@@ -1,31 +1,31 @@
 ---
 layout: page
 title: "Two Black Cats — Morty & Negrita"
-description: "Registro documental de dos gatos bombay en Málaga desde 2018. Fotografías de baja iluminación, notas y un cortometraje sobre la convivencia con Morty y Negrita."
+description: "Sitio personal dedicado a dos gatos bombay que llevan desde 2018 siendo mejores que casi todo. Fotos, notas y pequeños rituales de convivencia."
 technologies: "HTML5, CSS3, JavaScript"
 date: 2026-05-28
 github: "https://github.com/Dunlag/Two-Black-Cats"
 ---
 
-## El registro diario de dos gatos bombay
+## Un sitio para dos gatos que se lo merecen
 
-**Two Black Cats** documenta la vida de Morty y Negrita — dos gatos bombay en Málaga desde 2018 — a través de fotografía nocturna, notas y un cortometraje. No es una marca ni un producto: es un archivo personal sobre la convivencia.
+No es un proyecto de cliente ni un experimento técnico. Es un archivo personal sobre Morty y Negrita — dos bombays que viven conmigo en Málaga desde 2018.
 
 > *"We don't own them — we share the floor."*
 
-### Los protagonistas
+El sitio recoge fotos, notas y pequeños rituales organizados en torno a cada una de ellas y a lo que forman juntas. Bilingüe, porque ellas tampoco entienden de idiomas.
 
-| | Morty | Negrita |
-|---|---|---|
-| **Carácter** | Silencioso, observador | Vocal, traviesa |
-| **Rasgo visual** | Ojos ámbar | Silueta pura |
-| **Idiomas** | Uno | Tres |
+### Morty. El silencio con ojos ámbar
 
-### Estructura del sitio
+Tres kilos y medio de diplomacia. Entra a un cuarto y la temperatura baja dos grados — en el buen sentido. Mirando fijamente algo que no estás viendo. Paciente como el mármol.
 
-El proyecto se organiza en cuatro capítulos: una apertura, un manifiesto con la filosofía del proyecto, los perfiles individuales de cada gato y una sección final que explora su relación.
+### Negrita. El ruido bueno
 
-La estética se apoya en fotografía nocturna y retratos de baja luz — ojos ámbar sobre oscuridad, siluetas en interiores domésticos — coherente con la naturaleza crepuscular de los propios sujetos.
+Habla. Mucho. En tres idiomas. Reconoce su nombre, lo niega siempre. Roba calcetines como si fueran ofrendas. Duerme con la lengua afuera. *Velvet earthquake.*
+
+### Juntas
+
+A veces son una sola sombra con cuatro orejas.
 
 ---
 
