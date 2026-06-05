@@ -284,23 +284,32 @@ h1,h2,h3,h4{hyphens:none;-webkit-hyphens:none;word-break:normal;font-family:var(
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s var(--ease-snap),transform .7s var(--ease-snap);}
 .reveal.is-in{opacity:1;transform:none;}
 
-/* ── HAMBURGER MENU ── */
-.navbar__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;padding:4px;background:var(--c-black);border:none;cursor:pointer;flex-shrink:0;}
-.navbar__burger span{display:block;height:2px;background:var(--c-yellow);transition:transform 0.22s ease,opacity 0.22s ease;}
-.navbar__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.navbar__burger.is-open span:nth-child(2){opacity:0;}
-.navbar__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* ── MOBILE MENU BUTTON ── */
+.navbar__menu-btn{display:none;font-family:var(--font-condensed);font-weight:800;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--c-black);border:2px solid var(--c-black);background:transparent;padding:0.4rem 0.7rem;cursor:pointer;line-height:1;flex-shrink:0;white-space:nowrap;transition:background 0.18s,color 0.18s;}
+.navbar__menu-btn:hover{background:var(--c-black);color:var(--c-yellow);}
 
-.navbar__mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:var(--c-yellow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;}
-.navbar__mobile-menu a{font-family:var(--font-display);font-size:clamp(3rem,15vw,5.5rem);line-height:0.9;color:var(--c-black);text-transform:uppercase;letter-spacing:-0.01em;padding:0.3em 0.4em;transition:opacity 0.18s ease;}
-.navbar__mobile-menu a:hover{opacity:0.5;}
+/* ── MOBILE NAV PANEL (slides up from bottom) ── */
+.navbar__mobile-panel{position:fixed;left:0;right:0;bottom:0;z-index:998;background:var(--c-yellow);border-top:var(--border-thick);transform:translateY(100%);transition:transform 0.42s cubic-bezier(0.25,0.46,0.45,0.94);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(1.5rem,4vw,2.5rem) clamp(1.25rem,4vw,2rem);max-height:72vh;overflow-y:auto;}
+.navbar__mobile-panel.is-open{transform:translateY(0);}
+.navbar__mobile-nav{display:flex;flex-direction:column;gap:0;}
+.navbar__mobile-nav a{font-family:var(--font-display);font-size:clamp(2.8rem,13vw,4.5rem);line-height:0.9;color:var(--c-black);text-transform:uppercase;letter-spacing:-0.01em;padding:0.18em 0;border-bottom:1px solid rgba(13,13,13,0.15);transition:opacity 0.18s ease;}
+.navbar__mobile-nav a:first-child{border-top:1px solid rgba(13,13,13,0.15);}
+.navbar__mobile-nav a:hover{opacity:0.5;}
+.navbar__mobile-foot{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.25rem;}
+.navbar__mobile-foot a,.navbar__mobile-foot span{font-family:var(--font-condensed);font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-black);opacity:0.6;display:block;}
+.navbar__mobile-foot a{opacity:1;}
+.navbar__mobile-socials{display:flex;gap:1.2rem;margin-top:0.4rem;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){.hero__bottom{grid-template-columns:1fr clamp(220px,32vw,360px);}}
-@media(max-width:1080px){.navbar__nav{display:none;}.navbar__burger{display:flex;}}
+@media(max-width:1080px){
+  .navbar__nav{display:none;}
+  .navbar__cta--desktop{display:none;}
+  .navbar__menu-btn{display:inline-flex;}
+}
 @media(max-width:768px){
-  .hero{justify-content:flex-start;}
-  .hero__inner{padding-top:clamp(2rem,6vh,4rem);}
+  .hero{justify-content:flex-start;min-height:auto;}
+  .hero__inner{padding-top:1rem;padding-bottom:clamp(2.5rem,8vw,4rem);}
   .hero__bottom{grid-template-columns:1fr;}
   .work-grid{grid-template-columns:1fr 1fr;}
   .footer__info{grid-template-columns:1fr;}
@@ -309,7 +318,8 @@ h1,h2,h3,h4{hyphens:none;-webkit-hyphens:none;word-break:normal;font-family:var(
 }
 @media(max-width:480px){
   .work-grid{grid-template-columns:1fr;}
-  .hero__title{font-size:clamp(2rem,11vw,5rem);}
+  .hero__title{font-size:clamp(2.8rem,13.5vw,5rem);}
   .hero__card{display:none;}
 }
 @media(prefers-reduced-motion:reduce){.marquee-inner{animation:none;}.reveal{opacity:1;transform:none;}*{transition-duration:0.01ms!important;animation-duration:0.01ms!important;}}
+@media(prefers-reduced-motion:reduce){.navbar__mobile-panel{transition:none;}}
