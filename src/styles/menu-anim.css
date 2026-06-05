@@ -1,0 +1,17 @@
+/* menu-anim.css — overrides active only when JS hover effects are mounted.
+   Without .mm-anim (reduced-motion / no-JS), the original CSS hovers stay. */
+
+/* Navbar: the black fill + word roll replace the instant bg/colour swap. */
+.mm-anim .navbar__nav a:hover { background: transparent; color: inherit; }
+.mm-anim .navbar__nav a { isolation: isolate; }
+
+.mm-navfill {
+  position: absolute;
+  inset: 0;
+  background: var(--c-black);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Footer: drop the opacity dim — the per-letter roll is the feedback now. */
+.mm-anim .footer__top-nav a:hover { opacity: 1; color: var(--c-black); }

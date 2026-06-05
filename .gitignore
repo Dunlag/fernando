@@ -1,10 +1,18 @@
-# Jekyll & Ruby
+# Vite / Node
+node_modules/
+dist/
+*.local
+
+# Design export (not needed in repo)
+.playwright-mcp/
+porfolio-personal/
+
+# Jekyll leftovers
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
 
-# Claude AI
-.claude/
-claude.md
+# OS
+.DS_Store

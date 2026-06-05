@@ -1,0 +1,63 @@
+/* enhance.css — preloader, custom cursor, scroll progress, work-card "VER" cursor.
+   All motion respects prefers-reduced-motion (handled in enhance.js). */
+
+/* ── PRELOADER ── */
+#preloader{
+  position:fixed; inset:0; z-index:99999;
+  background:var(--c-black);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+#preloader .preloader__word{
+  font-family:var(--font-display);
+  color:var(--c-yellow);
+  font-size:clamp(3.5rem,18vw,16rem);
+  line-height:.8; letter-spacing:-.01em;
+  transform:translateY(0.1em);
+}
+#preloader .preloader__count{
+  position:absolute; right:clamp(1rem,4vw,3rem); bottom:clamp(1rem,4vw,2.5rem);
+  font-family:var(--font-condensed); font-weight:800;
+  color:var(--c-cream); font-size:clamp(2rem,7vw,5rem);
+  letter-spacing:.02em; line-height:1; font-variant-numeric:tabular-nums;
+}
+#preloader .preloader__bar{
+  position:absolute; left:0; bottom:0; height:4px; width:0%;
+  background:var(--c-yellow);
+}
+body.preloading{overflow:hidden;}
+
+/* ── SCROLL PROGRESS ── */
+#scroll-progress{
+  position:fixed; top:0; left:0; height:3px; width:0;
+  background:var(--c-black); z-index:1002; pointer-events:none;
+}
+
+/* ── CUSTOM CURSOR ── */
+html.has-cursor, html.has-cursor *{cursor:none !important;}
+.cursor-dot{
+  position:fixed; left:0; top:0; z-index:100000;
+  width:12px; height:12px; border-radius:50%;
+  background:var(--c-yellow); mix-blend-mode:difference;
+  display:flex; align-items:center; justify-content:center;
+  pointer-events:none; will-change:transform;
+  transition:width .22s var(--ease-snap), height .22s var(--ease-snap),
+             background .18s ease, border-radius .18s ease, padding .22s var(--ease-snap);
+}
+.cursor-dot--big{width:46px; height:46px;}
+.cursor-dot--down{transform-box:fill-box;}
+.cursor-dot__label{
+  font-family:var(--font-condensed); font-weight:800;
+  font-size:.82rem; letter-spacing:.14em; text-transform:uppercase;
+  white-space:nowrap; opacity:0; transform:scale(.6);
+  transition:opacity .18s ease, transform .22s var(--ease-snap);
+}
+.cursor-dot--view{
+  width:auto; height:auto; padding:.62rem 1rem; border-radius:0;
+  background:var(--c-black) !important; mix-blend-mode:normal !important;
+}
+.cursor-dot--view .cursor-dot__label{opacity:1; transform:scale(1); color:var(--c-yellow);}
+
+@media (max-width:768px){
+  .cursor-dot, #scroll-progress{display:none;}
+}

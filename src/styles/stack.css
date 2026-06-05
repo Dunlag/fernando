@@ -1,0 +1,152 @@
+/* stack.css — STACK / toolbox section. Black surface, bordered tech tiles that
+   invert to the accent on hover. Tiles enter staggered on scroll. */
+
+.section-stack{
+  background:var(--c-black); color:var(--c-cream);
+  padding:var(--space-section-v) var(--space-section-h);
+  border-bottom:var(--border-thick);
+}
+
+/* header */
+.stack__header{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:1.5rem 2.5rem; flex-wrap:wrap;
+  margin-bottom:clamp(1.8rem,4vw,3.2rem);
+}
+.eyebrow--invert{opacity:1; color:var(--c-yellow); margin-bottom:0.5rem;}
+.stack__heading{color:var(--c-cream);}
+.stack__desc{
+  font-family:var(--font-condensed); font-weight:700;
+  font-size:clamp(1.05rem,2.2vw,1.45rem); line-height:1.3;
+  max-width:42ch; color:rgba(245,240,232,.78);
+}
+
+/* groups */
+.stack__groups{display:flex; flex-direction:column;}
+.stack-group{
+  display:grid; grid-template-columns:minmax(140px,18%) 1fr;
+  gap:clamp(1rem,3vw,2.5rem); align-items:start;
+  padding:clamp(1.4rem,3vw,2.2rem) 0;
+  border-top:2px solid rgba(245,240,232,.22);
+}
+.stack-group:last-child{border-bottom:2px solid rgba(245,240,232,.22);}
+.stack-group__label{
+  font-family:var(--font-condensed); font-weight:800;
+  font-size:clamp(1rem,1.6vw,1.25rem); letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--c-cream);
+  display:flex; align-items:center; gap:0.6rem; padding-top:0.35rem;
+}
+.stack-group__bullet{
+  width:0.7rem; height:0.7rem; background:var(--c-yellow);
+  flex:none; display:inline-block;
+}
+
+/* tiles */
+.stack-grid{
+  list-style:none; display:flex; flex-wrap:wrap; gap:0.7rem;
+}
+.stack-tile{
+  position:relative; overflow:hidden;
+  border:2px solid var(--c-cream);
+  padding:0.7rem 1.15rem 0.55rem;
+}
+.stack-tile::before{
+  content:''; position:absolute; inset:0; background:var(--c-yellow);
+  transform:translateY(101%); transition:transform .34s var(--ease-snap); z-index:0;
+}
+.stack-tile:hover::before{transform:translateY(0);}
+.stack-tile__name{
+  position:relative; z-index:1; white-space:nowrap;
+  font-family:var(--font-display); font-size:clamp(1.4rem,2.4vw,2rem);
+  line-height:0.9; letter-spacing:0.005em; color:var(--c-cream);
+  transition:color .2s ease;
+}
+.stack-tile:hover .stack-tile__name{color:var(--c-black);}
+
+/* staggered scroll entrance — children rise + fade in sequence.
+   The grid itself is observed (gets .is-in) but must stay visible — only the
+   tiles animate, so neutralise the base .reveal hide on the container. */
+.stack-grid.reveal{opacity:1; transform:none; transition:none;}
+.stack-grid.reveal--stagger .stack-tile{
+  opacity:0; transform:translateY(18px);
+  transition:opacity .5s var(--ease-snap), transform .5s var(--ease-snap);
+}
+.stack-grid.reveal--stagger.is-in .stack-tile{opacity:1; transform:none;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(1){transition-delay:.04s;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(2){transition-delay:.10s;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(3){transition-delay:.16s;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(4){transition-delay:.22s;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(5){transition-delay:.28s;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(6){transition-delay:.34s;}
+.stack-grid.reveal--stagger.is-in .stack-tile:nth-child(7){transition-delay:.40s;}
+
+@media(max-width:680px){
+  .stack-group{grid-template-columns:1fr; gap:0.9rem;}
+  .stack-group__label{padding-top:0;}
+}
+@media(prefers-reduced-motion:reduce){
+  .stack-grid.reveal--stagger .stack-tile{opacity:1; transform:none; transition:none;}
+}
+
+/* ============================================================
+   VARIANT B — "STICKER WALL": cream surface, tilted mixed-fill
+   stickers that straighten + pop on hover. Playful, still Mammoth.
+   ============================================================ */
+.section-stack--stickers{background:var(--c-cream); color:var(--c-black);}
+.section-stack--stickers .eyebrow--invert{color:var(--c-black); opacity:.6;}
+.section-stack--stickers .stack__heading{color:var(--c-black);}
+.section-stack--stickers .stack__desc{color:rgba(13,13,13,.72);}
+.section-stack--stickers .stack-group{border-top-color:rgba(13,13,13,.18);}
+.section-stack--stickers .stack-group:last-child{border-bottom-color:rgba(13,13,13,.18);}
+.section-stack--stickers .stack-group__label{color:var(--c-black);}
+
+/* chunkier sticker tiles, no wipe — they straighten + pop instead */
+.section-stack--stickers .stack-grid{gap:0.95rem 0.85rem; align-items:center;}
+.section-stack--stickers .stack-tile{
+  border:2.5px solid var(--c-black); overflow:visible;
+  padding:0.7rem 1.3rem 0.55rem;
+  transform:rotate(var(--rot,0deg));
+  transition:transform .26s var(--ease-snap), box-shadow .26s var(--ease-snap),
+             background .2s ease;
+}
+.section-stack--stickers .stack-tile::before{display:none;}
+.section-stack--stickers .stack-tile__name{color:inherit; transition:color .2s ease;}
+/* keep sticker text readable on hover (the solid-variant rule turns it black,
+   which is invisible on the black-fill tiles) — black tiles glow accent. */
+.section-stack--stickers .stack-grid .stack-tile:hover .stack-tile__name{color:inherit;}
+.section-stack--stickers .stack-grid .stack-tile:nth-child(3n+2):hover .stack-tile__name{color:var(--c-yellow);}
+
+/* three rotating fills cycled across the tiles */
+.section-stack--stickers .stack-tile:nth-child(3n+1){background:var(--c-yellow); color:var(--c-black);}
+.section-stack--stickers .stack-tile:nth-child(3n+2){background:var(--c-black); color:var(--c-cream);}
+.section-stack--stickers .stack-tile:nth-child(3n+3){background:var(--c-cream); color:var(--c-black);}
+
+/* varied resting tilt so the row reads like slapped-on stickers */
+.section-stack--stickers .stack-tile:nth-child(6n+1){--rot:-3.5deg;}
+.section-stack--stickers .stack-tile:nth-child(6n+2){--rot:2.5deg;}
+.section-stack--stickers .stack-tile:nth-child(6n+3){--rot:-1.5deg;}
+.section-stack--stickers .stack-tile:nth-child(6n+4){--rot:3.5deg;}
+.section-stack--stickers .stack-tile:nth-child(6n+5){--rot:-2.5deg;}
+.section-stack--stickers .stack-tile:nth-child(6n+6){--rot:1.5deg;}
+
+/* hover: straighten, pop up, hard brutalist drop shadow.
+   Scoped through .reveal--stagger.is-in so it out-specifies the reveal rule. */
+.section-stack--stickers .stack-grid .stack-tile:hover,
+.section-stack--stickers .stack-grid.reveal--stagger.is-in .stack-tile:hover{
+  transform:rotate(0deg) scale(1.09) translateY(-4px);
+  box-shadow:5px 6px 0 var(--c-black); z-index:2;
+}
+.section-stack--stickers .stack-grid .stack-tile:nth-child(3n+2):hover,
+.section-stack--stickers .stack-grid.reveal--stagger.is-in .stack-tile:nth-child(3n+2):hover{box-shadow:5px 6px 0 var(--c-yellow);}
+
+/* reveal: keep the resting tilt, fade in only (don't clobber --rot) */
+.section-stack--stickers .stack-grid.reveal--stagger .stack-tile{
+  opacity:0; transform:rotate(var(--rot,0deg)) translateY(16px);
+}
+.section-stack--stickers .stack-grid.reveal--stagger.is-in .stack-tile{
+  opacity:1; transform:rotate(var(--rot,0deg));
+}
+.section-stack--stickers .stack-tile{position:relative;}
+@media(prefers-reduced-motion:reduce){
+  .section-stack--stickers .stack-tile{transform:rotate(var(--rot,0deg))!important;}
+}
