@@ -1204,9 +1204,9 @@ h4 {
   z-index: 1;
   font-family: var(--font-condensed);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
   line-height: 1.35;
-  max-width: 30ch;
+  max-width: 28ch;
   text-align: right;
   transition: color 0.3s;
   color: var(--c-black);
