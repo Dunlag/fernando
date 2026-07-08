@@ -305,7 +305,7 @@ h4 {
 }
 .hero__bottom {
   display: grid;
-  grid-template-columns: 1fr clamp(260px, 28vw, 420px);
+  grid-template-columns: 1fr clamp(260px, 42vw, 640px);
   align-items: start;
   gap: 2rem;
 }
@@ -1757,7 +1757,7 @@ h4 {
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero__bottom {
-    grid-template-columns: 1fr clamp(220px, 32vw, 360px);
+    grid-template-columns: 1fr clamp(220px, 38vw, 420px);
   }
 }
 @media (max-width: 1080px) {
