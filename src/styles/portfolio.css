@@ -305,7 +305,7 @@ h4 {
 }
 .hero__bottom {
   display: grid;
-  grid-template-columns: 1fr clamp(260px, 42vw, 640px);
+  grid-template-columns: 1fr clamp(260px, 28vw, 420px);
   align-items: start;
   gap: 2rem;
 }
@@ -331,7 +331,8 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  align-self: end;
+  align-self: start;
+  margin-top: clamp(-9rem, -12vh, -3rem);
 }
 .hero__card-thumb {
   width: 100%;
@@ -451,7 +452,7 @@ h4 {
   overflow: hidden;
   border: var(--border-thick);
   background: var(--c-black);
-  max-width: min(100%, 1385px);
+  max-width: min(100%, 1800px);
   margin-inline: auto;
 }
 .featured__shots {
@@ -1757,7 +1758,7 @@ h4 {
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero__bottom {
-    grid-template-columns: 1fr clamp(220px, 38vw, 420px);
+    grid-template-columns: 1fr clamp(220px, 32vw, 360px);
   }
 }
 @media (max-width: 1080px) {
@@ -1783,6 +1784,9 @@ h4 {
   }
   .hero__bottom {
     grid-template-columns: 1fr;
+  }
+  .hero__card {
+    margin-top: 0;
   }
 
   /* work — reducir altura del header */

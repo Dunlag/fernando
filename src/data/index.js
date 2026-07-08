@@ -19,6 +19,10 @@ export const PROJECTS_COMMON = [
     tags: ['PrestaShop', 'Elementor', 'E-com'] },
   { id: 'barberia', ref: '07', year: 'SOON', url: null, comingSoon: true,
     tags: ['Mammoth Style', 'WIP'] },
+  { id: 'obras-elena', ref: '08', year: '2026', url: 'https://dunlag.github.io/Obras-helen/',
+    tags: ['HTML5', 'CSS3', 'JS'] },
+  { id: 'serenity-hills', ref: '09', year: '2026', url: 'https://serenityhills.proyectosavanza.com/index.php',
+    tags: ['PHP', 'HTML5', 'CSS3'] },
 ]
 
 export const EXP_COMMON = [
@@ -39,6 +43,8 @@ export const PROJECT_COPY = {
     'avignon': { title: 'Finca Avignon', desc: 'Landing de captación para promoción de apartamentos. Proyecto real en producción.' },
     'umbro': { title: 'Umbro Iberia', desc: 'Maquetación de la tienda oficial de Umbro para España y Portugal sobre PrestaShop.' },
     'barberia': { title: 'Barbería', desc: 'Landing de barbería con estética Mammoth Style. En construcción — llega pronto.' },
+    'obras-elena': { title: 'Obras de Elena', desc: 'Web personal para que Elena publique y muestre sus obras. Proyecto real, en producción.' },
+    'serenity-hills': { title: 'Serenity Hills', desc: 'Landing de captación para una promoción residencial. Proyecto real, en producción.' },
     'error404': { title: 'Error 404 Terminal', desc: 'Página 404 cyberpunk: scanlines, glitch, cursor propio y partículas con Canvas API.' },
     'buttons': { title: 'Botones & Estados', desc: 'Colección de botones y estados hover. Micro-interacciones puras en CSS.' },
     'cards': { title: 'Cards Animadas', desc: 'Tarjetas interactivas con animaciones CSS modernas. Sin frameworks.' },
@@ -54,6 +60,8 @@ export const PROJECT_COPY = {
     'avignon': { title: 'Finca Avignon', desc: 'Lead-gen landing for an apartment development. Real project in production.' },
     'umbro': { title: 'Umbro Iberia', desc: 'Front-end build of Umbro\'s official store for Spain & Portugal on PrestaShop.' },
     'barberia': { title: 'Barbershop', desc: 'Barbershop landing in Mammoth Style. Under construction — coming soon.' },
+    'obras-elena': { title: "Elena's Art", desc: "Personal site where Elena publishes and showcases her artwork. Real project, in production." },
+    'serenity-hills': { title: 'Serenity Hills', desc: 'Lead-gen landing for a residential development. Real project, in production.' },
     'error404': { title: 'Error 404 Terminal', desc: 'Cyberpunk 404 page: scanlines, glitch, custom cursor and Canvas particles.' },
     'buttons': { title: 'Buttons & States', desc: 'A set of buttons and hover states. Pure CSS micro-interactions.' },
     'cards': { title: 'Animated Cards', desc: 'Interactive cards with modern CSS animation. No frameworks.' },
