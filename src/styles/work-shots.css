@@ -44,6 +44,14 @@
 .work-card:hover .work-card__shots--3 .work-card__shot:nth-child(2){animation-delay:-0.5s;}
 .work-card:hover .work-card__shots--3 .work-card__shot:nth-child(3){animation-delay:-1s;}
 
+.work-card:hover .work-card__shots--5 .work-card__shot{
+  animation:wcShots5 2.5s infinite ease-in-out;
+}
+.work-card:hover .work-card__shots--5 .work-card__shot:nth-child(2){animation-delay:-0.5s;}
+.work-card:hover .work-card__shots--5 .work-card__shot:nth-child(3){animation-delay:-1s;}
+.work-card:hover .work-card__shots--5 .work-card__shot:nth-child(4){animation-delay:-1.5s;}
+.work-card:hover .work-card__shots--5 .work-card__shot:nth-child(5){animation-delay:-2s;}
+
 /* keep the existing subtle zoom-out on hover, now on every frame */
 .work-card:hover .work-card__shot img{transform:scale(0.82);}
 
@@ -52,13 +60,22 @@
   .work-card__shot:first-child{opacity:1;}
 }
 
-/* ── FEATURED project: same pure-CSS crossfade, ALWAYS running (no hover)
-   and a touch faster than the work cards. ── */
-.featured__shot{
-  animation:wcShots3 1.05s infinite ease-in-out;
+/* ── FEATURED project: same pure-CSS crossfade, ALWAYS running (no hover).
+   5 stacked frames, slow steady pace. ── */
+@keyframes wcShots5{
+  0%   {opacity:1;}
+  13%  {opacity:1;}
+  20%  {opacity:0;}
+  93%  {opacity:0;}
+  100% {opacity:1;}
 }
-.featured__shot:nth-child(2){animation-delay:-0.35s;}
-.featured__shot:nth-child(3){animation-delay:-0.7s;}
+.featured__shot{
+  animation:wcShots5 6s infinite ease-in-out;
+}
+.featured__shot:nth-child(2){animation-delay:-1.2s;}
+.featured__shot:nth-child(3){animation-delay:-2.4s;}
+.featured__shot:nth-child(4){animation-delay:-3.6s;}
+.featured__shot:nth-child(5){animation-delay:-4.8s;}
 
 @media(prefers-reduced-motion:reduce){
   .featured__shot{animation:none !important;}

@@ -2,13 +2,13 @@ import Rich from './Rich'
 import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
 
 function WorkShots({ p, title }) {
-  const n = p.comingSoon ? 1 : 3
+  const n = p.shots ? p.shots.length : (p.comingSoon ? 1 : 3)
   return (
     <div className={'work-card__shots work-card__shots--' + n}>
       {Array.from({ length: n }, (_, i) => (
         <div className="work-card__shot" key={i}>
           <img
-            src={'https://picsum.photos/seed/fpw-' + p.id + '-' + (i + 1) + '/800/600'}
+            src={p.shots ? p.shots[i] : 'https://picsum.photos/seed/fpw-' + p.id + '-' + (i + 1) + '/800/600'}
             alt={title + ' · screenshot ' + (i + 1)}
             loading="lazy"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}

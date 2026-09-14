@@ -1,9 +1,12 @@
 import Rich from './Rich'
 
 const SHOTS = [
-  { src: '/fernando/assets/two-black-cats.png', alt: 'Two Black Cats — screenshot 1' },
-  { src: 'https://picsum.photos/seed/fpf-2/1894/1077', alt: 'Two Black Cats — screenshot 2' },
-  { src: 'https://picsum.photos/seed/fpf-3/1894/1077', alt: 'Two Black Cats — screenshot 3' },
+  { src: '/fernando/assets/twoBlackCats/two-black-cats00.png', alt: 'Two Black Cats — screenshot 1' },
+  { src: '/fernando/assets/twoBlackCats/two-black-cats01.png', alt: 'Two Black Cats — screenshot 2' },
+  { src: '/fernando/assets/twoBlackCats/two-black-cats02.png', alt: 'Two Black Cats — screenshot 3' },
+
+  { src: '/fernando/assets/twoBlackCats/two-black-cats04.png', alt: 'Two Black Cats — screenshot 5' },
+  { src: '/fernando/assets/twoBlackCats/two-black-cats05.png', alt: 'Two Black Cats — screenshot 6' },
 ]
 
 export default function Featured({ t }) {
