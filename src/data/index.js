@@ -126,6 +126,13 @@ export const PROJECTS_COMMON = [
     year: "2026",
     url: "https://serenityhills.proyectosavanza.com/index.php",
     tags: ["PHP", "HTML5", "CSS3"],
+    shots: [
+      "/fernando/assets/serenity/serenity01.png",
+      "/fernando/assets/serenity/serenity02.png",
+      "/fernando/assets/serenity/serenity03.png",
+      "/fernando/assets/serenity/serenity04.png",
+      "/fernando/assets/serenity/serenity05.png",
+    ],
   },
 ];
 
