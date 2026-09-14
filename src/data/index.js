@@ -45,6 +45,13 @@ export const PROJECTS_COMMON = [
     year: "2025.08",
     url: "https://pacificoresidences.com/",
     tags: ["PHP", "CSS3", "JS"],
+    shots: [
+      "/fernando/assets/pacificoResidences/pacifico-residences01.png",
+      "/fernando/assets/pacificoResidences/pacifico-residences02.png",
+      "/fernando/assets/pacificoResidences/pacifico-residences03.png",
+      "/fernando/assets/pacificoResidences/pacifico-residences04.png",
+      "/fernando/assets/pacificoResidences/pacifico-residences02.png",
+    ],
   },
   {
     id: "narixa",
@@ -52,6 +59,13 @@ export const PROJECTS_COMMON = [
     year: "2025.06",
     url: "https://gardenhomes.puertonarixa.com/",
     tags: ["PHP", "HTML5", "CSS3"],
+    shots: [
+      "/fernando/assets/puertoNarixa/puerto-narixa01.png",
+      "/fernando/assets/puertoNarixa/puerto-narixa02.png",
+      "/fernando/assets/puertoNarixa/puerto-narixa03.png",
+      "/fernando/assets/puertoNarixa/puerto-narixa04.png",
+      "/fernando/assets/puertoNarixa/puerto-narixa05.png",
+    ],
   },
   {
     id: "avignon",
@@ -59,6 +73,16 @@ export const PROJECTS_COMMON = [
     year: "2025.07",
     url: "https://fincaavignon.es/",
     tags: ["PHP", "HTML5", "CSS3"],
+    shots: [
+      "/fernando/assets/fincaAvignon/finca-avignon01.png",
+      "/fernando/assets/fincaAvignon/finca-avignon02.png",
+      "/fernando/assets/fincaAvignon/finca-avignon03.png",
+      "/fernando/assets/fincaAvignon/finca-avignon04.png",
+      "/fernando/assets/fincaAvignon/finca-avignon05.png",
+      "/fernando/assets/fincaAvignon/finca-avignon06.png",
+      "/fernando/assets/fincaAvignon/finca-avignon07.png",
+      "/fernando/assets/fincaAvignon/finca-avignon08.png",
+    ],
   },
   {
     id: "umbro",
@@ -66,6 +90,13 @@ export const PROJECTS_COMMON = [
     year: "2025",
     url: "https://umbro.es/",
     tags: ["PrestaShop", "Elementor", "E-com"],
+    shots: [
+      "/fernando/assets/umbro/umbro01.png",
+      "/fernando/assets/umbro/umbro02.png",
+      "/fernando/assets/umbro/umbro03.png",
+      "/fernando/assets/umbro/umbro04.png",
+      "/fernando/assets/umbro/umbro05.png",
+    ],
   },
   {
     id: "barberia",
