@@ -115,7 +115,7 @@ export default function App() {
   return (
     <>
       <Navbar t={data} lang={lang} setLang={setLang} />
-      <Hero t={data} variant="a" />
+      <Hero t={data} lang={lang} variant="a" />
       <Featured t={data} />
       <Marquee t={data} />
       <Work t={data} lang={lang} variant="a" />

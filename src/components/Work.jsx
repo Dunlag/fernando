@@ -11,7 +11,7 @@ function WorkShots({ p, title }) {
             src={p.shots ? p.shots[i] : 'https://picsum.photos/seed/fpw-' + p.id + '-' + (i + 1) + '/800/600'}
             alt={title + ' · screenshot ' + (i + 1)}
             loading="lazy"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ width: '100%', height: '100%' }}
           />
         </div>
       ))}

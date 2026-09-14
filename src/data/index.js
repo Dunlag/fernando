@@ -38,6 +38,13 @@ export const PROJECTS_COMMON = [
     year: "2026.02",
     url: "/fernando/projects/marathon-concept/",
     tags: ["HTML5", "CSS3", "JS"],
+    shots: [
+      "/fernando/assets/marathon/marathon01.png",
+      "/fernando/assets/marathon/marathon02.png",
+      "/fernando/assets/marathon/marathon03.png",
+      "/fernando/assets/marathon/marathon04.png",
+      "/fernando/assets/marathon/marathon05.png",
+    ],
   },
   {
     id: "pacifico",
@@ -105,6 +112,13 @@ export const PROJECTS_COMMON = [
     url: null,
     comingSoon: true,
     tags: ["Mammoth Style", "WIP"],
+    shots: [
+      "/fernando/assets/barberia/barberia01.png",
+      "/fernando/assets/barberia/barberia02.png",
+      "/fernando/assets/barberia/barberia03.png",
+      "/fernando/assets/barberia/barberia04.png",
+      "/fernando/assets/barberia/barberia05.png",
+    ],
   },
   {
     id: "obras-elena",
@@ -138,34 +152,46 @@ export const PROJECTS_COMMON = [
 
 export const EXP_COMMON = [
   {
-    id: "error404",
-    badge: "Canvas",
-    stack: "Canvas · JS",
-    url: "https://dunlag.github.io/fernando/projects/error-404/",
-  },
-  {
-    id: "buttons",
-    badge: "CSS",
-    stack: "CSS · Estados",
-    url: "https://dunlag.github.io/fernando/projects/elementos-ui/",
-  },
-  {
-    id: "cards",
-    badge: "CSS",
-    stack: "CSS · Keyframes",
-    url: "https://dunlag.github.io/fernando/projects/cards-animadas/",
-  },
-  {
-    id: "forms",
+    id: "hover-dock",
     badge: "UI",
-    stack: "CSS · A11y",
-    url: "https://dunlag.github.io/fernando/projects/formularios-efectos/",
+    stack: "CSS · JS",
+    url: "https://codepen.io/Fernando-Pinilla/pen/wBoayWM",
+    thumb: "https://shots.codepen.io/username/pen/wBoayWM-512.jpg",
   },
   {
-    id: "ui",
-    badge: "Lib",
-    stack: "HTML · CSS · JS",
-    url: "https://dunlag.github.io/fernando/projects/elementos-ui/",
+    id: "bg-motion",
+    badge: "CSS",
+    stack: "CSS · Animación",
+    url: "https://codepen.io/Fernando-Pinilla/pen/WbGYavO",
+    thumb: "https://shots.codepen.io/username/pen/WbGYavO-512.jpg",
+  },
+  {
+    id: "login-scroll",
+    badge: "UI",
+    stack: "CSS · JS",
+    url: "https://codepen.io/Fernando-Pinilla/pen/myyKKzX",
+    thumb: "https://shots.codepen.io/username/pen/myyKKzX-512.jpg",
+  },
+  {
+    id: "navbar-anim",
+    badge: "CSS",
+    stack: "CSS · JS",
+    url: "https://codepen.io/Fernando-Pinilla/pen/YPXOoPO",
+    thumb: "https://shots.codepen.io/username/pen/YPXOoPO-512.jpg",
+  },
+  {
+    id: "button-anim",
+    badge: "CSS",
+    stack: "CSS",
+    url: "https://codepen.io/Fernando-Pinilla/pen/RNoZvqO",
+    thumb: "https://shots.codepen.io/username/pen/RNoZvqO-512.jpg",
+  },
+  {
+    id: "error404-pen",
+    badge: "Canvas",
+    stack: "CSS · JS",
+    url: "https://codepen.io/Fernando-Pinilla/pen/raLXxZG",
+    thumb: "https://shots.codepen.io/username/pen/raLXxZG-512.jpg",
   },
 ];
 
@@ -211,25 +237,29 @@ export const PROJECT_COPY = {
       title: "Serenity Hills",
       desc: "Landing de captación para una promoción residencial. Proyecto real, en producción.",
     },
-    error404: {
-      title: "Error 404 Terminal",
-      desc: "Página 404 cyberpunk: scanlines, glitch, cursor propio y partículas con Canvas API.",
+    "hover-dock": {
+      title: "Dock Hover",
+      desc: "Dock estilo macOS con animación de hover. Pure CSS + JS, sin frameworks.",
     },
-    buttons: {
-      title: "Botones & Estados",
-      desc: "Colección de botones y estados hover. Micro-interacciones puras en CSS.",
+    "bg-motion": {
+      title: "Fondo en Movimiento",
+      desc: "Fondo animado con movimiento continuo. Efecto CSS puro.",
     },
-    cards: {
-      title: "Cards Animadas",
-      desc: "Tarjetas interactivas con animaciones CSS modernas. Sin frameworks.",
+    "login-scroll": {
+      title: "Login con Scroll",
+      desc: "Formulario de login con transiciones de scroll. Micro-interacciones en CSS.",
     },
-    forms: {
-      title: "Etiqueta Flotante",
-      desc: "Formulario con label flotante estilo Material. Limpio y accesible.",
+    "navbar-anim": {
+      title: "Navbar Animado",
+      desc: "Menú de navegación con animación de apertura y cierre.",
     },
-    ui: {
-      title: "Elementos UI",
-      desc: "Biblioteca de componentes modernos, accesibles y personalizables.",
+    "button-anim": {
+      title: "Animación de Botón",
+      desc: "Efecto de animación sobre un botón. CSS puro.",
+    },
+    "error404-pen": {
+      title: "Error 404",
+      desc: "Página 404 animada, experimento en CodePen.",
     },
   },
   en: {
@@ -273,25 +303,29 @@ export const PROJECT_COPY = {
       title: "Serenity Hills",
       desc: "Lead-gen landing for a residential development. Real project, in production.",
     },
-    error404: {
-      title: "Error 404 Terminal",
-      desc: "Cyberpunk 404 page: scanlines, glitch, custom cursor and Canvas particles.",
+    "hover-dock": {
+      title: "Dock Hover",
+      desc: "macOS-style dock with hover animation. Pure CSS + JS, no frameworks.",
     },
-    buttons: {
-      title: "Buttons & States",
-      desc: "A set of buttons and hover states. Pure CSS micro-interactions.",
+    "bg-motion": {
+      title: "Moving Background",
+      desc: "Animated background with continuous motion. Pure CSS effect.",
     },
-    cards: {
-      title: "Animated Cards",
-      desc: "Interactive cards with modern CSS animation. No frameworks.",
+    "login-scroll": {
+      title: "Scroll Login",
+      desc: "Login form with scroll-driven transitions. CSS micro-interactions.",
     },
-    forms: {
-      title: "Floating Label",
-      desc: "Material-style floating-label form. Clean and accessible.",
+    "navbar-anim": {
+      title: "Animated Navbar",
+      desc: "Navigation menu with open/close animation.",
     },
-    ui: {
-      title: "UI Elements",
-      desc: "A library of modern, accessible, customizable components.",
+    "button-anim": {
+      title: "Button Animation",
+      desc: "Animated effect on a button. Pure CSS.",
+    },
+    "error404-pen": {
+      title: "Error 404",
+      desc: "Animated 404 page, CodePen experiment.",
     },
   },
 };

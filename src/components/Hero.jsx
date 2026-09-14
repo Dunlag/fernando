@@ -1,6 +1,10 @@
 import Rich from './Rich'
+import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
 
-export default function Hero({ t, variant = 'a' }) {
+const HERO_SHOTS = PROJECTS_COMMON.filter(p => p.shots && p.shots.length)
+
+export default function Hero({ t, lang, variant = 'a' }) {
+  const copy = PROJECT_COPY[lang]
   return (
     <header className="hero" id="top" data-variant={variant}>
       <div className="hero__inner">
@@ -18,13 +22,16 @@ export default function Hero({ t, variant = 'a' }) {
           </div>
           <div className="hero__card">
             <div className="hero__card-thumb">
-              <img
-                src="https://dunlag.github.io/Two-Black-Cats/assets/preview.jpg"
-                alt="Two Black Cats — proyecto reciente"
-                loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
+              {HERO_SHOTS.map((p) => (
+                <div className="hero__card-shot" key={p.id}>
+                  <img
+                    src={p.shots[0]}
+                    alt={copy[p.id]?.title || p.id}
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </div>
+              ))}
               <div className="hero__card-label">
                 <span className="hero__card-now"><span className="status-dot"></span>{t.hero.cardNow}</span>
                 <span className="hero__card-tag">{t.hero.cardTag}</span>

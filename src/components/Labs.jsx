@@ -18,7 +18,7 @@ export default function Labs({ t, lang }) {
             <a className="lab-tile" key={e.id} href={e.url} target="_blank" rel="noopener noreferrer" aria-label={c.title}>
               <span className="lab-tile__num">{String(i + 1).padStart(2, '0')}</span>
               <div className="lab-tile__frame">
-                <iframe src={e.url} loading="lazy" tabIndex="-1" scrolling="no" title={c.title} aria-hidden="true"></iframe>
+                <img src={e.thumb} alt={c.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="lab-tile__duo" aria-hidden="true"></div>
               <div className="lab-tile__bar">
