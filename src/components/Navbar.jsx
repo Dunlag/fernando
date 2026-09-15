@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useScrollHide } from '../hooks/useScrollHide'
 
-export default function Navbar({ t, lang, setLang }) {
+export default function Navbar({ t, lang, setLang, onOpenCv }) {
   const hidden = useScrollHide()
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
@@ -14,6 +14,7 @@ export default function Navbar({ t, lang, setLang }) {
           <li><a href="#work">{t.nav.work}</a></li>
           <li><a href="#labs">{t.nav.labs}</a></li>
           <li><a href="#about">{t.nav.about}</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenCv() }}>{t.cv.tab}</a></li>
           <li><a href="#contact">{t.nav.contact}</a></li>
         </ul>
         <div className="navbar__right">
@@ -38,6 +39,7 @@ export default function Navbar({ t, lang, setLang }) {
           <a href="#work" onClick={close}>{t.nav.work}</a>
           <a href="#labs" onClick={close}>{t.nav.labs}</a>
           <a href="#about" onClick={close}>{t.nav.about}</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); close(); onOpenCv() }}>{t.cv.tab}</a>
           <a href="#contact" onClick={close}>{t.nav.contact}</a>
         </nav>
         <div className="navbar__mobile-foot">

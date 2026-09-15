@@ -5,12 +5,15 @@ const fine = window.matchMedia('(pointer:fine)').matches
 let heroDone = false
 
 /* ---------- PRELOADER ---------- */
+const PRELOADER_ROLES = ['GSAP · CANVAS', 'REACT · TYPESCRIPT', 'FRONTEND DEVELOPER']
+
 function runPreloader(onDone) {
   const pre = document.getElementById('preloader')
   if (!pre) { onDone(); return }
   document.body.classList.add('preloading')
   const countEl = pre.querySelector('.preloader__count')
   const barEl = pre.querySelector('.preloader__bar')
+  const roleEl = pre.querySelector('.preloader__role')
 
   function finish() {
     document.body.classList.remove('preloading')
@@ -24,10 +27,12 @@ function runPreloader(onDone) {
   if (reduce) {
     if (countEl) countEl.textContent = '100'
     if (barEl) barEl.style.width = '100%'
+    if (roleEl) roleEl.textContent = PRELOADER_ROLES[PRELOADER_ROLES.length - 1]
     setTimeout(finish, 250)
     return
   }
 
+  let roleIdx = 0
   const obj = { v: 0 }
   gsap.to(obj, {
     v: 100, duration: 1.5, ease: 'power2.inOut',
@@ -35,6 +40,17 @@ function runPreloader(onDone) {
       const n = Math.round(obj.v)
       if (countEl) countEl.textContent = String(n).padStart(3, '0')
       if (barEl) barEl.style.width = n + '%'
+      const i = Math.min(PRELOADER_ROLES.length - 1, Math.floor(n / 34))
+      if (roleEl && i !== roleIdx) {
+        roleIdx = i
+        gsap.to(roleEl, {
+          opacity: 0, duration: 0.12,
+          onComplete: () => {
+            roleEl.textContent = PRELOADER_ROLES[i]
+            gsap.to(roleEl, { opacity: 1, duration: 0.18 })
+          },
+        })
+      }
     },
     onComplete: finish,
   })

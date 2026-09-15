@@ -3,6 +3,8 @@ import './styles/menu-anim.css'
 import './styles/enhance.css'
 import './styles/stack.css'
 import './styles/work-shots.css'
+import './styles/cv-tab.css'
+import './styles/cv-modal.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'

@@ -1,8 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLang } from './hooks/useLang'
 import { useFitText } from './hooks/useFitText'
 import { DATA, ACCENTS } from './data/index'
 import Navbar from './components/Navbar'
+import CvTab from './components/CvTab'
+import CvModal from './components/CvModal'
 import Hero from './components/Hero'
 import Featured from './components/Featured'
 import Marquee from './components/Marquee'
@@ -17,6 +19,9 @@ import Footer from './components/Footer'
 export default function App() {
   const [lang, setLang] = useLang()
   const data = DATA[lang]
+  const [cvOpen, setCvOpen] = useState(false)
+  const cvTabRef = useRef(null)
+  const openCv = () => setCvOpen(true)
 
   // Random accent on mount — never repeat the previous one
   useEffect(() => {
@@ -75,9 +80,9 @@ export default function App() {
     window.__lang = lang
     if (window.Enhance) window.Enhance.refresh(lang)
     if (!window.MenuAnims) return
-    const navTexts = [data.nav.work, data.nav.labs, data.nav.about, data.nav.contact]
+    const navTexts = [data.nav.work, data.nav.labs, data.nav.about, data.cv.tab, data.nav.contact]
     const f = data.footer.nav
-    const footerTexts = [f.work, f.labs, f.about, f.contact]
+    const footerTexts = [f.work, f.labs, f.about, data.cv.tab, f.contact]
     const id = requestAnimationFrame(() => window.MenuAnims.init(navTexts, footerTexts))
     if (document.fonts?.ready) document.fonts.ready.then(() => window.MenuAnims.init(navTexts, footerTexts))
     return () => { cancelAnimationFrame(id); window.MenuAnims.destroy() }
@@ -114,7 +119,9 @@ export default function App() {
 
   return (
     <>
-      <Navbar t={data} lang={lang} setLang={setLang} />
+      <Navbar t={data} lang={lang} setLang={setLang} onOpenCv={openCv} />
+      <CvTab t={data} ref={cvTabRef} onOpenCv={openCv} />
+      <CvModal t={data} open={cvOpen} onClose={() => setCvOpen(false)} originRef={cvTabRef} />
       <Hero t={data} lang={lang} variant="a" />
       <Featured t={data} />
       <Marquee t={data} />
@@ -124,7 +131,7 @@ export default function App() {
       <Stack t={data} styleVariant="stickers" />
       <About t={data} />
       <Cta t={data} />
-      <Footer t={data} />
+      <Footer t={data} onOpenCv={openCv} />
     </>
   )
 }

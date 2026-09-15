@@ -5,7 +5,7 @@
 #preloader{
   position:fixed; inset:0; z-index:99999;
   background:var(--c-black);
-  display:flex; align-items:center; justify-content:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
   overflow:hidden;
 }
 #preloader .preloader__word{
@@ -14,6 +14,13 @@
   font-size:clamp(3.5rem,18vw,16rem);
   line-height:.8; letter-spacing:-.01em;
   transform:translateY(0.1em);
+}
+#preloader .preloader__role{
+  font-family:var(--font-condensed); font-weight:800;
+  color:var(--c-cream); text-transform:uppercase;
+  font-size:clamp(1.5rem,6vw,6rem); letter-spacing:.02em;
+  white-space:nowrap; max-width:94vw;
+  margin-top:.9rem;
 }
 #preloader .preloader__count{
   position:absolute; right:clamp(1rem,4vw,3rem); bottom:clamp(1rem,4vw,2.5rem);

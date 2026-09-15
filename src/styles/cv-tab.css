@@ -1,0 +1,87 @@
+/* cv-tab.css — floating "CV" bookmark tab, fixed to the right edge */
+
+.cv-tab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  background: var(--c-yellow);
+  color: var(--c-black);
+  border: var(--border-thick);
+  border-right: none;
+  text-decoration: none;
+  padding: 1rem 0.55rem;
+  cursor: pointer;
+  appearance: none;
+  transition:
+    box-shadow 0.2s var(--ease-snap),
+    transform 0.2s var(--ease-snap);
+}
+.cv-tab:hover,
+.cv-tab:focus-visible {
+  transform: translateY(-50%) translateX(-4px);
+  box-shadow: -6px 6px 0 var(--c-blue);
+}
+.cv-tab__collapsed {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.04em;
+}
+.cv-tab__expanded {
+  font-family: var(--font-condensed);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-width 0.28s var(--ease-snap),
+    opacity 0.18s ease,
+    margin 0.28s var(--ease-snap);
+}
+.cv-tab:hover .cv-tab__expanded,
+.cv-tab:focus-visible .cv-tab__expanded {
+  max-width: 12rem;
+  opacity: 1;
+  margin-right: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .cv-tab {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    transform: none;
+    padding: 0.6rem 0.8rem;
+    border-right: var(--border-thick);
+  }
+  .cv-tab__collapsed {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 1rem;
+  }
+  .cv-tab__expanded {
+    display: none;
+  }
+  .cv-tab:hover,
+  .cv-tab:active {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--c-blue);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-tab,
+  .cv-tab__expanded {
+    transition: none;
+  }
+}

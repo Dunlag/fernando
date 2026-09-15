@@ -1,4 +1,4 @@
-export default function Footer({ t }) {
+export default function Footer({ t, onOpenCv }) {
   const f = t.footer
   return (
     <footer className="footer">
@@ -7,6 +7,7 @@ export default function Footer({ t }) {
           <li><a href="#work">{f.nav.work}</a></li>
           <li><a href="#labs">{f.nav.labs}</a></li>
           <li><a href="#about">{f.nav.about}</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenCv() }}>{t.cv.tab}</a></li>
           <li><a href="#contact">{f.nav.contact}</a></li>
         </ul>
       </div>

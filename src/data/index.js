@@ -377,6 +377,7 @@ export const DATA = {
       contact: "Contacto",
     },
     cta: "Contacto",
+    cv: { tab: "CV", expanded: "Descargar CV" },
     hero: {
       eyebrow: "↘ Frontend Developer · Málaga, ES",
       title: [
@@ -514,6 +515,7 @@ export const DATA = {
     dir: "EN",
     nav: { work: "Work", labs: "Labs", about: "About", contact: "Contact" },
     cta: "Contact",
+    cv: { tab: "CV", expanded: "Download CV" },
     hero: {
       eyebrow: "↘ Frontend Developer · Málaga, ES",
       title: [
