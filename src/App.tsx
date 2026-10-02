@@ -21,12 +21,12 @@ export default function App() {
   const [lang, setLang] = useLang()
   const data = DATA[lang]
   const [cvOpen, setCvOpen] = useState(false)
-  const cvTabRef = useRef(null)
+  const cvTabRef = useRef<HTMLButtonElement>(null)
   const openCv = () => setCvOpen(true)
 
   // Random accent on mount — never repeat the previous one
   useEffect(() => {
-    let last = null
+    let last: string | null = null
     try {
       last = localStorage.getItem('fp_last_accent')
     } catch {}
@@ -48,10 +48,10 @@ export default function App() {
       { zone: '.work-header', el: '.work-header__text', max: 24 },
     ]
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const cleanups = []
+    const cleanups: (() => void)[] = []
     targets.forEach(({ zone, el, max }) => {
-      const z = document.querySelector(zone)
-      const e = document.querySelector(el)
+      const z = document.querySelector<HTMLElement>(zone)
+      const e = document.querySelector<HTMLElement>(el)
       if (!z || !e) return
       if (reduce) {
         e.style.transform = ''
@@ -60,7 +60,7 @@ export default function App() {
       e.style.transition = 'transform 0.32s ease-out'
       e.style.transformOrigin = 'center'
       e.style.willChange = 'transform'
-      const move = (ev) => {
+      const move = (ev: PointerEvent) => {
         const r = z.getBoundingClientRect()
         const px = (ev.clientX - r.left) / r.width - 0.5
         const py = (ev.clientY - r.top) / r.height - 0.5

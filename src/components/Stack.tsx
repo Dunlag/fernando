@@ -1,4 +1,7 @@
-export default function Stack({ t }) {
+import type { CSSProperties } from 'react'
+import type { Copy } from '../data/index'
+
+export default function Stack({ t }: { t: Copy }) {
   const s = t.stack
   return (
     <section className="section-stack section-stack--stickers" id="stack">
@@ -18,7 +21,7 @@ export default function Stack({ t }) {
             </div>
             <ul className="stack-grid reveal reveal--stagger">
               {g.items.map((item, i) => (
-                <li className="stack-tile" key={item} style={{ '--n': i }}>
+                <li className="stack-tile" key={item} style={{ '--n': i } as CSSProperties}>
                   <span className="stack-tile__name">{item}</span>
                 </li>
               ))}

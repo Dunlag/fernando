@@ -1,4 +1,6 @@
-export default function Marquee({ t }) {
+import type { Copy } from '../data/index'
+
+export default function Marquee({ t }: { t: Copy }) {
   const items = t.marquee
   return (
     <div className="marquee-strip" aria-hidden="true">

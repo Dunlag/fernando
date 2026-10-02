@@ -1,6 +1,6 @@
-import { SERVICES } from '../data/index'
+import { SERVICES, type Copy, type Lang } from '../data/index'
 
-export default function Services({ t, lang }) {
+export default function Services({ t, lang }: { t: Copy; lang: Lang }) {
   const items = SERVICES[lang]
   return (
     <section className="section-services" id="services">

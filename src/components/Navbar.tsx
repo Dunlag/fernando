@@ -1,8 +1,15 @@
 import { useState } from 'react'
 import { useScrollHide } from '../hooks/useScrollHide'
-import { CONTACT, CV_URL } from '../data/index'
+import { CONTACT, CV_URL, type Copy, type Lang } from '../data/index'
 
-export default function Navbar({ t, lang, setLang, onOpenCv }) {
+interface Props {
+  t: Copy
+  lang: Lang
+  setLang: (lang: Lang) => void
+  onOpenCv: () => void
+}
+
+export default function Navbar({ t, lang, setLang, onOpenCv }: Props) {
   const hidden = useScrollHide()
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)

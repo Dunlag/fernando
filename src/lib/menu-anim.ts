@@ -4,9 +4,9 @@ import { SplitText } from 'gsap/SplitText'
 gsap.registerPlugin(SplitText)
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-let cleanups = []
+let cleanups: (() => void)[] = []
 
-function buildCell(host, text, topColor, botColor) {
+function buildCell(host: HTMLElement, text: string, topColor?: string | null, botColor?: string) {
   host.textContent = ''
   host.style.position = 'relative'
   host.style.display = 'inline-block'
@@ -45,13 +45,13 @@ function buildCell(host, text, topColor, botColor) {
   return inner
 }
 
-function setupFooter(texts) {
-  const links = document.querySelectorAll('.footer__top-nav a')
+function setupFooter(texts: string[]) {
+  const links = document.querySelectorAll<HTMLElement>('.footer__top-nav a')
   links.forEach((link, i) => {
-    if (texts && texts[i] != null) link.textContent = texts[i]
+    if (texts[i] != null) link.textContent = texts[i]
     const split = new SplitText(link, { type: 'chars', charsClass: 'mm-char' })
-    const inners = []
-    split.chars.forEach((ch) => {
+    const inners: HTMLElement[] = []
+    ;(split.chars as HTMLElement[]).forEach((ch) => {
       const tx = ch.textContent
       if (!tx || tx.trim() === '') return
       inners.push(buildCell(ch, tx))
@@ -88,17 +88,17 @@ function setupFooter(texts) {
   })
 }
 
-function setupNav(texts) {
-  const links = document.querySelectorAll('.navbar__nav a')
+function setupNav(texts: string[]) {
+  const links = document.querySelectorAll<HTMLElement>('.navbar__nav a')
   links.forEach((link, i) => {
-    if (texts && texts[i] != null) link.textContent = texts[i]
+    if (texts[i] != null) link.textContent = texts[i]
     link.style.position = 'relative'
     link.style.overflow = 'hidden'
 
     const split = new SplitText(link, { type: 'words', wordsClass: 'mm-word' })
-    const inners = []
-    split.words.forEach((w) => {
-      const tx = w.textContent
+    const inners: HTMLElement[] = []
+    ;(split.words as HTMLElement[]).forEach((w) => {
+      const tx = w.textContent ?? ''
       w.style.position = 'relative'
       w.style.zIndex = '1'
       inners.push(buildCell(w, tx, null, 'var(--c-white)'))
@@ -156,7 +156,7 @@ export const MenuAnims = {
     })
     cleanups = []
   },
-  init(navTexts, footerTexts) {
+  init(navTexts: string[], footerTexts: string[]) {
     this.destroy()
     if (reduce) return
     document.documentElement.classList.add('mm-anim')

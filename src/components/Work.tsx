@@ -1,7 +1,15 @@
 import Rich from './Rich'
-import { PROJECTS_COMMON, PROJECT_COPY, CONTACT } from '../data/index'
+import {
+  PROJECTS_COMMON,
+  PROJECT_COPY,
+  CONTACT,
+  type Copy,
+  type ItemCopy,
+  type Lang,
+  type Project,
+} from '../data/index'
 
-function WorkCard({ p, copy, t }) {
+function WorkCard({ p, copy, t }: { p: Project; copy: ItemCopy; t: Copy }) {
   return (
     <article className="work-card">
       {/* stretched link: covers the card so the repo chip can be its own link (no nested <a>) */}
@@ -42,7 +50,7 @@ function WorkCard({ p, copy, t }) {
   )
 }
 
-export default function Work({ t, lang }) {
+export default function Work({ t, lang }: { t: Copy; lang: Lang }) {
   const copy = PROJECT_COPY[lang]
   return (
     <section className="section-work" id="work">
