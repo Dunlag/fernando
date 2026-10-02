@@ -20,6 +20,9 @@ export function useFitText(deps = []) {
     const id = setTimeout(run, 150)
     if (document.fonts?.ready) document.fonts.ready.then(run)
     window.addEventListener('resize', run)
-    return () => { clearTimeout(id); window.removeEventListener('resize', run) }
+    return () => {
+      clearTimeout(id)
+      window.removeEventListener('resize', run)
+    }
   }, deps) // eslint-disable-line react-hooks/exhaustive-deps
 }

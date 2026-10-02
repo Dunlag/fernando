@@ -9,8 +9,15 @@ let heroDone = false
 function runPreloader(onDone) {
   const pre = document.getElementById('preloader')
   let seen = false
-  try { seen = !!sessionStorage.getItem('fp_seen'); sessionStorage.setItem('fp_seen', '1') } catch {}
-  if (!pre || seen) { pre?.remove(); onDone(); return }
+  try {
+    seen = !!sessionStorage.getItem('fp_seen')
+    sessionStorage.setItem('fp_seen', '1')
+  } catch {}
+  if (!pre || seen) {
+    pre?.remove()
+    onDone()
+    return
+  }
   document.body.classList.add('preloading')
   const countEl = pre.querySelector('.preloader__count')
   const barEl = pre.querySelector('.preloader__bar')
@@ -19,7 +26,9 @@ function runPreloader(onDone) {
     document.body.classList.remove('preloading')
     onDone()
     gsap.to(pre, {
-      yPercent: -100, duration: 0.5, ease: 'power4.inOut',
+      yPercent: -100,
+      duration: 0.5,
+      ease: 'power4.inOut',
       onComplete: () => pre.remove(),
     })
   }
@@ -33,7 +42,9 @@ function runPreloader(onDone) {
 
   const obj = { v: 0 }
   gsap.to(obj, {
-    v: 100, duration: 0.7, ease: 'power2.inOut',
+    v: 100,
+    duration: 0.7,
+    ease: 'power2.inOut',
     onUpdate() {
       const n = Math.round(obj.v)
       if (countEl) countEl.textContent = String(n).padStart(3, '0')
@@ -57,7 +68,14 @@ function initCursor() {
   gsap.set(dot, { xPercent: -50, yPercent: -50, x: window.innerWidth / 2, y: window.innerHeight / 2 })
   const xTo = gsap.quickTo(dot, 'x', { duration: 0.13, ease: 'power3' })
   const yTo = gsap.quickTo(dot, 'y', { duration: 0.13, ease: 'power3' })
-  window.addEventListener('pointermove', (e) => { xTo(e.clientX); yTo(e.clientY) }, { passive: true })
+  window.addEventListener(
+    'pointermove',
+    (e) => {
+      xTo(e.clientX)
+      yTo(e.clientY)
+    },
+    { passive: true },
+  )
 
   const GROW = 'a,button,.lab-tile,img,input,textarea,[data-cursor]'
   document.addEventListener('pointerover', (e) => {
@@ -72,7 +90,8 @@ function initCursor() {
     }
   })
   document.addEventListener('pointerout', (e) => {
-    const t = e.target, rel = e.relatedTarget
+    const t = e.target,
+      rel = e.relatedTarget
     const card = t.closest && t.closest('.work-card')
     if (card && !(rel && card.contains(rel))) dot.classList.remove('cursor-dot--view')
     else if (t.closest && t.closest(GROW) && !(rel && rel.closest && rel.closest(GROW)))
@@ -97,7 +116,16 @@ function initProgress() {
     bar.style.width = (max > 0 ? (el.scrollTop / max) * 100 : 0) + '%'
     ticking = false
   }
-  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update) } }, { passive: true })
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(update)
+      }
+    },
+    { passive: true },
+  )
   update()
 }
 
@@ -117,7 +145,9 @@ function heroIntro(attempt = 0) {
     .from('.hero__sub', { opacity: 0, y: 22, duration: 0.55 }, '-=0.5')
     .from('.hero__buttons > *', { opacity: 0, y: 18, duration: 0.45, stagger: 0.08 }, '-=0.35')
     .from('.hero__card', { opacity: 0, y: 26, duration: 0.55 }, '-=0.5')
-    .set(['.hero__eyebrow', '.hero__title', '.hero__sub', '.hero__buttons > *', '.hero__card'], { clearProps: 'opacity,transform' })
+    .set(['.hero__eyebrow', '.hero__title', '.hero__sub', '.hero__buttons > *', '.hero__card'], {
+      clearProps: 'opacity,transform',
+    })
 }
 
 export function boot() {
