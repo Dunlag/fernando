@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
-import { useLang } from './hooks/useLang'
+import { useEffect, useRef } from 'react'
+import { useLang, useT } from './store'
 import { useFitText } from './hooks/useFitText'
-import { DATA, ACCENTS } from './data/index'
+import { ACCENTS } from './data/index'
 import { MenuAnims } from './lib/menu-anim'
 import Navbar from './components/Navbar'
 import CvTab from './components/CvTab'
@@ -18,11 +18,9 @@ import Cta from './components/Cta'
 import Footer from './components/Footer'
 
 export default function App() {
-  const [lang, setLang] = useLang()
-  const data = DATA[lang]
-  const [cvOpen, setCvOpen] = useState(false)
+  const lang = useLang()
+  const data = useT()
   const cvTabRef = useRef<HTMLButtonElement>(null)
-  const openCv = () => setCvOpen(true)
 
   // Random accent on mount — never repeat the previous one
   useEffect(() => {
@@ -119,19 +117,19 @@ export default function App() {
 
   return (
     <>
-      <Navbar t={data} lang={lang} setLang={setLang} onOpenCv={openCv} />
-      <CvTab t={data} ref={cvTabRef} onOpenCv={openCv} />
-      <CvModal t={data} open={cvOpen} onClose={() => setCvOpen(false)} originRef={cvTabRef} />
-      <Hero t={data} lang={lang} />
-      <Featured t={data} lang={lang} />
-      <Marquee t={data} />
-      <Work t={data} lang={lang} />
-      <Labs t={data} lang={lang} />
-      <Services t={data} lang={lang} />
-      <Stack t={data} />
-      <About t={data} />
-      <Cta t={data} />
-      <Footer t={data} onOpenCv={openCv} />
+      <Navbar />
+      <CvTab ref={cvTabRef} />
+      <CvModal originRef={cvTabRef} />
+      <Hero />
+      <Featured />
+      <Marquee />
+      <Work />
+      <Labs />
+      <Services />
+      <Stack />
+      <About />
+      <Cta />
+      <Footer />
     </>
   )
 }

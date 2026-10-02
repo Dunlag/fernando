@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { useScrollHide } from '../hooks/useScrollHide'
-import { CONTACT, CV_URL, type Copy, type Lang } from '../data/index'
+import { CONTACT, CV_URL } from '../data/index'
+import { useLang, useStore, useT } from '../store'
 
-interface Props {
-  t: Copy
-  lang: Lang
-  setLang: (lang: Lang) => void
-  onOpenCv: () => void
-}
-
-export default function Navbar({ t, lang, setLang, onOpenCv }: Props) {
+export default function Navbar() {
+  const t = useT()
+  const lang = useLang()
+  const setLang = useStore((s) => s.setLang)
+  const openCv = useStore((s) => s.openCv)
   const hidden = useScrollHide()
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
@@ -35,7 +33,7 @@ export default function Navbar({ t, lang, setLang, onOpenCv }: Props) {
               href={CV_URL}
               onClick={(e) => {
                 e.preventDefault()
-                onOpenCv()
+                openCv()
               }}
             >
               {t.cv.tab}
@@ -86,7 +84,7 @@ export default function Navbar({ t, lang, setLang, onOpenCv }: Props) {
             onClick={(e) => {
               e.preventDefault()
               close()
-              onOpenCv()
+              openCv()
             }}
           >
             {t.cv.tab}

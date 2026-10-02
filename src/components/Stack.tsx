@@ -1,7 +1,8 @@
 import type { CSSProperties } from 'react'
-import type { Copy } from '../data/index'
+import { useT } from '../store'
 
-export default function Stack({ t }: { t: Copy }) {
+export default function Stack() {
+  const t = useT()
   const s = t.stack
   return (
     <section className="section-stack section-stack--stickers" id="stack">

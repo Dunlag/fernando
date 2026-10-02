@@ -1,4 +1,5 @@
 import { gsap } from 'gsap'
+import { useStore } from '../store'
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 const fine = window.matchMedia('(pointer:fine)').matches
@@ -82,7 +83,7 @@ function initCursor() {
     const t = e.target
     if (!(t instanceof Element)) return
     if (t.closest('.work-card')) {
-      label.textContent = (document.documentElement.lang === 'en' ? 'VIEW' : 'VER') + ' →'
+      label.textContent = (useStore.getState().lang === 'en' ? 'VIEW' : 'VER') + ' →'
       dot.classList.add('cursor-dot--view')
       dot.classList.remove('cursor-dot--big')
     } else if (t.closest(GROW)) {

@@ -1,15 +1,9 @@
 import Rich from './Rich'
-import {
-  PROJECTS_COMMON,
-  PROJECT_COPY,
-  CONTACT,
-  type Copy,
-  type ItemCopy,
-  type Lang,
-  type Project,
-} from '../data/index'
+import { PROJECTS_COMMON, PROJECT_COPY, CONTACT, type ItemCopy, type Project } from '../data/index'
+import { useLang, useT } from '../store'
 
-function WorkCard({ p, copy, t }: { p: Project; copy: ItemCopy; t: Copy }) {
+function WorkCard({ p, copy }: { p: Project; copy: ItemCopy }) {
+  const t = useT()
   return (
     <article className="work-card">
       {/* stretched link: covers the card so the repo chip can be its own link (no nested <a>) */}
@@ -50,7 +44,9 @@ function WorkCard({ p, copy, t }: { p: Project; copy: ItemCopy; t: Copy }) {
   )
 }
 
-export default function Work({ t, lang }: { t: Copy; lang: Lang }) {
+export default function Work() {
+  const t = useT()
+  const lang = useLang()
   const copy = PROJECT_COPY[lang]
   return (
     <section className="section-work" id="work">
@@ -65,7 +61,7 @@ export default function Work({ t, lang }: { t: Copy; lang: Lang }) {
       <div className="work-grid-wrapper">
         <div className="work-grid reveal">
           {PROJECTS_COMMON.map((p) => (
-            <WorkCard key={p.id} p={p} copy={copy[p.id]} t={t} />
+            <WorkCard key={p.id} p={p} copy={copy[p.id]} />
           ))}
         </div>
         <div className="work-cta">

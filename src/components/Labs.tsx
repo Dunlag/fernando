@@ -1,6 +1,9 @@
-import { EXP_COMMON, PROJECT_COPY, type Copy, type Lang } from '../data/index'
+import { EXP_COMMON, PROJECT_COPY } from '../data/index'
+import { useLang, useT } from '../store'
 
-export default function Labs({ t, lang }: { t: Copy; lang: Lang }) {
+export default function Labs() {
+  const t = useT()
+  const lang = useLang()
   const copy = PROJECT_COPY[lang]
   return (
     <section className="section-labs" id="labs">

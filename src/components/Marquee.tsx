@@ -1,6 +1,7 @@
-import type { Copy } from '../data/index'
+import { useT } from '../store'
 
-export default function Marquee({ t }: { t: Copy }) {
+export default function Marquee() {
+  const t = useT()
   const items = t.marquee
   return (
     <div className="marquee-strip" aria-hidden="true">

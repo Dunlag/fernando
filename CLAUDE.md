@@ -12,7 +12,8 @@ This is a **personal portfolio website** built with **React 18 + TypeScript + Vi
 - **Quality**: ESLint (typescript-eslint, react-hooks), Prettier, Vitest + Testing Library; CI runs them on every pull request (`.github/workflows/ci.yml`)
 - **Styling**: Plain CSS (no Tailwind/CSS-in-JS), CSS custom properties for design tokens
 - **Animation**: GSAP (hero entrance, custom cursor, preloader, menu text splits), IntersectionObserver for scroll reveals
-- **i18n**: Hand-rolled — no library. All copy lives in one JS object keyed by language
+- **i18n**: Hand-rolled — no library. All copy lives in one typed object keyed by language
+- **State**: Zustand store (`src/store.ts`) for the two pieces of shared state: active language (persisted) and whether the CV panel is open
 - **Hosting**: GitHub Pages via `.github/workflows/deploy.yml` (`npm ci && npm run build`, deploys `dist/`)
 - **Fonts**: Google Fonts (Bebas Neue for display, Barlow / Barlow Condensed for body and labels)
 
@@ -27,7 +28,10 @@ root/
   src/
     main.tsx              # imports all CSS, mounts <App/>, calls boot() from lib/enhance
     App.tsx               # top-level layout: renders all sections in order, wires
-                           #   language state, accent color, tilt/reveal effects
+                           #   accent color, tilt/reveal effects
+    store.ts              # Zustand store: lang + setLang (persisted as fp_prefs), cvOpen +
+                           #   openCv/closeCv. Exports useStore, useLang() and useT() (copy for
+                           #   the active language). Also keeps <html lang> in sync
     data/index.ts          # single source of truth for all content and its types:
                            #   PROJECTS_COMMON (project metadata), PROJECT_COPY (es/en
                            #   title+desc per project id), DATA.es / DATA.en (all other copy),
@@ -37,7 +41,7 @@ root/
     components/            # one file per section (Navbar, Hero, Featured, Marquee, Work,
                            #   Labs, Services, Stack, About, Cta, Footer) + Rich.tsx (renders
                            #   the small inline-markup arrays used in copy, e.g. line breaks/em)
-    hooks/                  # useLang (persisted language state), useFitText, useScrollHide
+    hooks/                  # useFitText, useScrollHide
     lib/
       enhance.ts            # boot(): preloader, custom cursor, scroll progress bar, hero
                            #   entrance animation (GSAP). Preloader plays once per session
@@ -106,6 +110,7 @@ Keep the code and the repo as clean as possible, always. This is a general rule,
 
 ## Notes for Future Work
 
+- **No prop drilling for shared state**: components read copy with `useT()` and the language with `useLang()`; they do not receive `t`/`lang` as props. Keep the store small — state used by a single component stays local (`useState`).
 - **No CMS, no markdown content files** — everything textual is in `src/data/index.ts`. When editing copy, update both `es` and `en` blocks together; the `Copy` type fails the build if they drift apart.
 - **Asset paths**: never hardcode `/fernando/`. In JS build paths from `import.meta.env.BASE_URL` (see the `A` prefix in `data/index.ts`); in `index.html` write `/assets/...` and Vite prepends `base`. Changing host or domain is then one line in `vite.config.ts` (plus the absolute canonical/OG URLs in `index.html`).
 - **Testing**: `npm run lint`, `npm run typecheck` and `npm test` must pass (CI enforces them on PRs). Tests live next to the code as `*.test.ts(x)`. Visual changes still need a manual check: `npm run dev`, open `http://localhost:5173/fernando/`, both languages plus mobile width.
