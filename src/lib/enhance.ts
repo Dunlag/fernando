@@ -6,7 +6,7 @@ let heroDone = false
 
 /* ---------- PRELOADER ---------- */
 // Plays once per session; index.html adds .seen to <html> on repeat views so it never paints.
-function runPreloader(onDone) {
+function runPreloader(onDone: () => void) {
   const pre = document.getElementById('preloader')
   let seen = false
   try {
@@ -19,10 +19,10 @@ function runPreloader(onDone) {
     return
   }
   document.body.classList.add('preloading')
-  const countEl = pre.querySelector('.preloader__count')
-  const barEl = pre.querySelector('.preloader__bar')
+  const countEl = pre.querySelector<HTMLElement>('.preloader__count')
+  const barEl = pre.querySelector<HTMLElement>('.preloader__bar')
 
-  function finish() {
+  const finish = () => {
     document.body.classList.remove('preloading')
     onDone()
     gsap.to(pre, {
@@ -80,22 +80,22 @@ function initCursor() {
   const GROW = 'a,button,.lab-tile,img,input,textarea,[data-cursor]'
   document.addEventListener('pointerover', (e) => {
     const t = e.target
-    const card = t.closest && t.closest('.work-card')
-    if (card) {
+    if (!(t instanceof Element)) return
+    if (t.closest('.work-card')) {
       label.textContent = (document.documentElement.lang === 'en' ? 'VIEW' : 'VER') + ' →'
       dot.classList.add('cursor-dot--view')
       dot.classList.remove('cursor-dot--big')
-    } else if (t.closest && t.closest(GROW)) {
+    } else if (t.closest(GROW)) {
       dot.classList.add('cursor-dot--big')
     }
   })
   document.addEventListener('pointerout', (e) => {
-    const t = e.target,
-      rel = e.relatedTarget
-    const card = t.closest && t.closest('.work-card')
+    const t = e.target
+    if (!(t instanceof Element)) return
+    const rel = e.relatedTarget instanceof Element ? e.relatedTarget : null
+    const card = t.closest('.work-card')
     if (card && !(rel && card.contains(rel))) dot.classList.remove('cursor-dot--view')
-    else if (t.closest && t.closest(GROW) && !(rel && rel.closest && rel.closest(GROW)))
-      dot.classList.remove('cursor-dot--big')
+    else if (t.closest(GROW) && !rel?.closest(GROW)) dot.classList.remove('cursor-dot--big')
   })
   window.addEventListener('pointerdown', () => dot.classList.add('cursor-dot--down'))
   window.addEventListener('pointerup', () => dot.classList.remove('cursor-dot--down'))

@@ -1,11 +1,11 @@
 import Rich from './Rich'
-import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
+import { PROJECTS_COMMON, PROJECT_COPY, type Copy, type Lang } from '../data/index'
 
-const FEATURED = PROJECTS_COMMON.find((p) => p.featured)
+const FEATURED = PROJECTS_COMMON.find((p) => p.featured) ?? PROJECTS_COMMON[0]
 // Sorted by filename so the "00" frame shows first here (the Work card leads with "01")
 const SHOTS = [...FEATURED.shots].sort()
 
-export default function Featured({ t, lang }) {
+export default function Featured({ t, lang }: { t: Copy; lang: Lang }) {
   const title = PROJECT_COPY[lang][FEATURED.id].title
   return (
     <section className="featured">
@@ -30,7 +30,12 @@ export default function Featured({ t, lang }) {
               <div key={i}>{m}</div>
             ))}
           </div>
-          <a className="btn-primary featured__cta" href={FEATURED.url} target="_blank" rel="noopener noreferrer">
+          <a
+            className="btn-primary featured__cta"
+            href={FEATURED.url ?? undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t.featured.cta} <span>→</span>
           </a>
         </div>

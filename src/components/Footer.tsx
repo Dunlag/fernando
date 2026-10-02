@@ -1,6 +1,6 @@
-import { CONTACT, CV_URL } from '../data/index'
+import { CONTACT, CV_URL, type Copy } from '../data/index'
 
-export default function Footer({ t, onOpenCv }) {
+export default function Footer({ t, onOpenCv }: { t: Copy; onOpenCv: () => void }) {
   const f = t.footer
   return (
     <footer className="footer">

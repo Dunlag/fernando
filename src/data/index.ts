@@ -1,5 +1,100 @@
 // Bilingual content for Fernando's portfolio
 
+export type Lang = 'es' | 'en'
+
+/** Inline markup used in copy: plain text, a line break, or an emphasised/highlighted run. */
+export type RichPart = string | { br: true } | { em: string } | { span: string }
+
+interface ProjectBase {
+  id: string
+  ref: string
+  year: string
+  /** null while the project is not public yet (see comingSoon) */
+  url: string | null
+  repo?: string
+  featured?: boolean
+  comingSoon?: boolean
+  tags: readonly string[]
+  shots: readonly string[]
+}
+
+interface ExperimentBase {
+  id: string
+  badge: string
+  stack: string
+  url: string
+  thumb: string
+}
+
+export interface ItemCopy {
+  title: string
+  desc: string
+}
+
+export interface Service {
+  num: string
+  name: string
+  desc: string
+}
+
+export type Stat =
+  { seq: number[]; label: string } | { num: number; count: true; label: string } | { num: string; label: string }
+
+interface NavCopy {
+  work: string
+  labs: string
+  about: string
+  contact: string
+}
+
+/** Everything a language must provide. DATA.es and DATA.en are both checked against it. */
+export interface Copy {
+  dir: 'ES' | 'EN'
+  nav: NavCopy
+  cta: string
+  cv: { tab: string; expanded: string; close: string }
+  menu: { open: string; close: string }
+  mailSubject: string
+  hero: {
+    eyebrow: string
+    title: RichPart[]
+    sub: string
+    btnPrimary: string
+    btnSecondary: string
+    cardNow: string
+    cardTag: string
+    cardCaption: string
+  }
+  featured: { title: RichPart[]; meta: string[]; cta: string }
+  marquee: string[]
+  work: { heading: string; lead: RichPart[]; ctaLabel: string; soon: string; code: string }
+  labs: { eyebrow: string; heading: string; desc: string; open: string }
+  services: { eyebrow: string; heading: string; statNum: string; statLabel: string; body: string }
+  stack: { eyebrow: string; heading: string; desc: string; groups: { label: string; items: string[] }[] }
+  about: {
+    eyebrow: string
+    heading: string
+    headline: RichPart[]
+    p1: string
+    p2: string
+    collage: string[]
+    stats: Stat[]
+  }
+  contact: { kicker: string; title: RichPart[]; sub: string; btn: string }
+  footer: {
+    nav: NavCopy
+    colA: { label: string }
+    colB: { label: string; lines: string[] }
+    colC: { label: string }
+    word1: string
+    word2: string
+    graffiti1: string
+    graffiti2: string
+    legal: string
+    builtWith: string
+  }
+}
+
 const A = import.meta.env.BASE_URL + 'assets/'
 
 export const CV_URL = A + 'cv-fernando-pinilla.pdf'
@@ -12,7 +107,7 @@ export const CONTACT = {
 
 export const ACCENTS = ['#FFE000', '#FFB100', '#C6F23C', '#FF5C38', '#36E0C8']
 
-export const PROJECTS_COMMON = [
+const PROJECTS = [
   {
     id: 'two-black-cats',
     ref: '00',
@@ -162,9 +257,15 @@ export const PROJECTS_COMMON = [
       A + 'serenity/serenity05.webp',
     ],
   },
-]
+] as const satisfies readonly ProjectBase[]
 
-export const EXP_COMMON = [
+export type ProjectId = (typeof PROJECTS)[number]['id']
+export interface Project extends ProjectBase {
+  id: ProjectId
+}
+export const PROJECTS_COMMON: readonly Project[] = PROJECTS
+
+const EXPERIMENTS = [
   {
     id: 'hover-dock',
     badge: 'UI',
@@ -207,9 +308,16 @@ export const EXP_COMMON = [
     url: 'https://codepen.io/Fernando-Pinilla/pen/raLXxZG',
     thumb: 'https://shots.codepen.io/username/pen/raLXxZG-512.jpg',
   },
-]
+] as const satisfies readonly ExperimentBase[]
 
-export const PROJECT_COPY = {
+export type ExperimentId = (typeof EXPERIMENTS)[number]['id']
+export interface Experiment extends ExperimentBase {
+  id: ExperimentId
+}
+export const EXP_COMMON: readonly Experiment[] = EXPERIMENTS
+
+// Typed by id: a project or experiment missing its copy in either language does not compile
+export const PROJECT_COPY: Record<Lang, Record<ProjectId | ExperimentId, ItemCopy>> = {
   es: {
     'two-black-cats': {
       title: 'Two Black Cats',
@@ -344,7 +452,7 @@ export const PROJECT_COPY = {
   },
 }
 
-export const SERVICES = {
+export const SERVICES: Record<Lang, Service[]> = {
   es: [
     {
       num: '01',
@@ -381,7 +489,7 @@ export const SERVICES = {
   ],
 }
 
-export const DATA = {
+export const DATA: Record<Lang, Copy> = {
   es: {
     dir: 'ES',
     nav: {

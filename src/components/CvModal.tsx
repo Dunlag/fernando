@@ -1,10 +1,18 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, type RefObject } from 'react'
 import { gsap } from 'gsap'
-import { CV_URL } from '../data/index'
+import { CV_URL, type Copy } from '../data/index'
+
+interface Props {
+  t: Copy
+  open: boolean
+  onClose: () => void
+  /** element the panel grows from and shrinks back to */
+  originRef: RefObject<HTMLElement>
+}
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function originPoint(originEl, panelEl) {
+function originPoint(originEl: Element | null, panelEl: Element) {
   const p = panelEl.getBoundingClientRect()
   const o = originEl ? originEl.getBoundingClientRect() : null
   const x = o ? o.left + o.width / 2 - p.left : p.width
@@ -15,22 +23,22 @@ function originPoint(originEl, panelEl) {
   return { x, y, maxR }
 }
 
-export default function CvModal({ t, open, onClose, originRef }) {
-  const backdropRef = useRef(null)
-  const panelRef = useRef(null)
-  const closeBtnRef = useRef(null)
-  const contentRef = useRef(null)
-  const triggerRef = useRef(null)
+export default function CvModal({ t, open, onClose, originRef }: Props) {
+  const backdropRef = useRef<HTMLDivElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
+  const closeBtnRef = useRef<HTMLButtonElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     if (!open) return
-    triggerRef.current = document.activeElement
+    triggerRef.current = document.activeElement as HTMLElement | null
     const backdrop = backdropRef.current
     const panel = panelRef.current
     const content = contentRef.current
     if (!backdrop || !panel) return
 
-    const { x, y, maxR } = originPoint(originRef?.current, panel)
+    const { x, y, maxR } = originPoint(originRef.current, panel)
     const at = `${x}px ${y}px`
 
     if (reduce) {
@@ -59,7 +67,9 @@ export default function CvModal({ t, open, onClose, originRef }) {
       )
       .to(content?.children || [], { opacity: 1, y: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out' }, 0.2)
 
-    return () => tl.kill()
+    return () => {
+      tl.kill()
+    }
   }, [open, originRef])
 
   const close = useCallback(() => {
@@ -67,17 +77,17 @@ export default function CvModal({ t, open, onClose, originRef }) {
     const panel = panelRef.current
     if (!backdrop || !panel || reduce) {
       onClose()
-      triggerRef.current?.focus?.()
+      triggerRef.current?.focus()
       return
     }
-    const { x, y, maxR } = originPoint(originRef?.current, panel)
+    const { x, y, maxR } = originPoint(originRef.current, panel)
     const at = `${x}px ${y}px`
     const obj = { v: maxR }
     gsap
       .timeline({
         onComplete: () => {
           onClose()
-          triggerRef.current?.focus?.()
+          triggerRef.current?.focus()
         },
       })
       .to(backdrop, { opacity: 0, duration: 0.25, ease: 'power1.in' }, 0.1)
@@ -97,14 +107,15 @@ export default function CvModal({ t, open, onClose, originRef }) {
 
   useEffect(() => {
     if (!open) return
-    const onKey = (e) => {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close()
-      if (e.key !== 'Tab') return
+      const panel = panelRef.current
+      if (e.key !== 'Tab' || !panel) return
       // focus trap: keep Tab inside the panel
-      const items = panelRef.current.querySelectorAll('a,button')
+      const items = panel.querySelectorAll<HTMLElement>('a,button')
       const first = items[0],
         last = items[items.length - 1]
-      if (!panelRef.current.contains(document.activeElement)) {
+      if (!panel.contains(document.activeElement)) {
         e.preventDefault()
         first.focus()
       } else if (e.shiftKey && document.activeElement === first) {

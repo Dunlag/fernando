@@ -1,7 +1,7 @@
 import Rich from './Rich'
-import { CONTACT } from '../data/index'
+import { CONTACT, type Copy } from '../data/index'
 
-export default function Cta({ t }) {
+export default function Cta({ t }: { t: Copy }) {
   const mail = 'mailto:' + CONTACT.email
   return (
     <section className="section-cta" id="contact">

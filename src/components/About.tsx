@@ -1,5 +1,6 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, type RefObject } from 'react'
 import Rich from './Rich'
+import type { Copy, Stat } from '../data/index'
 
 const ABOUT = import.meta.env.BASE_URL + 'assets/about/'
 // one per .about__frame--N slot: 4:3, 3:4, 1:1
@@ -7,7 +8,7 @@ const COLLAGE = ['mesa-sonido.webp', 'escenario.webp', 'plato.webp']
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function useInView(ref, threshold = 0.45) {
+function useInView(ref: RefObject<Element>, threshold = 0.45) {
   const [inView, setInView] = useState(false)
   useEffect(() => {
     const el = ref.current
@@ -27,13 +28,14 @@ function useInView(ref, threshold = 0.45) {
   return inView
 }
 
-function CountUp({ to, locale, inView, duration }) {
+function CountUp({ to, locale, inView, duration }: { to: number; locale: string; inView: boolean; duration?: number }) {
   const [val, setVal] = useState(0)
   useEffect(() => {
     if (!inView || reduce) return
-    let raf, start
+    let raf = 0
+    let start = 0
     const dur = duration || (to > 1000 ? 1900 : 1200)
-    const step = (ts) => {
+    const step = (ts: number) => {
       if (!start) start = ts
       const p = Math.min(1, (ts - start) / dur)
       const eased = 1 - Math.pow(1 - p, 3)
@@ -43,10 +45,10 @@ function CountUp({ to, locale, inView, duration }) {
     raf = requestAnimationFrame(step)
     return () => cancelAnimationFrame(raf)
   }, [inView, to, duration])
-  return <>{(reduce ? to : val).toLocaleString(locale || 'es-ES')}</>
+  return <>{(reduce ? to : val).toLocaleString(locale)}</>
 }
 
-function SeqReveal({ seq, inView, step = 380 }) {
+function SeqReveal({ seq, inView, step = 380 }: { seq: number[]; inView: boolean; step?: number }) {
   const [shown, setShown] = useState(0)
   useEffect(() => {
     if (!inView || reduce) return
@@ -69,15 +71,15 @@ function SeqReveal({ seq, inView, step = 380 }) {
   )
 }
 
-function AnimatedStat({ s, locale }) {
-  const ref = useRef(null)
+function AnimatedStat({ s, locale }: { s: Stat; locale: string }) {
+  const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref)
   return (
-    <div className={'about__stat' + (s.seq ? ' about__stat--seq' : '')} ref={ref}>
+    <div className={'about__stat' + ('seq' in s ? ' about__stat--seq' : '')} ref={ref}>
       <div className="about__stat-num">
-        {s.seq ? (
+        {'seq' in s ? (
           <SeqReveal seq={s.seq} inView={inView} />
-        ) : s.count ? (
+        ) : 'count' in s ? (
           <CountUp to={s.num} locale={locale} inView={inView} />
         ) : (
           s.num
@@ -88,7 +90,7 @@ function AnimatedStat({ s, locale }) {
   )
 }
 
-export default function About({ t }) {
+export default function About({ t }: { t: Copy }) {
   const locale = t.dir === 'EN' ? 'en-US' : 'es-ES'
   return (
     <section className="section-about" id="about">

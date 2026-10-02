@@ -1,6 +1,12 @@
 import { forwardRef } from 'react'
+import type { Copy } from '../data/index'
 
-const CvTab = forwardRef(function CvTab({ t, onOpenCv }, ref) {
+interface Props {
+  t: Copy
+  onOpenCv: () => void
+}
+
+const CvTab = forwardRef<HTMLButtonElement, Props>(function CvTab({ t, onOpenCv }, ref) {
   return (
     <button ref={ref} type="button" className="cv-tab" onClick={onOpenCv} aria-label={t.cv.expanded}>
       <span className="cv-tab__expanded">{t.cv.expanded} ↓</span>

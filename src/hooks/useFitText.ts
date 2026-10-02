@@ -1,21 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, type DependencyList } from 'react'
 
-export function useFitText(deps = []) {
+export function useFitText(deps: DependencyList = []) {
   useEffect(() => {
-    const fit = (el) => {
-      if (!el || !el.parentElement) return
-      const pad = parseInt(el.dataset.fit) || 0
+    const fit = (el: HTMLElement) => {
+      if (!el.parentElement) return
+      const pad = parseInt(el.dataset.fit ?? '') || 0
       const target = el.parentElement.clientWidth - pad
       if (target <= 0) return
       el.style.fontSize = '100px'
       const w = el.scrollWidth
       if (!w) return
       let size = (100 * target) / w
-      const fvh = parseFloat(el.dataset.fitVh)
+      const fvh = parseFloat(el.dataset.fitVh ?? '')
       if (fvh) size = Math.min(size, window.innerHeight * fvh)
       el.style.fontSize = Math.floor(size) + 'px'
     }
-    const run = () => document.querySelectorAll('[data-fit]').forEach(fit)
+    const run = () => document.querySelectorAll<HTMLElement>('[data-fit]').forEach(fit)
     run()
     const id = setTimeout(run, 150)
     if (document.fonts?.ready) document.fonts.ready.then(run)
