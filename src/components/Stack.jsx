@@ -13,7 +13,8 @@ export default function Stack({ t }) {
         {s.groups.map((g) => (
           <div className="stack-group" key={g.label}>
             <div className="stack-group__label">
-              <span className="stack-group__bullet"></span>{g.label}
+              <span className="stack-group__bullet"></span>
+              {g.label}
             </div>
             <ul className="stack-grid reveal reveal--stagger">
               {g.items.map((item, i) => (

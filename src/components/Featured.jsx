@@ -20,11 +20,15 @@ export default function Featured({ t, lang }) {
       </div>
       <div className="featured__caption">
         <div className="featured__caption-left">
-          <h2 className="featured__title"><Rich parts={t.featured.title} /></h2>
+          <h2 className="featured__title">
+            <Rich parts={t.featured.title} />
+          </h2>
         </div>
         <div className="featured__meta">
           <div className="featured__meta-lines">
-            {t.featured.meta.map((m, i) => <div key={i}>{m}</div>)}
+            {t.featured.meta.map((m, i) => (
+              <div key={i}>{m}</div>
+            ))}
           </div>
           <a className="btn-primary featured__cta" href={FEATURED.url} target="_blank" rel="noopener noreferrer">
             {t.featured.cta} <span>→</span>

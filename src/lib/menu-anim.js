@@ -59,15 +59,31 @@ function setupFooter(texts) {
     if (!inners.length) return
     gsap.set(inners, { yPercent: 0 })
 
-    const enter = () => gsap.to(inners, { yPercent: -100, duration: 0.5, ease: 'power3.out', overwrite: true, stagger: { each: 0.035, from: 'start' } })
-    const leave = () => gsap.to(inners, { yPercent: 0, duration: 0.45, ease: 'power3.out', overwrite: true, stagger: { each: 0.03, from: 'end' } })
+    const enter = () =>
+      gsap.to(inners, {
+        yPercent: -100,
+        duration: 0.5,
+        ease: 'power3.out',
+        overwrite: true,
+        stagger: { each: 0.035, from: 'start' },
+      })
+    const leave = () =>
+      gsap.to(inners, {
+        yPercent: 0,
+        duration: 0.45,
+        ease: 'power3.out',
+        overwrite: true,
+        stagger: { each: 0.03, from: 'end' },
+      })
 
     link.addEventListener('mouseenter', enter)
     link.addEventListener('mouseleave', leave)
     cleanups.push(() => {
       link.removeEventListener('mouseenter', enter)
       link.removeEventListener('mouseleave', leave)
-      try { split.revert() } catch {}
+      try {
+        split.revert()
+      } catch {}
     })
   })
 }
@@ -97,11 +113,23 @@ function setupNav(texts) {
 
     const enter = () => {
       gsap.to(fill, { scaleY: 1, duration: 0.34, ease: 'power3.out', overwrite: true })
-      gsap.to(inners, { yPercent: -100, duration: 0.44, ease: 'power3.out', overwrite: true, stagger: { each: 0.07, from: 'start' } })
+      gsap.to(inners, {
+        yPercent: -100,
+        duration: 0.44,
+        ease: 'power3.out',
+        overwrite: true,
+        stagger: { each: 0.07, from: 'start' },
+      })
     }
     const leave = () => {
       gsap.to(fill, { scaleY: 0, duration: 0.3, ease: 'power3.in', overwrite: true })
-      gsap.to(inners, { yPercent: 0, duration: 0.38, ease: 'power3.out', overwrite: true, stagger: { each: 0.05, from: 'end' } })
+      gsap.to(inners, {
+        yPercent: 0,
+        duration: 0.38,
+        ease: 'power3.out',
+        overwrite: true,
+        stagger: { each: 0.05, from: 'end' },
+      })
     }
 
     link.addEventListener('mouseenter', enter)
@@ -109,7 +137,9 @@ function setupNav(texts) {
     cleanups.push(() => {
       link.removeEventListener('mouseenter', enter)
       link.removeEventListener('mouseleave', leave)
-      try { split.revert() } catch {}
+      try {
+        split.revert()
+      } catch {}
       if (fill.parentNode) fill.parentNode.removeChild(fill)
       link.style.overflow = ''
       link.style.position = ''
@@ -119,7 +149,11 @@ function setupNav(texts) {
 
 export const MenuAnims = {
   destroy() {
-    cleanups.forEach((fn) => { try { fn() } catch {} })
+    cleanups.forEach((fn) => {
+      try {
+        fn()
+      } catch {}
+    })
     cleanups = []
   },
   init(navTexts, footerTexts) {
