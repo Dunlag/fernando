@@ -482,9 +482,9 @@ export const DATA = {
       p1: "Me gusta el desarrollo web casi tanto como discutir el orden correcto de ver Star Wars: coger una idea suelta y convertirla en una página que carga rápido y se entiende a la primera. Vengo del directo —conciertos, rodajes—, donde no hay segundas tomas, y esa costumbre de hacer las cosas bien al momento se me quedó pegada.",
       p2: "Hago frontend con HTML, CSS y JavaScript, cuidando el rendimiento, la accesibilidad y el SEO sin dármelas de gurú de nada. Lo que me importa: que la web vaya fina y que el código siga teniendo sentido cuando vuelvo a él meses después. Desde Málaga y casi siempre en remoto.",
       collage: [
-        "Directo / setup de sonido",
-        "Tú en acción",
-        "Detalle de proyecto",
+        "Mesa de sonido en directo",
+        "Escenario durante el montaje",
+        "Plató de televisión antes del directo",
       ],
       stats: [
         {
@@ -495,8 +495,6 @@ export const DATA = {
         { num: 23957, count: true, label: "Minutos de música en Spotify" },
         { num: "MLG", label: "Base · Málaga, en remoto" },
       ],
-      mediaCap: "Sustituir por foto / retrato",
-      mediaSlot: "Suelta una foto tuya",
     },
     contact: {
       kicker: "↘ Línea abierta",
@@ -612,7 +610,7 @@ export const DATA = {
       ],
       p1: "I like web development almost as much as arguing about the right order to watch Star Wars: taking a loose idea and turning it into a page that loads fast and makes sense the first time. I come from live work —concerts, shoots— where there are no second takes, and that habit of getting things right on the spot stuck with me.",
       p2: "I build frontend with HTML, CSS and JavaScript, keeping an eye on performance, accessibility and SEO without acting like some kind of guru. What matters to me: the site runs smooth and the code still makes sense when I come back to it months later. From Málaga, mostly remote.",
-      collage: ["Live / sound setup", "You in action", "Project detail"],
+      collage: ["Live sound console", "Stage during load-in", "TV studio set before a show"],
       stats: [
         {
           seq: [6, 7, 8, 1, 2, 3, 9, 10, 11],
@@ -622,8 +620,6 @@ export const DATA = {
         { num: 23957, count: true, label: "Minutes of music on Spotify" },
         { num: "MLG", label: "Based in Málaga, remote" },
       ],
-      mediaCap: "Replace with photo / portrait",
-      mediaSlot: "Drop a photo of you",
     },
     contact: {
       kicker: "↘ Open line",

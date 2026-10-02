@@ -1,6 +1,10 @@
 import { useRef, useState, useEffect } from 'react'
 import Rich from './Rich'
 
+const ABOUT = import.meta.env.BASE_URL + 'assets/about/'
+// one per .about__frame--N slot: 4:3, 3:4, 1:1
+const COLLAGE = ['mesa-sonido.webp', 'escenario.webp', 'plato.webp']
+
 function useInView(ref, threshold = 0.45) {
   const [inView, setInView] = useState(false)
   useEffect(() => {
@@ -84,15 +88,11 @@ export default function About({ t }) {
       <div className="about__body">
         <div className="about__left">
           <div className="about__collage">
-            <div className="about__frame about__frame--1">
-              <img src="https://picsum.photos/seed/fp-c1/640/480" alt="Setup de sonido en directo" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-            <div className="about__frame about__frame--2">
-              <img src="https://picsum.photos/seed/fp-c2/480/640" alt="Fernando en acción" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-            <div className="about__frame about__frame--3">
-              <img src="https://picsum.photos/seed/fp-c3/560/560" alt="Detalle de proyecto" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
+            {COLLAGE.map((file, i) => (
+              <div className={'about__frame about__frame--' + (i + 1)} key={file}>
+                <img src={ABOUT + file} alt={t.about.collage[i]} loading="lazy" decoding="async" />
+              </div>
+            ))}
           </div>
           <div className="about__text">
             <p className="about__p">{t.about.p1}</p>
@@ -106,9 +106,8 @@ export default function About({ t }) {
         </div>
         <div className="about__right">
           <div className="about__media">
-            <img src="https://picsum.photos/seed/fp-portrait/640/800" alt="Fernando Pinilla" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={ABOUT + 'retrato.webp'} alt="Fernando Pinilla" loading="lazy" decoding="async" />
           </div>
-          <div className="about__media-cap">{t.about.mediaCap}</div>
         </div>
       </div>
     </section>
