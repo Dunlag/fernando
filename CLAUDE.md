@@ -74,12 +74,12 @@ npm run preview       # serve the built dist/ locally
 
 Projects shown in the "Proyectos"/Work grid are **not** individual files — they're data entries in `src/data/index.ts`:
 
-1. Add an entry to `PROJECTS_COMMON` (array): `{ id, ref, year, url, repo, tags: [...], shots: [...] }`. Use the next two-digit `ref`. `repo` is optional (adds a "Código" chip linking to the source). Set `url: null, comingSoon: true` for WIP projects instead of a link.
+1. Add an entry to the `PROJECTS` array (exported, typed, as `PROJECTS_COMMON`): `{ id, ref, year, url, repo, tags: [...], shots: [...] }`. Use the next two-digit `ref`. `repo` is optional (adds a "Código" chip linking to the source). Set `url: null, comingSoon: true` for WIP projects instead of a link.
 2. Add a matching `id` key to **both** `PROJECT_COPY.es` and `PROJECT_COPY.en` with `{ title, desc }`. Missing either language is a compile error: `PROJECT_COPY` is typed by project id.
 3. Screenshots are required: put them in `public/assets/<project>/` as WebP and list them in `shots` as `A + "<project>/<file>.webp"`. The hover crossfade in `work-shots.css` only has keyframes for 2, 3, 5 or 8 shots — repeat one to reach a supported count. Convert PNG captures with:
    `npx sharp-cli -i "public/assets/<project>/*.png" -o "{dir}" -f webp -q 78 resize 1200 --withoutEnlargement` and delete the PNGs.
 
-To add a Labs/experiment entry, use `EXP_COMMON` the same way (simpler shape: `id`, `badge`, `stack`, `url`).
+To add a Labs/experiment entry, use the `EXPERIMENTS` array (exported as `EXP_COMMON`) the same way (simpler shape: `id`, `badge`, `stack`, `url`, `thumb`).
 
 ## Design System: "Mammoth Style"
 
