@@ -5,6 +5,8 @@ const ABOUT = import.meta.env.BASE_URL + 'assets/about/'
 // one per .about__frame--N slot: 4:3, 3:4, 1:1
 const COLLAGE = ['mesa-sonido.webp', 'escenario.webp', 'plato.webp']
 
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 function useInView(ref, threshold = 0.45) {
   const [inView, setInView] = useState(false)
   useEffect(() => {
@@ -15,15 +17,14 @@ function useInView(ref, threshold = 0.45) {
     }, { threshold })
     io.observe(el)
     return () => io.disconnect()
-  }, [])
+  }, [ref, threshold])
   return inView
 }
 
 function CountUp({ to, locale, inView, duration }) {
   const [val, setVal] = useState(0)
   useEffect(() => {
-    if (!inView) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setVal(to); return }
+    if (!inView || reduce) return
     let raf, start
     const dur = duration || (to > 1000 ? 1900 : 1200)
     const step = (ts) => {
@@ -35,26 +36,25 @@ function CountUp({ to, locale, inView, duration }) {
     }
     raf = requestAnimationFrame(step)
     return () => cancelAnimationFrame(raf)
-  }, [inView])
-  return <>{val.toLocaleString(locale || 'es-ES')}</>
+  }, [inView, to, duration])
+  return <>{(reduce ? to : val).toLocaleString(locale || 'es-ES')}</>
 }
 
 function SeqReveal({ seq, inView, step = 380 }) {
   const [shown, setShown] = useState(0)
   useEffect(() => {
-    if (!inView) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setShown(seq.length); return }
-    let i = 0; setShown(0)
+    if (!inView || reduce) return
+    let i = 0
     const id = setInterval(() => {
       i += 1; setShown(i)
       if (i >= seq.length) clearInterval(id)
     }, step)
     return () => clearInterval(id)
-  }, [inView])
+  }, [inView, seq.length, step])
   return (
     <span className="about__seq">
       {seq.map((n, i) => (
-        <span key={i} className={'about__seq-n' + (i < shown ? ' is-on' : '')}>{n}</span>
+        <span key={i} className={'about__seq-n' + (reduce || i < shown ? ' is-on' : '')}>{n}</span>
       ))}
     </span>
   )

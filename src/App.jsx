@@ -79,7 +79,7 @@ export default function App() {
     const id = requestAnimationFrame(() => MenuAnims.init(navTexts, footerTexts))
     if (document.fonts?.ready) document.fonts.ready.then(() => MenuAnims.init(navTexts, footerTexts))
     return () => { cancelAnimationFrame(id); MenuAnims.destroy() }
-  }, [lang])
+  }, [data])
 
   // Scroll reveal
   useEffect(() => {

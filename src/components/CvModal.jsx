@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { CV_URL } from '../data/index'
 
@@ -54,23 +54,7 @@ export default function CvModal({ t, open, onClose, originRef }) {
     return () => tl.kill()
   }, [open, originRef])
 
-  useEffect(() => {
-    if (!open) return
-    const onKey = (e) => {
-      if (e.key === 'Escape') close()
-      if (e.key !== 'Tab') return
-      // focus trap: keep Tab inside the panel
-      const items = panelRef.current.querySelectorAll('a,button')
-      const first = items[0], last = items[items.length - 1]
-      if (!panelRef.current.contains(document.activeElement)) { e.preventDefault(); first.focus() }
-      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [open])
-
-  function close() {
+  const close = useCallback(() => {
     const backdrop = backdropRef.current
     const panel = panelRef.current
     if (!backdrop || !panel || reduce) {
@@ -92,7 +76,23 @@ export default function CvModal({ t, open, onClose, originRef }) {
         v: 0, duration: 0.35, ease: 'power2.in',
         onUpdate() { panel.style.clipPath = `circle(${obj.v}px at ${at})` },
       }, 0)
-  }
+  }, [onClose, originRef])
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') close()
+      if (e.key !== 'Tab') return
+      // focus trap: keep Tab inside the panel
+      const items = panelRef.current.querySelectorAll('a,button')
+      const first = items[0], last = items[items.length - 1]
+      if (!panelRef.current.contains(document.activeElement)) { e.preventDefault(); first.focus() }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open, close])
 
   if (!open) return null
 

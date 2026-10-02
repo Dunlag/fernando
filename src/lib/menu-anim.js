@@ -67,7 +67,7 @@ function setupFooter(texts) {
     cleanups.push(() => {
       link.removeEventListener('mouseenter', enter)
       link.removeEventListener('mouseleave', leave)
-      try { split.revert() } catch (e) {}
+      try { split.revert() } catch {}
     })
   })
 }
@@ -109,7 +109,7 @@ function setupNav(texts) {
     cleanups.push(() => {
       link.removeEventListener('mouseenter', enter)
       link.removeEventListener('mouseleave', leave)
-      try { split.revert() } catch (e) {}
+      try { split.revert() } catch {}
       if (fill.parentNode) fill.parentNode.removeChild(fill)
       link.style.overflow = ''
       link.style.position = ''
@@ -119,7 +119,7 @@ function setupNav(texts) {
 
 export const MenuAnims = {
   destroy() {
-    cleanups.forEach((fn) => { try { fn() } catch (e) {} })
+    cleanups.forEach((fn) => { try { fn() } catch {} })
     cleanups = []
   },
   init(navTexts, footerTexts) {

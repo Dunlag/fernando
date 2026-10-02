@@ -1,0 +1,10 @@
+dist
+public
+package-lock.json
+*.css
+*.md
+docs
+.github
+.vscode
+.claude
+index.html
