@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { CV_URL } from '../data/index'
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -55,7 +56,16 @@ export default function CvModal({ t, open, onClose, originRef }) {
 
   useEffect(() => {
     if (!open) return
-    const onKey = (e) => { if (e.key === 'Escape') close() }
+    const onKey = (e) => {
+      if (e.key === 'Escape') close()
+      if (e.key !== 'Tab') return
+      // focus trap: keep Tab inside the panel
+      const items = panelRef.current.querySelectorAll('a,button')
+      const first = items[0], last = items[items.length - 1]
+      if (!panelRef.current.contains(document.activeElement)) { e.preventDefault(); first.focus() }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [open])
@@ -90,14 +100,14 @@ export default function CvModal({ t, open, onClose, originRef }) {
     <div className="cv-modal" role="dialog" aria-modal="true" aria-label={t.cv.expanded}>
       <div className="cv-modal__backdrop" ref={backdropRef} onClick={close} />
       <div className="cv-modal__panel" ref={panelRef}>
-        <button type="button" className="cv-modal__close" ref={closeBtnRef} onClick={close} aria-label="×">×</button>
+        <button type="button" className="cv-modal__close" ref={closeBtnRef} onClick={close} aria-label={t.cv.close}>×</button>
         <div className="cv-modal__content" ref={contentRef}>
           <span className="cv-modal__eyebrow">{t.hero.eyebrow}</span>
           <h2 className="cv-modal__title">FERNANDO PINILLA</h2>
           <p className="cv-modal__hint">{t.cv.expanded}</p>
           <a
             className="btn-primary cv-modal__btn"
-            href="/fernando/assets/cv-fernando-pinilla.pdf"
+            href={CV_URL}
             download
           >
             {t.cv.expanded} <span>↓</span>

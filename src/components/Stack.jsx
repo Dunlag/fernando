@@ -1,8 +1,7 @@
-export default function Stack({ t, styleVariant = 'stickers' }) {
+export default function Stack({ t }) {
   const s = t.stack
-  const cls = 'section-stack' + (styleVariant === 'stickers' ? ' section-stack--stickers' : '')
   return (
-    <section className={cls} id="stack">
+    <section className="section-stack section-stack--stickers" id="stack">
       <div className="stack__header">
         <div>
           <span className="eyebrow eyebrow--invert">{s.eyebrow}</span>

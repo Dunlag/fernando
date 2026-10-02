@@ -1,3 +1,5 @@
+import { CONTACT, CV_URL } from '../data/index'
+
 export default function Footer({ t, onOpenCv }) {
   const f = t.footer
   return (
@@ -7,22 +9,23 @@ export default function Footer({ t, onOpenCv }) {
           <li><a href="#work">{f.nav.work}</a></li>
           <li><a href="#labs">{f.nav.labs}</a></li>
           <li><a href="#about">{f.nav.about}</a></li>
-          <li><a href="#" onClick={(e) => { e.preventDefault(); onOpenCv() }}>{t.cv.tab}</a></li>
+          <li><a href={CV_URL} onClick={(e) => { e.preventDefault(); onOpenCv() }}>{t.cv.tab}</a></li>
           <li><a href="#contact">{f.nav.contact}</a></li>
         </ul>
       </div>
       <div className="footer__info">
         <div className="footer__info-col">
           <span className="footer__info-label">{f.colA.label}</span>
-          {f.colA.lines.map((l, i) => <a key={i} href="mailto:fernando.pinilla85@gmail.com">{l}</a>)}
+          <a href={'mailto:' + CONTACT.email}>{CONTACT.email}</a>
         </div>
-        <div className="footer__info-col footer__info-col--center" style={{ display: 'block', textAlign: 'center' }}>
+        <div className="footer__info-col footer__info-col--center">
           <span className="footer__info-label">{f.colB.label}</span>
           {f.colB.lines.map((l, i) => <p key={i}>{l}</p>)}
         </div>
         <div className="footer__info-col footer__info-col--right">
           <span className="footer__info-label">{f.colC.label}</span>
-          {f.colC.links.map(([label, href], i) => <a key={i} href={href} target="_blank" rel="noopener noreferrer">{label}</a>)}
+          <a href={CONTACT.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
       <div className="footer__bottom">

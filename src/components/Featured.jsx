@@ -1,22 +1,19 @@
 import Rich from './Rich'
+import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
 
-const SHOTS = [
-  { src: '/fernando/assets/twoBlackCats/two-black-cats00.png', alt: 'Two Black Cats — screenshot 1' },
-  { src: '/fernando/assets/twoBlackCats/two-black-cats01.png', alt: 'Two Black Cats — screenshot 2' },
-  { src: '/fernando/assets/twoBlackCats/two-black-cats02.png', alt: 'Two Black Cats — screenshot 3' },
+const FEATURED = PROJECTS_COMMON.find((p) => p.featured)
+// Sorted by filename so the "00" frame shows first here (the Work card leads with "01")
+const SHOTS = [...FEATURED.shots].sort()
 
-  { src: '/fernando/assets/twoBlackCats/two-black-cats04.png', alt: 'Two Black Cats — screenshot 5' },
-  { src: '/fernando/assets/twoBlackCats/two-black-cats05.png', alt: 'Two Black Cats — screenshot 6' },
-]
-
-export default function Featured({ t }) {
+export default function Featured({ t, lang }) {
+  const title = PROJECT_COPY[lang][FEATURED.id].title
   return (
     <section className="featured">
       <div className="featured__frame">
         <div className="featured__shots">
-          {SHOTS.map((s, i) => (
-            <div className="featured__shot" key={i}>
-              <img src={s.src} alt={s.alt} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          {SHOTS.map((src, i) => (
+            <div className="featured__shot" key={src}>
+              <img src={src} alt={title + ' · screenshot ' + (i + 1)} loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
@@ -29,7 +26,7 @@ export default function Featured({ t }) {
           <div className="featured__meta-lines">
             {t.featured.meta.map((m, i) => <div key={i}>{m}</div>)}
           </div>
-          <a className="btn-primary featured__cta" href="https://dunlag.github.io/Two-Black-Cats/" target="_blank" rel="noopener noreferrer">
+          <a className="btn-primary featured__cta" href={FEATURED.url} target="_blank" rel="noopener noreferrer">
             {t.featured.cta} <span>→</span>
           </a>
         </div>

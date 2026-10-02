@@ -33,6 +33,7 @@
   background:var(--c-yellow);
 }
 body.preloading{overflow:hidden;}
+.seen #preloader{display:none;}
 
 /* ── SCROLL PROGRESS ── */
 #scroll-progress{
