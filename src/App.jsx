@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useLang } from './hooks/useLang'
 import { useFitText } from './hooks/useFitText'
 import { DATA, ACCENTS } from './data/index'
+import { MenuAnims } from './lib/menu-anim'
 import Navbar from './components/Navbar'
 import CvTab from './components/CvTab'
 import CvModal from './components/CvModal'
@@ -31,11 +32,6 @@ export default function App() {
     const pick = pool[Math.floor(Math.random() * pool.length)] || ACCENTS[0]
     try { localStorage.setItem('fp_last_accent', pick) } catch {}
     document.documentElement.style.setProperty('--c-yellow', pick)
-  }, [])
-
-  // Marquee speed
-  useEffect(() => {
-    document.documentElement.style.setProperty('--marquee-speed', '22s')
   }, [])
 
   // Fit display words to full width
@@ -77,15 +73,12 @@ export default function App() {
 
   // SplitText menu animations — re-init on lang change
   useEffect(() => {
-    window.__lang = lang
-    if (window.Enhance) window.Enhance.refresh(lang)
-    if (!window.MenuAnims) return
     const navTexts = [data.nav.work, data.nav.labs, data.nav.about, data.cv.tab, data.nav.contact]
     const f = data.footer.nav
     const footerTexts = [f.work, f.labs, f.about, data.cv.tab, f.contact]
-    const id = requestAnimationFrame(() => window.MenuAnims.init(navTexts, footerTexts))
-    if (document.fonts?.ready) document.fonts.ready.then(() => window.MenuAnims.init(navTexts, footerTexts))
-    return () => { cancelAnimationFrame(id); window.MenuAnims.destroy() }
+    const id = requestAnimationFrame(() => MenuAnims.init(navTexts, footerTexts))
+    if (document.fonts?.ready) document.fonts.ready.then(() => MenuAnims.init(navTexts, footerTexts))
+    return () => { cancelAnimationFrame(id); MenuAnims.destroy() }
   }, [lang])
 
   // Scroll reveal
@@ -102,33 +95,18 @@ export default function App() {
     return () => io.disconnect()
   }, [lang])
 
-  // Scale lab iframes to fit their tiles
-  useEffect(() => {
-    const scale = () => {
-      document.querySelectorAll('.lab-tile__frame').forEach((f) => {
-        const s = f.clientWidth / 1280
-        if (s > 0) f.style.setProperty('--s', s.toString())
-      })
-    }
-    scale()
-    const t1 = setTimeout(scale, 200)
-    const t2 = setTimeout(scale, 800)
-    window.addEventListener('resize', scale)
-    return () => { clearTimeout(t1); clearTimeout(t2); window.removeEventListener('resize', scale) }
-  }, [lang])
-
   return (
     <>
       <Navbar t={data} lang={lang} setLang={setLang} onOpenCv={openCv} />
       <CvTab t={data} ref={cvTabRef} onOpenCv={openCv} />
       <CvModal t={data} open={cvOpen} onClose={() => setCvOpen(false)} originRef={cvTabRef} />
-      <Hero t={data} lang={lang} variant="a" />
-      <Featured t={data} />
+      <Hero t={data} lang={lang} />
+      <Featured t={data} lang={lang} />
       <Marquee t={data} />
-      <Work t={data} lang={lang} variant="a" />
+      <Work t={data} lang={lang} />
       <Labs t={data} lang={lang} />
       <Services t={data} lang={lang} />
-      <Stack t={data} styleVariant="stickers" />
+      <Stack t={data} />
       <About t={data} />
       <Cta t={data} />
       <Footer t={data} onOpenCv={openCv} />

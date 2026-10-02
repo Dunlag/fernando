@@ -130,5 +130,3 @@ export const MenuAnims = {
     setupFooter(footerTexts)
   },
 }
-
-window.MenuAnims = MenuAnims

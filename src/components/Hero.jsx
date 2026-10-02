@@ -1,12 +1,10 @@
 import Rich from './Rich'
 import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
 
-const HERO_SHOTS = PROJECTS_COMMON.filter(p => p.shots && p.shots.length)
-
-export default function Hero({ t, lang, variant = 'a' }) {
+export default function Hero({ t, lang }) {
   const copy = PROJECT_COPY[lang]
   return (
-    <header className="hero" id="top" data-variant={variant}>
+    <header className="hero" id="top">
       <div className="hero__inner">
         <div>
           <div className="hero__eyebrow">{t.hero.eyebrow}</div>
@@ -22,13 +20,14 @@ export default function Hero({ t, lang, variant = 'a' }) {
           </div>
           <div className="hero__card">
             <div className="hero__card-thumb">
-              {HERO_SHOTS.map((p) => (
+              {PROJECTS_COMMON.map((p, i) => (
                 <div className="hero__card-shot" key={p.id}>
+                  {/* stacked above the fold: only the first frame is visible at rest, so it gets priority */}
                   <img
                     src={p.shots[0]}
-                    alt={copy[p.id]?.title || p.id}
-                    loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    alt={copy[p.id].title}
+                    fetchpriority={i === 0 ? 'high' : 'low'}
+                    decoding="async"
                   />
                 </div>
               ))}

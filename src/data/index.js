@@ -1,5 +1,15 @@
 // Bilingual content for Fernando's portfolio
 
+const A = import.meta.env.BASE_URL + "assets/";
+
+export const CV_URL = A + "cv-fernando-pinilla.pdf";
+
+export const CONTACT = {
+  email: "fernando.pinilla85@gmail.com",
+  github: "https://github.com/Dunlag",
+  linkedin: "https://linkedin.com/in/fernandopinillavalbuena",
+};
+
 export const ACCENTS = ["#FFE000", "#FFB100", "#C6F23C", "#FF5C38", "#36E0C8"];
 
 export const PROJECTS_COMMON = [
@@ -8,14 +18,15 @@ export const PROJECTS_COMMON = [
     ref: "00",
     year: "2026.05",
     url: "https://dunlag.github.io/Two-Black-Cats/",
+    repo: "https://github.com/Dunlag/Two-Black-Cats",
     featured: true,
     tags: ["Canvas", "CSS3", "JS"],
     shots: [
-      "/fernando/assets/twoBlackCats/two-black-cats01.png",
-      "/fernando/assets/twoBlackCats/two-black-cats00.png",
-      "/fernando/assets/twoBlackCats/two-black-cats02.png",
-      "/fernando/assets/twoBlackCats/two-black-cats04.png",
-      "/fernando/assets/twoBlackCats/two-black-cats05.png",
+      A + "twoBlackCats/two-black-cats01.webp",
+      A + "twoBlackCats/two-black-cats00.webp",
+      A + "twoBlackCats/two-black-cats02.webp",
+      A + "twoBlackCats/two-black-cats04.webp",
+      A + "twoBlackCats/two-black-cats05.webp",
     ],
   },
   {
@@ -23,27 +34,29 @@ export const PROJECTS_COMMON = [
     ref: "01",
     year: "2026.05",
     url: "https://dunlag.github.io/toldos-venecianos-landing/",
+    repo: "https://github.com/Dunlag/toldos-venecianos-landing",
     tags: ["React 18", "Claude Design", "GH Pages"],
     shots: [
-      "/fernando/assets/toldosVenecianos/toldos-venecianos00.png",
-      "/fernando/assets/toldosVenecianos/toldos-venecianos01.png",
-      "/fernando/assets/toldosVenecianos/toldos-venecianos02.png",
-      "/fernando/assets/toldosVenecianos/toldos-venecianos03.png",
-      "/fernando/assets/toldosVenecianos/toldos-venecianos04.png",
+      A + "toldosVenecianos/toldos-venecianos00.webp",
+      A + "toldosVenecianos/toldos-venecianos01.webp",
+      A + "toldosVenecianos/toldos-venecianos02.webp",
+      A + "toldosVenecianos/toldos-venecianos03.webp",
+      A + "toldosVenecianos/toldos-venecianos04.webp",
     ],
   },
   {
     id: "marathon",
     ref: "02",
     year: "2026.02",
-    url: "/fernando/projects/marathon-concept/",
+    url: import.meta.env.BASE_URL + "projects/marathon-concept/",
+    repo: "https://github.com/Dunlag/fernando/tree/main/public/projects/marathon-concept",
     tags: ["HTML5", "CSS3", "JS"],
     shots: [
-      "/fernando/assets/marathon/marathon01.png",
-      "/fernando/assets/marathon/marathon02.png",
-      "/fernando/assets/marathon/marathon03.png",
-      "/fernando/assets/marathon/marathon04.png",
-      "/fernando/assets/marathon/marathon05.png",
+      A + "marathon/marathon01.webp",
+      A + "marathon/marathon02.webp",
+      A + "marathon/marathon03.webp",
+      A + "marathon/marathon04.webp",
+      A + "marathon/marathon05.webp",
     ],
   },
   {
@@ -53,11 +66,11 @@ export const PROJECTS_COMMON = [
     url: "https://pacificoresidences.com/",
     tags: ["PHP", "CSS3", "JS"],
     shots: [
-      "/fernando/assets/pacificoResidences/pacifico-residences01.png",
-      "/fernando/assets/pacificoResidences/pacifico-residences02.png",
-      "/fernando/assets/pacificoResidences/pacifico-residences03.png",
-      "/fernando/assets/pacificoResidences/pacifico-residences04.png",
-      "/fernando/assets/pacificoResidences/pacifico-residences02.png",
+      A + "pacificoResidences/pacifico-residences01.webp",
+      A + "pacificoResidences/pacifico-residences02.webp",
+      A + "pacificoResidences/pacifico-residences03.webp",
+      A + "pacificoResidences/pacifico-residences04.webp",
+      A + "pacificoResidences/pacifico-residences02.webp",
     ],
   },
   {
@@ -67,11 +80,11 @@ export const PROJECTS_COMMON = [
     url: "https://gardenhomes.puertonarixa.com/",
     tags: ["PHP", "HTML5", "CSS3"],
     shots: [
-      "/fernando/assets/puertoNarixa/puerto-narixa01.png",
-      "/fernando/assets/puertoNarixa/puerto-narixa02.png",
-      "/fernando/assets/puertoNarixa/puerto-narixa03.png",
-      "/fernando/assets/puertoNarixa/puerto-narixa04.png",
-      "/fernando/assets/puertoNarixa/puerto-narixa05.png",
+      A + "puertoNarixa/puerto-narixa01.webp",
+      A + "puertoNarixa/puerto-narixa02.webp",
+      A + "puertoNarixa/puerto-narixa03.webp",
+      A + "puertoNarixa/puerto-narixa04.webp",
+      A + "puertoNarixa/puerto-narixa05.webp",
     ],
   },
   {
@@ -81,14 +94,14 @@ export const PROJECTS_COMMON = [
     url: "https://fincaavignon.es/",
     tags: ["PHP", "HTML5", "CSS3"],
     shots: [
-      "/fernando/assets/fincaAvignon/finca-avignon01.png",
-      "/fernando/assets/fincaAvignon/finca-avignon02.png",
-      "/fernando/assets/fincaAvignon/finca-avignon03.png",
-      "/fernando/assets/fincaAvignon/finca-avignon04.png",
-      "/fernando/assets/fincaAvignon/finca-avignon05.png",
-      "/fernando/assets/fincaAvignon/finca-avignon06.png",
-      "/fernando/assets/fincaAvignon/finca-avignon07.png",
-      "/fernando/assets/fincaAvignon/finca-avignon08.png",
+      A + "fincaAvignon/finca-avignon01.webp",
+      A + "fincaAvignon/finca-avignon02.webp",
+      A + "fincaAvignon/finca-avignon03.webp",
+      A + "fincaAvignon/finca-avignon04.webp",
+      A + "fincaAvignon/finca-avignon05.webp",
+      A + "fincaAvignon/finca-avignon06.webp",
+      A + "fincaAvignon/finca-avignon07.webp",
+      A + "fincaAvignon/finca-avignon08.webp",
     ],
   },
   {
@@ -98,11 +111,11 @@ export const PROJECTS_COMMON = [
     url: "https://umbro.es/",
     tags: ["PrestaShop", "Elementor", "E-com"],
     shots: [
-      "/fernando/assets/umbro/umbro01.png",
-      "/fernando/assets/umbro/umbro02.png",
-      "/fernando/assets/umbro/umbro03.png",
-      "/fernando/assets/umbro/umbro04.png",
-      "/fernando/assets/umbro/umbro05.png",
+      A + "umbro/umbro01.webp",
+      A + "umbro/umbro02.webp",
+      A + "umbro/umbro03.webp",
+      A + "umbro/umbro04.webp",
+      A + "umbro/umbro05.webp",
     ],
   },
   {
@@ -113,11 +126,11 @@ export const PROJECTS_COMMON = [
     comingSoon: true,
     tags: ["Mammoth Style", "WIP"],
     shots: [
-      "/fernando/assets/barberia/barberia01.png",
-      "/fernando/assets/barberia/barberia02.png",
-      "/fernando/assets/barberia/barberia03.png",
-      "/fernando/assets/barberia/barberia04.png",
-      "/fernando/assets/barberia/barberia05.png",
+      A + "barberia/barberia01.webp",
+      A + "barberia/barberia02.webp",
+      A + "barberia/barberia03.webp",
+      A + "barberia/barberia04.webp",
+      A + "barberia/barberia05.webp",
     ],
   },
   {
@@ -125,13 +138,14 @@ export const PROJECTS_COMMON = [
     ref: "08",
     year: "2026",
     url: "https://dunlag.github.io/Obras-helen/",
+    repo: "https://github.com/Dunlag/Obras-helen",
     tags: ["HTML5", "CSS3", "JS"],
     shots: [
-      "/fernando/assets/obrasHelen/obras-helen01.png",
-      "/fernando/assets/obrasHelen/obras-helen02.png",
-      "/fernando/assets/obrasHelen/obras-helen03.png",
-      "/fernando/assets/obrasHelen/obras-helen04.png",
-      "/fernando/assets/obrasHelen/obras-helen02.png",
+      A + "obrasHelen/obras-helen01.webp",
+      A + "obrasHelen/obras-helen02.webp",
+      A + "obrasHelen/obras-helen03.webp",
+      A + "obrasHelen/obras-helen04.webp",
+      A + "obrasHelen/obras-helen02.webp",
     ],
   },
   {
@@ -141,11 +155,11 @@ export const PROJECTS_COMMON = [
     url: "https://serenityhills.proyectosavanza.com/index.php",
     tags: ["PHP", "HTML5", "CSS3"],
     shots: [
-      "/fernando/assets/serenity/serenity01.png",
-      "/fernando/assets/serenity/serenity02.png",
-      "/fernando/assets/serenity/serenity03.png",
-      "/fernando/assets/serenity/serenity04.png",
-      "/fernando/assets/serenity/serenity05.png",
+      A + "serenity/serenity01.webp",
+      A + "serenity/serenity02.webp",
+      A + "serenity/serenity03.webp",
+      A + "serenity/serenity04.webp",
+      A + "serenity/serenity05.webp",
     ],
   },
 ];
@@ -377,7 +391,9 @@ export const DATA = {
       contact: "Contacto",
     },
     cta: "Contacto",
-    cv: { tab: "CV", expanded: "Descargar CV" },
+    cv: { tab: "CV", expanded: "Descargar CV", close: "Cerrar" },
+    menu: { open: "Abrir menú", close: "Cerrar menú" },
+    mailSubject: "Contacto desde portfolio",
     hero: {
       eyebrow: "↘ Frontend Developer · Málaga, ES",
       title: [
@@ -387,7 +403,7 @@ export const DATA = {
         { br: true },
         "DE IGNORAR",
       ],
-      sub: "Frontend dev y diseñador UI/UX. HTML semántico, CSS contemporáneo y JavaScript vanilla — código que sigue siendo legible seis meses después.",
+      sub: "Frontend dev y diseñador UI/UX. React, CSS contemporáneo y JavaScript — código que sigue siendo legible seis meses después.",
       btnPrimary: "Ver proyectos",
       btnSecondary: "Hablemos",
       cardNow: "RECIENTE",
@@ -419,6 +435,7 @@ export const DATA = {
       lead: [{ span: "Producto real, en producción — de la idea al deploy." }],
       ctaLabel: "VER TODO",
       soon: "Próximamente",
+      code: "Código",
     },
     labs: {
       eyebrow: "↘ Patio de pruebas",
@@ -429,7 +446,7 @@ export const DATA = {
     services: {
       eyebrow: "↘ Lo que hago",
       heading: "QUÉ HAGO",
-      statNum: "11+",
+      statNum: "10+",
       statLabel: "proyectos llevados de la idea a producción",
       body: "Llevo años creando experiencias — antes en directo, ahora en el navegador. La web es solo otro escenario donde montar el espectáculo.",
     },
@@ -494,15 +511,9 @@ export const DATA = {
         about: "Sobre mí",
         contact: "Contacto",
       },
-      colA: { label: "Escríbeme", lines: ["fernando.pinilla85@gmail.com"] },
+      colA: { label: "Escríbeme" },
       colB: { label: "Dónde", lines: ["Málaga / España", "También en remoto"] },
-      colC: {
-        label: "Redes",
-        links: [
-          ["GitHub", "https://github.com/Dunlag"],
-          ["LinkedIn", "https://linkedin.com/in/fernandopinillavalbuena"],
-        ],
-      },
+      colC: { label: "Redes" },
       word1: "FRONTEND",
       word2: "DEVELOPER",
       graffiti1: "Hecho",
@@ -515,7 +526,9 @@ export const DATA = {
     dir: "EN",
     nav: { work: "Work", labs: "Labs", about: "About", contact: "Contact" },
     cta: "Contact",
-    cv: { tab: "CV", expanded: "Download CV" },
+    cv: { tab: "CV", expanded: "Download CV", close: "Close" },
+    menu: { open: "Open menu", close: "Close menu" },
+    mailSubject: "Contact from portfolio",
     hero: {
       eyebrow: "↘ Frontend Developer · Málaga, ES",
       title: [
@@ -525,7 +538,7 @@ export const DATA = {
         { br: true },
         "TO IGNORE",
       ],
-      sub: "Frontend dev & UI/UX designer. Semantic HTML, modern CSS and vanilla JavaScript — code that still reads clean six months later.",
+      sub: "Frontend dev & UI/UX designer. React, modern CSS and JavaScript — code that still reads clean six months later.",
       btnPrimary: "See projects",
       btnSecondary: "Let's talk",
       cardNow: "RECENT",
@@ -553,6 +566,7 @@ export const DATA = {
       lead: [{ span: "Real, shipped product — from idea to deploy." }],
       ctaLabel: "VIEW ALL",
       soon: "Coming soon",
+      code: "Code",
     },
     labs: {
       eyebrow: "↘ Playground",
@@ -563,7 +577,7 @@ export const DATA = {
     services: {
       eyebrow: "↘ What I do",
       heading: "WHAT I DO",
-      statNum: "11+",
+      statNum: "10+",
       statLabel: "projects taken from idea to production",
       body: "I've spent years crafting experiences — first live, now in the browser. The web is just another stage to put on the show.",
     },
@@ -619,15 +633,9 @@ export const DATA = {
     },
     footer: {
       nav: { work: "Work", labs: "Labs", about: "About", contact: "Contact" },
-      colA: { label: "Write me", lines: ["fernando.pinilla85@gmail.com"] },
+      colA: { label: "Write me" },
       colB: { label: "Where", lines: ["Málaga / Spain", "Remote too"] },
-      colC: {
-        label: "Social",
-        links: [
-          ["GitHub", "https://github.com/Dunlag"],
-          ["LinkedIn", "https://linkedin.com/in/fernandopinillavalbuena"],
-        ],
-      },
+      colC: { label: "Social" },
       word1: "FRONTEND",
       word2: "DEVELOPER",
       graffiti1: "Hand",

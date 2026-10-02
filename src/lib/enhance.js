@@ -5,21 +5,21 @@ const fine = window.matchMedia('(pointer:fine)').matches
 let heroDone = false
 
 /* ---------- PRELOADER ---------- */
-const PRELOADER_ROLES = ['GSAP · CANVAS', 'REACT · TYPESCRIPT', 'FRONTEND DEVELOPER']
-
+// Plays once per session; index.html adds .seen to <html> on repeat views so it never paints.
 function runPreloader(onDone) {
   const pre = document.getElementById('preloader')
-  if (!pre) { onDone(); return }
+  let seen = false
+  try { seen = !!sessionStorage.getItem('fp_seen'); sessionStorage.setItem('fp_seen', '1') } catch {}
+  if (!pre || seen) { pre?.remove(); onDone(); return }
   document.body.classList.add('preloading')
   const countEl = pre.querySelector('.preloader__count')
   const barEl = pre.querySelector('.preloader__bar')
-  const roleEl = pre.querySelector('.preloader__role')
 
   function finish() {
     document.body.classList.remove('preloading')
     onDone()
     gsap.to(pre, {
-      yPercent: -100, duration: 0.75, ease: 'power4.inOut', delay: 0.15,
+      yPercent: -100, duration: 0.5, ease: 'power4.inOut',
       onComplete: () => pre.remove(),
     })
   }
@@ -27,30 +27,17 @@ function runPreloader(onDone) {
   if (reduce) {
     if (countEl) countEl.textContent = '100'
     if (barEl) barEl.style.width = '100%'
-    if (roleEl) roleEl.textContent = PRELOADER_ROLES[PRELOADER_ROLES.length - 1]
     setTimeout(finish, 250)
     return
   }
 
-  let roleIdx = 0
   const obj = { v: 0 }
   gsap.to(obj, {
-    v: 100, duration: 1.5, ease: 'power2.inOut',
+    v: 100, duration: 0.7, ease: 'power2.inOut',
     onUpdate() {
       const n = Math.round(obj.v)
       if (countEl) countEl.textContent = String(n).padStart(3, '0')
       if (barEl) barEl.style.width = n + '%'
-      const i = Math.min(PRELOADER_ROLES.length - 1, Math.floor(n / 34))
-      if (roleEl && i !== roleIdx) {
-        roleIdx = i
-        gsap.to(roleEl, {
-          opacity: 0, duration: 0.12,
-          onComplete: () => {
-            roleEl.textContent = PRELOADER_ROLES[i]
-            gsap.to(roleEl, { opacity: 1, duration: 0.18 })
-          },
-        })
-      }
     },
     onComplete: finish,
   })
@@ -77,7 +64,7 @@ function initCursor() {
     const t = e.target
     const card = t.closest && t.closest('.work-card')
     if (card) {
-      label.textContent = (window.__lang === 'en' ? 'VIEW' : 'VER') + ' →'
+      label.textContent = (document.documentElement.lang === 'en' ? 'VIEW' : 'VER') + ' →'
       dot.classList.add('cursor-dot--view')
       dot.classList.remove('cursor-dot--big')
     } else if (t.closest && t.closest(GROW)) {
@@ -125,12 +112,11 @@ function heroIntro(attempt = 0) {
   heroDone = true
   if (reduce) return
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-  gsap.set('.hero__eyebrow,.hero__title,.hero__sub,.hero__buttons > *,.hero__card', { opacity: 0 })
-  tl.from('.hero__eyebrow', { y: 18, duration: 0.5 })
-    .from('.hero__title', { yPercent: 16, duration: 0.85 }, '-=0.18')
-    .from('.hero__sub', { y: 22, duration: 0.55 }, '-=0.5')
-    .from('.hero__buttons > *', { y: 18, duration: 0.45, stagger: 0.08 }, '-=0.35')
-    .from('.hero__card', { y: 26, duration: 0.55 }, '-=0.5')
+  tl.from('.hero__eyebrow', { opacity: 0, y: 18, duration: 0.5 })
+    .from('.hero__title', { opacity: 0, yPercent: 16, duration: 0.85 }, '-=0.18')
+    .from('.hero__sub', { opacity: 0, y: 22, duration: 0.55 }, '-=0.5')
+    .from('.hero__buttons > *', { opacity: 0, y: 18, duration: 0.45, stagger: 0.08 }, '-=0.35')
+    .from('.hero__card', { opacity: 0, y: 26, duration: 0.55 }, '-=0.5')
     .set(['.hero__eyebrow', '.hero__title', '.hero__sub', '.hero__buttons > *', '.hero__card'], { clearProps: 'opacity,transform' })
 }
 
@@ -139,10 +125,4 @@ export function boot() {
   initCursor()
   runPreloader(() => heroIntro(0))
   setTimeout(() => heroIntro(0), 2600)
-}
-
-window.Enhance = {
-  refresh(lang) {
-    if (lang) window.__lang = lang
-  },
 }

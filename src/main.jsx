@@ -11,7 +11,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 
 import { boot } from './lib/enhance'
-import './lib/menu-anim'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
