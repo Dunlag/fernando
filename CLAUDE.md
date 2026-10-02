@@ -74,12 +74,12 @@ npm run preview       # serve the built dist/ locally
 
 Projects shown in the "Proyectos"/Work grid are **not** individual files — they're data entries in `src/data/index.ts`:
 
-1. Add an entry to `PROJECTS_COMMON` (array): `{ id, ref, year, url, repo, tags: [...], shots: [...] }`. Use the next two-digit `ref`. `repo` is optional (adds a "Código" chip linking to the source). Set `url: null, comingSoon: true` for WIP projects instead of a link.
+1. Add an entry to the `PROJECTS` array (exported, typed, as `PROJECTS_COMMON`): `{ id, ref, year, url, repo, tags: [...], shots: [...] }`. Use the next two-digit `ref`. `repo` is optional (adds a "Código" chip linking to the source). Set `url: null, comingSoon: true` for WIP projects instead of a link.
 2. Add a matching `id` key to **both** `PROJECT_COPY.es` and `PROJECT_COPY.en` with `{ title, desc }`. Missing either language is a compile error: `PROJECT_COPY` is typed by project id.
 3. Screenshots are required: put them in `public/assets/<project>/` as WebP and list them in `shots` as `A + "<project>/<file>.webp"`. The hover crossfade in `work-shots.css` only has keyframes for 2, 3, 5 or 8 shots — repeat one to reach a supported count. Convert PNG captures with:
    `npx sharp-cli -i "public/assets/<project>/*.png" -o "{dir}" -f webp -q 78 resize 1200 --withoutEnlargement` and delete the PNGs.
 
-To add a Labs/experiment entry, use `EXP_COMMON` the same way (simpler shape: `id`, `badge`, `stack`, `url`).
+To add a Labs/experiment entry, use the `EXPERIMENTS` array (exported as `EXP_COMMON`) the same way (simpler shape: `id`, `badge`, `stack`, `url`, `thumb`).
 
 ## Design System: "Mammoth Style"
 
@@ -105,7 +105,7 @@ Keep the code and the repo as clean as possible, always. This is a general rule,
 - **Code**: delete dead code, unused variants, props, CSS rules and data fields in the same change that makes them unused. No commented-out blocks, no "just in case" leftovers, no duplicated values — one source of truth (`src/data/index.js`).
 - **Assets**: when an image or file is replaced, remove the old one. No placeholder content left in the shipped site.
 - **Git**: once a PR is merged, delete its branch locally and on GitHub in the same step, without being asked. Don't leave untracked files lying around — commit them or remove them.
-- **Docs**: when a change makes this file inaccurate, update it in the same change.
+- **Docs**: when a change makes this file or `README.md` inaccurate (stack, scripts, structure, how to add a project), update it in the same change.
 - Only clean up what the current work created or made obsolete. Anything else that looks stale (old branches, files of unknown origin) gets flagged, not deleted.
 
 ## Notes for Future Work
