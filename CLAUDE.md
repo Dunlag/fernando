@@ -85,6 +85,16 @@ Component classes follow a `.block__element` convention per section (e.g. `.hero
 - Mobile-first. Key breakpoints in `portfolio.css`: 1024px, 768px, 480px (search `@media` blocks — they're grouped near the bottom under `/* ── RESPONSIVE ── */`)
 - `prefers-reduced-motion` disables transform-heavy hover/entrance animations
 
+## Working Rule: Leave Nothing Behind
+
+Keep the code and the repo as clean as possible, always. This is a general rule, not a per-task preference.
+
+- **Code**: delete dead code, unused variants, props, CSS rules and data fields in the same change that makes them unused. No commented-out blocks, no "just in case" leftovers, no duplicated values — one source of truth (`src/data/index.js`).
+- **Assets**: when an image or file is replaced, remove the old one. No placeholder content left in the shipped site.
+- **Git**: once a PR is merged, delete its branch locally and on GitHub in the same step, without being asked. Don't leave untracked files lying around — commit them or remove them.
+- **Docs**: when a change makes this file inaccurate, update it in the same change.
+- Only clean up what the current work created or made obsolete. Anything else that looks stale (old branches, files of unknown origin) gets flagged, not deleted.
+
 ## Notes for Future Work
 
 - **No CMS, no markdown content files** — everything textual is in `src/data/index.js`. When editing copy, update both `es` and `en` blocks together.
