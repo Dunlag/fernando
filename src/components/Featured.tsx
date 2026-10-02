@@ -1,11 +1,14 @@
 import Rich from './Rich'
-import { PROJECTS_COMMON, PROJECT_COPY, type Copy, type Lang } from '../data/index'
+import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
+import { useLang, useT } from '../store'
 
 const FEATURED = PROJECTS_COMMON.find((p) => p.featured) ?? PROJECTS_COMMON[0]
 // Sorted by filename so the "00" frame shows first here (the Work card leads with "01")
 const SHOTS = [...FEATURED.shots].sort()
 
-export default function Featured({ t, lang }: { t: Copy; lang: Lang }) {
+export default function Featured() {
+  const t = useT()
+  const lang = useLang()
   const title = PROJECT_COPY[lang][FEATURED.id].title
   return (
     <section className="featured">

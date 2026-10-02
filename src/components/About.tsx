@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, type RefObject } from 'react'
 import Rich from './Rich'
-import type { Copy, Stat } from '../data/index'
+import type { Stat } from '../data/index'
+import { useT } from '../store'
 
 const ABOUT = import.meta.env.BASE_URL + 'assets/about/'
 // one per .about__frame--N slot: 4:3, 3:4, 1:1
@@ -90,7 +91,8 @@ function AnimatedStat({ s, locale }: { s: Stat; locale: string }) {
   )
 }
 
-export default function About({ t }: { t: Copy }) {
+export default function About() {
+  const t = useT()
   const locale = t.dir === 'EN' ? 'en-US' : 'es-ES'
   return (
     <section className="section-about" id="about">

@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useRef, type RefObject } from 'react'
 import { gsap } from 'gsap'
-import { CV_URL, type Copy } from '../data/index'
+import { CV_URL } from '../data/index'
+import { useStore, useT } from '../store'
 
 interface Props {
-  t: Copy
-  open: boolean
-  onClose: () => void
   /** element the panel grows from and shrinks back to */
   originRef: RefObject<HTMLElement>
 }
@@ -23,7 +21,10 @@ function originPoint(originEl: Element | null, panelEl: Element) {
   return { x, y, maxR }
 }
 
-export default function CvModal({ t, open, onClose, originRef }: Props) {
+export default function CvModal({ originRef }: Props) {
+  const t = useT()
+  const open = useStore((s) => s.cvOpen)
+  const onClose = useStore((s) => s.closeCv)
   const backdropRef = useRef<HTMLDivElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
   const closeBtnRef = useRef<HTMLButtonElement>(null)

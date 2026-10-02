@@ -1,6 +1,9 @@
-import { CONTACT, CV_URL, type Copy } from '../data/index'
+import { CONTACT, CV_URL } from '../data/index'
+import { useStore, useT } from '../store'
 
-export default function Footer({ t, onOpenCv }: { t: Copy; onOpenCv: () => void }) {
+export default function Footer() {
+  const t = useT()
+  const openCv = useStore((s) => s.openCv)
   const f = t.footer
   return (
     <footer className="footer">
@@ -20,7 +23,7 @@ export default function Footer({ t, onOpenCv }: { t: Copy; onOpenCv: () => void 
               href={CV_URL}
               onClick={(e) => {
                 e.preventDefault()
-                onOpenCv()
+                openCv()
               }}
             >
               {t.cv.tab}

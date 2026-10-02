@@ -1,6 +1,5 @@
 import { act, render } from '@testing-library/react'
 import { afterAll, beforeAll, expect, it, vi } from 'vitest'
-import { DATA } from '../data/index'
 
 beforeAll(() => {
   vi.useFakeTimers()
@@ -26,7 +25,7 @@ afterAll(() => {
 it('animates the stats up to their final values once in view', async () => {
   // imported after the stubs: About reads matchMedia at module load
   const { default: About } = await import('./About')
-  const { container } = render(<About t={DATA.es} />)
+  const { container } = render(<About />)
 
   expect(container.querySelectorAll('.about__seq-n.is-on')).toHaveLength(0)
   act(() => vi.advanceTimersByTime(5000))

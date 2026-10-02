@@ -1,7 +1,10 @@
 import Rich from './Rich'
-import { PROJECTS_COMMON, PROJECT_COPY, type Copy, type Lang } from '../data/index'
+import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
+import { useLang, useT } from '../store'
 
-export default function Hero({ t, lang }: { t: Copy; lang: Lang }) {
+export default function Hero() {
+  const t = useT()
+  const lang = useLang()
   const copy = PROJECT_COPY[lang]
   return (
     <header className="hero" id="top">

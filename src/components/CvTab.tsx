@@ -1,14 +1,11 @@
 import { forwardRef } from 'react'
-import type { Copy } from '../data/index'
+import { useStore, useT } from '../store'
 
-interface Props {
-  t: Copy
-  onOpenCv: () => void
-}
-
-const CvTab = forwardRef<HTMLButtonElement, Props>(function CvTab({ t, onOpenCv }, ref) {
+const CvTab = forwardRef<HTMLButtonElement>(function CvTab(_props, ref) {
+  const t = useT()
+  const openCv = useStore((s) => s.openCv)
   return (
-    <button ref={ref} type="button" className="cv-tab" onClick={onOpenCv} aria-label={t.cv.expanded}>
+    <button ref={ref} type="button" className="cv-tab" onClick={openCv} aria-label={t.cv.expanded}>
       <span className="cv-tab__expanded">{t.cv.expanded} ↓</span>
       <span className="cv-tab__collapsed">{t.cv.tab}</span>
     </button>
