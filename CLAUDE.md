@@ -88,7 +88,7 @@ Bold, single-theme (no light/dark toggle) editorial look. Tokens live in `:root`
 - `--c-yellow` (base canvas — randomized per page load from `ACCENTS` in `data/index.ts`, persisted in `localStorage` to avoid repeats), `--c-black`, `--c-cream`, `--c-blue`, `--c-red`
 - `--font-display` (Bebas Neue — big condensed headlines, ALL CAPS), `--font-condensed` (Barlow Condensed — eyebrows/labels/tags), `--font-body` (Barlow)
 - `--border` / `--border-thick` — solid 2px/4px black borders used everywhere instead of soft shadows
-- `--space-section-v` / `--space-section-h` — shared section padding scale (`clamp(...)`)
+- `--space-section-v` / `--space-section-h` — shared section padding scale (`clamp(...)`); `--space-section-h` also grows on screens wider than `--page-max` (1600px) so content stays centered while section backgrounds remain full-bleed
 - `--ease-snap` — the standard motion easing curve
 
 Component classes follow a `.block__element` convention per section (e.g. `.hero__title`, `.hero__card`, `.featured__frame`, `.work-grid`) — grep `portfolio.css` for the block name before inventing a new class.
