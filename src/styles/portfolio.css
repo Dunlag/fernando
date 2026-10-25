@@ -19,7 +19,8 @@
   --border: 2px solid var(--c-black);
   --border-thick: 4px solid var(--c-black);
   --space-section-v: clamp(2.5rem, 5vw, 5rem);
-  --space-section-h: clamp(1.5rem, 4vw, 4rem);
+  --page-max: 1600px;
+  --space-section-h: max(clamp(1.5rem, 4vw, 4rem), calc((100vw - var(--page-max)) / 2));
   --ease-snap: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --marquee-speed: 22s;
 }
@@ -266,7 +267,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2.2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem) 2rem;
+  padding: clamp(2.2rem, 5vw, 4rem) var(--space-section-h) 2rem;
   gap: clamp(1.5rem, 3vh, 2.5rem);
 }
 .hero__eyebrow {
@@ -408,8 +409,6 @@ h4 {
   overflow: hidden;
   border: var(--border-thick);
   background: var(--c-black);
-  max-width: min(100%, 1800px);
-  margin-inline: auto;
 }
 .featured__shots {
   position: relative;
@@ -529,7 +528,7 @@ h4 {
   justify-content: center;
   overflow: hidden;
   height: clamp(440px, 80vh, 1000px);
-  padding: clamp(2rem, 4vw, 5rem) 0;
+  padding: clamp(2rem, 4vw, 5rem) var(--space-section-h);
   user-select: none;
 }
 .work-heading-display {
@@ -625,7 +624,7 @@ h4 {
 
 /* ── WORK GRID ── */
 .work-grid-wrapper {
-  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 4rem)
+  padding: clamp(2rem, 5vw, 4.5rem) var(--space-section-h)
     clamp(2rem, 4vw, 4rem);
 }
 .work-grid {

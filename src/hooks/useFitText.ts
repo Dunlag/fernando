@@ -5,7 +5,9 @@ export function useFitText(deps: DependencyList = []) {
     const fit = (el: HTMLElement) => {
       if (!el.parentElement) return
       const pad = parseInt(el.dataset.fit ?? '') || 0
-      const target = el.parentElement.clientWidth - pad
+      const cs = getComputedStyle(el.parentElement)
+      const inner = el.parentElement.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)
+      const target = inner - pad
       if (target <= 0) return
       el.style.fontSize = '100px'
       const w = el.scrollWidth
