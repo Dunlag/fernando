@@ -3,6 +3,7 @@ import './styles/menu-anim.css'
 import './styles/enhance.css'
 import './styles/stack.css'
 import './styles/work-shots.css'
+import './styles/tools.css'
 import './styles/cv-tab.css'
 import './styles/cv-modal.css'
 

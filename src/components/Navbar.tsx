@@ -23,6 +23,9 @@ export default function Navbar() {
             <a href="#work">{t.nav.work}</a>
           </li>
           <li>
+            <a href="#tools">{t.nav.tools}</a>
+          </li>
+          <li>
             <a href="#labs">{t.nav.labs}</a>
           </li>
           <li>
@@ -72,6 +75,9 @@ export default function Navbar() {
         <nav className="navbar__mobile-nav">
           <a href="#work" onClick={close}>
             {t.nav.work}
+          </a>
+          <a href="#tools" onClick={close}>
+            {t.nav.tools}
           </a>
           <a href="#labs" onClick={close}>
             {t.nav.labs}

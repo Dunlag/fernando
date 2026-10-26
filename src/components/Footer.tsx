@@ -13,6 +13,9 @@ export default function Footer() {
             <a href="#work">{f.nav.work}</a>
           </li>
           <li>
+            <a href="#tools">{f.nav.tools}</a>
+          </li>
+          <li>
             <a href="#labs">{f.nav.labs}</a>
           </li>
           <li>

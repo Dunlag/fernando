@@ -114,6 +114,7 @@ export default function About() {
           <div className="about__text">
             <p className="about__p">{t.about.p1}</p>
             <p className="about__p">{t.about.p2}</p>
+            <p className="about__p">{t.about.p3}</p>
             <div className="about__stats">
               {t.about.stats.map((s, i) => (
                 <AnimatedStat key={i} s={s} locale={locale} />
