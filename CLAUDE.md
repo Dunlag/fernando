@@ -35,11 +35,11 @@ root/
     data/index.ts          # single source of truth for all content and its types:
                            #   PROJECTS_COMMON (project metadata), PROJECT_COPY (es/en
                            #   title+desc per project id), DATA.es / DATA.en (all other copy),
-                           #   SERVICES, ACCENTS, CONTACT (email/GitHub/LinkedIn), CV_URL.
+                           #   AGENCY, TOOLS_COMMON/TOOL_COPY, SERVICES, ACCENTS, CONTACT (email/GitHub/LinkedIn), CV_URL.
                            #   Types: Lang, Copy (shape every language must fill), Project,
                            #   ProjectId, RichPart, Stat
     components/            # one file per section (Navbar, Hero, Featured, Marquee, Work,
-                           #   Labs, Services, Stack, About, Cta, Footer) + Rich.tsx (renders
+                           #   Tools, Labs, Services, Stack, About, Cta, Footer) + Rich.tsx (renders
                            #   the small inline-markup arrays used in copy, e.g. line breaks/em)
     hooks/                  # useFitText, useScrollHide
     lib/
@@ -48,7 +48,7 @@ root/
       menu-anim.ts          # SplitText-style nav/footer link animations (exports MenuAnims)
     styles/
       portfolio.css         # main stylesheet — design tokens (:root) + all section styles
-      menu-anim.css, enhance.css, stack.css, work-shots.css  # feature-scoped stylesheets
+      menu-anim.css, enhance.css, stack.css, work-shots.css, tools.css  # feature-scoped stylesheets
   public/
     assets/                # favicon, og-cover, CV pdf, one folder of .webp screenshots per project
     projects/marathon-concept/  # a standalone demo embedded/linked as one project's target
@@ -74,10 +74,14 @@ npm run preview       # serve the built dist/ locally
 
 Projects shown in the "Proyectos"/Work grid are **not** individual files — they're data entries in `src/data/index.ts`:
 
-1. Add an entry to the `PROJECTS` array (exported, typed, as `PROJECTS_COMMON`): `{ id, ref, year, url, repo, tags: [...], shots: [...] }`. Use the next two-digit `ref`. `repo` is optional (adds a "Código" chip linking to the source). Set `url: null, comingSoon: true` for WIP projects instead of a link.
+1. Add an entry to the `PROJECTS` array (exported, typed, as `PROJECTS_COMMON`): `{ id, ref, year, url, repo, tags: [...], shots: [...] }`. Use the next two-digit `ref`. `repo` is optional (adds a "Código" chip linking to the source).
 2. Add a matching `id` key to **both** `PROJECT_COPY.es` and `PROJECT_COPY.en` with `{ title, desc }`. Missing either language is a compile error: `PROJECT_COPY` is typed by project id.
 3. Screenshots are required: put them in `public/assets/<project>/` as WebP and list them in `shots` as `A + "<project>/<file>.webp"`. The hover crossfade in `work-shots.css` only has keyframes for 2, 3, 5 or 8 shots — repeat one to reach a supported count. Convert PNG captures with:
    `npx sharp-cli -i "public/assets/<project>/*.png" -o "{dir}" -f webp -q 78 resize 1200 --withoutEnlargement` and delete the PNGs.
+
+Agency work without a public repo goes in the `AGENCY` array instead (`name, year, url, tags`): it renders as one compact row under the grid, with no screenshots and no per-language copy.
+
+To add a Tools entry, use `TOOLS` (exported as `TOOLS_COMMON`): `id, stack, repo, repoPublic`. Add `{ title, problem }` to `TOOL_COPY.es` and `.en`. The code link only renders when `repoPublic` is true, so flipping a repo to public is one boolean. Use `soon: true` for tools with no repo yet. `shot` (WebP in `public/assets/tools/`) is optional; a "screenshot pending" placeholder shows until it is set.
 
 To add a Labs/experiment entry, use the `EXPERIMENTS` array (exported as `EXP_COMMON`) the same way (simpler shape: `id`, `badge`, `stack`, `url`, `thumb`).
 
@@ -102,7 +106,7 @@ Component classes follow a `.block__element` convention per section (e.g. `.hero
 
 Keep the code and the repo as clean as possible, always. This is a general rule, not a per-task preference.
 
-- **Code**: delete dead code, unused variants, props, CSS rules and data fields in the same change that makes them unused. No commented-out blocks, no "just in case" leftovers, no duplicated values — one source of truth (`src/data/index.js`).
+- **Code**: delete dead code, unused variants, props, CSS rules and data fields in the same change that makes them unused. No commented-out blocks, no "just in case" leftovers, no duplicated values — one source of truth (`src/data/index.ts`).
 - **Assets**: when an image or file is replaced, remove the old one. No placeholder content left in the shipped site.
 - **Git**: once a PR is merged, delete its branch locally and on GitHub in the same step, without being asked. Don't leave untracked files lying around — commit them or remove them.
 - **Docs**: when a change makes this file or `README.md` inaccurate (stack, scripts, structure, how to add a project), update it in the same change.

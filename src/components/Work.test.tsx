@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { expect, it } from 'vitest'
-import { PROJECTS_COMMON } from '../data/index'
+import { AGENCY, PROJECTS_COMMON } from '../data/index'
 import Work from './Work'
 
 it('renders one card per project', () => {
@@ -16,10 +16,8 @@ it('shows the source chip only for projects that have a repo', () => {
   expect(chips.map((a) => a.getAttribute('href'))).toEqual(PROJECTS_COMMON.flatMap((p) => p.repo ?? []))
 })
 
-it('does not link cards of projects that are not public yet', () => {
+it('lists agency work in one row instead of as cards', () => {
   const { container } = render(<Work />)
-  const linked = container.querySelectorAll('.work-card__link')
 
-  expect(linked).toHaveLength(PROJECTS_COMMON.filter((p) => p.url).length)
-  expect(PROJECTS_COMMON.some((p) => !p.url)).toBe(true)
+  expect(container.querySelectorAll('.work-agency__list a')).toHaveLength(AGENCY.length)
 })

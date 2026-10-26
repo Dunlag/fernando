@@ -1,5 +1,5 @@
 import Rich from './Rich'
-import { PROJECTS_COMMON, PROJECT_COPY, CONTACT, type ItemCopy, type Project } from '../data/index'
+import { AGENCY, PROJECTS_COMMON, PROJECT_COPY, CONTACT, type ItemCopy, type Project } from '../data/index'
 import { useLang, useT } from '../store'
 
 function WorkCard({ p, copy }: { p: Project; copy: ItemCopy }) {
@@ -7,11 +7,9 @@ function WorkCard({ p, copy }: { p: Project; copy: ItemCopy }) {
   return (
     <article className="work-card">
       {/* stretched link: covers the card so the repo chip can be its own link (no nested <a>) */}
-      {p.url && (
-        <a className="work-card__link" href={p.url} target="_blank" rel="noopener noreferrer" aria-label={copy.title} />
-      )}
+      <a className="work-card__link" href={p.url} target="_blank" rel="noopener noreferrer" aria-label={copy.title} />
       <div className="work-card__media">
-        <span className="work-card__ref">{p.comingSoon ? t.work.soon : 'REF ' + p.ref}</span>
+        <span className="work-card__ref">REF {p.ref}</span>
         <div className={'work-card__shots work-card__shots--' + p.shots.length}>
           {p.shots.map((src, i) => (
             <div className="work-card__shot" key={i}>
@@ -63,6 +61,20 @@ export default function Work() {
           {PROJECTS_COMMON.map((p) => (
             <WorkCard key={p.id} p={p} copy={copy[p.id]} />
           ))}
+        </div>
+        <div className="work-agency reveal">
+          <h3 className="work-agency__title">{t.work.agency.heading}</h3>
+          <p className="work-agency__note">{t.work.agency.note}</p>
+          <ul className="work-agency__list">
+            {AGENCY.map((a) => (
+              <li key={a.name}>
+                <a href={a.url} target="_blank" rel="noopener noreferrer">
+                  <span className="work-agency__name">{a.name}</span>
+                  <span className="work-agency__meta">{[a.year, ...a.tags].filter(Boolean).join(' · ')}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="work-cta">
           <span className="work-cta__label">

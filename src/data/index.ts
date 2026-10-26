@@ -9,11 +9,9 @@ interface ProjectBase {
   id: string
   ref: string
   year: string
-  /** null while the project is not public yet (see comingSoon) */
-  url: string | null
+  url: string
   repo?: string
   featured?: boolean
-  comingSoon?: boolean
   tags: readonly string[]
   shots: readonly string[]
 }
@@ -42,6 +40,7 @@ export type Stat =
 
 interface NavCopy {
   work: string
+  tools: string
   labs: string
   about: string
   contact: string
@@ -67,7 +66,8 @@ export interface Copy {
   }
   featured: { title: RichPart[]; meta: string[]; cta: string }
   marquee: string[]
-  work: { heading: string; lead: RichPart[]; ctaLabel: string; soon: string; code: string }
+  work: { heading: string; lead: RichPart[]; ctaLabel: string; code: string; agency: { heading: string; note: string } }
+  tools: { eyebrow: string; heading: string; desc: string; soon: string; code: string; noShot: string }
   labs: { eyebrow: string; heading: string; desc: string; open: string }
   services: { eyebrow: string; heading: string; statNum: string; statLabel: string; body: string }
   stack: { eyebrow: string; heading: string; desc: string; groups: { label: string; items: string[] }[] }
@@ -77,6 +77,7 @@ export interface Copy {
     headline: RichPart[]
     p1: string
     p2: string
+    p3: string
     collage: string[]
     stats: Stat[]
   }
@@ -155,82 +156,8 @@ const PROJECTS = [
     ],
   },
   {
-    id: 'pacifico',
-    ref: '03',
-    year: '2025.08',
-    url: 'https://pacificoresidences.com/',
-    tags: ['PHP', 'CSS3', 'JS'],
-    shots: [
-      A + 'pacificoResidences/pacifico-residences01.webp',
-      A + 'pacificoResidences/pacifico-residences02.webp',
-      A + 'pacificoResidences/pacifico-residences03.webp',
-      A + 'pacificoResidences/pacifico-residences04.webp',
-      A + 'pacificoResidences/pacifico-residences02.webp',
-    ],
-  },
-  {
-    id: 'narixa',
-    ref: '04',
-    year: '2025.06',
-    url: 'https://gardenhomes.puertonarixa.com/',
-    tags: ['PHP', 'HTML5', 'CSS3'],
-    shots: [
-      A + 'puertoNarixa/puerto-narixa01.webp',
-      A + 'puertoNarixa/puerto-narixa02.webp',
-      A + 'puertoNarixa/puerto-narixa03.webp',
-      A + 'puertoNarixa/puerto-narixa04.webp',
-      A + 'puertoNarixa/puerto-narixa05.webp',
-    ],
-  },
-  {
-    id: 'avignon',
-    ref: '05',
-    year: '2025.07',
-    url: 'https://fincaavignon.es/',
-    tags: ['PHP', 'HTML5', 'CSS3'],
-    shots: [
-      A + 'fincaAvignon/finca-avignon01.webp',
-      A + 'fincaAvignon/finca-avignon02.webp',
-      A + 'fincaAvignon/finca-avignon03.webp',
-      A + 'fincaAvignon/finca-avignon04.webp',
-      A + 'fincaAvignon/finca-avignon05.webp',
-      A + 'fincaAvignon/finca-avignon06.webp',
-      A + 'fincaAvignon/finca-avignon07.webp',
-      A + 'fincaAvignon/finca-avignon08.webp',
-    ],
-  },
-  {
-    id: 'umbro',
-    ref: '06',
-    year: '2025',
-    url: 'https://umbro.es/',
-    tags: ['PrestaShop', 'Elementor', 'E-com'],
-    shots: [
-      A + 'umbro/umbro01.webp',
-      A + 'umbro/umbro02.webp',
-      A + 'umbro/umbro03.webp',
-      A + 'umbro/umbro04.webp',
-      A + 'umbro/umbro05.webp',
-    ],
-  },
-  {
-    id: 'barberia',
-    ref: '07',
-    year: 'SOON',
-    url: null,
-    comingSoon: true,
-    tags: ['Mammoth Style', 'WIP'],
-    shots: [
-      A + 'barberia/barberia01.webp',
-      A + 'barberia/barberia02.webp',
-      A + 'barberia/barberia03.webp',
-      A + 'barberia/barberia04.webp',
-      A + 'barberia/barberia05.webp',
-    ],
-  },
-  {
     id: 'obras-elena',
-    ref: '08',
+    ref: '03',
     year: '2026',
     url: 'https://dunlag.github.io/Obras-helen/',
     repo: 'https://github.com/Dunlag/Obras-helen',
@@ -243,20 +170,6 @@ const PROJECTS = [
       A + 'obrasHelen/obras-helen02.webp',
     ],
   },
-  {
-    id: 'serenity-hills',
-    ref: '09',
-    year: '2026',
-    url: 'https://serenityhills.proyectosavanza.com/index.php',
-    tags: ['PHP', 'HTML5', 'CSS3'],
-    shots: [
-      A + 'serenity/serenity01.webp',
-      A + 'serenity/serenity02.webp',
-      A + 'serenity/serenity03.webp',
-      A + 'serenity/serenity04.webp',
-      A + 'serenity/serenity05.webp',
-    ],
-  },
 ] as const satisfies readonly ProjectBase[]
 
 export type ProjectId = (typeof PROJECTS)[number]['id']
@@ -265,48 +178,144 @@ export interface Project extends ProjectBase {
 }
 export const PROJECTS_COMMON: readonly Project[] = PROJECTS
 
+/** Agency work without a public repo: shown as one compact row, not as cards. Names are proper nouns, so no per-language copy. */
+export const AGENCY: readonly { name: string; year?: string; url: string; tags: readonly string[] }[] = [
+  { name: 'Pacífico Residences', year: '2025.08', url: 'https://pacificoresidences.com/', tags: ['PHP', 'CSS3', 'JS'] },
+  {
+    name: 'Puerto Narixa',
+    year: '2025.06',
+    url: 'https://gardenhomes.puertonarixa.com/',
+    tags: ['PHP', 'HTML5', 'CSS3'],
+  },
+  { name: 'Finca Avignon', year: '2025.07', url: 'https://fincaavignon.es/', tags: ['PHP', 'HTML5', 'CSS3'] },
+  { name: 'Mipuf', year: '2025+', url: 'https://www.mipuf.es/', tags: ['PrestaShop', 'E-com'] },
+  { name: 'Cenep', year: '2026.10', url: 'https://cenep.kodoo.es/', tags: ['Odoo', 'E-com'] },
+  { name: 'Umbro Iberia', year: '2025', url: 'https://umbro.es/', tags: ['PrestaShop', 'Elementor', 'E-com'] },
+  {
+    name: 'Serenity Hills',
+    year: '2026',
+    url: 'https://serenityhills.proyectosavanza.com/index.php',
+    tags: ['PHP', 'HTML5', 'CSS3'],
+  },
+]
+
+interface ToolBase {
+  id: string
+  stack: string
+  /** repo URL, kept ready while the repo is private; only rendered when repoPublic */
+  repo?: string
+  repoPublic: boolean
+  /** no repo yet at all */
+  soon?: boolean
+  /** screenshot under public/assets/tools/; a placeholder is drawn while missing */
+  shot?: string
+}
+
+const TOOLS = [
+  {
+    id: 'escrow',
+    shot: A + 'tools/escrow.webp',
+    stack: 'Go · Bubble Tea',
+    repo: 'https://github.com/Dunlag/escrow',
+    repoPublic: false,
+  },
+  { id: 'tesla', stack: 'GJS · GNOME Shell 50', repoPublic: false, soon: true },
+  { id: 'spotify-cli', stack: 'Ink · React · Node', repo: 'https://github.com/Dunlag/spotify-cli', repoPublic: false },
+  {
+    id: 'sitio-cli',
+    shot: A + 'tools/sitio-cli.webp',
+    stack: 'Node · CLI',
+    repo: 'https://github.com/Dunlag/sitio-cli',
+    repoPublic: false,
+  },
+  {
+    id: 'creador-de-videos',
+    shot: A + 'tools/creador-de-videos.webp',
+    stack: 'Node · Canvas · Kokoro',
+    repo: 'https://github.com/Dunlag/creador-de-videos',
+    repoPublic: false,
+  },
+] as const satisfies readonly ToolBase[]
+
+export type ToolId = (typeof TOOLS)[number]['id']
+export interface Tool extends ToolBase {
+  id: ToolId
+}
+export const TOOLS_COMMON: readonly Tool[] = TOOLS
+
+// Typed by id: a tool missing its copy in either language does not compile
+export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: string }>> = {
+  es: {
+    escrow: {
+      title: 'ESCROW',
+      problem: 'Estrategia espacial cyberpunk para jugar sin salir de la terminal.',
+    },
+    tesla: {
+      title: 'Tesla para GNOME',
+      problem:
+        'El estado de mi coche en la barra de GNOME. Es un port de omarchy-tesla (MIT, de Jankees van Woezik) que acabo de empezar.',
+    },
+    'spotify-cli': {
+      title: 'spotify-cli',
+      problem: 'Spotify en la terminal, con la carátula incluida y todo desde el teclado.',
+    },
+    'sitio-cli': {
+      title: 'sitio-cli',
+      problem:
+        'Un comando para abrir de golpe todo lo de un cliente (web, admin, staging, repo…) y auditar su web de paso.',
+    },
+    'creador-de-videos': {
+      title: 'Creador de vídeos',
+      problem: 'Mi estudio para hacer vídeos animados con código. Con él monto los del canal AskPloc.',
+    },
+  },
+  en: {
+    escrow: {
+      title: 'ESCROW',
+      problem: 'Cyberpunk space strategy you play without leaving the terminal.',
+    },
+    tesla: {
+      title: 'Tesla for GNOME',
+      problem:
+        "My car's status in the GNOME bar. It's a port of omarchy-tesla (MIT, by Jankees van Woezik) that I've just started.",
+    },
+    'spotify-cli': {
+      title: 'spotify-cli',
+      problem: 'Spotify in the terminal, cover art included, all from the keyboard.',
+    },
+    'sitio-cli': {
+      title: 'sitio-cli',
+      problem:
+        "One command to open everything for a client (site, admin, staging, repo…) and audit their site while you're at it.",
+    },
+    'creador-de-videos': {
+      title: 'Video maker',
+      problem: 'My studio for making animated videos with code. I use it for the AskPloc channel.',
+    },
+  },
+}
+
 const EXPERIMENTS = [
   {
     id: 'hover-dock',
     badge: 'UI',
     stack: 'CSS · JS',
     url: 'https://codepen.io/Fernando-Pinilla/pen/wBoayWM',
-    thumb: 'https://shots.codepen.io/username/pen/wBoayWM-512.jpg',
-  },
-  {
-    id: 'bg-motion',
-    badge: 'CSS',
-    stack: 'CSS · Animación',
-    url: 'https://codepen.io/Fernando-Pinilla/pen/WbGYavO',
-    thumb: 'https://shots.codepen.io/username/pen/WbGYavO-512.jpg',
-  },
-  {
-    id: 'login-scroll',
-    badge: 'UI',
-    stack: 'CSS · JS',
-    url: 'https://codepen.io/Fernando-Pinilla/pen/myyKKzX',
-    thumb: 'https://shots.codepen.io/username/pen/myyKKzX-512.jpg',
+    thumb: A + 'labs/hover-dock.webp',
   },
   {
     id: 'navbar-anim',
     badge: 'CSS',
     stack: 'CSS · JS',
     url: 'https://codepen.io/Fernando-Pinilla/pen/YPXOoPO',
-    thumb: 'https://shots.codepen.io/username/pen/YPXOoPO-512.jpg',
-  },
-  {
-    id: 'button-anim',
-    badge: 'CSS',
-    stack: 'CSS',
-    url: 'https://codepen.io/Fernando-Pinilla/pen/RNoZvqO',
-    thumb: 'https://shots.codepen.io/username/pen/RNoZvqO-512.jpg',
+    thumb: A + 'labs/navbar-anim.webp',
   },
   {
     id: 'error404-pen',
     badge: 'Canvas',
     stack: 'CSS · JS',
     url: 'https://codepen.io/Fernando-Pinilla/pen/raLXxZG',
-    thumb: 'https://shots.codepen.io/username/pen/raLXxZG-512.jpg',
+    thumb: A + 'labs/error404-pen.webp',
   },
 ] as const satisfies readonly ExperimentBase[]
 
@@ -331,53 +340,17 @@ export const PROJECT_COPY: Record<Lang, Record<ProjectId | ExperimentId, ItemCop
       title: 'Marathon Concept',
       desc: 'Recreación fiel del site oficial de Bungie. Paleta neón, efectos avanzados y responsive.',
     },
-    pacifico: {
-      title: 'Pacífico Residences',
-      desc: 'Landing de captación para promoción residencial de lujo en Málaga. Proyecto real en producción.',
-    },
-    narixa: {
-      title: 'Puerto Narixa',
-      desc: 'Landing inmobiliaria para concepto Garden Homes. Proyecto real en producción.',
-    },
-    avignon: {
-      title: 'Finca Avignon',
-      desc: 'Landing de captación para promoción de apartamentos. Proyecto real en producción.',
-    },
-    umbro: {
-      title: 'Umbro Iberia',
-      desc: 'Maquetación de la tienda oficial de Umbro para España y Portugal sobre PrestaShop.',
-    },
-    barberia: {
-      title: 'Barbería',
-      desc: 'Landing de barbería con estética Mammoth Style. En construcción — llega pronto.',
-    },
     'obras-elena': {
       title: 'Obras de Elena',
       desc: 'Web personal para que Elena publique y muestre sus obras. Proyecto real, en producción.',
-    },
-    'serenity-hills': {
-      title: 'Serenity Hills',
-      desc: 'Landing de captación para una promoción residencial. Proyecto real, en producción.',
     },
     'hover-dock': {
       title: 'Dock Hover',
       desc: 'Dock estilo macOS con animación de hover. Pure CSS + JS, sin frameworks.',
     },
-    'bg-motion': {
-      title: 'Fondo en Movimiento',
-      desc: 'Fondo animado con movimiento continuo. Efecto CSS puro.',
-    },
-    'login-scroll': {
-      title: 'Login con Scroll',
-      desc: 'Formulario de login con transiciones de scroll. Micro-interacciones en CSS.',
-    },
     'navbar-anim': {
       title: 'Navbar Animado',
       desc: 'Menú de navegación con animación de apertura y cierre.',
-    },
-    'button-anim': {
-      title: 'Animación de Botón',
-      desc: 'Efecto de animación sobre un botón. CSS puro.',
     },
     'error404-pen': {
       title: 'Error 404',
@@ -397,53 +370,17 @@ export const PROJECT_COPY: Record<Lang, Record<ProjectId | ExperimentId, ItemCop
       title: 'Marathon Concept',
       desc: "Faithful recreation of Bungie's official site. Neon palette, advanced effects, responsive.",
     },
-    pacifico: {
-      title: 'Pacífico Residences',
-      desc: 'Lead-gen landing for a luxury residential development in Málaga. Real, in production.',
-    },
-    narixa: {
-      title: 'Puerto Narixa',
-      desc: 'Real-estate landing for the Garden Homes concept. Real project in production.',
-    },
-    avignon: {
-      title: 'Finca Avignon',
-      desc: 'Lead-gen landing for an apartment development. Real project in production.',
-    },
-    umbro: {
-      title: 'Umbro Iberia',
-      desc: "Front-end build of Umbro's official store for Spain & Portugal on PrestaShop.",
-    },
-    barberia: {
-      title: 'Barbershop',
-      desc: 'Barbershop landing in Mammoth Style. Under construction — coming soon.',
-    },
     'obras-elena': {
       title: "Elena's Art",
       desc: 'Personal site where Elena publishes and showcases her artwork. Real project, in production.',
-    },
-    'serenity-hills': {
-      title: 'Serenity Hills',
-      desc: 'Lead-gen landing for a residential development. Real project, in production.',
     },
     'hover-dock': {
       title: 'Dock Hover',
       desc: 'macOS-style dock with hover animation. Pure CSS + JS, no frameworks.',
     },
-    'bg-motion': {
-      title: 'Moving Background',
-      desc: 'Animated background with continuous motion. Pure CSS effect.',
-    },
-    'login-scroll': {
-      title: 'Scroll Login',
-      desc: 'Login form with scroll-driven transitions. CSS micro-interactions.',
-    },
     'navbar-anim': {
       title: 'Animated Navbar',
       desc: 'Navigation menu with open/close animation.',
-    },
-    'button-anim': {
-      title: 'Button Animation',
-      desc: 'Animated effect on a button. Pure CSS.',
     },
     'error404-pen': {
       title: 'Error 404',
@@ -457,34 +394,44 @@ export const SERVICES: Record<Lang, Service[]> = {
     {
       num: '01',
       name: 'FRONTEND',
-      desc: 'Interfaces modernas y funcionales. HTML semántico, CSS contemporáneo y JS vanilla.',
+      desc: 'React y TypeScript, o HTML, CSS y JS a pelo, según pida el proyecto. Mira Work.',
     },
     {
       num: '02',
       name: 'DISEÑO',
-      desc: 'UI/UX, sistemas de diseño, jerarquía tipográfica y micro-interacciones que aportan.',
+      desc: 'UI/UX con carácter y animación (GSAP, Canvas): esta web, Two Black Cats, y el flujo de Claude Design a React de Toldos.',
     },
     {
       num: '03',
-      name: 'WEB',
-      desc: 'Del concepto a producción: rendimiento, SEO básico y accesibilidad como mínimos.',
+      name: 'WEB DE AGENCIA',
+      desc: 'PHP, WordPress y PrestaShop en proyectos reales de cliente, montados primero en local con Docker.',
+    },
+    {
+      num: '04',
+      name: 'HERRAMIENTAS',
+      desc: 'CLIs y TUIs en Go y Node, y un motor de vídeo propio. Mira Herramientas.',
     },
   ],
   en: [
     {
       num: '01',
       name: 'FRONTEND',
-      desc: 'Modern, functional interfaces. Semantic HTML, contemporary CSS and vanilla JS.',
+      desc: 'React and TypeScript, or bare HTML, CSS and JS, whatever the project asks for. See Work.',
     },
     {
       num: '02',
       name: 'DESIGN',
-      desc: 'UI/UX, design systems, type hierarchy and micro-interactions that earn their place.',
+      desc: 'UI/UX with character and motion (GSAP, Canvas): this site, Two Black Cats, and the Claude Design to React flow behind Toldos.',
     },
     {
       num: '03',
-      name: 'WEB',
-      desc: 'Concept to production: performance, basic SEO and accessibility as a baseline.',
+      name: 'AGENCY WEB',
+      desc: 'PHP, WordPress and PrestaShop on real client projects, built locally with Docker first.',
+    },
+    {
+      num: '04',
+      name: 'TOOLS',
+      desc: 'CLIs and TUIs in Go and Node, plus a home-made video engine. See Tools.',
     },
   ],
 }
@@ -494,6 +441,7 @@ export const DATA: Record<Lang, Copy> = {
     dir: 'ES',
     nav: {
       work: 'Proyectos',
+      tools: 'Herramientas',
       labs: 'Experimentos',
       about: 'Sobre mí',
       contact: 'Contacto',
@@ -503,9 +451,9 @@ export const DATA: Record<Lang, Copy> = {
     menu: { open: 'Abrir menú', close: 'Cerrar menú' },
     mailSubject: 'Contacto desde portfolio',
     hero: {
-      eyebrow: '↘ Frontend Developer · Málaga, ES',
+      eyebrow: '↘ Frontend + herramientas/IA · Málaga, ES',
       title: ['DISEÑO WEBS', { br: true }, { em: 'imposibles' }, { br: true }, 'DE IGNORAR'],
-      sub: 'Frontend dev y diseñador UI/UX. React, CSS contemporáneo y JavaScript — código que sigue siendo legible seis meses después.',
+      sub: 'Frontend que también construye herramientas, TUIs y flujos con IA. React, CSS y JavaScript en la web; Go y Node en la terminal. Código que se sigue entendiendo seis meses después.',
       btnPrimary: 'Ver proyectos',
       btnSecondary: 'Hablemos',
       cardNow: 'RECIENTE',
@@ -520,11 +468,15 @@ export const DATA: Record<Lang, Copy> = {
     marquee: [
       'FRONTEND',
       'UI/UX',
-      'CSS QUE RESPIRA',
+      'CSS A PELO',
       'VANILLA JS',
       'RESPONSIVE',
       'ANIMACIÓN',
       'ACCESIBLE',
+      'TERMINAL',
+      'GO',
+      'NODE',
+      'AGENTES',
       'HECHO A MANO',
       'DEL DIRECTO AL NAVEGADOR',
     ],
@@ -532,13 +484,24 @@ export const DATA: Record<Lang, Copy> = {
       heading: 'WORK',
       lead: [{ span: 'Producto real, en producción — de la idea al deploy.' }],
       ctaLabel: 'VER TODO',
+      code: 'Código',
+      agency: {
+        heading: 'Trabajo de agencia',
+        note: 'Webs de cliente en PHP, WordPress y PrestaShop. Las desarrollo primero en local con Docker y luego las subo.',
+      },
+    },
+    tools: {
+      eyebrow: '↘ Taller',
+      heading: 'HERRAMIENTAS',
+      desc: 'Lo que construyo cuando el problema no es una web: juegos, TUIs, CLIs y agentes. El código se verá según vaya puliéndolo.',
       soon: 'Próximamente',
       code: 'Código',
+      noShot: 'Captura pendiente',
     },
     labs: {
       eyebrow: '↘ Patio de pruebas',
       heading: 'LABS',
-      desc: 'Experimentos sueltos: efectos de botones, micro-interacciones, páginas de error con Canvas y componentes de UI. Sin frameworks, sin dependencias — solo HTML, CSS y JS.',
+      desc: 'Tres experimentos sueltos: un dock con hover, una 404 con Canvas y un menú que se abre y se cierra. Sin frameworks, solo HTML, CSS y JS.',
       open: 'Abrir',
     },
     services: {
@@ -559,6 +522,7 @@ export const DATA: Record<Lang, Copy> = {
         },
         { label: 'Backend', items: ['Node.js', 'PHP', 'MySQL', 'REST APIs'] },
         { label: 'Herramientas', items: ['Git', 'Docker', 'Vite', 'Figma'] },
+        { label: 'Herramientas/IA', items: ['Go', 'Bubble Tea', 'Ink', 'GJS', 'Claude Code', 'Agentes'] },
       ],
     },
     about: {
@@ -571,6 +535,7 @@ export const DATA: Record<Lang, Copy> = {
       ],
       p1: 'Me gusta el desarrollo web casi tanto como discutir el orden correcto de ver Star Wars: coger una idea suelta y convertirla en una página que carga rápido y se entiende a la primera. Vengo del directo —conciertos, rodajes—, donde no hay segundas tomas, y esa costumbre de hacer las cosas bien al momento se me quedó pegada.',
       p2: 'Hago frontend con HTML, CSS y JavaScript, cuidando el rendimiento, la accesibilidad y el SEO sin dármelas de gurú de nada. Lo que me importa: que la web vaya fina y que el código siga teniendo sentido cuando vuelvo a él meses después. Desde Málaga y casi siempre en remoto.',
+      p3: 'Del directo me quedé con la manía de no fiarme de «ya saldrá bien». En el escenario no hay segundas tomas; en código lo equivalente son los tests. Por eso, además de webs, ahora hago herramientas de terminal, juegos y agentes con IA, y los que importan llevan tests.',
       collage: ['Mesa de sonido en directo', 'Escenario durante el montaje', 'Plató de televisión antes del directo'],
       stats: [
         {
@@ -591,6 +556,7 @@ export const DATA: Record<Lang, Copy> = {
     footer: {
       nav: {
         work: 'Proyectos',
+        tools: 'Herramientas',
         labs: 'Labs',
         about: 'Sobre mí',
         contact: 'Contacto',
@@ -608,15 +574,15 @@ export const DATA: Record<Lang, Copy> = {
   },
   en: {
     dir: 'EN',
-    nav: { work: 'Work', labs: 'Labs', about: 'About', contact: 'Contact' },
+    nav: { work: 'Work', tools: 'Tools', labs: 'Labs', about: 'About', contact: 'Contact' },
     cta: 'Contact',
     cv: { tab: 'CV', expanded: 'Download CV', close: 'Close' },
     menu: { open: 'Open menu', close: 'Close menu' },
     mailSubject: 'Contact from portfolio',
     hero: {
-      eyebrow: '↘ Frontend Developer · Málaga, ES',
+      eyebrow: '↘ Frontend + tools/AI · Málaga, ES',
       title: ['I BUILD SITES', { br: true }, { em: 'impossible' }, { br: true }, 'TO IGNORE'],
-      sub: 'Frontend dev & UI/UX designer. React, modern CSS and JavaScript — code that still reads clean six months later.',
+      sub: 'Frontend that also builds tools, TUIs and AI workflows. React, CSS and JavaScript on the web; Go and Node in the terminal. Code that still reads clean six months later.',
       btnPrimary: 'See projects',
       btnSecondary: "Let's talk",
       cardNow: 'RECENT',
@@ -631,11 +597,15 @@ export const DATA: Record<Lang, Copy> = {
     marquee: [
       'FRONTEND',
       'UI/UX',
-      'CSS THAT BREATHES',
+      'NO-FRAMEWORK CSS',
       'VANILLA JS',
       'RESPONSIVE',
       'MOTION',
       'ACCESSIBLE',
+      'TERMINAL',
+      'GO',
+      'NODE',
+      'AGENTS',
       'HAND-BUILT',
       'FROM STAGE TO BROWSER',
     ],
@@ -643,13 +613,24 @@ export const DATA: Record<Lang, Copy> = {
       heading: 'WORK',
       lead: [{ span: 'Real, shipped product — from idea to deploy.' }],
       ctaLabel: 'VIEW ALL',
+      code: 'Code',
+      agency: {
+        heading: 'Agency work',
+        note: 'Client sites in PHP, WordPress and PrestaShop. I build them locally with Docker first, then ship them.',
+      },
+    },
+    tools: {
+      eyebrow: '↘ Workshop',
+      heading: 'TOOLS',
+      desc: "What I build when the problem isn't a website: games, TUIs, CLIs and agents. The code goes up as I polish it.",
       soon: 'Coming soon',
       code: 'Code',
+      noShot: 'Screenshot pending',
     },
     labs: {
       eyebrow: '↘ Playground',
       heading: 'LABS',
-      desc: 'Loose experiments: button effects, micro-interactions, Canvas error pages and UI components. No frameworks, no dependencies — just HTML, CSS and JS.',
+      desc: 'Three loose experiments: a hover dock, a Canvas 404 and a menu that opens and closes. No frameworks, just HTML, CSS and JS.',
       open: 'Open',
     },
     services: {
@@ -670,6 +651,7 @@ export const DATA: Record<Lang, Copy> = {
         },
         { label: 'Backend', items: ['Node.js', 'PHP', 'MySQL', 'REST APIs'] },
         { label: 'Tooling', items: ['Git', 'Docker', 'Vite', 'Figma'] },
+        { label: 'Tools/AI', items: ['Go', 'Bubble Tea', 'Ink', 'GJS', 'Claude Code', 'Agents'] },
       ],
     },
     about: {
@@ -682,6 +664,7 @@ export const DATA: Record<Lang, Copy> = {
       ],
       p1: 'I like web development almost as much as arguing about the right order to watch Star Wars: taking a loose idea and turning it into a page that loads fast and makes sense the first time. I come from live work —concerts, shoots— where there are no second takes, and that habit of getting things right on the spot stuck with me.',
       p2: 'I build frontend with HTML, CSS and JavaScript, keeping an eye on performance, accessibility and SEO without acting like some kind of guru. What matters to me: the site runs smooth and the code still makes sense when I come back to it months later. From Málaga, mostly remote.',
+      p3: "Live work left me with a distrust of 'it'll be fine'. On stage there are no second takes; in code the equivalent is tests. That's why, besides websites, I now build terminal tools, games and AI agents, and the ones that matter come with tests.",
       collage: ['Live sound console', 'Stage during load-in', 'TV studio set before a show'],
       stats: [
         {
@@ -700,7 +683,7 @@ export const DATA: Record<Lang, Copy> = {
       btn: 'Transmit message',
     },
     footer: {
-      nav: { work: 'Work', labs: 'Labs', about: 'About', contact: 'Contact' },
+      nav: { work: 'Work', tools: 'Tools', labs: 'Labs', about: 'About', contact: 'Contact' },
       colA: { label: 'Write me' },
       colB: { label: 'Where', lines: ['Málaga / Spain', 'Remote too'] },
       colC: { label: 'Social' },

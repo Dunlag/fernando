@@ -10,6 +10,7 @@ import Hero from './components/Hero'
 import Featured from './components/Featured'
 import Marquee from './components/Marquee'
 import Work from './components/Work'
+import Tools from './components/Tools'
 import Labs from './components/Labs'
 import Services from './components/Services'
 import Stack from './components/Stack'
@@ -82,9 +83,9 @@ export default function App() {
 
   // SplitText menu animations — re-init on lang change
   useEffect(() => {
-    const navTexts = [data.nav.work, data.nav.labs, data.nav.about, data.cv.tab, data.nav.contact]
+    const navTexts = [data.nav.work, data.nav.tools, data.nav.labs, data.nav.about, data.cv.tab, data.nav.contact]
     const f = data.footer.nav
-    const footerTexts = [f.work, f.labs, f.about, data.cv.tab, f.contact]
+    const footerTexts = [f.work, f.tools, f.labs, f.about, data.cv.tab, f.contact]
     const id = requestAnimationFrame(() => MenuAnims.init(navTexts, footerTexts))
     if (document.fonts?.ready) document.fonts.ready.then(() => MenuAnims.init(navTexts, footerTexts))
     return () => {
@@ -124,6 +125,7 @@ export default function App() {
       <Featured />
       <Marquee />
       <Work />
+      <Tools />
       <Labs />
       <Services />
       <Stack />
