@@ -21,11 +21,25 @@ export default function Stack() {
               {g.label}
             </div>
             <ul className="stack-grid reveal reveal--stagger">
-              {g.items.map((item, i) => (
-                <li className="stack-tile" key={item} style={{ '--n': i } as CSSProperties}>
-                  <span className="stack-tile__name">{item}</span>
-                </li>
-              ))}
+              {g.items.map((item, i) => {
+                const name = typeof item === 'string' ? item : item.name
+                return (
+                  <li className="stack-tile" key={name} style={{ '--n': i } as CSSProperties}>
+                    {typeof item === 'string' ? (
+                      <span className="stack-tile__name">{name}</span>
+                    ) : (
+                      <a
+                        className="stack-tile__name stack-tile__link"
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {name} <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           </div>
         ))}

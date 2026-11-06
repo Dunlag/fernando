@@ -31,6 +31,9 @@ export interface ItemCopy {
   desc: string
 }
 
+/** A Stack tile: plain text, or a tile that links out. */
+export type StackItem = string | { name: string; href: string }
+
 export interface Service {
   num: string
   name: string
@@ -70,7 +73,7 @@ export interface Copy {
   work: { heading: string; lead: RichPart[]; ctaLabel: string; soon: string; code: string }
   labs: { eyebrow: string; heading: string; desc: string; open: string }
   services: { eyebrow: string; heading: string; statNum: string; statLabel: string; body: string }
-  stack: { eyebrow: string; heading: string; desc: string; groups: { label: string; items: string[] }[] }
+  stack: { eyebrow: string; heading: string; desc: string; groups: { label: string; items: StackItem[] }[] }
   about: {
     eyebrow: string
     heading: string
@@ -98,6 +101,7 @@ export interface Copy {
 const A = import.meta.env.BASE_URL + 'assets/'
 
 export const CV_URL = A + 'cv-fernando-pinilla.pdf'
+const OMARCHY_PLUGIN_URL = 'https://plugins.omarchy.org/plugin.html?id=io.github.dunlag.autostart-workspaces'
 
 export const CONTACT = {
   email: 'fernando.pinilla85@gmail.com',
@@ -558,7 +562,10 @@ export const DATA: Record<Lang, Copy> = {
           items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS moderno', 'GSAP', 'Canvas'],
         },
         { label: 'Backend', items: ['Node.js', 'PHP', 'MySQL', 'REST APIs'] },
-        { label: 'Herramientas', items: ['Git', 'Docker', 'Vite', 'Figma'] },
+        {
+          label: 'Herramientas',
+          items: ['Git', 'Docker', 'Vite', 'Figma', { name: 'Plugin Omarchy', href: OMARCHY_PLUGIN_URL }],
+        },
       ],
     },
     about: {
@@ -669,7 +676,10 @@ export const DATA: Record<Lang, Copy> = {
           items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'Modern CSS', 'GSAP', 'Canvas'],
         },
         { label: 'Backend', items: ['Node.js', 'PHP', 'MySQL', 'REST APIs'] },
-        { label: 'Tooling', items: ['Git', 'Docker', 'Vite', 'Figma'] },
+        {
+          label: 'Tooling',
+          items: ['Git', 'Docker', 'Vite', 'Figma', { name: 'Omarchy plugin', href: OMARCHY_PLUGIN_URL }],
+        },
       ],
     },
     about: {

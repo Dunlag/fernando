@@ -62,6 +62,8 @@
   transition:color .2s ease;
 }
 .stack-tile:hover .stack-tile__name{color:var(--c-black);}
+.stack-tile__link{text-decoration:none;}
+.stack-tile__link:focus-visible{outline:3px solid var(--c-blue); outline-offset:6px;}
 
 /* staggered scroll entrance — children rise + fade in sequence.
    The grid itself is observed (gets .is-in) but must stay visible — only the
