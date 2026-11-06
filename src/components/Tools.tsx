@@ -21,7 +21,7 @@ export default function Tools() {
         {TOOLS_COMMON.map((tool) => {
           const c = copy[tool.id]
           return (
-            <article className="tool-card" key={tool.id}>
+            <article className={tool.url ? 'tool-card tool-card--link' : 'tool-card'} key={tool.id}>
               <div className="tool-card__media">
                 {tool.shot ? (
                   <img src={tool.shot} alt={c.title} loading="lazy" decoding="async" />
@@ -30,11 +30,21 @@ export default function Tools() {
                 )}
               </div>
               <div className="tool-card__body">
-                <h3 className="tool-card__title">{c.title}</h3>
+                <h3 className="tool-card__title">
+                  {tool.url ? (
+                    <a className="tool-card__link" href={tool.url} target="_blank" rel="noopener noreferrer">
+                      {c.title}
+                    </a>
+                  ) : (
+                    c.title
+                  )}
+                </h3>
                 <p className="tool-card__problem">{c.problem}</p>
                 <div className="tool-card__foot">
                   <span className="tool-card__stack">{tool.stack}</span>
-                  {tool.repoPublic && tool.repo ? (
+                  {tool.url ? (
+                    <span className="tool-card__view">{c.link} ↗</span>
+                  ) : tool.repoPublic && tool.repo ? (
                     <a className="tool-card__code" href={tool.repo} target="_blank" rel="noopener noreferrer">
                       {t.tools.code} ↗
                     </a>

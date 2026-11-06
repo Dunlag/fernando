@@ -16,3 +16,12 @@ it('links code only for tools whose repo is public, and marks the ones without a
   expect(links.map((a) => a.getAttribute('href'))).toEqual(TOOLS_COMMON.flatMap((t) => (t.repoPublic && t.repo) || []))
   expect(container.querySelectorAll('.tool-card__soon')).toHaveLength(TOOLS_COMMON.filter((t) => t.soon).length)
 })
+
+it('makes the whole card a link for tools with a public page', () => {
+  const { container } = render(<Tools />)
+  const withUrl = TOOLS_COMMON.filter((t) => t.url)
+  const links = [...container.querySelectorAll<HTMLAnchorElement>('.tool-card__link')]
+
+  expect(links.map((a) => a.getAttribute('href'))).toEqual(withUrl.map((t) => t.url))
+  expect(container.querySelectorAll('.tool-card--link')).toHaveLength(withUrl.length)
+})

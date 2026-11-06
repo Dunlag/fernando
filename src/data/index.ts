@@ -205,6 +205,8 @@ interface ToolBase {
   /** repo URL, kept ready while the repo is private; only rendered when repoPublic */
   repo?: string
   repoPublic: boolean
+  /** public page for the tool (e.g. a marketplace listing); makes the whole card a link, labelled by TOOL_COPY[lang][id].link */
+  url?: string
   /** no repo yet at all */
   soon?: boolean
   /** screenshot under public/assets/tools/; a placeholder is drawn while missing */
@@ -232,7 +234,15 @@ const TOOLS = [
     id: 'creador-de-videos',
     shot: A + 'tools/creador-de-videos.webp',
     stack: 'Node · Canvas · Kokoro',
+    url: 'https://www.youtube.com/@AskPloc',
     repo: 'https://github.com/Dunlag/creador-de-videos',
+    repoPublic: false,
+  },
+  {
+    id: 'autostart-workspaces',
+    shot: A + 'tools/autostart-workspaces.webp',
+    stack: 'QML · Bash · Hyprland',
+    url: 'https://plugins.omarchy.org/plugin.html?id=io.github.dunlag.autostart-workspaces',
     repoPublic: false,
   },
 ] as const satisfies readonly ToolBase[]
@@ -244,7 +254,7 @@ export interface Tool extends ToolBase {
 export const TOOLS_COMMON: readonly Tool[] = TOOLS
 
 // Typed by id: a tool missing its copy in either language does not compile
-export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: string }>> = {
+export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: string; link?: string }>> = {
   es: {
     escrow: {
       title: 'ESCROW',
@@ -267,6 +277,13 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
     'creador-de-videos': {
       title: 'Creador de vídeos',
       problem: 'Mi estudio para hacer vídeos animados con código. Con él monto los del canal AskPloc.',
+      link: 'Ver canal',
+    },
+    'autostart-workspaces': {
+      title: 'Autostart Workspaces',
+      problem:
+        'Elige qué apps arrancan al iniciar sesión y en qué workspace de Hyprland se colocan. Plugin para Omarchy.',
+      link: 'Ver plugin',
     },
   },
   en: {
@@ -291,6 +308,12 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
     'creador-de-videos': {
       title: 'Video maker',
       problem: 'My studio for making animated videos with code. I use it for the AskPloc channel.',
+      link: 'View channel',
+    },
+    'autostart-workspaces': {
+      title: 'Autostart Workspaces',
+      problem: 'Pick which apps launch at login and on which Hyprland workspace each one lands. A plugin for Omarchy.',
+      link: 'View plugin',
     },
   },
 }
