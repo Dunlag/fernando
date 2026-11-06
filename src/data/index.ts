@@ -67,7 +67,7 @@ export interface Copy {
   featured: { title: RichPart[]; meta: string[]; cta: string }
   marquee: string[]
   work: { heading: string; lead: RichPart[]; ctaLabel: string; code: string; agency: { heading: string; note: string } }
-  tools: { eyebrow: string; heading: string; desc: string; soon: string; code: string; view: string; noShot: string }
+  tools: { eyebrow: string; heading: string; desc: string; soon: string; code: string; noShot: string }
   labs: { eyebrow: string; heading: string; desc: string; open: string }
   services: { eyebrow: string; heading: string; statNum: string; statLabel: string; body: string }
   stack: { eyebrow: string; heading: string; desc: string; groups: { label: string; items: string[] }[] }
@@ -205,7 +205,7 @@ interface ToolBase {
   /** repo URL, kept ready while the repo is private; only rendered when repoPublic */
   repo?: string
   repoPublic: boolean
-  /** public page for the tool (e.g. a marketplace listing); makes the whole card a link */
+  /** public page for the tool (e.g. a marketplace listing); makes the whole card a link, labelled by TOOL_COPY[lang][id].link */
   url?: string
   /** no repo yet at all */
   soon?: boolean
@@ -234,6 +234,7 @@ const TOOLS = [
     id: 'creador-de-videos',
     shot: A + 'tools/creador-de-videos.webp',
     stack: 'Node · Canvas · Kokoro',
+    url: 'https://www.youtube.com/@AskPloc',
     repo: 'https://github.com/Dunlag/creador-de-videos',
     repoPublic: false,
   },
@@ -253,7 +254,7 @@ export interface Tool extends ToolBase {
 export const TOOLS_COMMON: readonly Tool[] = TOOLS
 
 // Typed by id: a tool missing its copy in either language does not compile
-export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: string }>> = {
+export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: string; link?: string }>> = {
   es: {
     escrow: {
       title: 'ESCROW',
@@ -276,11 +277,13 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
     'creador-de-videos': {
       title: 'Creador de vídeos',
       problem: 'Mi estudio para hacer vídeos animados con código. Con él monto los del canal AskPloc.',
+      link: 'Ver canal',
     },
     'autostart-workspaces': {
       title: 'Autostart Workspaces',
       problem:
         'Elige qué apps arrancan al iniciar sesión y en qué workspace de Hyprland se colocan. Plugin para Omarchy.',
+      link: 'Ver plugin',
     },
   },
   en: {
@@ -305,10 +308,12 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
     'creador-de-videos': {
       title: 'Video maker',
       problem: 'My studio for making animated videos with code. I use it for the AskPloc channel.',
+      link: 'View channel',
     },
     'autostart-workspaces': {
       title: 'Autostart Workspaces',
       problem: 'Pick which apps launch at login and on which Hyprland workspace each one lands. A plugin for Omarchy.',
+      link: 'View plugin',
     },
   },
 }
@@ -514,7 +519,6 @@ export const DATA: Record<Lang, Copy> = {
       desc: 'Lo que construyo cuando el problema no es una web: juegos, TUIs, CLIs y agentes. El código se verá según vaya puliéndolo.',
       soon: 'Próximamente',
       code: 'Código',
-      view: 'Ver plugin',
       noShot: 'Captura pendiente',
     },
     labs: {
@@ -644,7 +648,6 @@ export const DATA: Record<Lang, Copy> = {
       desc: "What I build when the problem isn't a website: games, TUIs, CLIs and agents. The code goes up as I polish it.",
       soon: 'Coming soon',
       code: 'Code',
-      view: 'View plugin',
       noShot: 'Screenshot pending',
     },
     labs: {

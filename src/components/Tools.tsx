@@ -43,7 +43,7 @@ export default function Tools() {
                 <div className="tool-card__foot">
                   <span className="tool-card__stack">{tool.stack}</span>
                   {tool.url ? (
-                    <span className="tool-card__view">{t.tools.view} ↗</span>
+                    <span className="tool-card__view">{c.link} ↗</span>
                   ) : tool.repoPublic && tool.repo ? (
                     <a className="tool-card__code" href={tool.repo} target="_blank" rel="noopener noreferrer">
                       {t.tools.code} ↗

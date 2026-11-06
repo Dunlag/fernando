@@ -81,7 +81,7 @@ Projects shown in the "Proyectos"/Work grid are **not** individual files — the
 
 Agency work without a public repo goes in the `AGENCY` array instead (`name, year, url, tags`): it renders as one compact row under the grid, with no screenshots and no per-language copy.
 
-To add a Tools entry, use `TOOLS` (exported as `TOOLS_COMMON`): `id, stack, repo, repoPublic`. Add `{ title, problem }` to `TOOL_COPY.es` and `.en`. The code link only renders when `repoPublic` is true, so flipping a repo to public is one boolean. A tool with a public page (e.g. a marketplace listing) can set `url` instead: the whole card becomes the link, with a "view" label in the footer. Use `soon: true` for tools with no repo yet. `shot` (WebP in `public/assets/tools/`) is optional; a "screenshot pending" placeholder shows until it is set.
+To add a Tools entry, use `TOOLS` (exported as `TOOLS_COMMON`): `id, stack, repo, repoPublic`. Add `{ title, problem }` to `TOOL_COPY.es` and `.en`. The code link only renders when `repoPublic` is true, so flipping a repo to public is one boolean. A tool with a public page (e.g. a marketplace listing) can set `url` instead: the whole card becomes the link; set `link` (the footer label, e.g. "Ver plugin") in both `TOOL_COPY` languages. Use `soon: true` for tools with no repo yet. `shot` (WebP in `public/assets/tools/`) is optional; a "screenshot pending" placeholder shows until it is set.
 
 To add a Labs/experiment entry, use the `EXPERIMENTS` array (exported as `EXP_COMMON`) the same way (simpler shape: `id`, `badge`, `stack`, `url`, `thumb`).
 
