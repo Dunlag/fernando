@@ -67,7 +67,7 @@ export interface Copy {
   featured: { title: RichPart[]; meta: string[]; cta: string }
   marquee: string[]
   work: { heading: string; lead: RichPart[]; ctaLabel: string; code: string; agency: { heading: string; note: string } }
-  tools: { eyebrow: string; heading: string; desc: string; soon: string; code: string; noShot: string }
+  tools: { eyebrow: string; heading: string; desc: string; soon: string; code: string; view: string; noShot: string }
   labs: { eyebrow: string; heading: string; desc: string; open: string }
   services: { eyebrow: string; heading: string; statNum: string; statLabel: string; body: string }
   stack: { eyebrow: string; heading: string; desc: string; groups: { label: string; items: string[] }[] }
@@ -205,6 +205,8 @@ interface ToolBase {
   /** repo URL, kept ready while the repo is private; only rendered when repoPublic */
   repo?: string
   repoPublic: boolean
+  /** public page for the tool (e.g. a marketplace listing); makes the whole card a link */
+  url?: string
   /** no repo yet at all */
   soon?: boolean
   /** screenshot under public/assets/tools/; a placeholder is drawn while missing */
@@ -233,6 +235,13 @@ const TOOLS = [
     shot: A + 'tools/creador-de-videos.webp',
     stack: 'Node · Canvas · Kokoro',
     repo: 'https://github.com/Dunlag/creador-de-videos',
+    repoPublic: false,
+  },
+  {
+    id: 'autostart-workspaces',
+    shot: A + 'tools/autostart-workspaces.webp',
+    stack: 'QML · Bash · Hyprland',
+    url: 'https://plugins.omarchy.org/plugin.html?id=io.github.dunlag.autostart-workspaces',
     repoPublic: false,
   },
 ] as const satisfies readonly ToolBase[]
@@ -268,6 +277,11 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
       title: 'Creador de vídeos',
       problem: 'Mi estudio para hacer vídeos animados con código. Con él monto los del canal AskPloc.',
     },
+    'autostart-workspaces': {
+      title: 'Autostart Workspaces',
+      problem:
+        'Elige qué apps arrancan al iniciar sesión y en qué workspace de Hyprland se colocan. Plugin para Omarchy.',
+    },
   },
   en: {
     escrow: {
@@ -291,6 +305,10 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
     'creador-de-videos': {
       title: 'Video maker',
       problem: 'My studio for making animated videos with code. I use it for the AskPloc channel.',
+    },
+    'autostart-workspaces': {
+      title: 'Autostart Workspaces',
+      problem: 'Pick which apps launch at login and on which Hyprland workspace each one lands. A plugin for Omarchy.',
     },
   },
 }
@@ -496,6 +514,7 @@ export const DATA: Record<Lang, Copy> = {
       desc: 'Lo que construyo cuando el problema no es una web: juegos, TUIs, CLIs y agentes. El código se verá según vaya puliéndolo.',
       soon: 'Próximamente',
       code: 'Código',
+      view: 'Ver plugin',
       noShot: 'Captura pendiente',
     },
     labs: {
@@ -625,6 +644,7 @@ export const DATA: Record<Lang, Copy> = {
       desc: "What I build when the problem isn't a website: games, TUIs, CLIs and agents. The code goes up as I polish it.",
       soon: 'Coming soon',
       code: 'Code',
+      view: 'View plugin',
       noShot: 'Screenshot pending',
     },
     labs: {
