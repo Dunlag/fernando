@@ -224,9 +224,9 @@ const TOOLS = [
   { id: 'tesla', stack: 'GJS · GNOME Shell 50', repoPublic: false, soon: true },
   { id: 'spotify-cli', stack: 'Ink · React · Node', repo: 'https://github.com/Dunlag/spotify-cli', repoPublic: false },
   {
-    id: 'sitio-cli',
-    shot: A + 'tools/sitio-cli.webp',
-    stack: 'Node · CLI',
+    id: 'sitio',
+    shot: A + 'tools/sitio.webp',
+    stack: 'Electron · Node',
     repo: 'https://github.com/Dunlag/sitio-cli',
     repoPublic: false,
   },
@@ -269,10 +269,10 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
       title: 'spotify-cli',
       problem: 'Spotify en la terminal, con la carátula incluida y todo desde el teclado.',
     },
-    'sitio-cli': {
-      title: 'sitio-cli',
+    sitio: {
+      title: 'sitio',
       problem:
-        'Un comando para abrir de golpe todo lo de un cliente (web, admin, staging, repo…) y auditar su web de paso.',
+        'App de escritorio para abrir de golpe todo lo de un cliente (web, admin, staging, repo…) y auditar su web de paso.',
     },
     'creador-de-videos': {
       title: 'Creador de vídeos',
@@ -300,10 +300,10 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
       title: 'spotify-cli',
       problem: 'Spotify in the terminal, cover art included, all from the keyboard.',
     },
-    'sitio-cli': {
-      title: 'sitio-cli',
+    sitio: {
+      title: 'sitio',
       problem:
-        "One command to open everything for a client (site, admin, staging, repo…) and audit their site while you're at it.",
+        "Desktop app to open everything for a client (site, admin, staging, repo…) and audit their site while you're at it.",
     },
     'creador-de-videos': {
       title: 'Video maker',
