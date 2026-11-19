@@ -68,7 +68,7 @@ export default function App() {
       const leave = () => {
         e.style.transform = 'perspective(650px) rotateX(0deg) rotateY(0deg)'
       }
-      z.addEventListener('pointermove', move)
+      z.addEventListener('pointermove', move, { passive: true })
       z.addEventListener('pointerleave', leave)
       cleanups.push(() => {
         z.removeEventListener('pointermove', move)

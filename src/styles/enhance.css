@@ -29,7 +29,8 @@
   letter-spacing:.02em; line-height:1; font-variant-numeric:tabular-nums;
 }
 #preloader .preloader__bar{
-  position:absolute; left:0; bottom:0; height:4px; width:0%;
+  position:absolute; left:0; bottom:0; height:4px; width:100%;
+  transform:scaleX(0); transform-origin:left;
   background:var(--c-yellow);
 }
 body.preloading{overflow:hidden;}
@@ -37,7 +38,8 @@ body.preloading{overflow:hidden;}
 
 /* ── SCROLL PROGRESS ── */
 #scroll-progress{
-  position:fixed; top:0; left:0; height:3px; width:0;
+  position:fixed; top:0; left:0; height:3px; width:100%;
+  transform:scaleX(0); transform-origin:left;
   background:var(--c-black); z-index:1002; pointer-events:none;
 }
 

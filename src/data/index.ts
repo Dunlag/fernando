@@ -18,7 +18,6 @@ interface ProjectBase {
 
 interface ExperimentBase {
   id: string
-  badge: string
   stack: string
   url: string
   thumb: string
@@ -321,21 +320,18 @@ export const TOOL_COPY: Record<Lang, Record<ToolId, { title: string; problem: st
 const EXPERIMENTS = [
   {
     id: 'hover-dock',
-    badge: 'UI',
     stack: 'CSS · JS',
     url: 'https://codepen.io/Fernando-Pinilla/pen/wBoayWM',
     thumb: A + 'labs/hover-dock.webp',
   },
   {
     id: 'navbar-anim',
-    badge: 'CSS',
     stack: 'CSS · JS',
     url: 'https://codepen.io/Fernando-Pinilla/pen/YPXOoPO',
     thumb: A + 'labs/navbar-anim.webp',
   },
   {
     id: 'error404-pen',
-    badge: 'Canvas',
     stack: 'CSS · JS',
     url: 'https://codepen.io/Fernando-Pinilla/pen/raLXxZG',
     thumb: A + 'labs/error404-pen.webp',

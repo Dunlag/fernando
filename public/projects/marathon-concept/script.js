@@ -156,22 +156,6 @@ if (hazardStripes) {
     }, 50);
 }
 
-// Efecto de typing en el texto del hero (opcional)
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-
-    type();
-}
-
 // Log de carga
 console.log('%c🎮 MARATHON CONCEPT LOADED', 'color: #d4ff00; font-size: 20px; font-weight: bold; background: #000; padding: 10px;');
 console.log('%cEstilo Marathon Oficial Activado ⚡', 'color: #ff00ff; font-size: 14px;');

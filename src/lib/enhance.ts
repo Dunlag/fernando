@@ -36,7 +36,7 @@ function runPreloader(onDone: () => void) {
 
   if (reduce) {
     if (countEl) countEl.textContent = '100'
-    if (barEl) barEl.style.width = '100%'
+    if (barEl) barEl.style.transform = 'scaleX(1)'
     setTimeout(finish, 250)
     return
   }
@@ -49,7 +49,7 @@ function runPreloader(onDone: () => void) {
     onUpdate() {
       const n = Math.round(obj.v)
       if (countEl) countEl.textContent = String(n).padStart(3, '0')
-      if (barEl) barEl.style.width = n + '%'
+      if (barEl) barEl.style.transform = `scaleX(${n / 100})`
     },
     onComplete: finish,
   })
@@ -114,7 +114,7 @@ function initProgress() {
   function update() {
     const el = document.scrollingElement || document.documentElement
     const max = el.scrollHeight - el.clientHeight
-    bar.style.width = (max > 0 ? (el.scrollTop / max) * 100 : 0) + '%'
+    bar.style.transform = `scaleX(${max > 0 ? el.scrollTop / max : 0})`
     ticking = false
   }
   window.addEventListener(

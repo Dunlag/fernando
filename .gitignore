@@ -19,3 +19,5 @@ vendor/
 
 # Claude Code worktrees
 .claude/worktrees/
+# Claude Code local settings
+.claude/settings.local.json
