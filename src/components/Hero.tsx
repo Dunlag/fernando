@@ -1,11 +1,28 @@
+import { useEffect, useState } from 'react'
 import Rich from './Rich'
-import { PROJECTS_COMMON, PROJECT_COPY } from '../data/index'
+import { PROJECTS_COMMON, PROJECT_COPY, TOOLS_COMMON, TOOL_COPY } from '../data/index'
 import { useLang, useT } from '../store'
+
+const STEP_MS = 1200
 
 export default function Hero() {
   const t = useT()
   const lang = useLang()
-  const copy = PROJECT_COPY[lang]
+  // newest first: tools are appended over time, projects are already listed newest first
+  const frames = [
+    ...TOOLS_COMMON.filter((tool) => tool.shot)
+      .reverse()
+      .map((tool) => ({ id: tool.id, src: tool.shot ?? '', alt: TOOL_COPY[lang][tool.id].title })),
+    ...PROJECTS_COMMON.map((p) => ({ id: p.id, src: p.shots[0], alt: PROJECT_COPY[lang][p.id].title })),
+  ]
+  const [active, setActive] = useState(0)
+  const count = frames.length
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // exactly one frame is active at any time, so the card can never show the black backdrop
+    const id = setInterval(() => setActive((i) => (i + 1) % count), STEP_MS)
+    return () => clearInterval(id)
+  }, [count])
   return (
     <header className="hero" id="top">
       <div className="hero__inner">
@@ -29,15 +46,10 @@ export default function Hero() {
           </div>
           <div className="hero__card">
             <div className="hero__card-thumb">
-              {PROJECTS_COMMON.map((p, i) => (
-                <div className="hero__card-shot" key={p.id}>
+              {frames.map((f, i) => (
+                <div className={'hero__card-shot' + (i === active ? ' is-active' : '')} key={f.id}>
                   {/* stacked above the fold: only the first frame is visible at rest, so it gets priority */}
-                  <img
-                    src={p.shots[0]}
-                    alt={copy[p.id].title}
-                    fetchpriority={i === 0 ? 'high' : 'low'}
-                    decoding="async"
-                  />
+                  <img src={f.src} alt={f.alt} fetchpriority={i === 0 ? 'high' : 'low'} decoding="async" />
                 </div>
               ))}
               <div className="hero__card-label">
