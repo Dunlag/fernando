@@ -8,7 +8,7 @@ This is a **personal portfolio website** built with **React 18 + TypeScript + Vi
 
 ### Key Technologies
 
-- **Framework**: React 18 + TypeScript (strict), bootstrapped with Vite 5
+- **Framework**: React 18 + TypeScript (strict), bootstrapped with Vite 8 (Vitest 5 for tests)
 - **Quality**: ESLint (typescript-eslint, react-hooks), Prettier, Vitest + Testing Library; CI runs them on every pull request (`.github/workflows/ci.yml`)
 - **Styling**: Plain CSS (no Tailwind/CSS-in-JS), CSS custom properties for design tokens
 - **Animation**: GSAP (hero entrance, custom cursor, preloader, menu text splits), IntersectionObserver for scroll reveals
