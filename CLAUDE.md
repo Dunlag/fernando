@@ -22,7 +22,8 @@ This is a **personal portfolio website** built with **React 18 + TypeScript + Vi
 ```
 root/
   index.html              # Vite entry HTML, loads fonts, sets base title/meta
-  vite.config.ts          # base: '/fernando/', @vitejs/plugin-react, Vitest config
+  vite.config.ts          # base: '/fernando/', @vitejs/plugin-react, Vitest config, and a
+                           #   build-only plugin that injects the CSP <meta> (hashes inline scripts)
   tsconfig.json           # strict, noEmit (Vite transpiles; tsc only checks)
   .nvmrc                  # Node version used locally, in CI and in the deploy workflow
   src/
@@ -83,13 +84,13 @@ Agency work without a public repo goes in the `AGENCY` array instead (`name, yea
 
 To add a Tools entry, use `TOOLS` (exported as `TOOLS_COMMON`): `id, stack, repo, repoPublic`. Add `{ title, problem }` to `TOOL_COPY.es` and `.en`. The code link only renders when `repoPublic` is true, so flipping a repo to public is one boolean. A tool with a public page (e.g. a marketplace listing) can set `url` instead: the whole card becomes the link; set `link` (the footer label, e.g. "Ver plugin") in both `TOOL_COPY` languages. Use `soon: true` for tools with no repo yet. `shot` (WebP in `public/assets/tools/`) is optional; a "screenshot pending" placeholder shows until it is set.
 
-To add a Labs/experiment entry, use the `EXPERIMENTS` array (exported as `EXP_COMMON`) the same way (simpler shape: `id`, `badge`, `stack`, `url`, `thumb`).
+To add a Labs/experiment entry, use the `EXPERIMENTS` array (exported as `EXP_COMMON`) the same way (simpler shape: `id`, `stack`, `url`, `thumb`).
 
 ## Design System: "Mammoth Style"
 
 Bold, single-theme (no light/dark toggle) editorial look. Tokens live in `:root` at the top of `src/styles/portfolio.css`:
 
-- `--c-yellow` (base canvas — randomized per page load from `ACCENTS` in `data/index.ts`, persisted in `localStorage` to avoid repeats), `--c-black`, `--c-cream`, `--c-blue`, `--c-red`
+- `--c-yellow` (base canvas — randomized per page load from `ACCENTS` in `data/index.ts`, persisted in `localStorage` to avoid repeats), `--c-black`, `--c-cream`, `--c-blue`, `--c-white`
 - `--font-display` (Bebas Neue — big condensed headlines, ALL CAPS), `--font-condensed` (Barlow Condensed — eyebrows/labels/tags), `--font-body` (Barlow)
 - `--border` / `--border-thick` — solid 2px/4px black borders used everywhere instead of soft shadows
 - `--space-section-v` / `--space-section-h` — shared section padding scale (`clamp(...)`); `--space-section-h` also grows on screens wider than `--page-max` (1600px) so content stays centered while section backgrounds remain full-bleed
@@ -118,5 +119,6 @@ Keep the code and the repo as clean as possible, always. This is a general rule,
 - **No CMS, no markdown content files** — everything textual is in `src/data/index.ts`. When editing copy, update both `es` and `en` blocks together; the `Copy` type fails the build if they drift apart.
 - **Asset paths**: never hardcode `/fernando/`. In JS build paths from `import.meta.env.BASE_URL` (see the `A` prefix in `data/index.ts`); in `index.html` write `/assets/...` and Vite prepends `base`. Changing host or domain is then one line in `vite.config.ts` (plus the absolute canonical/OG URLs in `index.html`).
 - **Testing**: `npm run lint`, `npm run typecheck` and `npm test` must pass (CI enforces them on PRs). Tests live next to the code as `*.test.ts(x)`. Visual changes still need a manual check: `npm run dev`, open `http://localhost:5173/fernando/`, both languages plus mobile width.
+- **CSP**: production builds ship a strict Content-Security-Policy (built in `vite.config.ts`; dev has none). Loading anything from a new origin (fonts, images, embeds, fetch) means adding that origin to the policy there.
 - **No `any`**: keep the code free of `any`, `as any` and `@ts-` comments. DOM lookups use the typed generics (`querySelector<HTMLElement>`), unions are narrowed with `in`/`instanceof`.
 - **Deployment**: pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` — no manual gh-pages branch management needed.

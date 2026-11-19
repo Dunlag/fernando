@@ -6,13 +6,10 @@
 :root {
   /* accent is tweakable; everything keys off --c-yellow */
   --c-yellow: #ffe000;
-  --c-yellow-dark: #e6c800;
   --c-blue: #3b7ddd;
   --c-cream: #f5f0e8;
   --c-black: #0d0d0d;
   --c-white: #ffffff;
-  --c-red: #e8271a;
-  --c-dark-bg: #111111;
   --font-display: "Bebas Neue", "Arial Black", sans-serif;
   --font-condensed: "Barlow Condensed", sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
@@ -1000,13 +997,6 @@ h4 {
 .section-heading--outline {
   -webkit-text-stroke: 3px var(--c-black);
   color: transparent;
-}
-.section-desc {
-  font-family: var(--font-condensed);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  font-weight: 500;
-  max-width: 52ch;
-  line-height: 1.5;
 }
 
 /* ── SERVICES ── */
